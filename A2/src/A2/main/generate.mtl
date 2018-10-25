@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http:///urn.ecore')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param anURNlink
+ */]
+[template public generateElement(anURNlink : URNlink)]
+[comment @main/]
+[file (anURNlink.name, false, 'UTF-8')]
+
+[/file]
+[/template]
