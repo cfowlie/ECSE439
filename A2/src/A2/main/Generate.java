@@ -343,6 +343,24 @@ public class Generate extends AbstractAcceleoGenerator {
         if (!isInWorkspace(urn.UrnPackage.class)) {
             resourceSet.getPackageRegistry().put(urn.UrnPackage.eINSTANCE.getNsURI(), urn.UrnPackage.eINSTANCE);
         }
+        if (!isInWorkspace(grl.GrlPackage.class)) {
+            resourceSet.getPackageRegistry().put(grl.GrlPackage.eINSTANCE.getNsURI(), grl.GrlPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(grl.kpimodel.KpimodelPackage.class)) {
+            resourceSet.getPackageRegistry().put(grl.kpimodel.KpimodelPackage.eINSTANCE.getNsURI(), grl.kpimodel.KpimodelPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(ucm.UcmPackage.class)) {
+            resourceSet.getPackageRegistry().put(ucm.UcmPackage.eINSTANCE.getNsURI(), ucm.UcmPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(ucm.performance.PerformancePackage.class)) {
+            resourceSet.getPackageRegistry().put(ucm.performance.PerformancePackage.eINSTANCE.getNsURI(), ucm.performance.PerformancePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(ucm.map.MapPackage.class)) {
+            resourceSet.getPackageRegistry().put(ucm.map.MapPackage.eINSTANCE.getNsURI(), ucm.map.MapPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(ucm.scenario.ScenarioPackage.class)) {
+            resourceSet.getPackageRegistry().put(ucm.scenario.ScenarioPackage.eINSTANCE.getNsURI(), ucm.scenario.ScenarioPackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

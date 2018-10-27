@@ -2,16 +2,64 @@
 [**
  * The documentation of the module generate.
  */]
-[module generate('http:///urn.ecore')]
-
-
+[module generate('http:///urn.ecore','http:///grl.ecore', 'http:///ucm.ecore')]
 [**
  * The documentation of the template generateElement.
  * @param anURNlink
  */]
-[template public generateElement(anURNlink : URNlink)]
+[template public generateElement(anURNspec : URNspec)]
 [comment @main/]
-[file (anURNlink.name, false, 'UTF-8')]
-
+[file (anURNspec.fileName(), false, 'UTF-8')]
+[grlSpec(anURNspec.grlspec) /]
 [/file]
 [/template]
+
+[template public grlSpec(aGRLspec : GRLspec)]
+	[for (elem: IntentionalElement |aGRLspec.intElements)]
+		[if (isRoot(elem.linksSrc))] [comment add verification on element type/]
+[rootFeature(elem, aGRLspec)/]
+		[/if]
+	[/for]
+	[for (actor : Actor | aGRLspec.actors) separator ('\n')]
+		
+	[/for]
+[/template]
+
+[template public rootFeature(anIntElem: IntentionalElement, aGRLspec : GRLspec)]
+features [featureNode(anIntElem)/]
+[/template]
+
+[template public children(links: OrderedSet(ElementLink))]
+	[for (link:ElementLink |links)]
+[link -> getProperty('xsi-type') /][featureNode(cast(link.src))/]
+	[/for]
+[/template]
+
+[template public featureNode(elem: IntentionalElement)]
+[elem.name /] [elem.decompositionType /]  [if (hasChildren(elem.linksDest))]
+{
+	[children(elem.linksDest) /]
+}
+	[/if]
+[/template]
+
+
+[query public fileName(anURNspec : URNspec) : String = 
+	'features.txt'
+/]
+
+[query public hasChildren(links:OrderedSet(ElementLink)): Boolean =
+	not links -> isEmpty()
+/]
+
+[query public isRoot(links:OrderedSet(ElementLink)): Boolean =
+	links -> isEmpty()
+/]
+
+[query public isFeature(elem:IntentionalElement) : Boolean =
+	elem.getProperty('xsi:type').toString().equalsIgnoreCase('fm:Feature')
+/]
+
+[query public cast(elem:GRLLinkableElement) : IntentionalElement =
+	elem
+/]

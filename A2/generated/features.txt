@@ -1,0 +1,33 @@
+features Root And{
+	FeatureA And
+	FeatureC Or{
+		FeatureC1 Xor{
+			FeatureC11 And
+			FeatureC12 And
+			
+		}
+		
+		FeatureC2 And
+		
+	}
+	
+	FeatureB Xor{
+		FeatureB1 And{
+			FeatureB11 And
+			FeatureB12 And
+			
+		}
+		
+		FeatureB2 And
+		
+	}
+	
+	FeatureD And{
+		FeatureD1 And
+		
+	}
+	
+	
+}
+
+
