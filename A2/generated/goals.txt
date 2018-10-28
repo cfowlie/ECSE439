@@ -1,0 +1,98 @@
+
+
+actor ActorA {
+	Softgoal SoftgoalA{
+		importance 100
+	}
+	Goal GoalA1{
+		contributesTo SoftgoalA with 73
+	}
+	Goal GoalA2{
+		contributesTo GoalA1 with 77
+	}
+	Task TaskA1{
+		Xor decomposes GoalA1
+	}
+	Task TaskA2{
+		Xor decomposes GoalA1
+	}
+	Task TaskA3{
+		And decomposes GoalA2
+		
+	}
+	Ressource ResourceA{
+		And decomposes GoalA2
+		dependsOn ActorB.SoftgoalB
+	}
+
+}
+
+actor ActorB {
+
+	Softgoal SoftgoalB{
+
+		
+
+	}
+
+	Goal GoalB{
+
+		contributesTo SoftgoalB with 54
+
+	}
+
+	Task TaskB2{
+
+		Or decomposes GoalB
+
+		
+
+	}
+
+	Ressource ResourceB{
+
+		contributesTo SoftgoalB with 25
+
+	}
+
+	Task TaskB1{
+
+		Or decomposes GoalB
+
+	}
+
+
+
+}
+
+actor ActorC {
+
+	Softgoal SoftgoalC1{
+
+		importance 45
+
+	}
+
+	Task TaskC{
+
+		contributesTo SoftgoalC1 with 59
+
+		contributesTo SoftgoalC2 correlated with -45
+
+		dependsOn ActorA.TaskA3
+
+		dependsOn ActorB.TaskB2
+
+	}
+
+	Softgoal SoftgoalC2{
+
+		importance 55
+
+	}
+
+
+
+}
+
+

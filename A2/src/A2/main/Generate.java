@@ -361,6 +361,18 @@ public class Generate extends AbstractAcceleoGenerator {
         if (!isInWorkspace(ucm.scenario.ScenarioPackage.class)) {
             resourceSet.getPackageRegistry().put(ucm.scenario.ScenarioPackage.eINSTANCE.getNsURI(), ucm.scenario.ScenarioPackage.eINSTANCE);
         }
+        if (!isInWorkspace(urncore.UrncorePackage.class)) {
+            resourceSet.getPackageRegistry().put(urncore.UrncorePackage.eINSTANCE.getNsURI(), urncore.UrncorePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(asd.AsdPackage.class)) {
+            resourceSet.getPackageRegistry().put(asd.AsdPackage.eINSTANCE.getNsURI(), asd.AsdPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(fm.FmPackage.class)) {
+            resourceSet.getPackageRegistry().put(fm.FmPackage.eINSTANCE.getNsURI(), fm.FmPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(ucmscenarios.UcmscenariosPackage.class)) {
+            resourceSet.getPackageRegistry().put(ucmscenarios.UcmscenariosPackage.eINSTANCE.getNsURI(), ucmscenarios.UcmscenariosPackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

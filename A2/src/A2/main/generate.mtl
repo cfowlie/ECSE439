@@ -2,7 +2,7 @@
 [**
  * The documentation of the module generate.
  */]
-[module generate('http:///urn.ecore','http:///grl.ecore', 'http:///ucm.ecore')]
+[module generate('http:///urn.ecore','http:///grl.ecore', 'http:///ucm.ecore', 'http:///urncore.ecore', 'http:///asd.ecore', 'http:///fm.ecore', 'http:///ucmscenarios.ecore' )]
 [**
  * The documentation of the template generateElement.
  * @param anURNlink
@@ -10,39 +10,94 @@
 [template public generateElement(anURNspec : URNspec)]
 [comment @main/]
 [file (anURNspec.fileName(), false, 'UTF-8')]
-[grlSpec(anURNspec.grlspec) /]
+[grlSpec(anURNspec.grlspec, anURNspec.urndef) /]
 [/file]
 [/template]
 
-[template public grlSpec(aGRLspec : GRLspec)]
+[template public grlSpec(aGRLspec : GRLspec, anURNdef: URNdefinition)]
+
 	[for (elem: IntentionalElement |aGRLspec.intElements)]
-		[if (isRoot(elem.linksSrc))] [comment add verification on element type/]
+		[if (elem.type.toString() = 'Task' and isRoot(elem.linksSrc))] [comment add verification on element type/]
 [rootFeature(elem, aGRLspec)/]
 		[/if]
 	[/for]
+
 	[for (actor : Actor | aGRLspec.actors) separator ('\n')]
-		
+[actor(actor, aGRLspec,anURNdef) /]
 	[/for]
+
 [/template]
 
 [template public rootFeature(anIntElem: IntentionalElement, aGRLspec : GRLspec)]
 features [featureNode(anIntElem)/]
 [/template]
 
-[template public children(links: OrderedSet(ElementLink))]
+[template public children(links: OrderedSet(ElementLink)) post (trim())]
 	[for (link:ElementLink |links)]
-[link -> getProperty('xsi-type') /][featureNode(cast(link.src))/]
+[linkType(link) /] [featureNode(cast(link.src))/]
 	[/for]
 [/template]
 
-[template public featureNode(elem: IntentionalElement)]
-[elem.name /] [elem.decompositionType /]  [if (hasChildren(elem.linksDest))]
+[template public featureNode(elem: IntentionalElement) post (trim())]
+[elem.name /] [decompositionType(elem) /]  [if (hasChildren(elem.linksDest))]
 {
-	[children(elem.linksDest) /]
+	[children(elem.linksDest)/]
 }
 	[/if]
 [/template]
 
+[template public linkType(link : ElementLink) post (trim())]
+[if (link.name.startsWith('Mandatory'))]mandatory[/if]
+[if (link.name.startsWith('Optional'))]optional[/if]
+[/template]
+
+[template public decompositionType(elem:IntentionalElement) post (trim())]
+[if (elem.decompositionType.toString().startsWith('Or'))]OR[/if]
+[if (elem.decompositionType.toString().startsWith('Xor'))]OR[/if]
+[/template]
+
+[template public actor(actor:Actor, aGRLspec : GRLspec, anURNdef: URNdefinition)]
+actor [actor.name/] {
+[for (contained: IURNContainerRef| actor.contRefs)]
+[actorContained(contained, aGRLspec, anURNdef) /]
+[/for]
+}
+[/template]
+
+[template public actorContained(contained: IURNContainerRef,aGRLspec : GRLspec, anURNdef: URNdefinition)]
+[for (node:IURNNode |contained.nodes)]
+[for (elem: IntentionalElement |findElem(getAtt(node, 'id'), aGRLspec))]
+	[actorElement(elem) /]
+[/for]
+[/for]
+[/template]
+
+[template public actorElement(elem:IntentionalElement) post (trim())]
+[elem.type/] [elem.name/] [if (hasContents(elem))]{
+[if (not (elem.importance.toString() = 'None'))]
+	importance [elem.importanceQuantitative/]
+[/if]
+[for (link: ElementLink | elem.linksSrc)]
+	[actorLinks(elem, link)/]
+[/for]
+[for (link:ElementLink | dependencies(elem.linksDest))]
+	[dependLink(link)/]
+[/for]
+}
+[/if]
+[/template]
+[template public actorLinks(elem:IntentionalElement ,link:ElementLink) post (trim())]
+[if (link.name.startsWith('Contribution'))]
+contributesTo [link.dest.name/][if (getAtt(link, 'correlation').equalsIgnoreCase('true'))] correlated[/if] with [link.getAtt('quantitativeContribution')/]
+[/if]
+[if (link.name.startsWith('Decomposition'))]
+[cast(link.dest).decompositionType /] decomposes [link.dest.name/]
+[/if]
+[/template]
+
+[template public dependLink(link:ElementLink)]
+dependsOn [containingActor(cast(link.src))/].[link.src.name /]
+[/template]
 
 [query public fileName(anURNspec : URNspec) : String = 
 	'features.txt'
@@ -63,3 +118,60 @@ features [featureNode(anIntElem)/]
 [query public cast(elem:GRLLinkableElement) : IntentionalElement =
 	elem
 /]
+
+
+[query public getAtt(link:ElementLink, attribute:String): String=
+	link.eGet(attribute) ->toString()
+/]
+
+[query public getAtt(node: IURNNode, attribute:String): String=
+	node.eGet(attribute)
+/]
+
+[query public getAtt(elem: IntentionalElement, attribute:String): String=
+	elem.eGet(attribute)
+/]
+
+[query public getAtt(ref: IntentionalElementRef, attribute:String) : String =
+	ref.eGet(attribute)
+/]
+
+[query public findElem(id:String, aGRLspec: GRLspec): OrderedSet(IntentionalElement) =
+	aGRLspec.intElements -> select(x | (not x.refs -> isEmpty()) and (x.refs.id.toString() ->first()) = id) 
+/]
+
+[query public hasContents(elem: IntentionalElement) : Boolean = 
+	(not (elem.importance.toString() = 'None')) or (not (elem.linksSrc -> isEmpty())) or hasDependency(elem.linksDest)
+/]
+
+[query public hasDependency(links:OrderedSet(ElementLink)) : Boolean =
+	not (dependencies(links) ->isEmpty())
+/]
+
+[query public dependencies(links:OrderedSet(ElementLink)) : OrderedSet(ElementLink) = 
+	links -> select(x | x.name.startsWith('Dependency'))
+/]
+
+[query public containingActor(elem:IntentionalElement) : String = 
+	findActor(elem.grlspec, findNode(elem)).name
+/]
+
+[query public findActor(grlSpec:GRLspec, node:IURNNode): Actor =
+	grlSpec.actors ->select(a | (a.contRefs.toString()->first()) = node.contRef.toString()) ->first()
+ /]
+
+[query public findNode(elem:IntentionalElement) : IURNNode =
+	getNodes(elem.grlspec.urnspec)->select(n| getAtt(n, 'id')= getRef(elem))->first()
+/]
+
+[query public getRef(elem:IntentionalElement) : String=
+	getAtt(elem.refs -> first(), 'id')
+/]
+
+[query public getNodes(aUrnSpec : URNspec) : Sequence(IURNNode) = 
+	aUrnSpec.urndef.specDiagrams.nodes
+/]
+
+
+
+

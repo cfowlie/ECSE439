@@ -1,33 +1,24 @@
-features Root And{
-	FeatureA And
-	FeatureC Or{
-		FeatureC1 Xor{
-			FeatureC11 And
-			FeatureC12 And
-			
-		}
-		
-		FeatureC2 And
-		
+
+features Root {
+	optional FeatureA
+	mandatory FeatureC OR{
+		FeatureC1 OR{
+		 	FeatureC11
+		 	 FeatureC12
+		 }
+		 FeatureC2
 	}
-	
-	FeatureB Xor{
-		FeatureB1 And{
-			FeatureB11 And
-			FeatureB12 And
-			
-		}
-		
-		FeatureB2 And
-		
+	optional FeatureB OR{
+		FeatureB1 {
+		 	mandatory FeatureB11
+		 	mandatory FeatureB12
+		 }
+		 FeatureB2
 	}
-	
-	FeatureD And{
-		FeatureD1 And
-		
+	optional FeatureD {
+		optional FeatureD1
 	}
-	
-	
 }
+
 
 
