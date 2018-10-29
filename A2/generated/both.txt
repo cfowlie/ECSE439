@@ -1,6 +1,6 @@
 features Root {
 	mandatory FeatureA
-	mandatory FeatureC OR{
+	mandatory FeatureC XOR{
 		FeatureC1 {
 		 	mandatory FeatureC11
 		 	optional FeatureC12
@@ -15,36 +15,35 @@ features Root {
 }
 
 actor ActorA {
-	Softgoal SoftgoalA
-	Goal GoalA1{
+softgoal SoftgoalA
+	goal GoalA1{
 		importance 75
 		contributesTo SoftgoalA with 73
 	}
-	Goal GoalA2{
+	goal GoalA2{
 		importance 25
 		contributesTo SoftgoalA with -18
 		dependsOn ActorB.SoftgoalB
 	}
-	Task TaskA1{
+	task TaskA1{
 		And decomposes GoalA1
 	}
-	Task TaskA2{
+	task TaskA2{
 		And decomposes GoalA1
 	}
-	Task TaskA3{
+	task TaskA3{
 		Xor decomposes GoalA2
 		contributesTo GoalA1 correlated with -22
 	}
-	Ressource ResourceA{
+	ressource ResourceA{
 		Xor decomposes GoalA2
 		
 	}
-
 }
 
 actor ActorB {
 
-	Softgoal SoftgoalB{
+softgoal SoftgoalB{
 
 		importance 100
 
@@ -52,13 +51,13 @@ actor ActorB {
 
 	}
 
-	Goal GoalB{
+	goal GoalB{
 
 		contributesTo SoftgoalB with 54
 
 	}
 
-	Task TaskB1{
+	task TaskB1{
 
 		Or decomposes GoalB
 
@@ -66,26 +65,22 @@ actor ActorB {
 
 	}
 
-	Task TaskB2{
+	task TaskB2{
 
 		Or decomposes GoalB
 
 	}
 
-	Task TaskB3{
+	task TaskB3{
 
 		contributesTo GoalB with 100
 
 	}
 
-	Ressource ResourceB{
+	ressource ResourceB{
 
 		contributesTo SoftgoalB with 25
 
 	}
 
-
-
 }
-
-

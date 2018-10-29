@@ -14,8 +14,7 @@
 [/file]
 [/template]
 
-[template public grlSpec(aGRLspec : GRLspec, anURNdef: URNdefinition)]
-
+[template public grlSpec(aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 	[for (elem: IntentionalElement |aGRLspec.intElements)]
 		[if (elem.type.toString() = 'Task' and isRoot(elem.linksSrc))] [comment add verification on element type/]
 [rootFeature(elem, aGRLspec)/]
@@ -28,11 +27,11 @@
 
 [/template]
 
-[template public rootFeature(anIntElem: IntentionalElement, aGRLspec : GRLspec)]
+[template public rootFeature(anIntElem: IntentionalElement, aGRLspec : GRLspec) post (trim())]
 features [featureNode(anIntElem)/]
 [/template]
 
-[template public children(links: OrderedSet(ElementLink)) post (trim())]
+[template public children(links: OrderedSet(ElementLink)) post (trim()) post (trim())]
 	[for (link:ElementLink |links)]
 [linkType(link) /] [featureNode(cast(link.src))/]
 	[/for]
@@ -53,10 +52,10 @@ features [featureNode(anIntElem)/]
 
 [template public decompositionType(elem:IntentionalElement) post (trim())]
 [if (elem.decompositionType.toString().startsWith('Or'))]OR[/if]
-[if (elem.decompositionType.toString().startsWith('Xor'))]OR[/if]
+[if (elem.decompositionType.toString().startsWith('Xor'))]XOR[/if]
 [/template]
 
-[template public actor(actor:Actor, aGRLspec : GRLspec, anURNdef: URNdefinition)]
+[template public actor(actor:Actor, aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 actor [actor.name/] {
 [for (contained: IURNContainerRef| actor.contRefs)]
 [actorContained(contained, aGRLspec, anURNdef) /]
@@ -64,7 +63,7 @@ actor [actor.name/] {
 }
 [/template]
 
-[template public actorContained(contained: IURNContainerRef,aGRLspec : GRLspec, anURNdef: URNdefinition)]
+[template public actorContained(contained: IURNContainerRef,aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 [for (node:IURNNode |contained.nodes)]
 [for (elem: IntentionalElement |findElem(getAtt(node, 'id'), aGRLspec))]
 	[actorElement(elem) /]
@@ -73,7 +72,7 @@ actor [actor.name/] {
 [/template]
 
 [template public actorElement(elem:IntentionalElement) post (trim())]
-[elem.type/] [elem.name/] [if (hasContents(elem))]{
+[elem.type.toString().toLowerCase()/] [elem.name/] [if (hasContents(elem))]{
 [if (not (elem.importance.toString() = 'None'))]
 	importance [elem.importanceQuantitative/]
 [/if]
@@ -95,12 +94,12 @@ contributesTo [link.dest.name/][if (getAtt(link, 'correlation').equalsIgnoreCase
 [/if]
 [/template]
 
-[template public dependLink(link:ElementLink)]
-dependsOn [containingActor(cast(link.src))/].[link.src.name /]
+[template public dependLink(link:ElementLink) post (trim())]
+dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 [/template]
 
 [query public fileName(anURNspec : URNspec) : String = 
-	'features.txt'
+	'both.txt'
 /]
 
 [query public hasChildren(links:OrderedSet(ElementLink)): Boolean =
@@ -136,6 +135,10 @@ dependsOn [containingActor(cast(link.src))/].[link.src.name /]
 	ref.eGet(attribute)
 /]
 
+[query public getAtt(contRef : IURNContainerRef, attribute:String) : String =
+	contRef.eGet(attribute)
+/]
+
 [query public findElem(id:String, aGRLspec: GRLspec): OrderedSet(IntentionalElement) =
 	aGRLspec.intElements -> select(x | (not x.refs -> isEmpty()) and (x.refs.id.toString() ->first()) = id) 
 /]
@@ -152,26 +155,9 @@ dependsOn [containingActor(cast(link.src))/].[link.src.name /]
 	links -> select(x | x.name.startsWith('Dependency'))
 /]
 
-[query public containingActor(elem:IntentionalElement) : String = 
-	findActor(elem.grlspec, findNode(elem)).name
+[query public containingActor(elem:IntentionalElement) : Actor = 
+	elem.grlspec.actors -> select(a| (a.contRefs ->first()) = (elem.refs -> first()).contRef) ->first()
 /]
-
-[query public findActor(grlSpec:GRLspec, node:IURNNode): Actor =
-	grlSpec.actors ->select(a | (a.contRefs.toString()->first()) = node.contRef.toString()) ->first()
- /]
-
-[query public findNode(elem:IntentionalElement) : IURNNode =
-	getNodes(elem.grlspec.urnspec)->select(n| getAtt(n, 'id')= getRef(elem))->first()
-/]
-
-[query public getRef(elem:IntentionalElement) : String=
-	getAtt(elem.refs -> first(), 'id')
-/]
-
-[query public getNodes(aUrnSpec : URNspec) : Sequence(IURNNode) = 
-	aUrnSpec.urndef.specDiagrams.nodes
-/]
-
 
 
 
