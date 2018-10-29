@@ -13,6 +13,9 @@
 [grlSpec(anURNspec.grlspec, anURNspec.urndef) /]
 [/file]
 [/template]
+[template public test(node:IURNNode) ]
+[getAtt(node, 'name')/]
+[/template]
 
 [template public grlSpec(aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 	[for (elem: IntentionalElement |aGRLspec.intElements)]
@@ -31,7 +34,7 @@
 features [featureNode(anIntElem)/]
 [/template]
 
-[template public children(links: OrderedSet(ElementLink)) post (trim()) post (trim())]
+[template public children(links: OrderedSet(ElementLink)) post (trim())]
 	[for (link:ElementLink |links)]
 [linkType(link) /] [featureNode(cast(link.src))/]
 	[/for]
@@ -65,7 +68,7 @@ actor [actor.name/] {
 
 [template public actorContained(contained: IURNContainerRef,aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 [for (node:IURNNode |contained.nodes)]
-[for (elem: IntentionalElement |findElem(getAtt(node, 'id'), aGRLspec))]
+[for (elem: IntentionalElement |findElem(node))]
 	[actorElement(elem) /]
 [/for]
 [/for]
@@ -139,8 +142,12 @@ dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 	contRef.eGet(attribute)
 /]
 
-[query public findElem(id:String, aGRLspec: GRLspec): OrderedSet(IntentionalElement) =
-	aGRLspec.intElements -> select(x | (not x.refs -> isEmpty()) and (x.refs.id.toString() ->first()) = id) 
+[query public findElem(node:IURNNode): OrderedSet(IntentionalElement) = 
+	node.diagram.urndefinition.urnspec.grlspec.intElements ->select(i|hasRef(node, i))
+/]
+
+[query public hasRef(node:IURNNode, elem:IntentionalElement) : Boolean =
+	not ((elem.refs -> select(r| r=node )) ->isEmpty())
 /]
 
 [query public hasContents(elem: IntentionalElement) : Boolean = 
@@ -156,8 +163,5 @@ dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 /]
 
 [query public containingActor(elem:IntentionalElement) : Actor = 
-	elem.grlspec.actors -> select(a| (a.contRefs ->first()) = (elem.refs -> first()).contRef) ->first()
+	elem.refs.contRef.contDef ->first()
 /]
-
-
-

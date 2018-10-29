@@ -39,6 +39,10 @@ softgoal SoftgoalA
 		Xor decomposes GoalA2
 		
 	}
+	task FeatureA{
+		
+		Xor decomposes GoalA2
+	}
 }
 
 actor ActorB {
@@ -80,6 +84,22 @@ softgoal SoftgoalB{
 	ressource ResourceB{
 
 		contributesTo SoftgoalB with 25
+
+	}
+
+	task FeatureB{
+
+		
+
+		contributesTo SoftgoalB with 37
+
+	}
+
+	task FeatureC{
+
+		
+
+		contributesTo TaskB3 with -60
 
 	}
 
