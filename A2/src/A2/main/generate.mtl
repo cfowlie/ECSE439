@@ -19,7 +19,7 @@
 
 [template public grlSpec(aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 	[for (elem: IntentionalElement |aGRLspec.intElements)]
-		[if (elem.type.toString() = 'Task' and isRoot(elem.linksSrc))] [comment add verification on element type/]
+		[if (isFeature(elem) and isRoot(elem.linksSrc))]
 [rootFeature(elem, aGRLspec)/]
 		[/if]
 	[/for]
@@ -49,8 +49,8 @@ features [featureNode(anIntElem)/]
 [/template]
 
 [template public linkType(link : ElementLink) post (trim())]
-[if (link.name.startsWith('Mandatory'))]mandatory[/if]
-[if (link.name.startsWith('Optional'))]optional[/if]
+[if (link.oclIsTypeOf(MandatoryFMLink))]mandatory[/if]
+[if (link.oclIsTypeOf(OptionalFMLink))]optional[/if]
 [/template]
 
 [template public decompositionType(elem:IntentionalElement) post (trim())]
@@ -89,10 +89,10 @@ actor [actor.name/] {
 [/if]
 [/template]
 [template public actorLinks(elem:IntentionalElement ,link:ElementLink) post (trim())]
-[if (link.name.startsWith('Contribution'))]
+[if (link.oclIsTypeOf(Contribution))]
 contributesTo [link.dest.name/][if (getAtt(link, 'correlation').equalsIgnoreCase('true'))] correlated[/if] with [link.getAtt('quantitativeContribution')/]
 [/if]
-[if (link.name.startsWith('Decomposition'))]
+[if (link.oclIsTypeOf(Decomposition))]
 [cast(link.dest).decompositionType /] decomposes [link.dest.name/]
 [/if]
 [/template]
@@ -114,11 +114,11 @@ dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 /]
 
 [query public isFeature(elem:IntentionalElement) : Boolean =
-	elem.getProperty('xsi:type').toString().equalsIgnoreCase('fm:Feature')
+	elem.oclIsTypeOf(Feature)
 /]
 
 [query public cast(elem:GRLLinkableElement) : IntentionalElement =
-	elem
+	elem.oclAsType(IntentionalElement)
 /]
 
 
