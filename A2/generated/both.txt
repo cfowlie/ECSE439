@@ -15,7 +15,7 @@ features Root {
 }
 
 actor ActorA {
-	softgoal SoftgoalA{
+softgoal SoftgoalA{
 		BeliefA
 	}
 	goal GoalA1{
@@ -37,11 +37,11 @@ actor ActorA {
 		Xor decomposes GoalA2
 		contributesTo GoalA1 correlated with -22
 	}
-	ressource ResourceA{
+	resource ResourceA{
 		Xor decomposes GoalA2
 		
 	}
-	task FeatureA{
+	feature FeatureA{
 		
 		Xor decomposes GoalA2
 	}
@@ -66,14 +66,14 @@ softgoal SoftgoalB{
 	task TaskB3{
 		contributesTo GoalB with 100
 	}
-	ressource ResourceB{
+	resource ResourceB{
 		contributesTo SoftgoalB with 25
 	}
-	task FeatureB{
+	feature FeatureB{
 		
 		contributesTo SoftgoalB with 37
 	}
-	task FeatureC{
+	feature FeatureC{
 		
 		contributesTo TaskB3 with -60
 	}

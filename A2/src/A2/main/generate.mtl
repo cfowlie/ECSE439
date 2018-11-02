@@ -75,7 +75,7 @@ actor [actor.name/] {
 [/template]
 
 [template public actorElement(elem:IntentionalElement, anURNdef: URNdefinition) post (trim())]
-[elem.type.toString().toLowerCase()/] [elem.name/] [if (hasContents(elem))]{
+[if (isFeature())] feature[/if][if (not elem.isFeature())] [elem.type.toString().toLowerCase()/][/if] [elem.name/] [if (hasContents(elem))]{
 [for (spec: IURNDiagram| anURNdef.specDiagrams)]
 [for (node: IURNNode|spec.nodes)]
 [for (connection: IURNConnection|spec.connections)]
@@ -142,6 +142,7 @@ dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 [query public getAtt(node: IURNNode, attribute:String): String=
 	node.eGet(attribute)
 /]
+
 
 [query public getAtt(elem: IntentionalElement, attribute:String): String=
 	elem.eGet(attribute)
