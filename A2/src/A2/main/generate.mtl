@@ -69,13 +69,26 @@ actor [actor.name/] {
 [template public actorContained(contained: IURNContainerRef,aGRLspec : GRLspec, anURNdef: URNdefinition) post (trim())]
 [for (node:IURNNode |contained.nodes)]
 [for (elem: IntentionalElement |findElem(node))]
-	[actorElement(elem) /]
+	[actorElement(elem, anURNdef) /]
 [/for]
 [/for]
 [/template]
 
-[template public actorElement(elem:IntentionalElement) post (trim())]
+[template public actorElement(elem:IntentionalElement, anURNdef: URNdefinition) post (trim())]
 [elem.type.toString().toLowerCase()/] [elem.name/] [if (hasContents(elem))]{
+[for (spec: IURNDiagram| anURNdef.specDiagrams)]
+[for (node: IURNNode|spec.nodes)]
+[for (connection: IURNConnection|spec.connections)]
+	[if node.oclIsTypeOf(Belief)]
+	[if elem.refs -> first() = connection.target]
+	[if node = connection.source]
+	[getAtt(node, 'description')/]
+	[/if]
+	[/if]
+	[/if]
+[/for]
+[/for]
+[/for]
 [if (not (elem.importance.toString() = 'None'))]
 	importance [elem.importanceQuantitative/]
 [/if]
@@ -151,7 +164,7 @@ dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 /]
 
 [query public hasContents(elem: IntentionalElement) : Boolean = 
-	(not (elem.importance.toString() = 'None')) or (not (elem.linksSrc -> isEmpty())) or hasDependency(elem.linksDest)
+	(not (elem.importance.toString() = 'None')) or (not (elem.linksSrc -> isEmpty())) or hasDependency(elem.linksDest) or (not (elem.refs -> isEmpty()))
 /]
 
 [query public hasDependency(links:OrderedSet(ElementLink)) : Boolean =

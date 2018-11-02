@@ -15,7 +15,9 @@ features Root {
 }
 
 actor ActorA {
-softgoal SoftgoalA
+	softgoal SoftgoalA{
+		BeliefA
+	}
 	goal GoalA1{
 		importance 75
 		contributesTo SoftgoalA with 73
@@ -46,61 +48,33 @@ softgoal SoftgoalA
 }
 
 actor ActorB {
-
 softgoal SoftgoalB{
-
 		importance 100
-
 		
-
 	}
-
 	goal GoalB{
-
 		contributesTo SoftgoalB with 54
-
 	}
-
 	task TaskB1{
-
+		BeliefB
 		Or decomposes GoalB
-
 		dependsOn ActorA.ResourceA
-
 	}
-
 	task TaskB2{
-
 		Or decomposes GoalB
-
 	}
-
 	task TaskB3{
-
 		contributesTo GoalB with 100
-
 	}
-
 	ressource ResourceB{
-
 		contributesTo SoftgoalB with 25
-
 	}
-
 	task FeatureB{
-
 		
-
 		contributesTo SoftgoalB with 37
-
 	}
-
 	task FeatureC{
-
 		
-
 		contributesTo TaskB3 with -60
-
 	}
-
 }
