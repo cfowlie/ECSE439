@@ -14,12 +14,12 @@
     Target: /A2/generated
 
 ## Output Files
-All output files will be set to /A2/Generated. The name of the ouput file can be configured in generate.mtl in the "fileName" query.
+All output files will be set to /A2/Generated. The name of the output file can be configured in generate.mtl in the "fileName" query.
 
 ## What Went Well
 Using multiple templates allowed for us to easily create the necessary components and lay them out correctly. The addition of many small querys allowed for cleaner and more understandable code.
 
 ## What Didnt Go Well
-The largest challenge in this for us was correctly adding beliefs. This was a problem as beliefs are only listed below the main part of graphs within the specDiagrams. We accessed ths by looping over the spec diagrams and checking to see if the belief node pointed at the current element, allowing us to insert it in the correct place. 
+The largest challenge in this for us was correctly adding beliefs. This was a problem as beliefs are only listed below the main part of graphs within the specDiagrams. We accessed this by looping over the spec diagrams and checking to see if the belief node pointed at the current element, allowing us to insert it in the correct place. 
 
-Another small stuggle is with trimming whitespace correctly. There are a few places that dont appear to trim correctly even when using the post (trim()) within a template.
+Another small struggle is with trimming whitespace correctly. There are a few places that dont appear to trim correctly even when using the post (trim()) within a template.
