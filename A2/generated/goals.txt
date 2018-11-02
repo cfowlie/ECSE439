@@ -1,47 +1,47 @@
-
-
 actor ActorA {
-	Softgoal SoftgoalA{
+softgoal SoftgoalA{
 		importance 100
 	}
-	Goal GoalA1{
+	goal GoalA1{
 		contributesTo SoftgoalA with 73
 	}
-	Goal GoalA2{
+	goal GoalA2{
+		BeliefA
 		contributesTo GoalA1 with 77
 	}
-	Task TaskA1{
+	task TaskA1{
 		Xor decomposes GoalA1
 	}
-	Task TaskA2{
+	task TaskA2{
 		Xor decomposes GoalA1
 	}
-	Task TaskA3{
+	task TaskA3{
 		And decomposes GoalA2
 		
 	}
-	Ressource ResourceA{
+	ressource ResourceA{
 		And decomposes GoalA2
 		dependsOn ActorB.SoftgoalB
 	}
-
 }
 
 actor ActorB {
 
-	Softgoal SoftgoalB{
+softgoal SoftgoalB{
 
 		
 
 	}
 
-	Goal GoalB{
+	goal GoalB{
+
+		BeliefB
 
 		contributesTo SoftgoalB with 54
 
 	}
 
-	Task TaskB2{
+	task TaskB2{
 
 		Or decomposes GoalB
 
@@ -49,31 +49,29 @@ actor ActorB {
 
 	}
 
-	Ressource ResourceB{
+	ressource ResourceB{
 
 		contributesTo SoftgoalB with 25
 
 	}
 
-	Task TaskB1{
+	task TaskB1{
 
 		Or decomposes GoalB
 
 	}
 
-
-
 }
 
 actor ActorC {
 
-	Softgoal SoftgoalC1{
+softgoal SoftgoalC1{
 
 		importance 45
 
 	}
 
-	Task TaskC{
+	task TaskC{
 
 		contributesTo SoftgoalC1 with 59
 
@@ -85,14 +83,10 @@ actor ActorC {
 
 	}
 
-	Softgoal SoftgoalC2{
+	softgoal SoftgoalC2{
 
 		importance 55
 
 	}
 
-
-
 }
-
-

@@ -1,14 +1,13 @@
-
 features Root {
 	optional FeatureA
 	mandatory FeatureC OR{
-		FeatureC1 OR{
+		FeatureC1 XOR{
 		 	FeatureC11
 		 	 FeatureC12
 		 }
 		 FeatureC2
 	}
-	optional FeatureB OR{
+	optional FeatureB XOR{
 		FeatureB1 {
 		 	mandatory FeatureB11
 		 	mandatory FeatureB12
@@ -19,6 +18,3 @@ features Root {
 		optional FeatureD1
 	}
 }
-
-
-

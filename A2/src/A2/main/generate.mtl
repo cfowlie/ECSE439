@@ -115,7 +115,7 @@ dependsOn [containingActor(cast(link.src)).name/].[link.src.name /]
 [/template]
 
 [query public fileName(anURNspec : URNspec) : String = 
-	'both.txt'
+	'goals.txt'
 /]
 
 [query public hasChildren(links:OrderedSet(ElementLink)): Boolean =
