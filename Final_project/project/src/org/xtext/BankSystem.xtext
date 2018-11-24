@@ -1,9 +1,107 @@
 grammar org.xtext.BankSystem with org.eclipse.xtext.common.Terminals
-
 generate bankSystem "http://www.xtext.org/BankSystem"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+
+BankSystem:
+	(banks+=Bank)+
+	(users+=User)+
+;
+Bank: 
+	'Bank' name=ID
+	'Country' countryOfOrigin= STRING
+	'{'
+		(branches+=Branch)+
+		(accounts+=Account)*
+		(transactions+=Transaction)*
+	'}'
+;
+
+User:
+	'User' '{'
+	'Name' name=ID
+	'Email' email=ID
+	'HashPass' hashpass=ID
+	'Address' address=ID
+	'}'
+;
+
+
+Branch:
+	'Branch{'
+		'Address' address = STRING
+		Booth
+		Vault
+		(employees+=Employee)+
+	'}'
+;
+
+Booth:
+	'Booth'
+;
+
+Vault:
+	'Vault'
+;
+
+Employee:
+	'Employee' name=ID '{'
+		'Hiring date' date= Date
+		'Salary' salary=INT
+		'Current Role' currentRole = EmployeeRole
+	'}'
+;
+
+EmployeeRole:
+	Teller|Manager
+;
+
+Teller:
+	'Teller'
+;
+
+Manager:
+	'Manager'
+;
+
+Account:
+	(SavingsAccount|CheckingAccount|MortgageAccount)
+		'Holder(s)' (holders+=User)+
+		'Balance' balance=INT
+		'Account Number' accountNum = ID
+		'MFA Type' mfaType= STRING
+	'}'
+;
+
+SavingsAccount:
+	'Savings Account {'
+		'Interest rate' intRate= INT
+;
+
+CheckingAccount:
+	'Checking Account {'
+		'Debits per month' depPerMonth= INT
+;
+
+MortgageAccount:
+	'Mortgage Account {'
+		'Loan period' loanPeriod=ID
+;
+
+Transaction:
+	'transaction {'
+		'Source:' sourceAccount=Account
+		'Target:' targetAccount=Account
+		'Amount:' amount = INT
+		'Date' date=Date
+		'Debit' debit=Boolean
+		'Vendor name' vendorName=STRING
+	'}'
+;
+
+Boolean:
+	'true'|'false'
+;
+
+Date:
+	year=INT'/'month=INT'/'day=INT
+;
