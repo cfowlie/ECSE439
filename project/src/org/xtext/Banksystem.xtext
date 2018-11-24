@@ -1,0 +1,9 @@
+grammar org.xtext.Banksystem with org.eclipse.xtext.common.Terminals
+
+generate banksystem "http://www.xtext.org/Banksystem"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
