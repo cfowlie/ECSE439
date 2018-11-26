@@ -1,0 +1,20 @@
+«IMPORT metamodel»
+«IMPORT bankSystem»
+
+«EXTENSION template::GeneratorExtensions»
+
+«DEFINE main FOR BankSystem»
+ 	«FILE "database.sql"»
+ 		CREATE DATABASE banksystem;
+ 		CREATE TABLE ...
+		«EXPAND bank FOREACH banks»
+		«EXPAND user FOREACH users»
+	«ENDFILE»
+«ENDDEFINE»
+
+
+«DEFINE bank FOR Bank»
+«ENDDEFINE»
+
+«DEFINE user FOR User»
+«ENDDEFINE»
