@@ -65,7 +65,7 @@ Manager:
 
 Account:
 	(SavingsAccount|CheckingAccount|MortgageAccount)
-		'Holder(s)' (holders+=User)+
+		'Holder(s)' (holders+=User)
 		'Balance' balance=INT
 		'Account Number' accountNum = ID
 		'MFA Type' mfaType= STRING
