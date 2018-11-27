@@ -102,10 +102,28 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Account returns CheckingAccount
 	 *
 	 * Constraint:
-	 *     (depPerMonth=INT holders+=User+ balance=INT accountNum=ID mfaType=STRING)
+	 *     (depPerMonth=INT holder=User balance=INT accountNum=ID mfaType=STRING)
 	 */
 	protected void sequence_Account_CheckingAccount(ISerializationContext context, CheckingAccount semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.CHECKING_ACCOUNT__DEP_PER_MONTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.CHECKING_ACCOUNT__DEP_PER_MONTH));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__HOLDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__HOLDER));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__BALANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__BALANCE));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__ACCOUNT_NUM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__ACCOUNT_NUM));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__MFA_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__MFA_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCheckingAccountAccess().getDepPerMonthINTTerminalRuleCall_2_0(), semanticObject.getDepPerMonth());
+		feeder.accept(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0(), semanticObject.getHolder());
+		feeder.accept(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0(), semanticObject.getBalance());
+		feeder.accept(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0(), semanticObject.getAccountNum());
+		feeder.accept(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0(), semanticObject.getMfaType());
+		feeder.finish();
 	}
 	
 	
@@ -114,10 +132,28 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Account returns MortgageAccount
 	 *
 	 * Constraint:
-	 *     (loanPeriod=ID holders+=User+ balance=INT accountNum=ID mfaType=STRING)
+	 *     (loanPeriod=STRING holder=User balance=INT accountNum=ID mfaType=STRING)
 	 */
 	protected void sequence_Account_MortgageAccount(ISerializationContext context, MortgageAccount semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.MORTGAGE_ACCOUNT__LOAN_PERIOD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.MORTGAGE_ACCOUNT__LOAN_PERIOD));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__HOLDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__HOLDER));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__BALANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__BALANCE));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__ACCOUNT_NUM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__ACCOUNT_NUM));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__MFA_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__MFA_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0(), semanticObject.getLoanPeriod());
+		feeder.accept(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0(), semanticObject.getHolder());
+		feeder.accept(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0(), semanticObject.getBalance());
+		feeder.accept(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0(), semanticObject.getAccountNum());
+		feeder.accept(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0(), semanticObject.getMfaType());
+		feeder.finish();
 	}
 	
 	
@@ -126,10 +162,28 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Account returns SavingsAccount
 	 *
 	 * Constraint:
-	 *     (intRate=INT holders+=User+ balance=INT accountNum=ID mfaType=STRING)
+	 *     (intRate=INT holder=User balance=INT accountNum=ID mfaType=STRING)
 	 */
 	protected void sequence_Account_SavingsAccount(ISerializationContext context, SavingsAccount semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.SAVINGS_ACCOUNT__INT_RATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.SAVINGS_ACCOUNT__INT_RATE));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__HOLDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__HOLDER));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__BALANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__BALANCE));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__ACCOUNT_NUM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__ACCOUNT_NUM));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.ACCOUNT__MFA_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.ACCOUNT__MFA_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSavingsAccountAccess().getIntRateINTTerminalRuleCall_2_0(), semanticObject.getIntRate());
+		feeder.accept(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0(), semanticObject.getHolder());
+		feeder.accept(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0(), semanticObject.getBalance());
+		feeder.accept(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0(), semanticObject.getAccountNum());
+		feeder.accept(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0(), semanticObject.getMfaType());
+		feeder.finish();
 	}
 	
 	
@@ -243,7 +297,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     MortgageAccount returns MortgageAccount
 	 *
 	 * Constraint:
-	 *     loanPeriod=ID
+	 *     loanPeriod=STRING
 	 */
 	protected void sequence_MortgageAccount(ISerializationContext context, MortgageAccount semanticObject) {
 		if (errorAcceptor != null) {
@@ -251,7 +305,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.MORTGAGE_ACCOUNT__LOAN_PERIOD));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMortgageAccountAccess().getLoanPeriodIDTerminalRuleCall_2_0(), semanticObject.getLoanPeriod());
+		feeder.accept(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0(), semanticObject.getLoanPeriod());
 		feeder.finish();
 	}
 	
@@ -279,21 +333,12 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Transaction returns Transaction
 	 *
 	 * Constraint:
-	 *     (
-	 *         sourceAccount=Account 
-	 *         targetAccount=Account 
-	 *         amount=INT 
-	 *         date=Date 
-	 *         debit=Boolean 
-	 *         vendorName=STRING
-	 *     )
+	 *     (account=Account amount=INT date=Date debit=Boolean vendorName=STRING)
 	 */
 	protected void sequence_Transaction(ISerializationContext context, Transaction semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.TRANSACTION__SOURCE_ACCOUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.TRANSACTION__SOURCE_ACCOUNT));
-			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.TRANSACTION__TARGET_ACCOUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.TRANSACTION__TARGET_ACCOUNT));
+			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.TRANSACTION__ACCOUNT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.TRANSACTION__ACCOUNT));
 			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.TRANSACTION__AMOUNT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.TRANSACTION__AMOUNT));
 			if (transientValues.isValueTransient(semanticObject, BankSystemPackage.Literals.TRANSACTION__DATE) == ValueTransient.YES)
@@ -304,12 +349,11 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.TRANSACTION__VENDOR_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTransactionAccess().getSourceAccountAccountParserRuleCall_2_0(), semanticObject.getSourceAccount());
-		feeder.accept(grammarAccess.getTransactionAccess().getTargetAccountAccountParserRuleCall_4_0(), semanticObject.getTargetAccount());
-		feeder.accept(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_6_0(), semanticObject.getAmount());
-		feeder.accept(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_8_0(), semanticObject.getDate());
-		feeder.accept(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_10_0(), semanticObject.getDebit());
-		feeder.accept(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_12_0(), semanticObject.getVendorName());
+		feeder.accept(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0(), semanticObject.getAccount());
+		feeder.accept(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_4_0(), semanticObject.getAmount());
+		feeder.accept(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0(), semanticObject.getDate());
+		feeder.accept(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0(), semanticObject.getDebit());
+		feeder.accept(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_10_0(), semanticObject.getVendorName());
 		feeder.finish();
 	}
 	
@@ -319,7 +363,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     User returns User
 	 *
 	 * Constraint:
-	 *     (name=ID email=ID hashpass=ID address=ID)
+	 *     (name=ID email=STRING hashpass=STRING address=STRING)
 	 */
 	protected void sequence_User(ISerializationContext context, User semanticObject) {
 		if (errorAcceptor != null) {
@@ -334,9 +378,9 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUserAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUserAccess().getEmailIDTerminalRuleCall_5_0(), semanticObject.getEmail());
-		feeder.accept(grammarAccess.getUserAccess().getHashpassIDTerminalRuleCall_7_0(), semanticObject.getHashpass());
-		feeder.accept(grammarAccess.getUserAccess().getAddressIDTerminalRuleCall_9_0(), semanticObject.getAddress());
+		feeder.accept(grammarAccess.getUserAccess().getEmailSTRINGTerminalRuleCall_5_0(), semanticObject.getEmail());
+		feeder.accept(grammarAccess.getUserAccess().getHashpassSTRINGTerminalRuleCall_7_0(), semanticObject.getHashpass());
+		feeder.accept(grammarAccess.getUserAccess().getAddressSTRINGTerminalRuleCall_9_0(), semanticObject.getAddress());
 		feeder.finish();
 	}
 	

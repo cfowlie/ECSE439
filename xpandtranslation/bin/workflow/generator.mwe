@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="xpandtranslation/src/Model.xmi" />
+	<property name="model" value="xpandtranslation/src/xmifiles/output.xmi" />
 	<property name="src-gen" value="src-gen" />
 
 	<!-- set up EMF for standalone execution -->
 	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
 		<platformUri value=".."/>
+		<registerEcoreFile value="platform:/resource/xpandtranslation/src/metamodel/BankSystem.ecore"/>
 	</bean>
 
 	<!-- instantiate metamodel -->

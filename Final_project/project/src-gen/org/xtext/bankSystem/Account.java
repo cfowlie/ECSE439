@@ -3,8 +3,6 @@
  */
 package org.xtext.bankSystem;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.bankSystem.Account#getHolders <em>Holders</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getBalance <em>Balance</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getMfaType <em>Mfa Type</em>}</li>
@@ -29,20 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Account extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Holders</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.bankSystem.User}.
+   * Returns the value of the '<em><b>Holder</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Holders</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Holder</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Holders</em>' containment reference list.
-   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_Holders()
+   * @return the value of the '<em>Holder</em>' containment reference.
+   * @see #setHolder(User)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_Holder()
    * @model containment="true"
    * @generated
    */
-  EList<User> getHolders();
+  User getHolder();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Holder</em>' containment reference.
+   * @see #getHolder()
+   * @generated
+   */
+  void setHolder(User value);
 
   /**
    * Returns the value of the '<em><b>Balance</b></em>' attribute.

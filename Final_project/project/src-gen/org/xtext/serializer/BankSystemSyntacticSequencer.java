@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.services.BankSystemGrammarAccess;
@@ -18,10 +20,14 @@ import org.xtext.services.BankSystemGrammarAccess;
 public class BankSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected BankSystemGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Branch_BoothParserRuleCall_3_q;
+	protected AbstractElementAlias match_Branch_VaultParserRuleCall_4_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (BankSystemGrammarAccess) access;
+		match_Branch_BoothParserRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getBranchAccess().getBoothParserRuleCall_3());
+		match_Branch_VaultParserRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getBranchAccess().getVaultParserRuleCall_4());
 	}
 	
 	@Override
@@ -61,8 +67,34 @@ public class BankSystemSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Branch_BoothParserRuleCall_3_q.equals(syntax))
+				emit_Branch_BoothParserRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Branch_VaultParserRuleCall_4_q.equals(syntax))
+				emit_Branch_VaultParserRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     Booth?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     address=STRING (ambiguity) Vault? employees+=Employee
+	 */
+	protected void emit_Branch_BoothParserRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     Vault?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     address=STRING Booth? (ambiguity) employees+=Employee
+	 */
+	protected void emit_Branch_VaultParserRuleCall_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

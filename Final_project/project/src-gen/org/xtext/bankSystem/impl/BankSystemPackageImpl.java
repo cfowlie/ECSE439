@@ -407,7 +407,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAccount_Holders()
+  public EReference getAccount_Holder()
   {
     return (EReference)accountEClass.getEStructuralFeatures().get(0);
   }
@@ -517,7 +517,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransaction_SourceAccount()
+  public EReference getTransaction_Account()
   {
     return (EReference)transactionEClass.getEStructuralFeatures().get(0);
   }
@@ -527,19 +527,9 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransaction_TargetAccount()
-  {
-    return (EReference)transactionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getTransaction_Amount()
   {
-    return (EAttribute)transactionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)transactionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -549,7 +539,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    */
   public EReference getTransaction_Date()
   {
-    return (EReference)transactionEClass.getEStructuralFeatures().get(3);
+    return (EReference)transactionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -559,7 +549,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    */
   public EAttribute getTransaction_Debit()
   {
-    return (EAttribute)transactionEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)transactionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -569,7 +559,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    */
   public EAttribute getTransaction_VendorName()
   {
-    return (EAttribute)transactionEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)transactionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -670,7 +660,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
     createEAttribute(employeeEClass, EMPLOYEE__CURRENT_ROLE);
 
     accountEClass = createEClass(ACCOUNT);
-    createEReference(accountEClass, ACCOUNT__HOLDERS);
+    createEReference(accountEClass, ACCOUNT__HOLDER);
     createEAttribute(accountEClass, ACCOUNT__BALANCE);
     createEAttribute(accountEClass, ACCOUNT__ACCOUNT_NUM);
     createEAttribute(accountEClass, ACCOUNT__MFA_TYPE);
@@ -685,8 +675,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
     createEAttribute(mortgageAccountEClass, MORTGAGE_ACCOUNT__LOAN_PERIOD);
 
     transactionEClass = createEClass(TRANSACTION);
-    createEReference(transactionEClass, TRANSACTION__SOURCE_ACCOUNT);
-    createEReference(transactionEClass, TRANSACTION__TARGET_ACCOUNT);
+    createEReference(transactionEClass, TRANSACTION__ACCOUNT);
     createEAttribute(transactionEClass, TRANSACTION__AMOUNT);
     createEReference(transactionEClass, TRANSACTION__DATE);
     createEAttribute(transactionEClass, TRANSACTION__DEBIT);
@@ -760,7 +749,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
     initEAttribute(getEmployee_CurrentRole(), ecorePackage.getEString(), "currentRole", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(accountEClass, Account.class, "Account", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAccount_Holders(), this.getUser(), null, "holders", null, 0, -1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAccount_Holder(), this.getUser(), null, "holder", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_Balance(), ecorePackage.getEInt(), "balance", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_AccountNum(), ecorePackage.getEString(), "accountNum", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_MfaType(), ecorePackage.getEString(), "mfaType", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -775,8 +764,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
     initEAttribute(getMortgageAccount_LoanPeriod(), ecorePackage.getEString(), "loanPeriod", null, 0, 1, MortgageAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transactionEClass, Transaction.class, "Transaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTransaction_SourceAccount(), this.getAccount(), null, "sourceAccount", null, 0, 1, Transaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTransaction_TargetAccount(), this.getAccount(), null, "targetAccount", null, 0, 1, Transaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransaction_Account(), this.getAccount(), null, "account", null, 0, 1, Transaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTransaction_Amount(), ecorePackage.getEInt(), "amount", null, 0, 1, Transaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTransaction_Date(), this.getDate(), null, "date", null, 0, 1, Transaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTransaction_Debit(), ecorePackage.getEString(), "debit", null, 0, 1, Transaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

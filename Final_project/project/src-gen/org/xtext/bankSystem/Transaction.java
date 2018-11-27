@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.bankSystem.Transaction#getSourceAccount <em>Source Account</em>}</li>
- *   <li>{@link org.xtext.bankSystem.Transaction#getTargetAccount <em>Target Account</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Transaction#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Transaction#getDate <em>Date</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Transaction#getDebit <em>Debit</em>}</li>
@@ -29,56 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Transaction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Source Account</b></em>' containment reference.
+   * Returns the value of the '<em><b>Account</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Source Account</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Account</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Source Account</em>' containment reference.
-   * @see #setSourceAccount(Account)
-   * @see org.xtext.bankSystem.BankSystemPackage#getTransaction_SourceAccount()
+   * @return the value of the '<em>Account</em>' containment reference.
+   * @see #setAccount(Account)
+   * @see org.xtext.bankSystem.BankSystemPackage#getTransaction_Account()
    * @model containment="true"
    * @generated
    */
-  Account getSourceAccount();
+  Account getAccount();
 
   /**
-   * Sets the value of the '{@link org.xtext.bankSystem.Transaction#getSourceAccount <em>Source Account</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source Account</em>' containment reference.
-   * @see #getSourceAccount()
+   * @param value the new value of the '<em>Account</em>' containment reference.
+   * @see #getAccount()
    * @generated
    */
-  void setSourceAccount(Account value);
-
-  /**
-   * Returns the value of the '<em><b>Target Account</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Target Account</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Target Account</em>' containment reference.
-   * @see #setTargetAccount(Account)
-   * @see org.xtext.bankSystem.BankSystemPackage#getTransaction_TargetAccount()
-   * @model containment="true"
-   * @generated
-   */
-  Account getTargetAccount();
-
-  /**
-   * Sets the value of the '{@link org.xtext.bankSystem.Transaction#getTargetAccount <em>Target Account</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target Account</em>' containment reference.
-   * @see #getTargetAccount()
-   * @generated
-   */
-  void setTargetAccount(Account value);
+  void setAccount(Account value);
 
   /**
    * Returns the value of the '<em><b>Amount</b></em>' attribute.

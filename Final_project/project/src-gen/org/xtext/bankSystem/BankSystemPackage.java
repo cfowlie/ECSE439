@@ -316,13 +316,13 @@ public interface BankSystemPackage extends EPackage
   int ACCOUNT = 5;
 
   /**
-   * The feature id for the '<em><b>Holders</b></em>' containment reference list.
+   * The feature id for the '<em><b>Holder</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNT__HOLDERS = 0;
+  int ACCOUNT__HOLDER = 0;
 
   /**
    * The feature id for the '<em><b>Balance</b></em>' attribute.
@@ -371,13 +371,13 @@ public interface BankSystemPackage extends EPackage
   int SAVINGS_ACCOUNT = 6;
 
   /**
-   * The feature id for the '<em><b>Holders</b></em>' containment reference list.
+   * The feature id for the '<em><b>Holder</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAVINGS_ACCOUNT__HOLDERS = ACCOUNT__HOLDERS;
+  int SAVINGS_ACCOUNT__HOLDER = ACCOUNT__HOLDER;
 
   /**
    * The feature id for the '<em><b>Balance</b></em>' attribute.
@@ -435,13 +435,13 @@ public interface BankSystemPackage extends EPackage
   int CHECKING_ACCOUNT = 7;
 
   /**
-   * The feature id for the '<em><b>Holders</b></em>' containment reference list.
+   * The feature id for the '<em><b>Holder</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHECKING_ACCOUNT__HOLDERS = ACCOUNT__HOLDERS;
+  int CHECKING_ACCOUNT__HOLDER = ACCOUNT__HOLDER;
 
   /**
    * The feature id for the '<em><b>Balance</b></em>' attribute.
@@ -499,13 +499,13 @@ public interface BankSystemPackage extends EPackage
   int MORTGAGE_ACCOUNT = 8;
 
   /**
-   * The feature id for the '<em><b>Holders</b></em>' containment reference list.
+   * The feature id for the '<em><b>Holder</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MORTGAGE_ACCOUNT__HOLDERS = ACCOUNT__HOLDERS;
+  int MORTGAGE_ACCOUNT__HOLDER = ACCOUNT__HOLDER;
 
   /**
    * The feature id for the '<em><b>Balance</b></em>' attribute.
@@ -563,22 +563,13 @@ public interface BankSystemPackage extends EPackage
   int TRANSACTION = 9;
 
   /**
-   * The feature id for the '<em><b>Source Account</b></em>' containment reference.
+   * The feature id for the '<em><b>Account</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSACTION__SOURCE_ACCOUNT = 0;
-
-  /**
-   * The feature id for the '<em><b>Target Account</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSACTION__TARGET_ACCOUNT = 1;
+  int TRANSACTION__ACCOUNT = 0;
 
   /**
    * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -587,7 +578,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSACTION__AMOUNT = 2;
+  int TRANSACTION__AMOUNT = 1;
 
   /**
    * The feature id for the '<em><b>Date</b></em>' containment reference.
@@ -596,7 +587,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSACTION__DATE = 3;
+  int TRANSACTION__DATE = 2;
 
   /**
    * The feature id for the '<em><b>Debit</b></em>' attribute.
@@ -605,7 +596,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSACTION__DEBIT = 4;
+  int TRANSACTION__DEBIT = 3;
 
   /**
    * The feature id for the '<em><b>Vendor Name</b></em>' attribute.
@@ -614,7 +605,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSACTION__VENDOR_NAME = 5;
+  int TRANSACTION__VENDOR_NAME = 4;
 
   /**
    * The number of structural features of the '<em>Transaction</em>' class.
@@ -623,7 +614,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSACTION_FEATURE_COUNT = 6;
+  int TRANSACTION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtext.bankSystem.impl.DateImpl <em>Date</em>}' class.
@@ -920,15 +911,15 @@ public interface BankSystemPackage extends EPackage
   EClass getAccount();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.bankSystem.Account#getHolders <em>Holders</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Holders</em>'.
-   * @see org.xtext.bankSystem.Account#getHolders()
+   * @return the meta object for the containment reference '<em>Holder</em>'.
+   * @see org.xtext.bankSystem.Account#getHolder()
    * @see #getAccount()
    * @generated
    */
-  EReference getAccount_Holders();
+  EReference getAccount_Holder();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getBalance <em>Balance</em>}'.
@@ -1037,26 +1028,15 @@ public interface BankSystemPackage extends EPackage
   EClass getTransaction();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.bankSystem.Transaction#getSourceAccount <em>Source Account</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source Account</em>'.
-   * @see org.xtext.bankSystem.Transaction#getSourceAccount()
+   * @return the meta object for the containment reference '<em>Account</em>'.
+   * @see org.xtext.bankSystem.Transaction#getAccount()
    * @see #getTransaction()
    * @generated
    */
-  EReference getTransaction_SourceAccount();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.bankSystem.Transaction#getTargetAccount <em>Target Account</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Target Account</em>'.
-   * @see org.xtext.bankSystem.Transaction#getTargetAccount()
-   * @see #getTransaction()
-   * @generated
-   */
-  EReference getTransaction_TargetAccount();
+  EReference getTransaction_Account();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Transaction#getAmount <em>Amount</em>}'.
@@ -1365,12 +1345,12 @@ public interface BankSystemPackage extends EPackage
     EClass ACCOUNT = eINSTANCE.getAccount();
 
     /**
-     * The meta object literal for the '<em><b>Holders</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Holder</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACCOUNT__HOLDERS = eINSTANCE.getAccount_Holders();
+    EReference ACCOUNT__HOLDER = eINSTANCE.getAccount_Holder();
 
     /**
      * The meta object literal for the '<em><b>Balance</b></em>' attribute feature.
@@ -1461,20 +1441,12 @@ public interface BankSystemPackage extends EPackage
     EClass TRANSACTION = eINSTANCE.getTransaction();
 
     /**
-     * The meta object literal for the '<em><b>Source Account</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Account</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSACTION__SOURCE_ACCOUNT = eINSTANCE.getTransaction_SourceAccount();
-
-    /**
-     * The meta object literal for the '<em><b>Target Account</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRANSACTION__TARGET_ACCOUNT = eINSTANCE.getTransaction_TargetAccount();
+    EReference TRANSACTION__ACCOUNT = eINSTANCE.getTransaction_Account();
 
     /**
      * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.

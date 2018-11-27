@@ -1,10 +1,4 @@
-«IMPORT metamodel»
-«IMPORT bankSystem»
 
-«EXTENSION template::GeneratorExtensions»
-
-«DEFINE main FOR BankSystem»
- 	«FILE "database.sql"»
 CREATE DATABASE banksystem;
 CREATE TABLE bank(
  	id UUID() ,
@@ -27,7 +21,6 @@ CREATE TABLE account(
  	id UUID(),
  	name varchar(36),
  	email varchar(64),
- 	hashpass varchar(64),
  	address varchar(128)
  );
  CREATE TABLE employee(
@@ -51,28 +44,16 @@ CREATE TABLE account(
 	amount DOUBLE,
  	debit BOOLEAN,
  	vendorName varchar(256)
- );		
-		«EXPAND bank FOREACH banks»
-		«EXPAND user FOREACH users»
-	«ENDFILE»
-«ENDDEFINE»
+ );
+ 		
+		
+INSERT INTO bank (name, country) VALUES('bnp', 'Belgium');
+	
 
+	
+	
 
-«DEFINE bank FOR Bank»
-INSERT INTO bank (name, country) VALUES('«name»', '«countryOfOrigin»');
-	«EXPAND branch FOREACH branches»
-	«EXPAND account FOREACH accounts»
-	«EXPAND transaction FOREACH transactions»
-«ENDDEFINE»
+		
+INSERT INTO bank (name, email, hashpass, address) VALUES('Nathan', 'nathan@mail.com', 'sdsqsq', 'qsdqs');
 
-«DEFINE user FOR User»
-INSERT INTO bank (name, email, hashpass, address) VALUES('«name»', '«email»', '«hashpass»', '«address»');
-«ENDDEFINE»
-
-«DEFINE branch FOR Branch»
-
-«ENDDEFINE»
-«DEFINE account FOR Account»
-«ENDDEFINE»
-«DEFINE transaction FOR Transaction»
-«ENDDEFINE»
+	

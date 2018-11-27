@@ -3,21 +3,14 @@
  */
 package org.xtext.bankSystem.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.bankSystem.Account;
 import org.xtext.bankSystem.BankSystemPackage;
@@ -31,7 +24,7 @@ import org.xtext.bankSystem.User;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getHolders <em>Holders</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getHolder <em>Holder</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getBalance <em>Balance</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getAccountNum <em>Account Num</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getMfaType <em>Mfa Type</em>}</li>
@@ -42,14 +35,14 @@ import org.xtext.bankSystem.User;
 public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 {
   /**
-   * The cached value of the '{@link #getHolders() <em>Holders</em>}' containment reference list.
+   * The cached value of the '{@link #getHolder() <em>Holder</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHolders()
+   * @see #getHolder()
    * @generated
    * @ordered
    */
-  protected EList<User> holders;
+  protected User holder;
 
   /**
    * The default value of the '{@link #getBalance() <em>Balance</em>}' attribute.
@@ -137,13 +130,47 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<User> getHolders()
+  public User getHolder()
   {
-    if (holders == null)
+    return holder;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetHolder(User newHolder, NotificationChain msgs)
+  {
+    User oldHolder = holder;
+    holder = newHolder;
+    if (eNotificationRequired())
     {
-      holders = new EObjectContainmentEList<User>(User.class, this, BankSystemPackage.ACCOUNT__HOLDERS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__HOLDER, oldHolder, newHolder);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return holders;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHolder(User newHolder)
+  {
+    if (newHolder != holder)
+    {
+      NotificationChain msgs = null;
+      if (holder != null)
+        msgs = ((InternalEObject)holder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.ACCOUNT__HOLDER, null, msgs);
+      if (newHolder != null)
+        msgs = ((InternalEObject)newHolder).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.ACCOUNT__HOLDER, null, msgs);
+      msgs = basicSetHolder(newHolder, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__HOLDER, newHolder, newHolder));
   }
 
   /**
@@ -225,8 +252,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
-      case BankSystemPackage.ACCOUNT__HOLDERS:
-        return ((InternalEList<?>)getHolders()).basicRemove(otherEnd, msgs);
+      case BankSystemPackage.ACCOUNT__HOLDER:
+        return basicSetHolder(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -241,8 +268,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
-      case BankSystemPackage.ACCOUNT__HOLDERS:
-        return getHolders();
+      case BankSystemPackage.ACCOUNT__HOLDER:
+        return getHolder();
       case BankSystemPackage.ACCOUNT__BALANCE:
         return getBalance();
       case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
@@ -258,15 +285,13 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case BankSystemPackage.ACCOUNT__HOLDERS:
-        getHolders().clear();
-        getHolders().addAll((Collection<? extends User>)newValue);
+      case BankSystemPackage.ACCOUNT__HOLDER:
+        setHolder((User)newValue);
         return;
       case BankSystemPackage.ACCOUNT__BALANCE:
         setBalance((Integer)newValue);
@@ -291,8 +316,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
-      case BankSystemPackage.ACCOUNT__HOLDERS:
-        getHolders().clear();
+      case BankSystemPackage.ACCOUNT__HOLDER:
+        setHolder((User)null);
         return;
       case BankSystemPackage.ACCOUNT__BALANCE:
         setBalance(BALANCE_EDEFAULT);
@@ -317,8 +342,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
-      case BankSystemPackage.ACCOUNT__HOLDERS:
-        return holders != null && !holders.isEmpty();
+      case BankSystemPackage.ACCOUNT__HOLDER:
+        return holder != null;
       case BankSystemPackage.ACCOUNT__BALANCE:
         return balance != BALANCE_EDEFAULT;
       case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:

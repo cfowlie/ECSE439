@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBankSystemParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Booth'", "'Vault'", "'Teller'", "'Manager'", "'true'", "'false'", "'Bank'", "'Country'", "'{'", "'}'", "'User'", "'Name'", "'Email'", "'HashPass'", "'Address'", "'Branch{'", "'Employee'", "'Hiring date'", "'Salary'", "'Current Role'", "'Holder(s)'", "'Balance'", "'Account Number'", "'MFA Type'", "'Savings Account {'", "'Interest rate'", "'Checking Account {'", "'Debits per month'", "'Mortgage Account {'", "'Loan period'", "'transaction {'", "'Source:'", "'Target:'", "'Amount:'", "'Date'", "'Debit'", "'Vendor name'", "'/'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Booth'", "'Vault'", "'Teller'", "'Manager'", "'true'", "'false'", "'Bank'", "'{'", "'Country'", "'}'", "'User'", "'Name'", "'Email'", "'HashPass'", "'Address'", "'Branch{'", "'Employee'", "'Hiring date'", "'Salary'", "'Current Role'", "'Holder(s)'", "'Balance'", "'Account Number'", "'MFA Type'", "'Savings Account {'", "'Interest rate'", "'Checking Account {'", "'Debits per month'", "'Mortgage Account {'", "'Loan period'", "'transaction {'", "'Account:'", "'Amount:'", "'Date'", "'Debit'", "'Vendor name'", "'/'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -61,7 +61,6 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     public static final int T__32=32;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
-    public static final int T__48=48;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
@@ -2082,21 +2081,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Bank__Group__2__Impl"
-    // InternalBankSystem.g:680:1: rule__Bank__Group__2__Impl : ( 'Country' ) ;
+    // InternalBankSystem.g:680:1: rule__Bank__Group__2__Impl : ( '{' ) ;
     public final void rule__Bank__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:684:1: ( ( 'Country' ) )
-            // InternalBankSystem.g:685:1: ( 'Country' )
+            // InternalBankSystem.g:684:1: ( ( '{' ) )
+            // InternalBankSystem.g:685:1: ( '{' )
             {
-            // InternalBankSystem.g:685:1: ( 'Country' )
-            // InternalBankSystem.g:686:2: 'Country'
+            // InternalBankSystem.g:685:1: ( '{' )
+            // InternalBankSystem.g:686:2: '{'
             {
-             before(grammarAccess.getBankAccess().getCountryKeyword_2()); 
+             before(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getBankAccess().getCountryKeyword_2()); 
+             after(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -2157,31 +2156,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Bank__Group__3__Impl"
-    // InternalBankSystem.g:707:1: rule__Bank__Group__3__Impl : ( ( rule__Bank__CountryOfOriginAssignment_3 ) ) ;
+    // InternalBankSystem.g:707:1: rule__Bank__Group__3__Impl : ( 'Country' ) ;
     public final void rule__Bank__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:711:1: ( ( ( rule__Bank__CountryOfOriginAssignment_3 ) ) )
-            // InternalBankSystem.g:712:1: ( ( rule__Bank__CountryOfOriginAssignment_3 ) )
+            // InternalBankSystem.g:711:1: ( ( 'Country' ) )
+            // InternalBankSystem.g:712:1: ( 'Country' )
             {
-            // InternalBankSystem.g:712:1: ( ( rule__Bank__CountryOfOriginAssignment_3 ) )
-            // InternalBankSystem.g:713:2: ( rule__Bank__CountryOfOriginAssignment_3 )
+            // InternalBankSystem.g:712:1: ( 'Country' )
+            // InternalBankSystem.g:713:2: 'Country'
             {
-             before(grammarAccess.getBankAccess().getCountryOfOriginAssignment_3()); 
-            // InternalBankSystem.g:714:2: ( rule__Bank__CountryOfOriginAssignment_3 )
-            // InternalBankSystem.g:714:3: rule__Bank__CountryOfOriginAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Bank__CountryOfOriginAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getBankAccess().getCountryOfOriginAssignment_3()); 
+             before(grammarAccess.getBankAccess().getCountryKeyword_3()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getBankAccess().getCountryKeyword_3()); 
 
             }
 
@@ -2242,21 +2231,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Bank__Group__4__Impl"
-    // InternalBankSystem.g:734:1: rule__Bank__Group__4__Impl : ( '{' ) ;
+    // InternalBankSystem.g:734:1: rule__Bank__Group__4__Impl : ( ( rule__Bank__CountryOfOriginAssignment_4 ) ) ;
     public final void rule__Bank__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:738:1: ( ( '{' ) )
-            // InternalBankSystem.g:739:1: ( '{' )
+            // InternalBankSystem.g:738:1: ( ( ( rule__Bank__CountryOfOriginAssignment_4 ) ) )
+            // InternalBankSystem.g:739:1: ( ( rule__Bank__CountryOfOriginAssignment_4 ) )
             {
-            // InternalBankSystem.g:739:1: ( '{' )
-            // InternalBankSystem.g:740:2: '{'
+            // InternalBankSystem.g:739:1: ( ( rule__Bank__CountryOfOriginAssignment_4 ) )
+            // InternalBankSystem.g:740:2: ( rule__Bank__CountryOfOriginAssignment_4 )
             {
-             before(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_4()); 
+             before(grammarAccess.getBankAccess().getCountryOfOriginAssignment_4()); 
+            // InternalBankSystem.g:741:2: ( rule__Bank__CountryOfOriginAssignment_4 )
+            // InternalBankSystem.g:741:3: rule__Bank__CountryOfOriginAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Bank__CountryOfOriginAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBankAccess().getCountryOfOriginAssignment_4()); 
 
             }
 
@@ -2692,7 +2691,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:868:1: ( rule__User__Group__0__Impl rule__User__Group__1 )
             // InternalBankSystem.g:869:2: rule__User__Group__0__Impl rule__User__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_7);
             rule__User__Group__0__Impl();
 
             state._fsp--;
@@ -2809,7 +2808,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:909:2: '{'
             {
              before(grammarAccess.getUserAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,19,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getUserAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -3002,7 +3001,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:976:1: ( rule__User__Group__4__Impl rule__User__Group__5 )
             // InternalBankSystem.g:977:2: rule__User__Group__4__Impl rule__User__Group__5
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_9);
             rule__User__Group__4__Impl();
 
             state._fsp--;
@@ -3162,7 +3161,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1030:1: ( rule__User__Group__6__Impl rule__User__Group__7 )
             // InternalBankSystem.g:1031:2: rule__User__Group__6__Impl rule__User__Group__7
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_9);
             rule__User__Group__6__Impl();
 
             state._fsp--;
@@ -3322,7 +3321,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1084:1: ( rule__User__Group__8__Impl rule__User__Group__9 )
             // InternalBankSystem.g:1085:2: rule__User__Group__8__Impl rule__User__Group__9
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_9);
             rule__User__Group__8__Impl();
 
             state._fsp--;
@@ -3627,7 +3626,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1192:1: ( rule__Branch__Group__1__Impl rule__Branch__Group__2 )
             // InternalBankSystem.g:1193:2: rule__Branch__Group__1__Impl rule__Branch__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_9);
             rule__Branch__Group__1__Impl();
 
             state._fsp--;
@@ -3787,7 +3786,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1246:1: ( rule__Branch__Group__3__Impl rule__Branch__Group__4 )
             // InternalBankSystem.g:1247:2: rule__Branch__Group__3__Impl rule__Branch__Group__4
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__Branch__Group__3__Impl();
 
             state._fsp--;
@@ -3816,23 +3815,40 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Branch__Group__3__Impl"
-    // InternalBankSystem.g:1254:1: rule__Branch__Group__3__Impl : ( ruleBooth ) ;
+    // InternalBankSystem.g:1254:1: rule__Branch__Group__3__Impl : ( ( ruleBooth )? ) ;
     public final void rule__Branch__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1258:1: ( ( ruleBooth ) )
-            // InternalBankSystem.g:1259:1: ( ruleBooth )
+            // InternalBankSystem.g:1258:1: ( ( ( ruleBooth )? ) )
+            // InternalBankSystem.g:1259:1: ( ( ruleBooth )? )
             {
-            // InternalBankSystem.g:1259:1: ( ruleBooth )
-            // InternalBankSystem.g:1260:2: ruleBooth
+            // InternalBankSystem.g:1259:1: ( ( ruleBooth )? )
+            // InternalBankSystem.g:1260:2: ( ruleBooth )?
             {
              before(grammarAccess.getBranchAccess().getBoothParserRuleCall_3()); 
-            pushFollow(FOLLOW_2);
-            ruleBooth();
+            // InternalBankSystem.g:1261:2: ( ruleBooth )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA9_0==11) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // InternalBankSystem.g:1261:3: ruleBooth
+                    {
+                    pushFollow(FOLLOW_2);
+                    ruleBooth();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
 
              after(grammarAccess.getBranchAccess().getBoothParserRuleCall_3()); 
 
@@ -3866,7 +3882,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1273:1: ( rule__Branch__Group__4__Impl rule__Branch__Group__5 )
             // InternalBankSystem.g:1274:2: rule__Branch__Group__4__Impl rule__Branch__Group__5
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_20);
             rule__Branch__Group__4__Impl();
 
             state._fsp--;
@@ -3895,23 +3911,40 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Branch__Group__4__Impl"
-    // InternalBankSystem.g:1281:1: rule__Branch__Group__4__Impl : ( ruleVault ) ;
+    // InternalBankSystem.g:1281:1: rule__Branch__Group__4__Impl : ( ( ruleVault )? ) ;
     public final void rule__Branch__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1285:1: ( ( ruleVault ) )
-            // InternalBankSystem.g:1286:1: ( ruleVault )
+            // InternalBankSystem.g:1285:1: ( ( ( ruleVault )? ) )
+            // InternalBankSystem.g:1286:1: ( ( ruleVault )? )
             {
-            // InternalBankSystem.g:1286:1: ( ruleVault )
-            // InternalBankSystem.g:1287:2: ruleVault
+            // InternalBankSystem.g:1286:1: ( ( ruleVault )? )
+            // InternalBankSystem.g:1287:2: ( ruleVault )?
             {
              before(grammarAccess.getBranchAccess().getVaultParserRuleCall_4()); 
-            pushFollow(FOLLOW_2);
-            ruleVault();
+            // InternalBankSystem.g:1288:2: ( ruleVault )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA10_0==12) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalBankSystem.g:1288:3: ruleVault
+                    {
+                    pushFollow(FOLLOW_2);
+                    ruleVault();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
 
              after(grammarAccess.getBranchAccess().getVaultParserRuleCall_4()); 
 
@@ -3993,7 +4026,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1316:3: ( rule__Branch__EmployeesAssignment_5 )
             // InternalBankSystem.g:1316:4: rule__Branch__EmployeesAssignment_5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_21);
             rule__Branch__EmployeesAssignment_5();
 
             state._fsp--;
@@ -4010,21 +4043,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             {
              before(grammarAccess.getBranchAccess().getEmployeesAssignment_5()); 
             // InternalBankSystem.g:1321:3: ( rule__Branch__EmployeesAssignment_5 )*
-            loop9:
+            loop11:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA9_0==27) ) {
-                    alt9=1;
+                if ( (LA11_0==27) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt11) {
             	case 1 :
             	    // InternalBankSystem.g:1321:4: rule__Branch__EmployeesAssignment_5
             	    {
-            	    pushFollow(FOLLOW_23);
+            	    pushFollow(FOLLOW_21);
             	    rule__Branch__EmployeesAssignment_5();
 
             	    state._fsp--;
@@ -4034,7 +4067,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop11;
                 }
             } while (true);
 
@@ -4218,7 +4251,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1388:1: ( rule__Employee__Group__1__Impl rule__Employee__Group__2 )
             // InternalBankSystem.g:1389:2: rule__Employee__Group__1__Impl rule__Employee__Group__2
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_7);
             rule__Employee__Group__1__Impl();
 
             state._fsp--;
@@ -4303,7 +4336,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1415:1: ( rule__Employee__Group__2__Impl rule__Employee__Group__3 )
             // InternalBankSystem.g:1416:2: rule__Employee__Group__2__Impl rule__Employee__Group__3
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_22);
             rule__Employee__Group__2__Impl();
 
             state._fsp--;
@@ -4345,7 +4378,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1429:2: '{'
             {
              before(grammarAccess.getEmployeeAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,19,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getEmployeeAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4378,7 +4411,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1442:1: ( rule__Employee__Group__3__Impl rule__Employee__Group__4 )
             // InternalBankSystem.g:1443:2: rule__Employee__Group__3__Impl rule__Employee__Group__4
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Employee__Group__3__Impl();
 
             state._fsp--;
@@ -4453,7 +4486,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1469:1: ( rule__Employee__Group__4__Impl rule__Employee__Group__5 )
             // InternalBankSystem.g:1470:2: rule__Employee__Group__4__Impl rule__Employee__Group__5
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_24);
             rule__Employee__Group__4__Impl();
 
             state._fsp--;
@@ -4538,7 +4571,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1496:1: ( rule__Employee__Group__5__Impl rule__Employee__Group__6 )
             // InternalBankSystem.g:1497:2: rule__Employee__Group__5__Impl rule__Employee__Group__6
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Employee__Group__5__Impl();
 
             state._fsp--;
@@ -4613,7 +4646,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1523:1: ( rule__Employee__Group__6__Impl rule__Employee__Group__7 )
             // InternalBankSystem.g:1524:2: rule__Employee__Group__6__Impl rule__Employee__Group__7
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_25);
             rule__Employee__Group__6__Impl();
 
             state._fsp--;
@@ -4698,7 +4731,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1550:1: ( rule__Employee__Group__7__Impl rule__Employee__Group__8 )
             // InternalBankSystem.g:1551:2: rule__Employee__Group__7__Impl rule__Employee__Group__8
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_26);
             rule__Employee__Group__7__Impl();
 
             state._fsp--;
@@ -4928,7 +4961,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1631:1: ( rule__Account__Group__0__Impl rule__Account__Group__1 )
             // InternalBankSystem.g:1632:2: rule__Account__Group__0__Impl rule__Account__Group__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_27);
             rule__Account__Group__0__Impl();
 
             state._fsp--;
@@ -5088,7 +5121,7 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
             // InternalBankSystem.g:1685:1: ( rule__Account__Group__2__Impl rule__Account__Group__3 )
             // InternalBankSystem.g:1686:2: rule__Account__Group__2__Impl rule__Account__Group__3
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_28);
             rule__Account__Group__2__Impl();
 
             state._fsp--;
@@ -5117,74 +5150,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__2__Impl"
-    // InternalBankSystem.g:1693:1: rule__Account__Group__2__Impl : ( ( ( rule__Account__HoldersAssignment_2 ) ) ( ( rule__Account__HoldersAssignment_2 )* ) ) ;
+    // InternalBankSystem.g:1693:1: rule__Account__Group__2__Impl : ( ( rule__Account__HolderAssignment_2 ) ) ;
     public final void rule__Account__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1697:1: ( ( ( ( rule__Account__HoldersAssignment_2 ) ) ( ( rule__Account__HoldersAssignment_2 )* ) ) )
-            // InternalBankSystem.g:1698:1: ( ( ( rule__Account__HoldersAssignment_2 ) ) ( ( rule__Account__HoldersAssignment_2 )* ) )
+            // InternalBankSystem.g:1697:1: ( ( ( rule__Account__HolderAssignment_2 ) ) )
+            // InternalBankSystem.g:1698:1: ( ( rule__Account__HolderAssignment_2 ) )
             {
-            // InternalBankSystem.g:1698:1: ( ( ( rule__Account__HoldersAssignment_2 ) ) ( ( rule__Account__HoldersAssignment_2 )* ) )
-            // InternalBankSystem.g:1699:2: ( ( rule__Account__HoldersAssignment_2 ) ) ( ( rule__Account__HoldersAssignment_2 )* )
+            // InternalBankSystem.g:1698:1: ( ( rule__Account__HolderAssignment_2 ) )
+            // InternalBankSystem.g:1699:2: ( rule__Account__HolderAssignment_2 )
             {
-            // InternalBankSystem.g:1699:2: ( ( rule__Account__HoldersAssignment_2 ) )
-            // InternalBankSystem.g:1700:3: ( rule__Account__HoldersAssignment_2 )
+             before(grammarAccess.getAccountAccess().getHolderAssignment_2()); 
+            // InternalBankSystem.g:1700:2: ( rule__Account__HolderAssignment_2 )
+            // InternalBankSystem.g:1700:3: rule__Account__HolderAssignment_2
             {
-             before(grammarAccess.getAccountAccess().getHoldersAssignment_2()); 
-            // InternalBankSystem.g:1701:3: ( rule__Account__HoldersAssignment_2 )
-            // InternalBankSystem.g:1701:4: rule__Account__HoldersAssignment_2
-            {
-            pushFollow(FOLLOW_5);
-            rule__Account__HoldersAssignment_2();
+            pushFollow(FOLLOW_2);
+            rule__Account__HolderAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAccountAccess().getHoldersAssignment_2()); 
-
-            }
-
-            // InternalBankSystem.g:1704:2: ( ( rule__Account__HoldersAssignment_2 )* )
-            // InternalBankSystem.g:1705:3: ( rule__Account__HoldersAssignment_2 )*
-            {
-             before(grammarAccess.getAccountAccess().getHoldersAssignment_2()); 
-            // InternalBankSystem.g:1706:3: ( rule__Account__HoldersAssignment_2 )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
-
-                if ( (LA10_0==21) ) {
-                    alt10=1;
-                }
-
-
-                switch (alt10) {
-            	case 1 :
-            	    // InternalBankSystem.g:1706:4: rule__Account__HoldersAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_5);
-            	    rule__Account__HoldersAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop10;
-                }
-            } while (true);
-
-             after(grammarAccess.getAccountAccess().getHoldersAssignment_2()); 
-
-            }
-
+             after(grammarAccess.getAccountAccess().getHolderAssignment_2()); 
 
             }
 
@@ -5207,16 +5197,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__3"
-    // InternalBankSystem.g:1715:1: rule__Account__Group__3 : rule__Account__Group__3__Impl rule__Account__Group__4 ;
+    // InternalBankSystem.g:1708:1: rule__Account__Group__3 : rule__Account__Group__3__Impl rule__Account__Group__4 ;
     public final void rule__Account__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1719:1: ( rule__Account__Group__3__Impl rule__Account__Group__4 )
-            // InternalBankSystem.g:1720:2: rule__Account__Group__3__Impl rule__Account__Group__4
+            // InternalBankSystem.g:1712:1: ( rule__Account__Group__3__Impl rule__Account__Group__4 )
+            // InternalBankSystem.g:1713:2: rule__Account__Group__3__Impl rule__Account__Group__4
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Account__Group__3__Impl();
 
             state._fsp--;
@@ -5245,17 +5235,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__3__Impl"
-    // InternalBankSystem.g:1727:1: rule__Account__Group__3__Impl : ( 'Balance' ) ;
+    // InternalBankSystem.g:1720:1: rule__Account__Group__3__Impl : ( 'Balance' ) ;
     public final void rule__Account__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1731:1: ( ( 'Balance' ) )
-            // InternalBankSystem.g:1732:1: ( 'Balance' )
+            // InternalBankSystem.g:1724:1: ( ( 'Balance' ) )
+            // InternalBankSystem.g:1725:1: ( 'Balance' )
             {
-            // InternalBankSystem.g:1732:1: ( 'Balance' )
-            // InternalBankSystem.g:1733:2: 'Balance'
+            // InternalBankSystem.g:1725:1: ( 'Balance' )
+            // InternalBankSystem.g:1726:2: 'Balance'
             {
              before(grammarAccess.getAccountAccess().getBalanceKeyword_3()); 
             match(input,32,FOLLOW_2); 
@@ -5282,16 +5272,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__4"
-    // InternalBankSystem.g:1742:1: rule__Account__Group__4 : rule__Account__Group__4__Impl rule__Account__Group__5 ;
+    // InternalBankSystem.g:1735:1: rule__Account__Group__4 : rule__Account__Group__4__Impl rule__Account__Group__5 ;
     public final void rule__Account__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1746:1: ( rule__Account__Group__4__Impl rule__Account__Group__5 )
-            // InternalBankSystem.g:1747:2: rule__Account__Group__4__Impl rule__Account__Group__5
+            // InternalBankSystem.g:1739:1: ( rule__Account__Group__4__Impl rule__Account__Group__5 )
+            // InternalBankSystem.g:1740:2: rule__Account__Group__4__Impl rule__Account__Group__5
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_29);
             rule__Account__Group__4__Impl();
 
             state._fsp--;
@@ -5320,21 +5310,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__4__Impl"
-    // InternalBankSystem.g:1754:1: rule__Account__Group__4__Impl : ( ( rule__Account__BalanceAssignment_4 ) ) ;
+    // InternalBankSystem.g:1747:1: rule__Account__Group__4__Impl : ( ( rule__Account__BalanceAssignment_4 ) ) ;
     public final void rule__Account__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1758:1: ( ( ( rule__Account__BalanceAssignment_4 ) ) )
-            // InternalBankSystem.g:1759:1: ( ( rule__Account__BalanceAssignment_4 ) )
+            // InternalBankSystem.g:1751:1: ( ( ( rule__Account__BalanceAssignment_4 ) ) )
+            // InternalBankSystem.g:1752:1: ( ( rule__Account__BalanceAssignment_4 ) )
             {
-            // InternalBankSystem.g:1759:1: ( ( rule__Account__BalanceAssignment_4 ) )
-            // InternalBankSystem.g:1760:2: ( rule__Account__BalanceAssignment_4 )
+            // InternalBankSystem.g:1752:1: ( ( rule__Account__BalanceAssignment_4 ) )
+            // InternalBankSystem.g:1753:2: ( rule__Account__BalanceAssignment_4 )
             {
              before(grammarAccess.getAccountAccess().getBalanceAssignment_4()); 
-            // InternalBankSystem.g:1761:2: ( rule__Account__BalanceAssignment_4 )
-            // InternalBankSystem.g:1761:3: rule__Account__BalanceAssignment_4
+            // InternalBankSystem.g:1754:2: ( rule__Account__BalanceAssignment_4 )
+            // InternalBankSystem.g:1754:3: rule__Account__BalanceAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Account__BalanceAssignment_4();
@@ -5367,14 +5357,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__5"
-    // InternalBankSystem.g:1769:1: rule__Account__Group__5 : rule__Account__Group__5__Impl rule__Account__Group__6 ;
+    // InternalBankSystem.g:1762:1: rule__Account__Group__5 : rule__Account__Group__5__Impl rule__Account__Group__6 ;
     public final void rule__Account__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1773:1: ( rule__Account__Group__5__Impl rule__Account__Group__6 )
-            // InternalBankSystem.g:1774:2: rule__Account__Group__5__Impl rule__Account__Group__6
+            // InternalBankSystem.g:1766:1: ( rule__Account__Group__5__Impl rule__Account__Group__6 )
+            // InternalBankSystem.g:1767:2: rule__Account__Group__5__Impl rule__Account__Group__6
             {
             pushFollow(FOLLOW_6);
             rule__Account__Group__5__Impl();
@@ -5405,17 +5395,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__5__Impl"
-    // InternalBankSystem.g:1781:1: rule__Account__Group__5__Impl : ( 'Account Number' ) ;
+    // InternalBankSystem.g:1774:1: rule__Account__Group__5__Impl : ( 'Account Number' ) ;
     public final void rule__Account__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1785:1: ( ( 'Account Number' ) )
-            // InternalBankSystem.g:1786:1: ( 'Account Number' )
+            // InternalBankSystem.g:1778:1: ( ( 'Account Number' ) )
+            // InternalBankSystem.g:1779:1: ( 'Account Number' )
             {
-            // InternalBankSystem.g:1786:1: ( 'Account Number' )
-            // InternalBankSystem.g:1787:2: 'Account Number'
+            // InternalBankSystem.g:1779:1: ( 'Account Number' )
+            // InternalBankSystem.g:1780:2: 'Account Number'
             {
              before(grammarAccess.getAccountAccess().getAccountNumberKeyword_5()); 
             match(input,33,FOLLOW_2); 
@@ -5442,16 +5432,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__6"
-    // InternalBankSystem.g:1796:1: rule__Account__Group__6 : rule__Account__Group__6__Impl rule__Account__Group__7 ;
+    // InternalBankSystem.g:1789:1: rule__Account__Group__6 : rule__Account__Group__6__Impl rule__Account__Group__7 ;
     public final void rule__Account__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1800:1: ( rule__Account__Group__6__Impl rule__Account__Group__7 )
-            // InternalBankSystem.g:1801:2: rule__Account__Group__6__Impl rule__Account__Group__7
+            // InternalBankSystem.g:1793:1: ( rule__Account__Group__6__Impl rule__Account__Group__7 )
+            // InternalBankSystem.g:1794:2: rule__Account__Group__6__Impl rule__Account__Group__7
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_30);
             rule__Account__Group__6__Impl();
 
             state._fsp--;
@@ -5480,21 +5470,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__6__Impl"
-    // InternalBankSystem.g:1808:1: rule__Account__Group__6__Impl : ( ( rule__Account__AccountNumAssignment_6 ) ) ;
+    // InternalBankSystem.g:1801:1: rule__Account__Group__6__Impl : ( ( rule__Account__AccountNumAssignment_6 ) ) ;
     public final void rule__Account__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1812:1: ( ( ( rule__Account__AccountNumAssignment_6 ) ) )
-            // InternalBankSystem.g:1813:1: ( ( rule__Account__AccountNumAssignment_6 ) )
+            // InternalBankSystem.g:1805:1: ( ( ( rule__Account__AccountNumAssignment_6 ) ) )
+            // InternalBankSystem.g:1806:1: ( ( rule__Account__AccountNumAssignment_6 ) )
             {
-            // InternalBankSystem.g:1813:1: ( ( rule__Account__AccountNumAssignment_6 ) )
-            // InternalBankSystem.g:1814:2: ( rule__Account__AccountNumAssignment_6 )
+            // InternalBankSystem.g:1806:1: ( ( rule__Account__AccountNumAssignment_6 ) )
+            // InternalBankSystem.g:1807:2: ( rule__Account__AccountNumAssignment_6 )
             {
              before(grammarAccess.getAccountAccess().getAccountNumAssignment_6()); 
-            // InternalBankSystem.g:1815:2: ( rule__Account__AccountNumAssignment_6 )
-            // InternalBankSystem.g:1815:3: rule__Account__AccountNumAssignment_6
+            // InternalBankSystem.g:1808:2: ( rule__Account__AccountNumAssignment_6 )
+            // InternalBankSystem.g:1808:3: rule__Account__AccountNumAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Account__AccountNumAssignment_6();
@@ -5527,16 +5517,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__7"
-    // InternalBankSystem.g:1823:1: rule__Account__Group__7 : rule__Account__Group__7__Impl rule__Account__Group__8 ;
+    // InternalBankSystem.g:1816:1: rule__Account__Group__7 : rule__Account__Group__7__Impl rule__Account__Group__8 ;
     public final void rule__Account__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1827:1: ( rule__Account__Group__7__Impl rule__Account__Group__8 )
-            // InternalBankSystem.g:1828:2: rule__Account__Group__7__Impl rule__Account__Group__8
+            // InternalBankSystem.g:1820:1: ( rule__Account__Group__7__Impl rule__Account__Group__8 )
+            // InternalBankSystem.g:1821:2: rule__Account__Group__7__Impl rule__Account__Group__8
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_9);
             rule__Account__Group__7__Impl();
 
             state._fsp--;
@@ -5565,17 +5555,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__7__Impl"
-    // InternalBankSystem.g:1835:1: rule__Account__Group__7__Impl : ( 'MFA Type' ) ;
+    // InternalBankSystem.g:1828:1: rule__Account__Group__7__Impl : ( 'MFA Type' ) ;
     public final void rule__Account__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1839:1: ( ( 'MFA Type' ) )
-            // InternalBankSystem.g:1840:1: ( 'MFA Type' )
+            // InternalBankSystem.g:1832:1: ( ( 'MFA Type' ) )
+            // InternalBankSystem.g:1833:1: ( 'MFA Type' )
             {
-            // InternalBankSystem.g:1840:1: ( 'MFA Type' )
-            // InternalBankSystem.g:1841:2: 'MFA Type'
+            // InternalBankSystem.g:1833:1: ( 'MFA Type' )
+            // InternalBankSystem.g:1834:2: 'MFA Type'
             {
              before(grammarAccess.getAccountAccess().getMFATypeKeyword_7()); 
             match(input,34,FOLLOW_2); 
@@ -5602,14 +5592,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__8"
-    // InternalBankSystem.g:1850:1: rule__Account__Group__8 : rule__Account__Group__8__Impl rule__Account__Group__9 ;
+    // InternalBankSystem.g:1843:1: rule__Account__Group__8 : rule__Account__Group__8__Impl rule__Account__Group__9 ;
     public final void rule__Account__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1854:1: ( rule__Account__Group__8__Impl rule__Account__Group__9 )
-            // InternalBankSystem.g:1855:2: rule__Account__Group__8__Impl rule__Account__Group__9
+            // InternalBankSystem.g:1847:1: ( rule__Account__Group__8__Impl rule__Account__Group__9 )
+            // InternalBankSystem.g:1848:2: rule__Account__Group__8__Impl rule__Account__Group__9
             {
             pushFollow(FOLLOW_19);
             rule__Account__Group__8__Impl();
@@ -5640,21 +5630,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__8__Impl"
-    // InternalBankSystem.g:1862:1: rule__Account__Group__8__Impl : ( ( rule__Account__MfaTypeAssignment_8 ) ) ;
+    // InternalBankSystem.g:1855:1: rule__Account__Group__8__Impl : ( ( rule__Account__MfaTypeAssignment_8 ) ) ;
     public final void rule__Account__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1866:1: ( ( ( rule__Account__MfaTypeAssignment_8 ) ) )
-            // InternalBankSystem.g:1867:1: ( ( rule__Account__MfaTypeAssignment_8 ) )
+            // InternalBankSystem.g:1859:1: ( ( ( rule__Account__MfaTypeAssignment_8 ) ) )
+            // InternalBankSystem.g:1860:1: ( ( rule__Account__MfaTypeAssignment_8 ) )
             {
-            // InternalBankSystem.g:1867:1: ( ( rule__Account__MfaTypeAssignment_8 ) )
-            // InternalBankSystem.g:1868:2: ( rule__Account__MfaTypeAssignment_8 )
+            // InternalBankSystem.g:1860:1: ( ( rule__Account__MfaTypeAssignment_8 ) )
+            // InternalBankSystem.g:1861:2: ( rule__Account__MfaTypeAssignment_8 )
             {
              before(grammarAccess.getAccountAccess().getMfaTypeAssignment_8()); 
-            // InternalBankSystem.g:1869:2: ( rule__Account__MfaTypeAssignment_8 )
-            // InternalBankSystem.g:1869:3: rule__Account__MfaTypeAssignment_8
+            // InternalBankSystem.g:1862:2: ( rule__Account__MfaTypeAssignment_8 )
+            // InternalBankSystem.g:1862:3: rule__Account__MfaTypeAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Account__MfaTypeAssignment_8();
@@ -5687,14 +5677,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__9"
-    // InternalBankSystem.g:1877:1: rule__Account__Group__9 : rule__Account__Group__9__Impl ;
+    // InternalBankSystem.g:1870:1: rule__Account__Group__9 : rule__Account__Group__9__Impl ;
     public final void rule__Account__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1881:1: ( rule__Account__Group__9__Impl )
-            // InternalBankSystem.g:1882:2: rule__Account__Group__9__Impl
+            // InternalBankSystem.g:1874:1: ( rule__Account__Group__9__Impl )
+            // InternalBankSystem.g:1875:2: rule__Account__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Account__Group__9__Impl();
@@ -5720,17 +5710,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__Group__9__Impl"
-    // InternalBankSystem.g:1888:1: rule__Account__Group__9__Impl : ( '}' ) ;
+    // InternalBankSystem.g:1881:1: rule__Account__Group__9__Impl : ( '}' ) ;
     public final void rule__Account__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1892:1: ( ( '}' ) )
-            // InternalBankSystem.g:1893:1: ( '}' )
+            // InternalBankSystem.g:1885:1: ( ( '}' ) )
+            // InternalBankSystem.g:1886:1: ( '}' )
             {
-            // InternalBankSystem.g:1893:1: ( '}' )
-            // InternalBankSystem.g:1894:2: '}'
+            // InternalBankSystem.g:1886:1: ( '}' )
+            // InternalBankSystem.g:1887:2: '}'
             {
              before(grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_9()); 
             match(input,20,FOLLOW_2); 
@@ -5757,16 +5747,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__Group__0"
-    // InternalBankSystem.g:1904:1: rule__SavingsAccount__Group__0 : rule__SavingsAccount__Group__0__Impl rule__SavingsAccount__Group__1 ;
+    // InternalBankSystem.g:1897:1: rule__SavingsAccount__Group__0 : rule__SavingsAccount__Group__0__Impl rule__SavingsAccount__Group__1 ;
     public final void rule__SavingsAccount__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1908:1: ( rule__SavingsAccount__Group__0__Impl rule__SavingsAccount__Group__1 )
-            // InternalBankSystem.g:1909:2: rule__SavingsAccount__Group__0__Impl rule__SavingsAccount__Group__1
+            // InternalBankSystem.g:1901:1: ( rule__SavingsAccount__Group__0__Impl rule__SavingsAccount__Group__1 )
+            // InternalBankSystem.g:1902:2: rule__SavingsAccount__Group__0__Impl rule__SavingsAccount__Group__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_31);
             rule__SavingsAccount__Group__0__Impl();
 
             state._fsp--;
@@ -5795,17 +5785,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__Group__0__Impl"
-    // InternalBankSystem.g:1916:1: rule__SavingsAccount__Group__0__Impl : ( 'Savings Account {' ) ;
+    // InternalBankSystem.g:1909:1: rule__SavingsAccount__Group__0__Impl : ( 'Savings Account {' ) ;
     public final void rule__SavingsAccount__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1920:1: ( ( 'Savings Account {' ) )
-            // InternalBankSystem.g:1921:1: ( 'Savings Account {' )
+            // InternalBankSystem.g:1913:1: ( ( 'Savings Account {' ) )
+            // InternalBankSystem.g:1914:1: ( 'Savings Account {' )
             {
-            // InternalBankSystem.g:1921:1: ( 'Savings Account {' )
-            // InternalBankSystem.g:1922:2: 'Savings Account {'
+            // InternalBankSystem.g:1914:1: ( 'Savings Account {' )
+            // InternalBankSystem.g:1915:2: 'Savings Account {'
             {
              before(grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword_0()); 
             match(input,35,FOLLOW_2); 
@@ -5832,16 +5822,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__Group__1"
-    // InternalBankSystem.g:1931:1: rule__SavingsAccount__Group__1 : rule__SavingsAccount__Group__1__Impl rule__SavingsAccount__Group__2 ;
+    // InternalBankSystem.g:1924:1: rule__SavingsAccount__Group__1 : rule__SavingsAccount__Group__1__Impl rule__SavingsAccount__Group__2 ;
     public final void rule__SavingsAccount__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1935:1: ( rule__SavingsAccount__Group__1__Impl rule__SavingsAccount__Group__2 )
-            // InternalBankSystem.g:1936:2: rule__SavingsAccount__Group__1__Impl rule__SavingsAccount__Group__2
+            // InternalBankSystem.g:1928:1: ( rule__SavingsAccount__Group__1__Impl rule__SavingsAccount__Group__2 )
+            // InternalBankSystem.g:1929:2: rule__SavingsAccount__Group__1__Impl rule__SavingsAccount__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__SavingsAccount__Group__1__Impl();
 
             state._fsp--;
@@ -5870,17 +5860,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__Group__1__Impl"
-    // InternalBankSystem.g:1943:1: rule__SavingsAccount__Group__1__Impl : ( 'Interest rate' ) ;
+    // InternalBankSystem.g:1936:1: rule__SavingsAccount__Group__1__Impl : ( 'Interest rate' ) ;
     public final void rule__SavingsAccount__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1947:1: ( ( 'Interest rate' ) )
-            // InternalBankSystem.g:1948:1: ( 'Interest rate' )
+            // InternalBankSystem.g:1940:1: ( ( 'Interest rate' ) )
+            // InternalBankSystem.g:1941:1: ( 'Interest rate' )
             {
-            // InternalBankSystem.g:1948:1: ( 'Interest rate' )
-            // InternalBankSystem.g:1949:2: 'Interest rate'
+            // InternalBankSystem.g:1941:1: ( 'Interest rate' )
+            // InternalBankSystem.g:1942:2: 'Interest rate'
             {
              before(grammarAccess.getSavingsAccountAccess().getInterestRateKeyword_1()); 
             match(input,36,FOLLOW_2); 
@@ -5907,14 +5897,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__Group__2"
-    // InternalBankSystem.g:1958:1: rule__SavingsAccount__Group__2 : rule__SavingsAccount__Group__2__Impl ;
+    // InternalBankSystem.g:1951:1: rule__SavingsAccount__Group__2 : rule__SavingsAccount__Group__2__Impl ;
     public final void rule__SavingsAccount__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1962:1: ( rule__SavingsAccount__Group__2__Impl )
-            // InternalBankSystem.g:1963:2: rule__SavingsAccount__Group__2__Impl
+            // InternalBankSystem.g:1955:1: ( rule__SavingsAccount__Group__2__Impl )
+            // InternalBankSystem.g:1956:2: rule__SavingsAccount__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SavingsAccount__Group__2__Impl();
@@ -5940,21 +5930,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__Group__2__Impl"
-    // InternalBankSystem.g:1969:1: rule__SavingsAccount__Group__2__Impl : ( ( rule__SavingsAccount__IntRateAssignment_2 ) ) ;
+    // InternalBankSystem.g:1962:1: rule__SavingsAccount__Group__2__Impl : ( ( rule__SavingsAccount__IntRateAssignment_2 ) ) ;
     public final void rule__SavingsAccount__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1973:1: ( ( ( rule__SavingsAccount__IntRateAssignment_2 ) ) )
-            // InternalBankSystem.g:1974:1: ( ( rule__SavingsAccount__IntRateAssignment_2 ) )
+            // InternalBankSystem.g:1966:1: ( ( ( rule__SavingsAccount__IntRateAssignment_2 ) ) )
+            // InternalBankSystem.g:1967:1: ( ( rule__SavingsAccount__IntRateAssignment_2 ) )
             {
-            // InternalBankSystem.g:1974:1: ( ( rule__SavingsAccount__IntRateAssignment_2 ) )
-            // InternalBankSystem.g:1975:2: ( rule__SavingsAccount__IntRateAssignment_2 )
+            // InternalBankSystem.g:1967:1: ( ( rule__SavingsAccount__IntRateAssignment_2 ) )
+            // InternalBankSystem.g:1968:2: ( rule__SavingsAccount__IntRateAssignment_2 )
             {
              before(grammarAccess.getSavingsAccountAccess().getIntRateAssignment_2()); 
-            // InternalBankSystem.g:1976:2: ( rule__SavingsAccount__IntRateAssignment_2 )
-            // InternalBankSystem.g:1976:3: rule__SavingsAccount__IntRateAssignment_2
+            // InternalBankSystem.g:1969:2: ( rule__SavingsAccount__IntRateAssignment_2 )
+            // InternalBankSystem.g:1969:3: rule__SavingsAccount__IntRateAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__SavingsAccount__IntRateAssignment_2();
@@ -5987,16 +5977,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__Group__0"
-    // InternalBankSystem.g:1985:1: rule__CheckingAccount__Group__0 : rule__CheckingAccount__Group__0__Impl rule__CheckingAccount__Group__1 ;
+    // InternalBankSystem.g:1978:1: rule__CheckingAccount__Group__0 : rule__CheckingAccount__Group__0__Impl rule__CheckingAccount__Group__1 ;
     public final void rule__CheckingAccount__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:1989:1: ( rule__CheckingAccount__Group__0__Impl rule__CheckingAccount__Group__1 )
-            // InternalBankSystem.g:1990:2: rule__CheckingAccount__Group__0__Impl rule__CheckingAccount__Group__1
+            // InternalBankSystem.g:1982:1: ( rule__CheckingAccount__Group__0__Impl rule__CheckingAccount__Group__1 )
+            // InternalBankSystem.g:1983:2: rule__CheckingAccount__Group__0__Impl rule__CheckingAccount__Group__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_32);
             rule__CheckingAccount__Group__0__Impl();
 
             state._fsp--;
@@ -6025,17 +6015,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__Group__0__Impl"
-    // InternalBankSystem.g:1997:1: rule__CheckingAccount__Group__0__Impl : ( 'Checking Account {' ) ;
+    // InternalBankSystem.g:1990:1: rule__CheckingAccount__Group__0__Impl : ( 'Checking Account {' ) ;
     public final void rule__CheckingAccount__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2001:1: ( ( 'Checking Account {' ) )
-            // InternalBankSystem.g:2002:1: ( 'Checking Account {' )
+            // InternalBankSystem.g:1994:1: ( ( 'Checking Account {' ) )
+            // InternalBankSystem.g:1995:1: ( 'Checking Account {' )
             {
-            // InternalBankSystem.g:2002:1: ( 'Checking Account {' )
-            // InternalBankSystem.g:2003:2: 'Checking Account {'
+            // InternalBankSystem.g:1995:1: ( 'Checking Account {' )
+            // InternalBankSystem.g:1996:2: 'Checking Account {'
             {
              before(grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword_0()); 
             match(input,37,FOLLOW_2); 
@@ -6062,16 +6052,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__Group__1"
-    // InternalBankSystem.g:2012:1: rule__CheckingAccount__Group__1 : rule__CheckingAccount__Group__1__Impl rule__CheckingAccount__Group__2 ;
+    // InternalBankSystem.g:2005:1: rule__CheckingAccount__Group__1 : rule__CheckingAccount__Group__1__Impl rule__CheckingAccount__Group__2 ;
     public final void rule__CheckingAccount__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2016:1: ( rule__CheckingAccount__Group__1__Impl rule__CheckingAccount__Group__2 )
-            // InternalBankSystem.g:2017:2: rule__CheckingAccount__Group__1__Impl rule__CheckingAccount__Group__2
+            // InternalBankSystem.g:2009:1: ( rule__CheckingAccount__Group__1__Impl rule__CheckingAccount__Group__2 )
+            // InternalBankSystem.g:2010:2: rule__CheckingAccount__Group__1__Impl rule__CheckingAccount__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__CheckingAccount__Group__1__Impl();
 
             state._fsp--;
@@ -6100,17 +6090,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__Group__1__Impl"
-    // InternalBankSystem.g:2024:1: rule__CheckingAccount__Group__1__Impl : ( 'Debits per month' ) ;
+    // InternalBankSystem.g:2017:1: rule__CheckingAccount__Group__1__Impl : ( 'Debits per month' ) ;
     public final void rule__CheckingAccount__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2028:1: ( ( 'Debits per month' ) )
-            // InternalBankSystem.g:2029:1: ( 'Debits per month' )
+            // InternalBankSystem.g:2021:1: ( ( 'Debits per month' ) )
+            // InternalBankSystem.g:2022:1: ( 'Debits per month' )
             {
-            // InternalBankSystem.g:2029:1: ( 'Debits per month' )
-            // InternalBankSystem.g:2030:2: 'Debits per month'
+            // InternalBankSystem.g:2022:1: ( 'Debits per month' )
+            // InternalBankSystem.g:2023:2: 'Debits per month'
             {
              before(grammarAccess.getCheckingAccountAccess().getDebitsPerMonthKeyword_1()); 
             match(input,38,FOLLOW_2); 
@@ -6137,14 +6127,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__Group__2"
-    // InternalBankSystem.g:2039:1: rule__CheckingAccount__Group__2 : rule__CheckingAccount__Group__2__Impl ;
+    // InternalBankSystem.g:2032:1: rule__CheckingAccount__Group__2 : rule__CheckingAccount__Group__2__Impl ;
     public final void rule__CheckingAccount__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2043:1: ( rule__CheckingAccount__Group__2__Impl )
-            // InternalBankSystem.g:2044:2: rule__CheckingAccount__Group__2__Impl
+            // InternalBankSystem.g:2036:1: ( rule__CheckingAccount__Group__2__Impl )
+            // InternalBankSystem.g:2037:2: rule__CheckingAccount__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CheckingAccount__Group__2__Impl();
@@ -6170,21 +6160,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__Group__2__Impl"
-    // InternalBankSystem.g:2050:1: rule__CheckingAccount__Group__2__Impl : ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) ) ;
+    // InternalBankSystem.g:2043:1: rule__CheckingAccount__Group__2__Impl : ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) ) ;
     public final void rule__CheckingAccount__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2054:1: ( ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) ) )
-            // InternalBankSystem.g:2055:1: ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) )
+            // InternalBankSystem.g:2047:1: ( ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) ) )
+            // InternalBankSystem.g:2048:1: ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) )
             {
-            // InternalBankSystem.g:2055:1: ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) )
-            // InternalBankSystem.g:2056:2: ( rule__CheckingAccount__DepPerMonthAssignment_2 )
+            // InternalBankSystem.g:2048:1: ( ( rule__CheckingAccount__DepPerMonthAssignment_2 ) )
+            // InternalBankSystem.g:2049:2: ( rule__CheckingAccount__DepPerMonthAssignment_2 )
             {
              before(grammarAccess.getCheckingAccountAccess().getDepPerMonthAssignment_2()); 
-            // InternalBankSystem.g:2057:2: ( rule__CheckingAccount__DepPerMonthAssignment_2 )
-            // InternalBankSystem.g:2057:3: rule__CheckingAccount__DepPerMonthAssignment_2
+            // InternalBankSystem.g:2050:2: ( rule__CheckingAccount__DepPerMonthAssignment_2 )
+            // InternalBankSystem.g:2050:3: rule__CheckingAccount__DepPerMonthAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__CheckingAccount__DepPerMonthAssignment_2();
@@ -6217,16 +6207,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__Group__0"
-    // InternalBankSystem.g:2066:1: rule__MortgageAccount__Group__0 : rule__MortgageAccount__Group__0__Impl rule__MortgageAccount__Group__1 ;
+    // InternalBankSystem.g:2059:1: rule__MortgageAccount__Group__0 : rule__MortgageAccount__Group__0__Impl rule__MortgageAccount__Group__1 ;
     public final void rule__MortgageAccount__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2070:1: ( rule__MortgageAccount__Group__0__Impl rule__MortgageAccount__Group__1 )
-            // InternalBankSystem.g:2071:2: rule__MortgageAccount__Group__0__Impl rule__MortgageAccount__Group__1
+            // InternalBankSystem.g:2063:1: ( rule__MortgageAccount__Group__0__Impl rule__MortgageAccount__Group__1 )
+            // InternalBankSystem.g:2064:2: rule__MortgageAccount__Group__0__Impl rule__MortgageAccount__Group__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_33);
             rule__MortgageAccount__Group__0__Impl();
 
             state._fsp--;
@@ -6255,17 +6245,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__Group__0__Impl"
-    // InternalBankSystem.g:2078:1: rule__MortgageAccount__Group__0__Impl : ( 'Mortgage Account {' ) ;
+    // InternalBankSystem.g:2071:1: rule__MortgageAccount__Group__0__Impl : ( 'Mortgage Account {' ) ;
     public final void rule__MortgageAccount__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2082:1: ( ( 'Mortgage Account {' ) )
-            // InternalBankSystem.g:2083:1: ( 'Mortgage Account {' )
+            // InternalBankSystem.g:2075:1: ( ( 'Mortgage Account {' ) )
+            // InternalBankSystem.g:2076:1: ( 'Mortgage Account {' )
             {
-            // InternalBankSystem.g:2083:1: ( 'Mortgage Account {' )
-            // InternalBankSystem.g:2084:2: 'Mortgage Account {'
+            // InternalBankSystem.g:2076:1: ( 'Mortgage Account {' )
+            // InternalBankSystem.g:2077:2: 'Mortgage Account {'
             {
              before(grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword_0()); 
             match(input,39,FOLLOW_2); 
@@ -6292,16 +6282,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__Group__1"
-    // InternalBankSystem.g:2093:1: rule__MortgageAccount__Group__1 : rule__MortgageAccount__Group__1__Impl rule__MortgageAccount__Group__2 ;
+    // InternalBankSystem.g:2086:1: rule__MortgageAccount__Group__1 : rule__MortgageAccount__Group__1__Impl rule__MortgageAccount__Group__2 ;
     public final void rule__MortgageAccount__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2097:1: ( rule__MortgageAccount__Group__1__Impl rule__MortgageAccount__Group__2 )
-            // InternalBankSystem.g:2098:2: rule__MortgageAccount__Group__1__Impl rule__MortgageAccount__Group__2
+            // InternalBankSystem.g:2090:1: ( rule__MortgageAccount__Group__1__Impl rule__MortgageAccount__Group__2 )
+            // InternalBankSystem.g:2091:2: rule__MortgageAccount__Group__1__Impl rule__MortgageAccount__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_9);
             rule__MortgageAccount__Group__1__Impl();
 
             state._fsp--;
@@ -6330,17 +6320,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__Group__1__Impl"
-    // InternalBankSystem.g:2105:1: rule__MortgageAccount__Group__1__Impl : ( 'Loan period' ) ;
+    // InternalBankSystem.g:2098:1: rule__MortgageAccount__Group__1__Impl : ( 'Loan period' ) ;
     public final void rule__MortgageAccount__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2109:1: ( ( 'Loan period' ) )
-            // InternalBankSystem.g:2110:1: ( 'Loan period' )
+            // InternalBankSystem.g:2102:1: ( ( 'Loan period' ) )
+            // InternalBankSystem.g:2103:1: ( 'Loan period' )
             {
-            // InternalBankSystem.g:2110:1: ( 'Loan period' )
-            // InternalBankSystem.g:2111:2: 'Loan period'
+            // InternalBankSystem.g:2103:1: ( 'Loan period' )
+            // InternalBankSystem.g:2104:2: 'Loan period'
             {
              before(grammarAccess.getMortgageAccountAccess().getLoanPeriodKeyword_1()); 
             match(input,40,FOLLOW_2); 
@@ -6367,14 +6357,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__Group__2"
-    // InternalBankSystem.g:2120:1: rule__MortgageAccount__Group__2 : rule__MortgageAccount__Group__2__Impl ;
+    // InternalBankSystem.g:2113:1: rule__MortgageAccount__Group__2 : rule__MortgageAccount__Group__2__Impl ;
     public final void rule__MortgageAccount__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2124:1: ( rule__MortgageAccount__Group__2__Impl )
-            // InternalBankSystem.g:2125:2: rule__MortgageAccount__Group__2__Impl
+            // InternalBankSystem.g:2117:1: ( rule__MortgageAccount__Group__2__Impl )
+            // InternalBankSystem.g:2118:2: rule__MortgageAccount__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MortgageAccount__Group__2__Impl();
@@ -6400,21 +6390,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__Group__2__Impl"
-    // InternalBankSystem.g:2131:1: rule__MortgageAccount__Group__2__Impl : ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) ) ;
+    // InternalBankSystem.g:2124:1: rule__MortgageAccount__Group__2__Impl : ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) ) ;
     public final void rule__MortgageAccount__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2135:1: ( ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) ) )
-            // InternalBankSystem.g:2136:1: ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) )
+            // InternalBankSystem.g:2128:1: ( ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) ) )
+            // InternalBankSystem.g:2129:1: ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) )
             {
-            // InternalBankSystem.g:2136:1: ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) )
-            // InternalBankSystem.g:2137:2: ( rule__MortgageAccount__LoanPeriodAssignment_2 )
+            // InternalBankSystem.g:2129:1: ( ( rule__MortgageAccount__LoanPeriodAssignment_2 ) )
+            // InternalBankSystem.g:2130:2: ( rule__MortgageAccount__LoanPeriodAssignment_2 )
             {
              before(grammarAccess.getMortgageAccountAccess().getLoanPeriodAssignment_2()); 
-            // InternalBankSystem.g:2138:2: ( rule__MortgageAccount__LoanPeriodAssignment_2 )
-            // InternalBankSystem.g:2138:3: rule__MortgageAccount__LoanPeriodAssignment_2
+            // InternalBankSystem.g:2131:2: ( rule__MortgageAccount__LoanPeriodAssignment_2 )
+            // InternalBankSystem.g:2131:3: rule__MortgageAccount__LoanPeriodAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__MortgageAccount__LoanPeriodAssignment_2();
@@ -6447,16 +6437,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__0"
-    // InternalBankSystem.g:2147:1: rule__Transaction__Group__0 : rule__Transaction__Group__0__Impl rule__Transaction__Group__1 ;
+    // InternalBankSystem.g:2140:1: rule__Transaction__Group__0 : rule__Transaction__Group__0__Impl rule__Transaction__Group__1 ;
     public final void rule__Transaction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2151:1: ( rule__Transaction__Group__0__Impl rule__Transaction__Group__1 )
-            // InternalBankSystem.g:2152:2: rule__Transaction__Group__0__Impl rule__Transaction__Group__1
+            // InternalBankSystem.g:2144:1: ( rule__Transaction__Group__0__Impl rule__Transaction__Group__1 )
+            // InternalBankSystem.g:2145:2: rule__Transaction__Group__0__Impl rule__Transaction__Group__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_34);
             rule__Transaction__Group__0__Impl();
 
             state._fsp--;
@@ -6485,17 +6475,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__0__Impl"
-    // InternalBankSystem.g:2159:1: rule__Transaction__Group__0__Impl : ( 'transaction {' ) ;
+    // InternalBankSystem.g:2152:1: rule__Transaction__Group__0__Impl : ( 'transaction {' ) ;
     public final void rule__Transaction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2163:1: ( ( 'transaction {' ) )
-            // InternalBankSystem.g:2164:1: ( 'transaction {' )
+            // InternalBankSystem.g:2156:1: ( ( 'transaction {' ) )
+            // InternalBankSystem.g:2157:1: ( 'transaction {' )
             {
-            // InternalBankSystem.g:2164:1: ( 'transaction {' )
-            // InternalBankSystem.g:2165:2: 'transaction {'
+            // InternalBankSystem.g:2157:1: ( 'transaction {' )
+            // InternalBankSystem.g:2158:2: 'transaction {'
             {
              before(grammarAccess.getTransactionAccess().getTransactionKeyword_0()); 
             match(input,41,FOLLOW_2); 
@@ -6522,16 +6512,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__1"
-    // InternalBankSystem.g:2174:1: rule__Transaction__Group__1 : rule__Transaction__Group__1__Impl rule__Transaction__Group__2 ;
+    // InternalBankSystem.g:2167:1: rule__Transaction__Group__1 : rule__Transaction__Group__1__Impl rule__Transaction__Group__2 ;
     public final void rule__Transaction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2178:1: ( rule__Transaction__Group__1__Impl rule__Transaction__Group__2 )
-            // InternalBankSystem.g:2179:2: rule__Transaction__Group__1__Impl rule__Transaction__Group__2
+            // InternalBankSystem.g:2171:1: ( rule__Transaction__Group__1__Impl rule__Transaction__Group__2 )
+            // InternalBankSystem.g:2172:2: rule__Transaction__Group__1__Impl rule__Transaction__Group__2
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_35);
             rule__Transaction__Group__1__Impl();
 
             state._fsp--;
@@ -6560,21 +6550,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__1__Impl"
-    // InternalBankSystem.g:2186:1: rule__Transaction__Group__1__Impl : ( 'Source:' ) ;
+    // InternalBankSystem.g:2179:1: rule__Transaction__Group__1__Impl : ( 'Account:' ) ;
     public final void rule__Transaction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2190:1: ( ( 'Source:' ) )
-            // InternalBankSystem.g:2191:1: ( 'Source:' )
+            // InternalBankSystem.g:2183:1: ( ( 'Account:' ) )
+            // InternalBankSystem.g:2184:1: ( 'Account:' )
             {
-            // InternalBankSystem.g:2191:1: ( 'Source:' )
-            // InternalBankSystem.g:2192:2: 'Source:'
+            // InternalBankSystem.g:2184:1: ( 'Account:' )
+            // InternalBankSystem.g:2185:2: 'Account:'
             {
-             before(grammarAccess.getTransactionAccess().getSourceKeyword_1()); 
+             before(grammarAccess.getTransactionAccess().getAccountKeyword_1()); 
             match(input,42,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getSourceKeyword_1()); 
+             after(grammarAccess.getTransactionAccess().getAccountKeyword_1()); 
 
             }
 
@@ -6597,16 +6587,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__2"
-    // InternalBankSystem.g:2201:1: rule__Transaction__Group__2 : rule__Transaction__Group__2__Impl rule__Transaction__Group__3 ;
+    // InternalBankSystem.g:2194:1: rule__Transaction__Group__2 : rule__Transaction__Group__2__Impl rule__Transaction__Group__3 ;
     public final void rule__Transaction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2205:1: ( rule__Transaction__Group__2__Impl rule__Transaction__Group__3 )
-            // InternalBankSystem.g:2206:2: rule__Transaction__Group__2__Impl rule__Transaction__Group__3
+            // InternalBankSystem.g:2198:1: ( rule__Transaction__Group__2__Impl rule__Transaction__Group__3 )
+            // InternalBankSystem.g:2199:2: rule__Transaction__Group__2__Impl rule__Transaction__Group__3
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_36);
             rule__Transaction__Group__2__Impl();
 
             state._fsp--;
@@ -6635,31 +6625,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__2__Impl"
-    // InternalBankSystem.g:2213:1: rule__Transaction__Group__2__Impl : ( ( rule__Transaction__SourceAccountAssignment_2 ) ) ;
+    // InternalBankSystem.g:2206:1: rule__Transaction__Group__2__Impl : ( ( rule__Transaction__AccountAssignment_2 ) ) ;
     public final void rule__Transaction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2217:1: ( ( ( rule__Transaction__SourceAccountAssignment_2 ) ) )
-            // InternalBankSystem.g:2218:1: ( ( rule__Transaction__SourceAccountAssignment_2 ) )
+            // InternalBankSystem.g:2210:1: ( ( ( rule__Transaction__AccountAssignment_2 ) ) )
+            // InternalBankSystem.g:2211:1: ( ( rule__Transaction__AccountAssignment_2 ) )
             {
-            // InternalBankSystem.g:2218:1: ( ( rule__Transaction__SourceAccountAssignment_2 ) )
-            // InternalBankSystem.g:2219:2: ( rule__Transaction__SourceAccountAssignment_2 )
+            // InternalBankSystem.g:2211:1: ( ( rule__Transaction__AccountAssignment_2 ) )
+            // InternalBankSystem.g:2212:2: ( rule__Transaction__AccountAssignment_2 )
             {
-             before(grammarAccess.getTransactionAccess().getSourceAccountAssignment_2()); 
-            // InternalBankSystem.g:2220:2: ( rule__Transaction__SourceAccountAssignment_2 )
-            // InternalBankSystem.g:2220:3: rule__Transaction__SourceAccountAssignment_2
+             before(grammarAccess.getTransactionAccess().getAccountAssignment_2()); 
+            // InternalBankSystem.g:2213:2: ( rule__Transaction__AccountAssignment_2 )
+            // InternalBankSystem.g:2213:3: rule__Transaction__AccountAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Transaction__SourceAccountAssignment_2();
+            rule__Transaction__AccountAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransactionAccess().getSourceAccountAssignment_2()); 
+             after(grammarAccess.getTransactionAccess().getAccountAssignment_2()); 
 
             }
 
@@ -6682,16 +6672,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__3"
-    // InternalBankSystem.g:2228:1: rule__Transaction__Group__3 : rule__Transaction__Group__3__Impl rule__Transaction__Group__4 ;
+    // InternalBankSystem.g:2221:1: rule__Transaction__Group__3 : rule__Transaction__Group__3__Impl rule__Transaction__Group__4 ;
     public final void rule__Transaction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2232:1: ( rule__Transaction__Group__3__Impl rule__Transaction__Group__4 )
-            // InternalBankSystem.g:2233:2: rule__Transaction__Group__3__Impl rule__Transaction__Group__4
+            // InternalBankSystem.g:2225:1: ( rule__Transaction__Group__3__Impl rule__Transaction__Group__4 )
+            // InternalBankSystem.g:2226:2: rule__Transaction__Group__3__Impl rule__Transaction__Group__4
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_23);
             rule__Transaction__Group__3__Impl();
 
             state._fsp--;
@@ -6720,21 +6710,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__3__Impl"
-    // InternalBankSystem.g:2240:1: rule__Transaction__Group__3__Impl : ( 'Target:' ) ;
+    // InternalBankSystem.g:2233:1: rule__Transaction__Group__3__Impl : ( 'Amount:' ) ;
     public final void rule__Transaction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2244:1: ( ( 'Target:' ) )
-            // InternalBankSystem.g:2245:1: ( 'Target:' )
+            // InternalBankSystem.g:2237:1: ( ( 'Amount:' ) )
+            // InternalBankSystem.g:2238:1: ( 'Amount:' )
             {
-            // InternalBankSystem.g:2245:1: ( 'Target:' )
-            // InternalBankSystem.g:2246:2: 'Target:'
+            // InternalBankSystem.g:2238:1: ( 'Amount:' )
+            // InternalBankSystem.g:2239:2: 'Amount:'
             {
-             before(grammarAccess.getTransactionAccess().getTargetKeyword_3()); 
+             before(grammarAccess.getTransactionAccess().getAmountKeyword_3()); 
             match(input,43,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getTargetKeyword_3()); 
+             after(grammarAccess.getTransactionAccess().getAmountKeyword_3()); 
 
             }
 
@@ -6757,16 +6747,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__4"
-    // InternalBankSystem.g:2255:1: rule__Transaction__Group__4 : rule__Transaction__Group__4__Impl rule__Transaction__Group__5 ;
+    // InternalBankSystem.g:2248:1: rule__Transaction__Group__4 : rule__Transaction__Group__4__Impl rule__Transaction__Group__5 ;
     public final void rule__Transaction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2259:1: ( rule__Transaction__Group__4__Impl rule__Transaction__Group__5 )
-            // InternalBankSystem.g:2260:2: rule__Transaction__Group__4__Impl rule__Transaction__Group__5
+            // InternalBankSystem.g:2252:1: ( rule__Transaction__Group__4__Impl rule__Transaction__Group__5 )
+            // InternalBankSystem.g:2253:2: rule__Transaction__Group__4__Impl rule__Transaction__Group__5
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_37);
             rule__Transaction__Group__4__Impl();
 
             state._fsp--;
@@ -6795,31 +6785,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__4__Impl"
-    // InternalBankSystem.g:2267:1: rule__Transaction__Group__4__Impl : ( ( rule__Transaction__TargetAccountAssignment_4 ) ) ;
+    // InternalBankSystem.g:2260:1: rule__Transaction__Group__4__Impl : ( ( rule__Transaction__AmountAssignment_4 ) ) ;
     public final void rule__Transaction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2271:1: ( ( ( rule__Transaction__TargetAccountAssignment_4 ) ) )
-            // InternalBankSystem.g:2272:1: ( ( rule__Transaction__TargetAccountAssignment_4 ) )
+            // InternalBankSystem.g:2264:1: ( ( ( rule__Transaction__AmountAssignment_4 ) ) )
+            // InternalBankSystem.g:2265:1: ( ( rule__Transaction__AmountAssignment_4 ) )
             {
-            // InternalBankSystem.g:2272:1: ( ( rule__Transaction__TargetAccountAssignment_4 ) )
-            // InternalBankSystem.g:2273:2: ( rule__Transaction__TargetAccountAssignment_4 )
+            // InternalBankSystem.g:2265:1: ( ( rule__Transaction__AmountAssignment_4 ) )
+            // InternalBankSystem.g:2266:2: ( rule__Transaction__AmountAssignment_4 )
             {
-             before(grammarAccess.getTransactionAccess().getTargetAccountAssignment_4()); 
-            // InternalBankSystem.g:2274:2: ( rule__Transaction__TargetAccountAssignment_4 )
-            // InternalBankSystem.g:2274:3: rule__Transaction__TargetAccountAssignment_4
+             before(grammarAccess.getTransactionAccess().getAmountAssignment_4()); 
+            // InternalBankSystem.g:2267:2: ( rule__Transaction__AmountAssignment_4 )
+            // InternalBankSystem.g:2267:3: rule__Transaction__AmountAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Transaction__TargetAccountAssignment_4();
+            rule__Transaction__AmountAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransactionAccess().getTargetAccountAssignment_4()); 
+             after(grammarAccess.getTransactionAccess().getAmountAssignment_4()); 
 
             }
 
@@ -6842,16 +6832,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__5"
-    // InternalBankSystem.g:2282:1: rule__Transaction__Group__5 : rule__Transaction__Group__5__Impl rule__Transaction__Group__6 ;
+    // InternalBankSystem.g:2275:1: rule__Transaction__Group__5 : rule__Transaction__Group__5__Impl rule__Transaction__Group__6 ;
     public final void rule__Transaction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2286:1: ( rule__Transaction__Group__5__Impl rule__Transaction__Group__6 )
-            // InternalBankSystem.g:2287:2: rule__Transaction__Group__5__Impl rule__Transaction__Group__6
+            // InternalBankSystem.g:2279:1: ( rule__Transaction__Group__5__Impl rule__Transaction__Group__6 )
+            // InternalBankSystem.g:2280:2: rule__Transaction__Group__5__Impl rule__Transaction__Group__6
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Transaction__Group__5__Impl();
 
             state._fsp--;
@@ -6880,21 +6870,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__5__Impl"
-    // InternalBankSystem.g:2294:1: rule__Transaction__Group__5__Impl : ( 'Amount:' ) ;
+    // InternalBankSystem.g:2287:1: rule__Transaction__Group__5__Impl : ( 'Date' ) ;
     public final void rule__Transaction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2298:1: ( ( 'Amount:' ) )
-            // InternalBankSystem.g:2299:1: ( 'Amount:' )
+            // InternalBankSystem.g:2291:1: ( ( 'Date' ) )
+            // InternalBankSystem.g:2292:1: ( 'Date' )
             {
-            // InternalBankSystem.g:2299:1: ( 'Amount:' )
-            // InternalBankSystem.g:2300:2: 'Amount:'
+            // InternalBankSystem.g:2292:1: ( 'Date' )
+            // InternalBankSystem.g:2293:2: 'Date'
             {
-             before(grammarAccess.getTransactionAccess().getAmountKeyword_5()); 
+             before(grammarAccess.getTransactionAccess().getDateKeyword_5()); 
             match(input,44,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getAmountKeyword_5()); 
+             after(grammarAccess.getTransactionAccess().getDateKeyword_5()); 
 
             }
 
@@ -6917,16 +6907,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__6"
-    // InternalBankSystem.g:2309:1: rule__Transaction__Group__6 : rule__Transaction__Group__6__Impl rule__Transaction__Group__7 ;
+    // InternalBankSystem.g:2302:1: rule__Transaction__Group__6 : rule__Transaction__Group__6__Impl rule__Transaction__Group__7 ;
     public final void rule__Transaction__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2313:1: ( rule__Transaction__Group__6__Impl rule__Transaction__Group__7 )
-            // InternalBankSystem.g:2314:2: rule__Transaction__Group__6__Impl rule__Transaction__Group__7
+            // InternalBankSystem.g:2306:1: ( rule__Transaction__Group__6__Impl rule__Transaction__Group__7 )
+            // InternalBankSystem.g:2307:2: rule__Transaction__Group__6__Impl rule__Transaction__Group__7
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_38);
             rule__Transaction__Group__6__Impl();
 
             state._fsp--;
@@ -6955,31 +6945,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__6__Impl"
-    // InternalBankSystem.g:2321:1: rule__Transaction__Group__6__Impl : ( ( rule__Transaction__AmountAssignment_6 ) ) ;
+    // InternalBankSystem.g:2314:1: rule__Transaction__Group__6__Impl : ( ( rule__Transaction__DateAssignment_6 ) ) ;
     public final void rule__Transaction__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2325:1: ( ( ( rule__Transaction__AmountAssignment_6 ) ) )
-            // InternalBankSystem.g:2326:1: ( ( rule__Transaction__AmountAssignment_6 ) )
+            // InternalBankSystem.g:2318:1: ( ( ( rule__Transaction__DateAssignment_6 ) ) )
+            // InternalBankSystem.g:2319:1: ( ( rule__Transaction__DateAssignment_6 ) )
             {
-            // InternalBankSystem.g:2326:1: ( ( rule__Transaction__AmountAssignment_6 ) )
-            // InternalBankSystem.g:2327:2: ( rule__Transaction__AmountAssignment_6 )
+            // InternalBankSystem.g:2319:1: ( ( rule__Transaction__DateAssignment_6 ) )
+            // InternalBankSystem.g:2320:2: ( rule__Transaction__DateAssignment_6 )
             {
-             before(grammarAccess.getTransactionAccess().getAmountAssignment_6()); 
-            // InternalBankSystem.g:2328:2: ( rule__Transaction__AmountAssignment_6 )
-            // InternalBankSystem.g:2328:3: rule__Transaction__AmountAssignment_6
+             before(grammarAccess.getTransactionAccess().getDateAssignment_6()); 
+            // InternalBankSystem.g:2321:2: ( rule__Transaction__DateAssignment_6 )
+            // InternalBankSystem.g:2321:3: rule__Transaction__DateAssignment_6
             {
             pushFollow(FOLLOW_2);
-            rule__Transaction__AmountAssignment_6();
+            rule__Transaction__DateAssignment_6();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransactionAccess().getAmountAssignment_6()); 
+             after(grammarAccess.getTransactionAccess().getDateAssignment_6()); 
 
             }
 
@@ -7002,16 +6992,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__7"
-    // InternalBankSystem.g:2336:1: rule__Transaction__Group__7 : rule__Transaction__Group__7__Impl rule__Transaction__Group__8 ;
+    // InternalBankSystem.g:2329:1: rule__Transaction__Group__7 : rule__Transaction__Group__7__Impl rule__Transaction__Group__8 ;
     public final void rule__Transaction__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2340:1: ( rule__Transaction__Group__7__Impl rule__Transaction__Group__8 )
-            // InternalBankSystem.g:2341:2: rule__Transaction__Group__7__Impl rule__Transaction__Group__8
+            // InternalBankSystem.g:2333:1: ( rule__Transaction__Group__7__Impl rule__Transaction__Group__8 )
+            // InternalBankSystem.g:2334:2: rule__Transaction__Group__7__Impl rule__Transaction__Group__8
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_39);
             rule__Transaction__Group__7__Impl();
 
             state._fsp--;
@@ -7040,21 +7030,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__7__Impl"
-    // InternalBankSystem.g:2348:1: rule__Transaction__Group__7__Impl : ( 'Date' ) ;
+    // InternalBankSystem.g:2341:1: rule__Transaction__Group__7__Impl : ( 'Debit' ) ;
     public final void rule__Transaction__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2352:1: ( ( 'Date' ) )
-            // InternalBankSystem.g:2353:1: ( 'Date' )
+            // InternalBankSystem.g:2345:1: ( ( 'Debit' ) )
+            // InternalBankSystem.g:2346:1: ( 'Debit' )
             {
-            // InternalBankSystem.g:2353:1: ( 'Date' )
-            // InternalBankSystem.g:2354:2: 'Date'
+            // InternalBankSystem.g:2346:1: ( 'Debit' )
+            // InternalBankSystem.g:2347:2: 'Debit'
             {
-             before(grammarAccess.getTransactionAccess().getDateKeyword_7()); 
+             before(grammarAccess.getTransactionAccess().getDebitKeyword_7()); 
             match(input,45,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getDateKeyword_7()); 
+             after(grammarAccess.getTransactionAccess().getDebitKeyword_7()); 
 
             }
 
@@ -7077,16 +7067,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__8"
-    // InternalBankSystem.g:2363:1: rule__Transaction__Group__8 : rule__Transaction__Group__8__Impl rule__Transaction__Group__9 ;
+    // InternalBankSystem.g:2356:1: rule__Transaction__Group__8 : rule__Transaction__Group__8__Impl rule__Transaction__Group__9 ;
     public final void rule__Transaction__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2367:1: ( rule__Transaction__Group__8__Impl rule__Transaction__Group__9 )
-            // InternalBankSystem.g:2368:2: rule__Transaction__Group__8__Impl rule__Transaction__Group__9
+            // InternalBankSystem.g:2360:1: ( rule__Transaction__Group__8__Impl rule__Transaction__Group__9 )
+            // InternalBankSystem.g:2361:2: rule__Transaction__Group__8__Impl rule__Transaction__Group__9
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__Transaction__Group__8__Impl();
 
             state._fsp--;
@@ -7115,31 +7105,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__8__Impl"
-    // InternalBankSystem.g:2375:1: rule__Transaction__Group__8__Impl : ( ( rule__Transaction__DateAssignment_8 ) ) ;
+    // InternalBankSystem.g:2368:1: rule__Transaction__Group__8__Impl : ( ( rule__Transaction__DebitAssignment_8 ) ) ;
     public final void rule__Transaction__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2379:1: ( ( ( rule__Transaction__DateAssignment_8 ) ) )
-            // InternalBankSystem.g:2380:1: ( ( rule__Transaction__DateAssignment_8 ) )
+            // InternalBankSystem.g:2372:1: ( ( ( rule__Transaction__DebitAssignment_8 ) ) )
+            // InternalBankSystem.g:2373:1: ( ( rule__Transaction__DebitAssignment_8 ) )
             {
-            // InternalBankSystem.g:2380:1: ( ( rule__Transaction__DateAssignment_8 ) )
-            // InternalBankSystem.g:2381:2: ( rule__Transaction__DateAssignment_8 )
+            // InternalBankSystem.g:2373:1: ( ( rule__Transaction__DebitAssignment_8 ) )
+            // InternalBankSystem.g:2374:2: ( rule__Transaction__DebitAssignment_8 )
             {
-             before(grammarAccess.getTransactionAccess().getDateAssignment_8()); 
-            // InternalBankSystem.g:2382:2: ( rule__Transaction__DateAssignment_8 )
-            // InternalBankSystem.g:2382:3: rule__Transaction__DateAssignment_8
+             before(grammarAccess.getTransactionAccess().getDebitAssignment_8()); 
+            // InternalBankSystem.g:2375:2: ( rule__Transaction__DebitAssignment_8 )
+            // InternalBankSystem.g:2375:3: rule__Transaction__DebitAssignment_8
             {
             pushFollow(FOLLOW_2);
-            rule__Transaction__DateAssignment_8();
+            rule__Transaction__DebitAssignment_8();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransactionAccess().getDateAssignment_8()); 
+             after(grammarAccess.getTransactionAccess().getDebitAssignment_8()); 
 
             }
 
@@ -7162,16 +7152,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__9"
-    // InternalBankSystem.g:2390:1: rule__Transaction__Group__9 : rule__Transaction__Group__9__Impl rule__Transaction__Group__10 ;
+    // InternalBankSystem.g:2383:1: rule__Transaction__Group__9 : rule__Transaction__Group__9__Impl rule__Transaction__Group__10 ;
     public final void rule__Transaction__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2394:1: ( rule__Transaction__Group__9__Impl rule__Transaction__Group__10 )
-            // InternalBankSystem.g:2395:2: rule__Transaction__Group__9__Impl rule__Transaction__Group__10
+            // InternalBankSystem.g:2387:1: ( rule__Transaction__Group__9__Impl rule__Transaction__Group__10 )
+            // InternalBankSystem.g:2388:2: rule__Transaction__Group__9__Impl rule__Transaction__Group__10
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_9);
             rule__Transaction__Group__9__Impl();
 
             state._fsp--;
@@ -7200,21 +7190,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__9__Impl"
-    // InternalBankSystem.g:2402:1: rule__Transaction__Group__9__Impl : ( 'Debit' ) ;
+    // InternalBankSystem.g:2395:1: rule__Transaction__Group__9__Impl : ( 'Vendor name' ) ;
     public final void rule__Transaction__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2406:1: ( ( 'Debit' ) )
-            // InternalBankSystem.g:2407:1: ( 'Debit' )
+            // InternalBankSystem.g:2399:1: ( ( 'Vendor name' ) )
+            // InternalBankSystem.g:2400:1: ( 'Vendor name' )
             {
-            // InternalBankSystem.g:2407:1: ( 'Debit' )
-            // InternalBankSystem.g:2408:2: 'Debit'
+            // InternalBankSystem.g:2400:1: ( 'Vendor name' )
+            // InternalBankSystem.g:2401:2: 'Vendor name'
             {
-             before(grammarAccess.getTransactionAccess().getDebitKeyword_9()); 
+             before(grammarAccess.getTransactionAccess().getVendorNameKeyword_9()); 
             match(input,46,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getDebitKeyword_9()); 
+             after(grammarAccess.getTransactionAccess().getVendorNameKeyword_9()); 
 
             }
 
@@ -7237,16 +7227,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__10"
-    // InternalBankSystem.g:2417:1: rule__Transaction__Group__10 : rule__Transaction__Group__10__Impl rule__Transaction__Group__11 ;
+    // InternalBankSystem.g:2410:1: rule__Transaction__Group__10 : rule__Transaction__Group__10__Impl rule__Transaction__Group__11 ;
     public final void rule__Transaction__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2421:1: ( rule__Transaction__Group__10__Impl rule__Transaction__Group__11 )
-            // InternalBankSystem.g:2422:2: rule__Transaction__Group__10__Impl rule__Transaction__Group__11
+            // InternalBankSystem.g:2414:1: ( rule__Transaction__Group__10__Impl rule__Transaction__Group__11 )
+            // InternalBankSystem.g:2415:2: rule__Transaction__Group__10__Impl rule__Transaction__Group__11
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_19);
             rule__Transaction__Group__10__Impl();
 
             state._fsp--;
@@ -7275,31 +7265,31 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__10__Impl"
-    // InternalBankSystem.g:2429:1: rule__Transaction__Group__10__Impl : ( ( rule__Transaction__DebitAssignment_10 ) ) ;
+    // InternalBankSystem.g:2422:1: rule__Transaction__Group__10__Impl : ( ( rule__Transaction__VendorNameAssignment_10 ) ) ;
     public final void rule__Transaction__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2433:1: ( ( ( rule__Transaction__DebitAssignment_10 ) ) )
-            // InternalBankSystem.g:2434:1: ( ( rule__Transaction__DebitAssignment_10 ) )
+            // InternalBankSystem.g:2426:1: ( ( ( rule__Transaction__VendorNameAssignment_10 ) ) )
+            // InternalBankSystem.g:2427:1: ( ( rule__Transaction__VendorNameAssignment_10 ) )
             {
-            // InternalBankSystem.g:2434:1: ( ( rule__Transaction__DebitAssignment_10 ) )
-            // InternalBankSystem.g:2435:2: ( rule__Transaction__DebitAssignment_10 )
+            // InternalBankSystem.g:2427:1: ( ( rule__Transaction__VendorNameAssignment_10 ) )
+            // InternalBankSystem.g:2428:2: ( rule__Transaction__VendorNameAssignment_10 )
             {
-             before(grammarAccess.getTransactionAccess().getDebitAssignment_10()); 
-            // InternalBankSystem.g:2436:2: ( rule__Transaction__DebitAssignment_10 )
-            // InternalBankSystem.g:2436:3: rule__Transaction__DebitAssignment_10
+             before(grammarAccess.getTransactionAccess().getVendorNameAssignment_10()); 
+            // InternalBankSystem.g:2429:2: ( rule__Transaction__VendorNameAssignment_10 )
+            // InternalBankSystem.g:2429:3: rule__Transaction__VendorNameAssignment_10
             {
             pushFollow(FOLLOW_2);
-            rule__Transaction__DebitAssignment_10();
+            rule__Transaction__VendorNameAssignment_10();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTransactionAccess().getDebitAssignment_10()); 
+             after(grammarAccess.getTransactionAccess().getVendorNameAssignment_10()); 
 
             }
 
@@ -7322,22 +7312,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__11"
-    // InternalBankSystem.g:2444:1: rule__Transaction__Group__11 : rule__Transaction__Group__11__Impl rule__Transaction__Group__12 ;
+    // InternalBankSystem.g:2437:1: rule__Transaction__Group__11 : rule__Transaction__Group__11__Impl ;
     public final void rule__Transaction__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2448:1: ( rule__Transaction__Group__11__Impl rule__Transaction__Group__12 )
-            // InternalBankSystem.g:2449:2: rule__Transaction__Group__11__Impl rule__Transaction__Group__12
+            // InternalBankSystem.g:2441:1: ( rule__Transaction__Group__11__Impl )
+            // InternalBankSystem.g:2442:2: rule__Transaction__Group__11__Impl
             {
-            pushFollow(FOLLOW_8);
-            rule__Transaction__Group__11__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Transaction__Group__12();
+            rule__Transaction__Group__11__Impl();
 
             state._fsp--;
 
@@ -7360,21 +7345,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Transaction__Group__11__Impl"
-    // InternalBankSystem.g:2456:1: rule__Transaction__Group__11__Impl : ( 'Vendor name' ) ;
+    // InternalBankSystem.g:2448:1: rule__Transaction__Group__11__Impl : ( '}' ) ;
     public final void rule__Transaction__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2460:1: ( ( 'Vendor name' ) )
-            // InternalBankSystem.g:2461:1: ( 'Vendor name' )
+            // InternalBankSystem.g:2452:1: ( ( '}' ) )
+            // InternalBankSystem.g:2453:1: ( '}' )
             {
-            // InternalBankSystem.g:2461:1: ( 'Vendor name' )
-            // InternalBankSystem.g:2462:2: 'Vendor name'
+            // InternalBankSystem.g:2453:1: ( '}' )
+            // InternalBankSystem.g:2454:2: '}'
             {
-             before(grammarAccess.getTransactionAccess().getVendorNameKeyword_11()); 
-            match(input,47,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getVendorNameKeyword_11()); 
+             before(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_11()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_11()); 
 
             }
 
@@ -7396,172 +7381,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Transaction__Group__11__Impl"
 
 
-    // $ANTLR start "rule__Transaction__Group__12"
-    // InternalBankSystem.g:2471:1: rule__Transaction__Group__12 : rule__Transaction__Group__12__Impl rule__Transaction__Group__13 ;
-    public final void rule__Transaction__Group__12() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalBankSystem.g:2475:1: ( rule__Transaction__Group__12__Impl rule__Transaction__Group__13 )
-            // InternalBankSystem.g:2476:2: rule__Transaction__Group__12__Impl rule__Transaction__Group__13
-            {
-            pushFollow(FOLLOW_19);
-            rule__Transaction__Group__12__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Transaction__Group__13();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transaction__Group__12"
-
-
-    // $ANTLR start "rule__Transaction__Group__12__Impl"
-    // InternalBankSystem.g:2483:1: rule__Transaction__Group__12__Impl : ( ( rule__Transaction__VendorNameAssignment_12 ) ) ;
-    public final void rule__Transaction__Group__12__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalBankSystem.g:2487:1: ( ( ( rule__Transaction__VendorNameAssignment_12 ) ) )
-            // InternalBankSystem.g:2488:1: ( ( rule__Transaction__VendorNameAssignment_12 ) )
-            {
-            // InternalBankSystem.g:2488:1: ( ( rule__Transaction__VendorNameAssignment_12 ) )
-            // InternalBankSystem.g:2489:2: ( rule__Transaction__VendorNameAssignment_12 )
-            {
-             before(grammarAccess.getTransactionAccess().getVendorNameAssignment_12()); 
-            // InternalBankSystem.g:2490:2: ( rule__Transaction__VendorNameAssignment_12 )
-            // InternalBankSystem.g:2490:3: rule__Transaction__VendorNameAssignment_12
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transaction__VendorNameAssignment_12();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransactionAccess().getVendorNameAssignment_12()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transaction__Group__12__Impl"
-
-
-    // $ANTLR start "rule__Transaction__Group__13"
-    // InternalBankSystem.g:2498:1: rule__Transaction__Group__13 : rule__Transaction__Group__13__Impl ;
-    public final void rule__Transaction__Group__13() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalBankSystem.g:2502:1: ( rule__Transaction__Group__13__Impl )
-            // InternalBankSystem.g:2503:2: rule__Transaction__Group__13__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transaction__Group__13__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transaction__Group__13"
-
-
-    // $ANTLR start "rule__Transaction__Group__13__Impl"
-    // InternalBankSystem.g:2509:1: rule__Transaction__Group__13__Impl : ( '}' ) ;
-    public final void rule__Transaction__Group__13__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalBankSystem.g:2513:1: ( ( '}' ) )
-            // InternalBankSystem.g:2514:1: ( '}' )
-            {
-            // InternalBankSystem.g:2514:1: ( '}' )
-            // InternalBankSystem.g:2515:2: '}'
-            {
-             before(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_13()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_13()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transaction__Group__13__Impl"
-
-
     // $ANTLR start "rule__Date__Group__0"
-    // InternalBankSystem.g:2525:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
+    // InternalBankSystem.g:2464:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
     public final void rule__Date__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2529:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
-            // InternalBankSystem.g:2530:2: rule__Date__Group__0__Impl rule__Date__Group__1
+            // InternalBankSystem.g:2468:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
+            // InternalBankSystem.g:2469:2: rule__Date__Group__0__Impl rule__Date__Group__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_41);
             rule__Date__Group__0__Impl();
 
             state._fsp--;
@@ -7590,21 +7420,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__0__Impl"
-    // InternalBankSystem.g:2537:1: rule__Date__Group__0__Impl : ( ( rule__Date__YearAssignment_0 ) ) ;
+    // InternalBankSystem.g:2476:1: rule__Date__Group__0__Impl : ( ( rule__Date__YearAssignment_0 ) ) ;
     public final void rule__Date__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2541:1: ( ( ( rule__Date__YearAssignment_0 ) ) )
-            // InternalBankSystem.g:2542:1: ( ( rule__Date__YearAssignment_0 ) )
+            // InternalBankSystem.g:2480:1: ( ( ( rule__Date__YearAssignment_0 ) ) )
+            // InternalBankSystem.g:2481:1: ( ( rule__Date__YearAssignment_0 ) )
             {
-            // InternalBankSystem.g:2542:1: ( ( rule__Date__YearAssignment_0 ) )
-            // InternalBankSystem.g:2543:2: ( rule__Date__YearAssignment_0 )
+            // InternalBankSystem.g:2481:1: ( ( rule__Date__YearAssignment_0 ) )
+            // InternalBankSystem.g:2482:2: ( rule__Date__YearAssignment_0 )
             {
              before(grammarAccess.getDateAccess().getYearAssignment_0()); 
-            // InternalBankSystem.g:2544:2: ( rule__Date__YearAssignment_0 )
-            // InternalBankSystem.g:2544:3: rule__Date__YearAssignment_0
+            // InternalBankSystem.g:2483:2: ( rule__Date__YearAssignment_0 )
+            // InternalBankSystem.g:2483:3: rule__Date__YearAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Date__YearAssignment_0();
@@ -7637,16 +7467,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__1"
-    // InternalBankSystem.g:2552:1: rule__Date__Group__1 : rule__Date__Group__1__Impl rule__Date__Group__2 ;
+    // InternalBankSystem.g:2491:1: rule__Date__Group__1 : rule__Date__Group__1__Impl rule__Date__Group__2 ;
     public final void rule__Date__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2556:1: ( rule__Date__Group__1__Impl rule__Date__Group__2 )
-            // InternalBankSystem.g:2557:2: rule__Date__Group__1__Impl rule__Date__Group__2
+            // InternalBankSystem.g:2495:1: ( rule__Date__Group__1__Impl rule__Date__Group__2 )
+            // InternalBankSystem.g:2496:2: rule__Date__Group__1__Impl rule__Date__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Date__Group__1__Impl();
 
             state._fsp--;
@@ -7675,20 +7505,20 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__1__Impl"
-    // InternalBankSystem.g:2564:1: rule__Date__Group__1__Impl : ( '/' ) ;
+    // InternalBankSystem.g:2503:1: rule__Date__Group__1__Impl : ( '/' ) ;
     public final void rule__Date__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2568:1: ( ( '/' ) )
-            // InternalBankSystem.g:2569:1: ( '/' )
+            // InternalBankSystem.g:2507:1: ( ( '/' ) )
+            // InternalBankSystem.g:2508:1: ( '/' )
             {
-            // InternalBankSystem.g:2569:1: ( '/' )
-            // InternalBankSystem.g:2570:2: '/'
+            // InternalBankSystem.g:2508:1: ( '/' )
+            // InternalBankSystem.g:2509:2: '/'
             {
              before(grammarAccess.getDateAccess().getSolidusKeyword_1()); 
-            match(input,48,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getDateAccess().getSolidusKeyword_1()); 
 
             }
@@ -7712,16 +7542,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__2"
-    // InternalBankSystem.g:2579:1: rule__Date__Group__2 : rule__Date__Group__2__Impl rule__Date__Group__3 ;
+    // InternalBankSystem.g:2518:1: rule__Date__Group__2 : rule__Date__Group__2__Impl rule__Date__Group__3 ;
     public final void rule__Date__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2583:1: ( rule__Date__Group__2__Impl rule__Date__Group__3 )
-            // InternalBankSystem.g:2584:2: rule__Date__Group__2__Impl rule__Date__Group__3
+            // InternalBankSystem.g:2522:1: ( rule__Date__Group__2__Impl rule__Date__Group__3 )
+            // InternalBankSystem.g:2523:2: rule__Date__Group__2__Impl rule__Date__Group__3
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_41);
             rule__Date__Group__2__Impl();
 
             state._fsp--;
@@ -7750,21 +7580,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__2__Impl"
-    // InternalBankSystem.g:2591:1: rule__Date__Group__2__Impl : ( ( rule__Date__MonthAssignment_2 ) ) ;
+    // InternalBankSystem.g:2530:1: rule__Date__Group__2__Impl : ( ( rule__Date__MonthAssignment_2 ) ) ;
     public final void rule__Date__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2595:1: ( ( ( rule__Date__MonthAssignment_2 ) ) )
-            // InternalBankSystem.g:2596:1: ( ( rule__Date__MonthAssignment_2 ) )
+            // InternalBankSystem.g:2534:1: ( ( ( rule__Date__MonthAssignment_2 ) ) )
+            // InternalBankSystem.g:2535:1: ( ( rule__Date__MonthAssignment_2 ) )
             {
-            // InternalBankSystem.g:2596:1: ( ( rule__Date__MonthAssignment_2 ) )
-            // InternalBankSystem.g:2597:2: ( rule__Date__MonthAssignment_2 )
+            // InternalBankSystem.g:2535:1: ( ( rule__Date__MonthAssignment_2 ) )
+            // InternalBankSystem.g:2536:2: ( rule__Date__MonthAssignment_2 )
             {
              before(grammarAccess.getDateAccess().getMonthAssignment_2()); 
-            // InternalBankSystem.g:2598:2: ( rule__Date__MonthAssignment_2 )
-            // InternalBankSystem.g:2598:3: rule__Date__MonthAssignment_2
+            // InternalBankSystem.g:2537:2: ( rule__Date__MonthAssignment_2 )
+            // InternalBankSystem.g:2537:3: rule__Date__MonthAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Date__MonthAssignment_2();
@@ -7797,16 +7627,16 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__3"
-    // InternalBankSystem.g:2606:1: rule__Date__Group__3 : rule__Date__Group__3__Impl rule__Date__Group__4 ;
+    // InternalBankSystem.g:2545:1: rule__Date__Group__3 : rule__Date__Group__3__Impl rule__Date__Group__4 ;
     public final void rule__Date__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2610:1: ( rule__Date__Group__3__Impl rule__Date__Group__4 )
-            // InternalBankSystem.g:2611:2: rule__Date__Group__3__Impl rule__Date__Group__4
+            // InternalBankSystem.g:2549:1: ( rule__Date__Group__3__Impl rule__Date__Group__4 )
+            // InternalBankSystem.g:2550:2: rule__Date__Group__3__Impl rule__Date__Group__4
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Date__Group__3__Impl();
 
             state._fsp--;
@@ -7835,20 +7665,20 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__3__Impl"
-    // InternalBankSystem.g:2618:1: rule__Date__Group__3__Impl : ( '/' ) ;
+    // InternalBankSystem.g:2557:1: rule__Date__Group__3__Impl : ( '/' ) ;
     public final void rule__Date__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2622:1: ( ( '/' ) )
-            // InternalBankSystem.g:2623:1: ( '/' )
+            // InternalBankSystem.g:2561:1: ( ( '/' ) )
+            // InternalBankSystem.g:2562:1: ( '/' )
             {
-            // InternalBankSystem.g:2623:1: ( '/' )
-            // InternalBankSystem.g:2624:2: '/'
+            // InternalBankSystem.g:2562:1: ( '/' )
+            // InternalBankSystem.g:2563:2: '/'
             {
              before(grammarAccess.getDateAccess().getSolidusKeyword_3()); 
-            match(input,48,FOLLOW_2); 
+            match(input,47,FOLLOW_2); 
              after(grammarAccess.getDateAccess().getSolidusKeyword_3()); 
 
             }
@@ -7872,14 +7702,14 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__4"
-    // InternalBankSystem.g:2633:1: rule__Date__Group__4 : rule__Date__Group__4__Impl ;
+    // InternalBankSystem.g:2572:1: rule__Date__Group__4 : rule__Date__Group__4__Impl ;
     public final void rule__Date__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2637:1: ( rule__Date__Group__4__Impl )
-            // InternalBankSystem.g:2638:2: rule__Date__Group__4__Impl
+            // InternalBankSystem.g:2576:1: ( rule__Date__Group__4__Impl )
+            // InternalBankSystem.g:2577:2: rule__Date__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Date__Group__4__Impl();
@@ -7905,21 +7735,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__Group__4__Impl"
-    // InternalBankSystem.g:2644:1: rule__Date__Group__4__Impl : ( ( rule__Date__DayAssignment_4 ) ) ;
+    // InternalBankSystem.g:2583:1: rule__Date__Group__4__Impl : ( ( rule__Date__DayAssignment_4 ) ) ;
     public final void rule__Date__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2648:1: ( ( ( rule__Date__DayAssignment_4 ) ) )
-            // InternalBankSystem.g:2649:1: ( ( rule__Date__DayAssignment_4 ) )
+            // InternalBankSystem.g:2587:1: ( ( ( rule__Date__DayAssignment_4 ) ) )
+            // InternalBankSystem.g:2588:1: ( ( rule__Date__DayAssignment_4 ) )
             {
-            // InternalBankSystem.g:2649:1: ( ( rule__Date__DayAssignment_4 ) )
-            // InternalBankSystem.g:2650:2: ( rule__Date__DayAssignment_4 )
+            // InternalBankSystem.g:2588:1: ( ( rule__Date__DayAssignment_4 ) )
+            // InternalBankSystem.g:2589:2: ( rule__Date__DayAssignment_4 )
             {
              before(grammarAccess.getDateAccess().getDayAssignment_4()); 
-            // InternalBankSystem.g:2651:2: ( rule__Date__DayAssignment_4 )
-            // InternalBankSystem.g:2651:3: rule__Date__DayAssignment_4
+            // InternalBankSystem.g:2590:2: ( rule__Date__DayAssignment_4 )
+            // InternalBankSystem.g:2590:3: rule__Date__DayAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Date__DayAssignment_4();
@@ -7952,17 +7782,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BankSystem__BanksAssignment_0"
-    // InternalBankSystem.g:2660:1: rule__BankSystem__BanksAssignment_0 : ( ruleBank ) ;
+    // InternalBankSystem.g:2599:1: rule__BankSystem__BanksAssignment_0 : ( ruleBank ) ;
     public final void rule__BankSystem__BanksAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2664:1: ( ( ruleBank ) )
-            // InternalBankSystem.g:2665:2: ( ruleBank )
+            // InternalBankSystem.g:2603:1: ( ( ruleBank ) )
+            // InternalBankSystem.g:2604:2: ( ruleBank )
             {
-            // InternalBankSystem.g:2665:2: ( ruleBank )
-            // InternalBankSystem.g:2666:3: ruleBank
+            // InternalBankSystem.g:2604:2: ( ruleBank )
+            // InternalBankSystem.g:2605:3: ruleBank
             {
              before(grammarAccess.getBankSystemAccess().getBanksBankParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7993,17 +7823,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__BankSystem__UsersAssignment_1"
-    // InternalBankSystem.g:2675:1: rule__BankSystem__UsersAssignment_1 : ( ruleUser ) ;
+    // InternalBankSystem.g:2614:1: rule__BankSystem__UsersAssignment_1 : ( ruleUser ) ;
     public final void rule__BankSystem__UsersAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2679:1: ( ( ruleUser ) )
-            // InternalBankSystem.g:2680:2: ( ruleUser )
+            // InternalBankSystem.g:2618:1: ( ( ruleUser ) )
+            // InternalBankSystem.g:2619:2: ( ruleUser )
             {
-            // InternalBankSystem.g:2680:2: ( ruleUser )
-            // InternalBankSystem.g:2681:3: ruleUser
+            // InternalBankSystem.g:2619:2: ( ruleUser )
+            // InternalBankSystem.g:2620:3: ruleUser
             {
              before(grammarAccess.getBankSystemAccess().getUsersUserParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -8034,17 +7864,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Bank__NameAssignment_1"
-    // InternalBankSystem.g:2690:1: rule__Bank__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2629:1: rule__Bank__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Bank__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2694:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2695:2: ( RULE_ID )
+            // InternalBankSystem.g:2633:1: ( ( RULE_ID ) )
+            // InternalBankSystem.g:2634:2: ( RULE_ID )
             {
-            // InternalBankSystem.g:2695:2: ( RULE_ID )
-            // InternalBankSystem.g:2696:3: RULE_ID
+            // InternalBankSystem.g:2634:2: ( RULE_ID )
+            // InternalBankSystem.g:2635:3: RULE_ID
             {
              before(grammarAccess.getBankAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8070,22 +7900,22 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Bank__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Bank__CountryOfOriginAssignment_3"
-    // InternalBankSystem.g:2705:1: rule__Bank__CountryOfOriginAssignment_3 : ( RULE_STRING ) ;
-    public final void rule__Bank__CountryOfOriginAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Bank__CountryOfOriginAssignment_4"
+    // InternalBankSystem.g:2644:1: rule__Bank__CountryOfOriginAssignment_4 : ( RULE_STRING ) ;
+    public final void rule__Bank__CountryOfOriginAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2709:1: ( ( RULE_STRING ) )
-            // InternalBankSystem.g:2710:2: ( RULE_STRING )
+            // InternalBankSystem.g:2648:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2649:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:2710:2: ( RULE_STRING )
-            // InternalBankSystem.g:2711:3: RULE_STRING
+            // InternalBankSystem.g:2649:2: ( RULE_STRING )
+            // InternalBankSystem.g:2650:3: RULE_STRING
             {
-             before(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_3_0()); 
+             before(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_3_0()); 
+             after(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_4_0()); 
 
             }
 
@@ -8104,21 +7934,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Bank__CountryOfOriginAssignment_3"
+    // $ANTLR end "rule__Bank__CountryOfOriginAssignment_4"
 
 
     // $ANTLR start "rule__Bank__BranchesAssignment_5"
-    // InternalBankSystem.g:2720:1: rule__Bank__BranchesAssignment_5 : ( ruleBranch ) ;
+    // InternalBankSystem.g:2659:1: rule__Bank__BranchesAssignment_5 : ( ruleBranch ) ;
     public final void rule__Bank__BranchesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2724:1: ( ( ruleBranch ) )
-            // InternalBankSystem.g:2725:2: ( ruleBranch )
+            // InternalBankSystem.g:2663:1: ( ( ruleBranch ) )
+            // InternalBankSystem.g:2664:2: ( ruleBranch )
             {
-            // InternalBankSystem.g:2725:2: ( ruleBranch )
-            // InternalBankSystem.g:2726:3: ruleBranch
+            // InternalBankSystem.g:2664:2: ( ruleBranch )
+            // InternalBankSystem.g:2665:3: ruleBranch
             {
              before(grammarAccess.getBankAccess().getBranchesBranchParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -8149,17 +7979,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Bank__AccountsAssignment_6"
-    // InternalBankSystem.g:2735:1: rule__Bank__AccountsAssignment_6 : ( ruleAccount ) ;
+    // InternalBankSystem.g:2674:1: rule__Bank__AccountsAssignment_6 : ( ruleAccount ) ;
     public final void rule__Bank__AccountsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2739:1: ( ( ruleAccount ) )
-            // InternalBankSystem.g:2740:2: ( ruleAccount )
+            // InternalBankSystem.g:2678:1: ( ( ruleAccount ) )
+            // InternalBankSystem.g:2679:2: ( ruleAccount )
             {
-            // InternalBankSystem.g:2740:2: ( ruleAccount )
-            // InternalBankSystem.g:2741:3: ruleAccount
+            // InternalBankSystem.g:2679:2: ( ruleAccount )
+            // InternalBankSystem.g:2680:3: ruleAccount
             {
              before(grammarAccess.getBankAccess().getAccountsAccountParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -8190,17 +8020,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Bank__TransactionsAssignment_7"
-    // InternalBankSystem.g:2750:1: rule__Bank__TransactionsAssignment_7 : ( ruleTransaction ) ;
+    // InternalBankSystem.g:2689:1: rule__Bank__TransactionsAssignment_7 : ( ruleTransaction ) ;
     public final void rule__Bank__TransactionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2754:1: ( ( ruleTransaction ) )
-            // InternalBankSystem.g:2755:2: ( ruleTransaction )
+            // InternalBankSystem.g:2693:1: ( ( ruleTransaction ) )
+            // InternalBankSystem.g:2694:2: ( ruleTransaction )
             {
-            // InternalBankSystem.g:2755:2: ( ruleTransaction )
-            // InternalBankSystem.g:2756:3: ruleTransaction
+            // InternalBankSystem.g:2694:2: ( ruleTransaction )
+            // InternalBankSystem.g:2695:3: ruleTransaction
             {
              before(grammarAccess.getBankAccess().getTransactionsTransactionParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -8231,17 +8061,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__User__NameAssignment_3"
-    // InternalBankSystem.g:2765:1: rule__User__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2704:1: rule__User__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__User__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2769:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2770:2: ( RULE_ID )
+            // InternalBankSystem.g:2708:1: ( ( RULE_ID ) )
+            // InternalBankSystem.g:2709:2: ( RULE_ID )
             {
-            // InternalBankSystem.g:2770:2: ( RULE_ID )
-            // InternalBankSystem.g:2771:3: RULE_ID
+            // InternalBankSystem.g:2709:2: ( RULE_ID )
+            // InternalBankSystem.g:2710:3: RULE_ID
             {
              before(grammarAccess.getUserAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8268,21 +8098,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__User__EmailAssignment_5"
-    // InternalBankSystem.g:2780:1: rule__User__EmailAssignment_5 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2719:1: rule__User__EmailAssignment_5 : ( RULE_STRING ) ;
     public final void rule__User__EmailAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2784:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2785:2: ( RULE_ID )
+            // InternalBankSystem.g:2723:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2724:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:2785:2: ( RULE_ID )
-            // InternalBankSystem.g:2786:3: RULE_ID
+            // InternalBankSystem.g:2724:2: ( RULE_STRING )
+            // InternalBankSystem.g:2725:3: RULE_STRING
             {
-             before(grammarAccess.getUserAccess().getEmailIDTerminalRuleCall_5_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUserAccess().getEmailIDTerminalRuleCall_5_0()); 
+             before(grammarAccess.getUserAccess().getEmailSTRINGTerminalRuleCall_5_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getUserAccess().getEmailSTRINGTerminalRuleCall_5_0()); 
 
             }
 
@@ -8305,21 +8135,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__User__HashpassAssignment_7"
-    // InternalBankSystem.g:2795:1: rule__User__HashpassAssignment_7 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2734:1: rule__User__HashpassAssignment_7 : ( RULE_STRING ) ;
     public final void rule__User__HashpassAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2799:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2800:2: ( RULE_ID )
+            // InternalBankSystem.g:2738:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2739:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:2800:2: ( RULE_ID )
-            // InternalBankSystem.g:2801:3: RULE_ID
+            // InternalBankSystem.g:2739:2: ( RULE_STRING )
+            // InternalBankSystem.g:2740:3: RULE_STRING
             {
-             before(grammarAccess.getUserAccess().getHashpassIDTerminalRuleCall_7_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUserAccess().getHashpassIDTerminalRuleCall_7_0()); 
+             before(grammarAccess.getUserAccess().getHashpassSTRINGTerminalRuleCall_7_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getUserAccess().getHashpassSTRINGTerminalRuleCall_7_0()); 
 
             }
 
@@ -8342,21 +8172,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__User__AddressAssignment_9"
-    // InternalBankSystem.g:2810:1: rule__User__AddressAssignment_9 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2749:1: rule__User__AddressAssignment_9 : ( RULE_STRING ) ;
     public final void rule__User__AddressAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2814:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2815:2: ( RULE_ID )
+            // InternalBankSystem.g:2753:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2754:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:2815:2: ( RULE_ID )
-            // InternalBankSystem.g:2816:3: RULE_ID
+            // InternalBankSystem.g:2754:2: ( RULE_STRING )
+            // InternalBankSystem.g:2755:3: RULE_STRING
             {
-             before(grammarAccess.getUserAccess().getAddressIDTerminalRuleCall_9_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUserAccess().getAddressIDTerminalRuleCall_9_0()); 
+             before(grammarAccess.getUserAccess().getAddressSTRINGTerminalRuleCall_9_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getUserAccess().getAddressSTRINGTerminalRuleCall_9_0()); 
 
             }
 
@@ -8379,17 +8209,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Branch__AddressAssignment_2"
-    // InternalBankSystem.g:2825:1: rule__Branch__AddressAssignment_2 : ( RULE_STRING ) ;
+    // InternalBankSystem.g:2764:1: rule__Branch__AddressAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Branch__AddressAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2829:1: ( ( RULE_STRING ) )
-            // InternalBankSystem.g:2830:2: ( RULE_STRING )
+            // InternalBankSystem.g:2768:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2769:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:2830:2: ( RULE_STRING )
-            // InternalBankSystem.g:2831:3: RULE_STRING
+            // InternalBankSystem.g:2769:2: ( RULE_STRING )
+            // InternalBankSystem.g:2770:3: RULE_STRING
             {
              before(grammarAccess.getBranchAccess().getAddressSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8416,17 +8246,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Branch__EmployeesAssignment_5"
-    // InternalBankSystem.g:2840:1: rule__Branch__EmployeesAssignment_5 : ( ruleEmployee ) ;
+    // InternalBankSystem.g:2779:1: rule__Branch__EmployeesAssignment_5 : ( ruleEmployee ) ;
     public final void rule__Branch__EmployeesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2844:1: ( ( ruleEmployee ) )
-            // InternalBankSystem.g:2845:2: ( ruleEmployee )
+            // InternalBankSystem.g:2783:1: ( ( ruleEmployee ) )
+            // InternalBankSystem.g:2784:2: ( ruleEmployee )
             {
-            // InternalBankSystem.g:2845:2: ( ruleEmployee )
-            // InternalBankSystem.g:2846:3: ruleEmployee
+            // InternalBankSystem.g:2784:2: ( ruleEmployee )
+            // InternalBankSystem.g:2785:3: ruleEmployee
             {
              before(grammarAccess.getBranchAccess().getEmployeesEmployeeParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -8457,17 +8287,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Employee__NameAssignment_1"
-    // InternalBankSystem.g:2855:1: rule__Employee__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2794:1: rule__Employee__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Employee__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2859:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2860:2: ( RULE_ID )
+            // InternalBankSystem.g:2798:1: ( ( RULE_ID ) )
+            // InternalBankSystem.g:2799:2: ( RULE_ID )
             {
-            // InternalBankSystem.g:2860:2: ( RULE_ID )
-            // InternalBankSystem.g:2861:3: RULE_ID
+            // InternalBankSystem.g:2799:2: ( RULE_ID )
+            // InternalBankSystem.g:2800:3: RULE_ID
             {
              before(grammarAccess.getEmployeeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8494,17 +8324,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Employee__DateAssignment_4"
-    // InternalBankSystem.g:2870:1: rule__Employee__DateAssignment_4 : ( ruleDate ) ;
+    // InternalBankSystem.g:2809:1: rule__Employee__DateAssignment_4 : ( ruleDate ) ;
     public final void rule__Employee__DateAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2874:1: ( ( ruleDate ) )
-            // InternalBankSystem.g:2875:2: ( ruleDate )
+            // InternalBankSystem.g:2813:1: ( ( ruleDate ) )
+            // InternalBankSystem.g:2814:2: ( ruleDate )
             {
-            // InternalBankSystem.g:2875:2: ( ruleDate )
-            // InternalBankSystem.g:2876:3: ruleDate
+            // InternalBankSystem.g:2814:2: ( ruleDate )
+            // InternalBankSystem.g:2815:3: ruleDate
             {
              before(grammarAccess.getEmployeeAccess().getDateDateParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -8535,17 +8365,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Employee__SalaryAssignment_6"
-    // InternalBankSystem.g:2885:1: rule__Employee__SalaryAssignment_6 : ( RULE_INT ) ;
+    // InternalBankSystem.g:2824:1: rule__Employee__SalaryAssignment_6 : ( RULE_INT ) ;
     public final void rule__Employee__SalaryAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2889:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:2890:2: ( RULE_INT )
+            // InternalBankSystem.g:2828:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:2829:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:2890:2: ( RULE_INT )
-            // InternalBankSystem.g:2891:3: RULE_INT
+            // InternalBankSystem.g:2829:2: ( RULE_INT )
+            // InternalBankSystem.g:2830:3: RULE_INT
             {
              before(grammarAccess.getEmployeeAccess().getSalaryINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8572,17 +8402,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Employee__CurrentRoleAssignment_8"
-    // InternalBankSystem.g:2900:1: rule__Employee__CurrentRoleAssignment_8 : ( ruleEmployeeRole ) ;
+    // InternalBankSystem.g:2839:1: rule__Employee__CurrentRoleAssignment_8 : ( ruleEmployeeRole ) ;
     public final void rule__Employee__CurrentRoleAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2904:1: ( ( ruleEmployeeRole ) )
-            // InternalBankSystem.g:2905:2: ( ruleEmployeeRole )
+            // InternalBankSystem.g:2843:1: ( ( ruleEmployeeRole ) )
+            // InternalBankSystem.g:2844:2: ( ruleEmployeeRole )
             {
-            // InternalBankSystem.g:2905:2: ( ruleEmployeeRole )
-            // InternalBankSystem.g:2906:3: ruleEmployeeRole
+            // InternalBankSystem.g:2844:2: ( ruleEmployeeRole )
+            // InternalBankSystem.g:2845:3: ruleEmployeeRole
             {
              before(grammarAccess.getEmployeeAccess().getCurrentRoleEmployeeRoleParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -8612,26 +8442,26 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Employee__CurrentRoleAssignment_8"
 
 
-    // $ANTLR start "rule__Account__HoldersAssignment_2"
-    // InternalBankSystem.g:2915:1: rule__Account__HoldersAssignment_2 : ( ruleUser ) ;
-    public final void rule__Account__HoldersAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Account__HolderAssignment_2"
+    // InternalBankSystem.g:2854:1: rule__Account__HolderAssignment_2 : ( ruleUser ) ;
+    public final void rule__Account__HolderAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2919:1: ( ( ruleUser ) )
-            // InternalBankSystem.g:2920:2: ( ruleUser )
+            // InternalBankSystem.g:2858:1: ( ( ruleUser ) )
+            // InternalBankSystem.g:2859:2: ( ruleUser )
             {
-            // InternalBankSystem.g:2920:2: ( ruleUser )
-            // InternalBankSystem.g:2921:3: ruleUser
+            // InternalBankSystem.g:2859:2: ( ruleUser )
+            // InternalBankSystem.g:2860:3: ruleUser
             {
-             before(grammarAccess.getAccountAccess().getHoldersUserParserRuleCall_2_0()); 
+             before(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleUser();
 
             state._fsp--;
 
-             after(grammarAccess.getAccountAccess().getHoldersUserParserRuleCall_2_0()); 
+             after(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0()); 
 
             }
 
@@ -8650,21 +8480,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Account__HoldersAssignment_2"
+    // $ANTLR end "rule__Account__HolderAssignment_2"
 
 
     // $ANTLR start "rule__Account__BalanceAssignment_4"
-    // InternalBankSystem.g:2930:1: rule__Account__BalanceAssignment_4 : ( RULE_INT ) ;
+    // InternalBankSystem.g:2869:1: rule__Account__BalanceAssignment_4 : ( RULE_INT ) ;
     public final void rule__Account__BalanceAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2934:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:2935:2: ( RULE_INT )
+            // InternalBankSystem.g:2873:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:2874:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:2935:2: ( RULE_INT )
-            // InternalBankSystem.g:2936:3: RULE_INT
+            // InternalBankSystem.g:2874:2: ( RULE_INT )
+            // InternalBankSystem.g:2875:3: RULE_INT
             {
              before(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8691,17 +8521,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__AccountNumAssignment_6"
-    // InternalBankSystem.g:2945:1: rule__Account__AccountNumAssignment_6 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2884:1: rule__Account__AccountNumAssignment_6 : ( RULE_ID ) ;
     public final void rule__Account__AccountNumAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2949:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:2950:2: ( RULE_ID )
+            // InternalBankSystem.g:2888:1: ( ( RULE_ID ) )
+            // InternalBankSystem.g:2889:2: ( RULE_ID )
             {
-            // InternalBankSystem.g:2950:2: ( RULE_ID )
-            // InternalBankSystem.g:2951:3: RULE_ID
+            // InternalBankSystem.g:2889:2: ( RULE_ID )
+            // InternalBankSystem.g:2890:3: RULE_ID
             {
              before(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8728,17 +8558,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Account__MfaTypeAssignment_8"
-    // InternalBankSystem.g:2960:1: rule__Account__MfaTypeAssignment_8 : ( RULE_STRING ) ;
+    // InternalBankSystem.g:2899:1: rule__Account__MfaTypeAssignment_8 : ( RULE_STRING ) ;
     public final void rule__Account__MfaTypeAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2964:1: ( ( RULE_STRING ) )
-            // InternalBankSystem.g:2965:2: ( RULE_STRING )
+            // InternalBankSystem.g:2903:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2904:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:2965:2: ( RULE_STRING )
-            // InternalBankSystem.g:2966:3: RULE_STRING
+            // InternalBankSystem.g:2904:2: ( RULE_STRING )
+            // InternalBankSystem.g:2905:3: RULE_STRING
             {
              before(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8765,17 +8595,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__SavingsAccount__IntRateAssignment_2"
-    // InternalBankSystem.g:2975:1: rule__SavingsAccount__IntRateAssignment_2 : ( RULE_INT ) ;
+    // InternalBankSystem.g:2914:1: rule__SavingsAccount__IntRateAssignment_2 : ( RULE_INT ) ;
     public final void rule__SavingsAccount__IntRateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2979:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:2980:2: ( RULE_INT )
+            // InternalBankSystem.g:2918:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:2919:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:2980:2: ( RULE_INT )
-            // InternalBankSystem.g:2981:3: RULE_INT
+            // InternalBankSystem.g:2919:2: ( RULE_INT )
+            // InternalBankSystem.g:2920:3: RULE_INT
             {
              before(grammarAccess.getSavingsAccountAccess().getIntRateINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8802,17 +8632,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__CheckingAccount__DepPerMonthAssignment_2"
-    // InternalBankSystem.g:2990:1: rule__CheckingAccount__DepPerMonthAssignment_2 : ( RULE_INT ) ;
+    // InternalBankSystem.g:2929:1: rule__CheckingAccount__DepPerMonthAssignment_2 : ( RULE_INT ) ;
     public final void rule__CheckingAccount__DepPerMonthAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:2994:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:2995:2: ( RULE_INT )
+            // InternalBankSystem.g:2933:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:2934:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:2995:2: ( RULE_INT )
-            // InternalBankSystem.g:2996:3: RULE_INT
+            // InternalBankSystem.g:2934:2: ( RULE_INT )
+            // InternalBankSystem.g:2935:3: RULE_INT
             {
              before(grammarAccess.getCheckingAccountAccess().getDepPerMonthINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8839,21 +8669,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__MortgageAccount__LoanPeriodAssignment_2"
-    // InternalBankSystem.g:3005:1: rule__MortgageAccount__LoanPeriodAssignment_2 : ( RULE_ID ) ;
+    // InternalBankSystem.g:2944:1: rule__MortgageAccount__LoanPeriodAssignment_2 : ( RULE_STRING ) ;
     public final void rule__MortgageAccount__LoanPeriodAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3009:1: ( ( RULE_ID ) )
-            // InternalBankSystem.g:3010:2: ( RULE_ID )
+            // InternalBankSystem.g:2948:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:2949:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:3010:2: ( RULE_ID )
-            // InternalBankSystem.g:3011:3: RULE_ID
+            // InternalBankSystem.g:2949:2: ( RULE_STRING )
+            // InternalBankSystem.g:2950:3: RULE_STRING
             {
-             before(grammarAccess.getMortgageAccountAccess().getLoanPeriodIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getMortgageAccountAccess().getLoanPeriodIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -8875,26 +8705,26 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__MortgageAccount__LoanPeriodAssignment_2"
 
 
-    // $ANTLR start "rule__Transaction__SourceAccountAssignment_2"
-    // InternalBankSystem.g:3020:1: rule__Transaction__SourceAccountAssignment_2 : ( ruleAccount ) ;
-    public final void rule__Transaction__SourceAccountAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Transaction__AccountAssignment_2"
+    // InternalBankSystem.g:2959:1: rule__Transaction__AccountAssignment_2 : ( ruleAccount ) ;
+    public final void rule__Transaction__AccountAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3024:1: ( ( ruleAccount ) )
-            // InternalBankSystem.g:3025:2: ( ruleAccount )
+            // InternalBankSystem.g:2963:1: ( ( ruleAccount ) )
+            // InternalBankSystem.g:2964:2: ( ruleAccount )
             {
-            // InternalBankSystem.g:3025:2: ( ruleAccount )
-            // InternalBankSystem.g:3026:3: ruleAccount
+            // InternalBankSystem.g:2964:2: ( ruleAccount )
+            // InternalBankSystem.g:2965:3: ruleAccount
             {
-             before(grammarAccess.getTransactionAccess().getSourceAccountAccountParserRuleCall_2_0()); 
+             before(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleAccount();
 
             state._fsp--;
 
-             after(grammarAccess.getTransactionAccess().getSourceAccountAccountParserRuleCall_2_0()); 
+             after(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0()); 
 
             }
 
@@ -8913,66 +8743,25 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Transaction__SourceAccountAssignment_2"
+    // $ANTLR end "rule__Transaction__AccountAssignment_2"
 
 
-    // $ANTLR start "rule__Transaction__TargetAccountAssignment_4"
-    // InternalBankSystem.g:3035:1: rule__Transaction__TargetAccountAssignment_4 : ( ruleAccount ) ;
-    public final void rule__Transaction__TargetAccountAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalBankSystem.g:3039:1: ( ( ruleAccount ) )
-            // InternalBankSystem.g:3040:2: ( ruleAccount )
-            {
-            // InternalBankSystem.g:3040:2: ( ruleAccount )
-            // InternalBankSystem.g:3041:3: ruleAccount
-            {
-             before(grammarAccess.getTransactionAccess().getTargetAccountAccountParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_2);
-            ruleAccount();
-
-            state._fsp--;
-
-             after(grammarAccess.getTransactionAccess().getTargetAccountAccountParserRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Transaction__TargetAccountAssignment_4"
-
-
-    // $ANTLR start "rule__Transaction__AmountAssignment_6"
-    // InternalBankSystem.g:3050:1: rule__Transaction__AmountAssignment_6 : ( RULE_INT ) ;
-    public final void rule__Transaction__AmountAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__Transaction__AmountAssignment_4"
+    // InternalBankSystem.g:2974:1: rule__Transaction__AmountAssignment_4 : ( RULE_INT ) ;
+    public final void rule__Transaction__AmountAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3054:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:3055:2: ( RULE_INT )
+            // InternalBankSystem.g:2978:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:2979:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:3055:2: ( RULE_INT )
-            // InternalBankSystem.g:3056:3: RULE_INT
+            // InternalBankSystem.g:2979:2: ( RULE_INT )
+            // InternalBankSystem.g:2980:3: RULE_INT
             {
-             before(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_6_0()); 
+             before(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_6_0()); 
+             after(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_4_0()); 
 
             }
 
@@ -8991,29 +8780,29 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Transaction__AmountAssignment_6"
+    // $ANTLR end "rule__Transaction__AmountAssignment_4"
 
 
-    // $ANTLR start "rule__Transaction__DateAssignment_8"
-    // InternalBankSystem.g:3065:1: rule__Transaction__DateAssignment_8 : ( ruleDate ) ;
-    public final void rule__Transaction__DateAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Transaction__DateAssignment_6"
+    // InternalBankSystem.g:2989:1: rule__Transaction__DateAssignment_6 : ( ruleDate ) ;
+    public final void rule__Transaction__DateAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3069:1: ( ( ruleDate ) )
-            // InternalBankSystem.g:3070:2: ( ruleDate )
+            // InternalBankSystem.g:2993:1: ( ( ruleDate ) )
+            // InternalBankSystem.g:2994:2: ( ruleDate )
             {
-            // InternalBankSystem.g:3070:2: ( ruleDate )
-            // InternalBankSystem.g:3071:3: ruleDate
+            // InternalBankSystem.g:2994:2: ( ruleDate )
+            // InternalBankSystem.g:2995:3: ruleDate
             {
-             before(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_8_0()); 
+             before(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
             ruleDate();
 
             state._fsp--;
 
-             after(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_8_0()); 
+             after(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0()); 
 
             }
 
@@ -9032,29 +8821,29 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Transaction__DateAssignment_8"
+    // $ANTLR end "rule__Transaction__DateAssignment_6"
 
 
-    // $ANTLR start "rule__Transaction__DebitAssignment_10"
-    // InternalBankSystem.g:3080:1: rule__Transaction__DebitAssignment_10 : ( ruleBoolean ) ;
-    public final void rule__Transaction__DebitAssignment_10() throws RecognitionException {
+    // $ANTLR start "rule__Transaction__DebitAssignment_8"
+    // InternalBankSystem.g:3004:1: rule__Transaction__DebitAssignment_8 : ( ruleBoolean ) ;
+    public final void rule__Transaction__DebitAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3084:1: ( ( ruleBoolean ) )
-            // InternalBankSystem.g:3085:2: ( ruleBoolean )
+            // InternalBankSystem.g:3008:1: ( ( ruleBoolean ) )
+            // InternalBankSystem.g:3009:2: ( ruleBoolean )
             {
-            // InternalBankSystem.g:3085:2: ( ruleBoolean )
-            // InternalBankSystem.g:3086:3: ruleBoolean
+            // InternalBankSystem.g:3009:2: ( ruleBoolean )
+            // InternalBankSystem.g:3010:3: ruleBoolean
             {
-             before(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_10_0()); 
+             before(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
             ruleBoolean();
 
             state._fsp--;
 
-             after(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_10_0()); 
+             after(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0()); 
 
             }
 
@@ -9073,25 +8862,25 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Transaction__DebitAssignment_10"
+    // $ANTLR end "rule__Transaction__DebitAssignment_8"
 
 
-    // $ANTLR start "rule__Transaction__VendorNameAssignment_12"
-    // InternalBankSystem.g:3095:1: rule__Transaction__VendorNameAssignment_12 : ( RULE_STRING ) ;
-    public final void rule__Transaction__VendorNameAssignment_12() throws RecognitionException {
+    // $ANTLR start "rule__Transaction__VendorNameAssignment_10"
+    // InternalBankSystem.g:3019:1: rule__Transaction__VendorNameAssignment_10 : ( RULE_STRING ) ;
+    public final void rule__Transaction__VendorNameAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3099:1: ( ( RULE_STRING ) )
-            // InternalBankSystem.g:3100:2: ( RULE_STRING )
+            // InternalBankSystem.g:3023:1: ( ( RULE_STRING ) )
+            // InternalBankSystem.g:3024:2: ( RULE_STRING )
             {
-            // InternalBankSystem.g:3100:2: ( RULE_STRING )
-            // InternalBankSystem.g:3101:3: RULE_STRING
+            // InternalBankSystem.g:3024:2: ( RULE_STRING )
+            // InternalBankSystem.g:3025:3: RULE_STRING
             {
-             before(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_12_0()); 
+             before(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_10_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_12_0()); 
+             after(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_10_0()); 
 
             }
 
@@ -9110,21 +8899,21 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Transaction__VendorNameAssignment_12"
+    // $ANTLR end "rule__Transaction__VendorNameAssignment_10"
 
 
     // $ANTLR start "rule__Date__YearAssignment_0"
-    // InternalBankSystem.g:3110:1: rule__Date__YearAssignment_0 : ( RULE_INT ) ;
+    // InternalBankSystem.g:3034:1: rule__Date__YearAssignment_0 : ( RULE_INT ) ;
     public final void rule__Date__YearAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3114:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:3115:2: ( RULE_INT )
+            // InternalBankSystem.g:3038:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:3039:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:3115:2: ( RULE_INT )
-            // InternalBankSystem.g:3116:3: RULE_INT
+            // InternalBankSystem.g:3039:2: ( RULE_INT )
+            // InternalBankSystem.g:3040:3: RULE_INT
             {
              before(grammarAccess.getDateAccess().getYearINTTerminalRuleCall_0_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9151,17 +8940,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__MonthAssignment_2"
-    // InternalBankSystem.g:3125:1: rule__Date__MonthAssignment_2 : ( RULE_INT ) ;
+    // InternalBankSystem.g:3049:1: rule__Date__MonthAssignment_2 : ( RULE_INT ) ;
     public final void rule__Date__MonthAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3129:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:3130:2: ( RULE_INT )
+            // InternalBankSystem.g:3053:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:3054:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:3130:2: ( RULE_INT )
-            // InternalBankSystem.g:3131:3: RULE_INT
+            // InternalBankSystem.g:3054:2: ( RULE_INT )
+            // InternalBankSystem.g:3055:3: RULE_INT
             {
              before(grammarAccess.getDateAccess().getMonthINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9188,17 +8977,17 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Date__DayAssignment_4"
-    // InternalBankSystem.g:3140:1: rule__Date__DayAssignment_4 : ( RULE_INT ) ;
+    // InternalBankSystem.g:3064:1: rule__Date__DayAssignment_4 : ( RULE_INT ) ;
     public final void rule__Date__DayAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBankSystem.g:3144:1: ( ( RULE_INT ) )
-            // InternalBankSystem.g:3145:2: ( RULE_INT )
+            // InternalBankSystem.g:3068:1: ( ( RULE_INT ) )
+            // InternalBankSystem.g:3069:2: ( RULE_INT )
             {
-            // InternalBankSystem.g:3145:2: ( RULE_INT )
-            // InternalBankSystem.g:3146:3: RULE_INT
+            // InternalBankSystem.g:3069:2: ( RULE_INT )
+            // InternalBankSystem.g:3070:3: RULE_INT
             {
              before(grammarAccess.getDateAccess().getDayINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -9235,8 +9024,8 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000200002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000002A800100000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000004000002L});
@@ -9247,30 +9036,27 @@ public class InternalBankSystemParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x000000A800000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008001800L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008001802L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x000000A800000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000800000000000L});
 
 }

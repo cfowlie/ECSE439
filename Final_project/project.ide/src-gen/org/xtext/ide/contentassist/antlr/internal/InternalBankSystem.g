@@ -683,9 +683,9 @@ rule__Bank__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBankAccess().getCountryKeyword_2()); }
-	'Country'
-	{ after(grammarAccess.getBankAccess().getCountryKeyword_2()); }
+	{ before(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_2()); }
+	'{'
+	{ after(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_2()); }
 )
 ;
 finally {
@@ -710,9 +710,9 @@ rule__Bank__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBankAccess().getCountryOfOriginAssignment_3()); }
-	(rule__Bank__CountryOfOriginAssignment_3)
-	{ after(grammarAccess.getBankAccess().getCountryOfOriginAssignment_3()); }
+	{ before(grammarAccess.getBankAccess().getCountryKeyword_3()); }
+	'Country'
+	{ after(grammarAccess.getBankAccess().getCountryKeyword_3()); }
 )
 ;
 finally {
@@ -737,9 +737,9 @@ rule__Bank__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_4()); }
-	'{'
-	{ after(grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_4()); }
+	{ before(grammarAccess.getBankAccess().getCountryOfOriginAssignment_4()); }
+	(rule__Bank__CountryOfOriginAssignment_4)
+	{ after(grammarAccess.getBankAccess().getCountryOfOriginAssignment_4()); }
 )
 ;
 finally {
@@ -1258,7 +1258,7 @@ rule__Branch__Group__3__Impl
 :
 (
 	{ before(grammarAccess.getBranchAccess().getBoothParserRuleCall_3()); }
-	ruleBooth
+	(ruleBooth)?
 	{ after(grammarAccess.getBranchAccess().getBoothParserRuleCall_3()); }
 )
 ;
@@ -1285,7 +1285,7 @@ rule__Branch__Group__4__Impl
 :
 (
 	{ before(grammarAccess.getBranchAccess().getVaultParserRuleCall_4()); }
-	ruleVault
+	(ruleVault)?
 	{ after(grammarAccess.getBranchAccess().getVaultParserRuleCall_4()); }
 )
 ;
@@ -1696,16 +1696,9 @@ rule__Account__Group__2__Impl
 	}
 :
 (
-	(
-		{ before(grammarAccess.getAccountAccess().getHoldersAssignment_2()); }
-		(rule__Account__HoldersAssignment_2)
-		{ after(grammarAccess.getAccountAccess().getHoldersAssignment_2()); }
-	)
-	(
-		{ before(grammarAccess.getAccountAccess().getHoldersAssignment_2()); }
-		(rule__Account__HoldersAssignment_2)*
-		{ after(grammarAccess.getAccountAccess().getHoldersAssignment_2()); }
-	)
+	{ before(grammarAccess.getAccountAccess().getHolderAssignment_2()); }
+	(rule__Account__HolderAssignment_2)
+	{ after(grammarAccess.getAccountAccess().getHolderAssignment_2()); }
 )
 ;
 finally {
@@ -2189,9 +2182,9 @@ rule__Transaction__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getSourceKeyword_1()); }
-	'Source:'
-	{ after(grammarAccess.getTransactionAccess().getSourceKeyword_1()); }
+	{ before(grammarAccess.getTransactionAccess().getAccountKeyword_1()); }
+	'Account:'
+	{ after(grammarAccess.getTransactionAccess().getAccountKeyword_1()); }
 )
 ;
 finally {
@@ -2216,9 +2209,9 @@ rule__Transaction__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getSourceAccountAssignment_2()); }
-	(rule__Transaction__SourceAccountAssignment_2)
-	{ after(grammarAccess.getTransactionAccess().getSourceAccountAssignment_2()); }
+	{ before(grammarAccess.getTransactionAccess().getAccountAssignment_2()); }
+	(rule__Transaction__AccountAssignment_2)
+	{ after(grammarAccess.getTransactionAccess().getAccountAssignment_2()); }
 )
 ;
 finally {
@@ -2243,9 +2236,9 @@ rule__Transaction__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getTargetKeyword_3()); }
-	'Target:'
-	{ after(grammarAccess.getTransactionAccess().getTargetKeyword_3()); }
+	{ before(grammarAccess.getTransactionAccess().getAmountKeyword_3()); }
+	'Amount:'
+	{ after(grammarAccess.getTransactionAccess().getAmountKeyword_3()); }
 )
 ;
 finally {
@@ -2270,9 +2263,9 @@ rule__Transaction__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getTargetAccountAssignment_4()); }
-	(rule__Transaction__TargetAccountAssignment_4)
-	{ after(grammarAccess.getTransactionAccess().getTargetAccountAssignment_4()); }
+	{ before(grammarAccess.getTransactionAccess().getAmountAssignment_4()); }
+	(rule__Transaction__AmountAssignment_4)
+	{ after(grammarAccess.getTransactionAccess().getAmountAssignment_4()); }
 )
 ;
 finally {
@@ -2297,9 +2290,9 @@ rule__Transaction__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getAmountKeyword_5()); }
-	'Amount:'
-	{ after(grammarAccess.getTransactionAccess().getAmountKeyword_5()); }
+	{ before(grammarAccess.getTransactionAccess().getDateKeyword_5()); }
+	'Date'
+	{ after(grammarAccess.getTransactionAccess().getDateKeyword_5()); }
 )
 ;
 finally {
@@ -2324,9 +2317,9 @@ rule__Transaction__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getAmountAssignment_6()); }
-	(rule__Transaction__AmountAssignment_6)
-	{ after(grammarAccess.getTransactionAccess().getAmountAssignment_6()); }
+	{ before(grammarAccess.getTransactionAccess().getDateAssignment_6()); }
+	(rule__Transaction__DateAssignment_6)
+	{ after(grammarAccess.getTransactionAccess().getDateAssignment_6()); }
 )
 ;
 finally {
@@ -2351,9 +2344,9 @@ rule__Transaction__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getDateKeyword_7()); }
-	'Date'
-	{ after(grammarAccess.getTransactionAccess().getDateKeyword_7()); }
+	{ before(grammarAccess.getTransactionAccess().getDebitKeyword_7()); }
+	'Debit'
+	{ after(grammarAccess.getTransactionAccess().getDebitKeyword_7()); }
 )
 ;
 finally {
@@ -2378,9 +2371,9 @@ rule__Transaction__Group__8__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getDateAssignment_8()); }
-	(rule__Transaction__DateAssignment_8)
-	{ after(grammarAccess.getTransactionAccess().getDateAssignment_8()); }
+	{ before(grammarAccess.getTransactionAccess().getDebitAssignment_8()); }
+	(rule__Transaction__DebitAssignment_8)
+	{ after(grammarAccess.getTransactionAccess().getDebitAssignment_8()); }
 )
 ;
 finally {
@@ -2405,9 +2398,9 @@ rule__Transaction__Group__9__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getDebitKeyword_9()); }
-	'Debit'
-	{ after(grammarAccess.getTransactionAccess().getDebitKeyword_9()); }
+	{ before(grammarAccess.getTransactionAccess().getVendorNameKeyword_9()); }
+	'Vendor name'
+	{ after(grammarAccess.getTransactionAccess().getVendorNameKeyword_9()); }
 )
 ;
 finally {
@@ -2432,9 +2425,9 @@ rule__Transaction__Group__10__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getDebitAssignment_10()); }
-	(rule__Transaction__DebitAssignment_10)
-	{ after(grammarAccess.getTransactionAccess().getDebitAssignment_10()); }
+	{ before(grammarAccess.getTransactionAccess().getVendorNameAssignment_10()); }
+	(rule__Transaction__VendorNameAssignment_10)
+	{ after(grammarAccess.getTransactionAccess().getVendorNameAssignment_10()); }
 )
 ;
 finally {
@@ -2447,7 +2440,6 @@ rule__Transaction__Group__11
 	}
 :
 	rule__Transaction__Group__11__Impl
-	rule__Transaction__Group__12
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2459,62 +2451,9 @@ rule__Transaction__Group__11__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTransactionAccess().getVendorNameKeyword_11()); }
-	'Vendor name'
-	{ after(grammarAccess.getTransactionAccess().getVendorNameKeyword_11()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__Group__12
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Transaction__Group__12__Impl
-	rule__Transaction__Group__13
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__Group__12__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getTransactionAccess().getVendorNameAssignment_12()); }
-	(rule__Transaction__VendorNameAssignment_12)
-	{ after(grammarAccess.getTransactionAccess().getVendorNameAssignment_12()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__Group__13
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Transaction__Group__13__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__Group__13__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_13()); }
+	{ before(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_11()); }
 	'}'
-	{ after(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_13()); }
+	{ after(grammarAccess.getTransactionAccess().getRightCurlyBracketKeyword_11()); }
 )
 ;
 finally {
@@ -2702,15 +2641,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Bank__CountryOfOriginAssignment_3
+rule__Bank__CountryOfOriginAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_3_0()); }
+		{ before(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_4_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_3_0()); }
+		{ after(grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
@@ -2783,9 +2722,9 @@ rule__User__EmailAssignment_5
 	}
 :
 	(
-		{ before(grammarAccess.getUserAccess().getEmailIDTerminalRuleCall_5_0()); }
-		RULE_ID
-		{ after(grammarAccess.getUserAccess().getEmailIDTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getUserAccess().getEmailSTRINGTerminalRuleCall_5_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getUserAccess().getEmailSTRINGTerminalRuleCall_5_0()); }
 	)
 ;
 finally {
@@ -2798,9 +2737,9 @@ rule__User__HashpassAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getUserAccess().getHashpassIDTerminalRuleCall_7_0()); }
-		RULE_ID
-		{ after(grammarAccess.getUserAccess().getHashpassIDTerminalRuleCall_7_0()); }
+		{ before(grammarAccess.getUserAccess().getHashpassSTRINGTerminalRuleCall_7_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getUserAccess().getHashpassSTRINGTerminalRuleCall_7_0()); }
 	)
 ;
 finally {
@@ -2813,9 +2752,9 @@ rule__User__AddressAssignment_9
 	}
 :
 	(
-		{ before(grammarAccess.getUserAccess().getAddressIDTerminalRuleCall_9_0()); }
-		RULE_ID
-		{ after(grammarAccess.getUserAccess().getAddressIDTerminalRuleCall_9_0()); }
+		{ before(grammarAccess.getUserAccess().getAddressSTRINGTerminalRuleCall_9_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getUserAccess().getAddressSTRINGTerminalRuleCall_9_0()); }
 	)
 ;
 finally {
@@ -2912,15 +2851,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Account__HoldersAssignment_2
+rule__Account__HolderAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAccountAccess().getHoldersUserParserRuleCall_2_0()); }
+		{ before(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0()); }
 		ruleUser
-		{ after(grammarAccess.getAccountAccess().getHoldersUserParserRuleCall_2_0()); }
+		{ after(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -3008,99 +2947,84 @@ rule__MortgageAccount__LoanPeriodAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getMortgageAccountAccess().getLoanPeriodIDTerminalRuleCall_2_0()); }
-		RULE_ID
-		{ after(grammarAccess.getMortgageAccountAccess().getLoanPeriodIDTerminalRuleCall_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__SourceAccountAssignment_2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getTransactionAccess().getSourceAccountAccountParserRuleCall_2_0()); }
-		ruleAccount
-		{ after(grammarAccess.getTransactionAccess().getSourceAccountAccountParserRuleCall_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__TargetAccountAssignment_4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getTransactionAccess().getTargetAccountAccountParserRuleCall_4_0()); }
-		ruleAccount
-		{ after(grammarAccess.getTransactionAccess().getTargetAccountAccountParserRuleCall_4_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__AmountAssignment_6
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_6_0()); }
-		RULE_INT
-		{ after(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_6_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__DateAssignment_8
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_8_0()); }
-		ruleDate
-		{ after(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_8_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__DebitAssignment_10
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_10_0()); }
-		ruleBoolean
-		{ after(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_10_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Transaction__VendorNameAssignment_12
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_12_0()); }
+		{ before(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_12_0()); }
+		{ after(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Transaction__AccountAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0()); }
+		ruleAccount
+		{ after(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Transaction__AmountAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_4_0()); }
+		RULE_INT
+		{ after(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Transaction__DateAssignment_6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0()); }
+		ruleDate
+		{ after(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Transaction__DebitAssignment_8
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0()); }
+		ruleBoolean
+		{ after(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Transaction__VendorNameAssignment_10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_10_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getTransactionAccess().getVendorNameSTRINGTerminalRuleCall_10_0()); }
 	)
 ;
 finally {

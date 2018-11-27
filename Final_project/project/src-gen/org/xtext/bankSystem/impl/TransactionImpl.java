@@ -25,8 +25,7 @@ import org.xtext.bankSystem.Transaction;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.bankSystem.impl.TransactionImpl#getSourceAccount <em>Source Account</em>}</li>
- *   <li>{@link org.xtext.bankSystem.impl.TransactionImpl#getTargetAccount <em>Target Account</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.TransactionImpl#getAccount <em>Account</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.TransactionImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.TransactionImpl#getDate <em>Date</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.TransactionImpl#getDebit <em>Debit</em>}</li>
@@ -38,24 +37,14 @@ import org.xtext.bankSystem.Transaction;
 public class TransactionImpl extends MinimalEObjectImpl.Container implements Transaction
 {
   /**
-   * The cached value of the '{@link #getSourceAccount() <em>Source Account</em>}' containment reference.
+   * The cached value of the '{@link #getAccount() <em>Account</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSourceAccount()
+   * @see #getAccount()
    * @generated
    * @ordered
    */
-  protected Account sourceAccount;
-
-  /**
-   * The cached value of the '{@link #getTargetAccount() <em>Target Account</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTargetAccount()
-   * @generated
-   * @ordered
-   */
-  protected Account targetAccount;
+  protected Account account;
 
   /**
    * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
@@ -153,9 +142,9 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public Account getSourceAccount()
+  public Account getAccount()
   {
-    return sourceAccount;
+    return account;
   }
 
   /**
@@ -163,13 +152,13 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSourceAccount(Account newSourceAccount, NotificationChain msgs)
+  public NotificationChain basicSetAccount(Account newAccount, NotificationChain msgs)
   {
-    Account oldSourceAccount = sourceAccount;
-    sourceAccount = newSourceAccount;
+    Account oldAccount = account;
+    account = newAccount;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT, oldSourceAccount, newSourceAccount);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__ACCOUNT, oldAccount, newAccount);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -180,68 +169,20 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSourceAccount(Account newSourceAccount)
+  public void setAccount(Account newAccount)
   {
-    if (newSourceAccount != sourceAccount)
+    if (newAccount != account)
     {
       NotificationChain msgs = null;
-      if (sourceAccount != null)
-        msgs = ((InternalEObject)sourceAccount).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT, null, msgs);
-      if (newSourceAccount != null)
-        msgs = ((InternalEObject)newSourceAccount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT, null, msgs);
-      msgs = basicSetSourceAccount(newSourceAccount, msgs);
+      if (account != null)
+        msgs = ((InternalEObject)account).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__ACCOUNT, null, msgs);
+      if (newAccount != null)
+        msgs = ((InternalEObject)newAccount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__ACCOUNT, null, msgs);
+      msgs = basicSetAccount(newAccount, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT, newSourceAccount, newSourceAccount));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Account getTargetAccount()
-  {
-    return targetAccount;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTargetAccount(Account newTargetAccount, NotificationChain msgs)
-  {
-    Account oldTargetAccount = targetAccount;
-    targetAccount = newTargetAccount;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__TARGET_ACCOUNT, oldTargetAccount, newTargetAccount);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTargetAccount(Account newTargetAccount)
-  {
-    if (newTargetAccount != targetAccount)
-    {
-      NotificationChain msgs = null;
-      if (targetAccount != null)
-        msgs = ((InternalEObject)targetAccount).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__TARGET_ACCOUNT, null, msgs);
-      if (newTargetAccount != null)
-        msgs = ((InternalEObject)newTargetAccount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__TARGET_ACCOUNT, null, msgs);
-      msgs = basicSetTargetAccount(newTargetAccount, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__TARGET_ACCOUNT, newTargetAccount, newTargetAccount));
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__ACCOUNT, newAccount, newAccount));
   }
 
   /**
@@ -371,10 +312,8 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
   {
     switch (featureID)
     {
-      case BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT:
-        return basicSetSourceAccount(null, msgs);
-      case BankSystemPackage.TRANSACTION__TARGET_ACCOUNT:
-        return basicSetTargetAccount(null, msgs);
+      case BankSystemPackage.TRANSACTION__ACCOUNT:
+        return basicSetAccount(null, msgs);
       case BankSystemPackage.TRANSACTION__DATE:
         return basicSetDate(null, msgs);
     }
@@ -391,10 +330,8 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
   {
     switch (featureID)
     {
-      case BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT:
-        return getSourceAccount();
-      case BankSystemPackage.TRANSACTION__TARGET_ACCOUNT:
-        return getTargetAccount();
+      case BankSystemPackage.TRANSACTION__ACCOUNT:
+        return getAccount();
       case BankSystemPackage.TRANSACTION__AMOUNT:
         return getAmount();
       case BankSystemPackage.TRANSACTION__DATE:
@@ -417,11 +354,8 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
   {
     switch (featureID)
     {
-      case BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT:
-        setSourceAccount((Account)newValue);
-        return;
-      case BankSystemPackage.TRANSACTION__TARGET_ACCOUNT:
-        setTargetAccount((Account)newValue);
+      case BankSystemPackage.TRANSACTION__ACCOUNT:
+        setAccount((Account)newValue);
         return;
       case BankSystemPackage.TRANSACTION__AMOUNT:
         setAmount((Integer)newValue);
@@ -449,11 +383,8 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
   {
     switch (featureID)
     {
-      case BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT:
-        setSourceAccount((Account)null);
-        return;
-      case BankSystemPackage.TRANSACTION__TARGET_ACCOUNT:
-        setTargetAccount((Account)null);
+      case BankSystemPackage.TRANSACTION__ACCOUNT:
+        setAccount((Account)null);
         return;
       case BankSystemPackage.TRANSACTION__AMOUNT:
         setAmount(AMOUNT_EDEFAULT);
@@ -481,10 +412,8 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
   {
     switch (featureID)
     {
-      case BankSystemPackage.TRANSACTION__SOURCE_ACCOUNT:
-        return sourceAccount != null;
-      case BankSystemPackage.TRANSACTION__TARGET_ACCOUNT:
-        return targetAccount != null;
+      case BankSystemPackage.TRANSACTION__ACCOUNT:
+        return account != null;
       case BankSystemPackage.TRANSACTION__AMOUNT:
         return amount != AMOUNT_EDEFAULT;
       case BankSystemPackage.TRANSACTION__DATE:

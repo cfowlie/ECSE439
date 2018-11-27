@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: xpandtranslation
 Bundle-SymbolicName: xpandtranslation; singleton:=true
 Bundle-Version: 1.0.0
-Require-Bundle:  org.eclipse.xtend.profiler;resolution:=optional,
+Require-Bundle: org.eclipse.xtend.profiler;resolution:=optional,
  org.apache.commons.logging,
  org.apache.log4j;resolution:=optional,
  org.eclipse.jdt.core;bundle-version="3.5.0",
@@ -19,5 +19,6 @@ Require-Bundle:  org.eclipse.xtend.profiler;resolution:=optional,
  org.eclipse.xtend.backend;bundle-version="1.0.0";resolution:=optional,
  org.eclipse.xtend.middleend.xpand;bundle-version="1.0.0";resolution:=optional,
  org.eclipse.xtend.middleend.xtend;bundle-version="1.0.0";resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ test;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

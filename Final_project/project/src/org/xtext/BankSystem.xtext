@@ -8,8 +8,8 @@ BankSystem:
 ;
 Bank: 
 	'Bank' name=ID
-	'Country' countryOfOrigin= STRING
 	'{'
+		'Country' countryOfOrigin= STRING
 		(branches+=Branch)+
 		(accounts+=Account)*
 		(transactions+=Transaction)*
@@ -19,9 +19,9 @@ Bank:
 User:
 	'User' '{'
 	'Name' name=ID
-	'Email' email=ID
-	'HashPass' hashpass=ID
-	'Address' address=ID
+	'Email' email=STRING
+	'HashPass' hashpass=STRING
+	'Address' address=STRING
 	'}'
 ;
 
@@ -29,8 +29,8 @@ User:
 Branch:
 	'Branch{'
 		'Address' address = STRING
-		Booth
-		Vault
+		(Booth)?
+		(Vault)?
 		(employees+=Employee)+
 	'}'
 ;
@@ -65,7 +65,7 @@ Manager:
 
 Account:
 	(SavingsAccount|CheckingAccount|MortgageAccount)
-		'Holder(s)' (holders+=User)
+		'Holder(s)' holder=User
 		'Balance' balance=INT
 		'Account Number' accountNum = ID
 		'MFA Type' mfaType= STRING
@@ -84,13 +84,12 @@ CheckingAccount:
 
 MortgageAccount:
 	'Mortgage Account {'
-		'Loan period' loanPeriod=ID
+		'Loan period' loanPeriod=STRING
 ;
 
 Transaction:
 	'transaction {'
-		'Source:' sourceAccount=Account
-		'Target:' targetAccount=Account
+		'Account:' account=Account
 		'Amount:' amount = INT
 		'Date' date=Date
 		'Debit' debit=Boolean
