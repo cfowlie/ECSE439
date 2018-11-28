@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="xpandtranslation/src/xmifiles/test.xmi" />
+	<property name="model" value="xpandtranslation/src/xmifiles/example2.xmi" />
 	<property name="src-gen" value="src-gen" />
 
 	<!-- set up EMF for standalone execution -->
@@ -18,10 +18,6 @@
 		<modelSlot value="model" />
 	</component>
 
-    <!-- Clear output directory -->
-	<component class="org.eclipse.emf.mwe.utils.DirectoryCleaner">
-			<directory value="${src-gen}"/>
-	</component>
 
 	<!-- check model -->
 	<component class="org.eclipse.xtend.check.CheckComponent">

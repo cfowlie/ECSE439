@@ -74,13 +74,13 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *
 	 * Constraint:
 	 *     (
-	 *         accountNum=ID 
-	 *         holder=ID 
+	 *         accountNum=STRING 
+	 *         holder=STRING 
 	 *         balance=INT 
 	 *         mfaType=STRING 
 	 *         accountType=AccountType 
 	 *         intRate=INT? 
-	 *         depPerMonth=INT? 
+	 *         debPerMonth=INT? 
 	 *         loanPeriod=STRING?
 	 *     )
 	 */
@@ -106,7 +106,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Bank returns Bank
 	 *
 	 * Constraint:
-	 *     (name=ID countryOfOrigin=STRING branches+=Branch+ accounts+=Account* transactions+=Transaction*)
+	 *     (name=STRING countryOfOrigin=STRING branches+=Branch+ accounts+=Account* transactions+=Transaction*)
 	 */
 	protected void sequence_Bank(ISerializationContext context, Bank semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -154,7 +154,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Employee returns Employee
 	 *
 	 * Constraint:
-	 *     (name=ID date=Date salary=INT currentRole=EmployeeRole)
+	 *     (name=STRING date=Date salary=INT currentRole=EmployeeRole)
 	 */
 	protected void sequence_Employee(ISerializationContext context, Employee semanticObject) {
 		if (errorAcceptor != null) {
@@ -168,10 +168,10 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.EMPLOYEE__CURRENT_ROLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEmployeeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEmployeeAccess().getDateDateParserRuleCall_4_0(), semanticObject.getDate());
-		feeder.accept(grammarAccess.getEmployeeAccess().getSalaryINTTerminalRuleCall_6_0(), semanticObject.getSalary());
-		feeder.accept(grammarAccess.getEmployeeAccess().getCurrentRoleEmployeeRoleParserRuleCall_8_0(), semanticObject.getCurrentRole());
+		feeder.accept(grammarAccess.getEmployeeAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEmployeeAccess().getDateDateParserRuleCall_5_0(), semanticObject.getDate());
+		feeder.accept(grammarAccess.getEmployeeAccess().getSalaryINTTerminalRuleCall_7_0(), semanticObject.getSalary());
+		feeder.accept(grammarAccess.getEmployeeAccess().getCurrentRoleEmployeeRoleParserRuleCall_9_0(), semanticObject.getCurrentRole());
 		feeder.finish();
 	}
 	
@@ -181,7 +181,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Transaction returns Transaction
 	 *
 	 * Constraint:
-	 *     (account=ID amount=INT date=Date debit=Boolean vendorName=STRING)
+	 *     (account=STRING amount=INT date=Date debit=Boolean vendorName=STRING)
 	 */
 	protected void sequence_Transaction(ISerializationContext context, Transaction semanticObject) {
 		if (errorAcceptor != null) {
@@ -197,7 +197,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.TRANSACTION__VENDOR_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTransactionAccess().getAccountIDTerminalRuleCall_2_0(), semanticObject.getAccount());
+		feeder.accept(grammarAccess.getTransactionAccess().getAccountSTRINGTerminalRuleCall_2_0(), semanticObject.getAccount());
 		feeder.accept(grammarAccess.getTransactionAccess().getAmountINTTerminalRuleCall_4_0(), semanticObject.getAmount());
 		feeder.accept(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0(), semanticObject.getDate());
 		feeder.accept(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0(), semanticObject.getDebit());
@@ -211,7 +211,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     User returns User
 	 *
 	 * Constraint:
-	 *     (name=ID email=STRING hashpass=STRING address=STRING)
+	 *     (name=STRING email=STRING hashpass=STRING address=STRING)
 	 */
 	protected void sequence_User(ISerializationContext context, User semanticObject) {
 		if (errorAcceptor != null) {
@@ -225,7 +225,7 @@ public class BankSystemSemanticSequencer extends AbstractDelegatingSemanticSeque
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BankSystemPackage.Literals.USER__ADDRESS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUserAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUserAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getUserAccess().getEmailSTRINGTerminalRuleCall_5_0(), semanticObject.getEmail());
 		feeder.accept(grammarAccess.getUserAccess().getHashpassSTRINGTerminalRuleCall_7_0(), semanticObject.getHashpass());
 		feeder.accept(grammarAccess.getUserAccess().getAddressSTRINGTerminalRuleCall_9_0(), semanticObject.getAddress());

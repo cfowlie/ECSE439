@@ -1,6 +1,7 @@
 
 DROP DATABASE bankSystem;
 CREATE DATABASE banksystem;
+USE banksystem;
 CREATE TABLE bank(
  	id varchar(36) PRIMARY KEY,
  	name varchar(36),
@@ -60,10 +61,10 @@ INSERT INTO user (id, name, email, hashpass, address) VALUES(UUID(), 'Nathan', '
 INSERT INTO bank (id, name, country) VALUES(UUID(), 'bnp', 'Belgium');
 	
 	INSERT INTO branch (id, bankID, address, hasVault, hasBooth) 
-	VALUES(UUID(), (SELECT id FROM bank where name = 'bnp') , 'Brussels',false , true);
+	VALUES(UUID(), (SELECT id FROM bank where name = 'bnp') , 'Brussels',false , false);
 	
 INSERT INTO employee(id, branchID, name, salary, currentRole)
-VALUES (UUID(), (SELECT id FROM branch WHERE address= 'Brussels'), 'manager', 54000, 'Manager');
+VALUES (UUID(), (SELECT id FROM branch WHERE address= 'Brussels'), 'John Smith', 54000, 'Manager');
 
 
 	
@@ -76,5 +77,8 @@ VALUES (UUID(), (SELECT id FROM branch WHERE address= 'Brussels'), 'manager', 54
  	
 
 	
+	INSERT INTO transaction (id, bankID, accountID, amount, debit, vendorName)
+	VALUES(UUID(), (SELECT id FROM bank where name = 'bnp'), (SELECT id FROM account where accountNum = 'BE65468746'), 12,  true, 'John');
+
 		
 	

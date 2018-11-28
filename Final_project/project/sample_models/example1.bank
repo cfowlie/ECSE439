@@ -1,0 +1,36 @@
+Bank
+{
+	Name 'bnp'
+	Country 'Belgium'
+	Branch{ 
+		Address 'Brussels'
+		Employee {
+			Name 'John Smith'
+			Hiring date 2018/4/7
+			Salary 54000
+			Current Role Manager
+		} 
+	}
+	 account  {
+	 	Account number 'BE65468746'
+		Holder 'Nathan'
+		Balance 12
+		MFA Type 'sdsdc'
+		Type Savings Account
+		Interest rate 5
+	}
+	transaction {
+		Related account 'BE65468746'
+		Amount 12
+		Date 2018/4/18
+		Debit true
+		Vendor name 'John'   
+	}
+}
+
+User{
+	Name 'Nathan'
+	Email 'nathan@mail.com'
+	HashPass 'sdsqsq'
+	Address 'qsdqs'
+}

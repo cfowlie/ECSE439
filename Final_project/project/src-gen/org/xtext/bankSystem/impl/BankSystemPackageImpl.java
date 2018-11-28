@@ -463,7 +463,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAccount_DepPerMonth()
+  public EAttribute getAccount_DebPerMonth()
   {
     return (EAttribute)accountEClass.getEStructuralFeatures().get(6);
   }
@@ -644,7 +644,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
     createEAttribute(accountEClass, ACCOUNT__MFA_TYPE);
     createEAttribute(accountEClass, ACCOUNT__ACCOUNT_TYPE);
     createEAttribute(accountEClass, ACCOUNT__INT_RATE);
-    createEAttribute(accountEClass, ACCOUNT__DEP_PER_MONTH);
+    createEAttribute(accountEClass, ACCOUNT__DEB_PER_MONTH);
     createEAttribute(accountEClass, ACCOUNT__LOAN_PERIOD);
 
     transactionEClass = createEClass(TRANSACTION);
@@ -727,7 +727,7 @@ public class BankSystemPackageImpl extends EPackageImpl implements BankSystemPac
     initEAttribute(getAccount_MfaType(), ecorePackage.getEString(), "mfaType", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_AccountType(), ecorePackage.getEString(), "accountType", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_IntRate(), ecorePackage.getEInt(), "intRate", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAccount_DepPerMonth(), ecorePackage.getEInt(), "depPerMonth", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAccount_DebPerMonth(), ecorePackage.getEInt(), "debPerMonth", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_LoanPeriod(), ecorePackage.getEString(), "loanPeriod", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transactionEClass, Transaction.class, "Transaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

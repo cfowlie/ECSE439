@@ -35,9 +35,9 @@ public class ExportXMI {
 		Injector injector = new BankSystemStandaloneSetup().createInjectorAndDoEMFRegistration();
 	    XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 	    //change this to the path of your input turn file
-	    String inputURI = "C:\\Users\\grego\\Documents\\test.bank";
+	    String inputURI = "C:\\Users\\grego\\Documents\\GitHub\\ECSE439\\Final_project\\project\\sample_models\\example2.bank";
 	    //change this to the path of your output xmi file
-	    String outputURI = "C:\\Users\\grego\\Documents\\Github\\ECSE439\\xpandtranslation\\src\\xmifiles\\test.xmi";
+	    String outputURI = "C:\\Users\\grego\\Documents\\Github\\ECSE439\\xpandtranslation\\src\\xmifiles\\example2.xmi";
 	    //used to parse a File path string
 	    URI inUri = URI.createFileURI(inputURI);
 	    URI outUri=URI.createFileURI(outputURI);

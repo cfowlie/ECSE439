@@ -388,13 +388,13 @@ public interface BankSystemPackage extends EPackage
   int ACCOUNT__INT_RATE = 5;
 
   /**
-   * The feature id for the '<em><b>Dep Per Month</b></em>' attribute.
+   * The feature id for the '<em><b>Deb Per Month</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNT__DEP_PER_MONTH = 6;
+  int ACCOUNT__DEB_PER_MONTH = 6;
 
   /**
    * The feature id for the '<em><b>Loan Period</b></em>' attribute.
@@ -861,15 +861,15 @@ public interface BankSystemPackage extends EPackage
   EAttribute getAccount_IntRate();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getDepPerMonth <em>Dep Per Month</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getDebPerMonth <em>Deb Per Month</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dep Per Month</em>'.
-   * @see org.xtext.bankSystem.Account#getDepPerMonth()
+   * @return the meta object for the attribute '<em>Deb Per Month</em>'.
+   * @see org.xtext.bankSystem.Account#getDebPerMonth()
    * @see #getAccount()
    * @generated
    */
-  EAttribute getAccount_DepPerMonth();
+  EAttribute getAccount_DebPerMonth();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getLoanPeriod <em>Loan Period</em>}'.
@@ -1274,12 +1274,12 @@ public interface BankSystemPackage extends EPackage
     EAttribute ACCOUNT__INT_RATE = eINSTANCE.getAccount_IntRate();
 
     /**
-     * The meta object literal for the '<em><b>Dep Per Month</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Deb Per Month</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACCOUNT__DEP_PER_MONTH = eINSTANCE.getAccount_DepPerMonth();
+    EAttribute ACCOUNT__DEB_PER_MONTH = eINSTANCE.getAccount_DebPerMonth();
 
     /**
      * The meta object literal for the '<em><b>Loan Period</b></em>' attribute feature.

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.bankSystem.Account#getMfaType <em>Mfa Type</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getIntRate <em>Int Rate</em>}</li>
- *   <li>{@link org.xtext.bankSystem.Account#getDepPerMonth <em>Dep Per Month</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Account#getDebPerMonth <em>Deb Per Month</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getLoanPeriod <em>Loan Period</em>}</li>
  * </ul>
  *
@@ -187,30 +187,30 @@ public interface Account extends EObject
   void setIntRate(int value);
 
   /**
-   * Returns the value of the '<em><b>Dep Per Month</b></em>' attribute.
+   * Returns the value of the '<em><b>Deb Per Month</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Dep Per Month</em>' attribute isn't clear,
+   * If the meaning of the '<em>Deb Per Month</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dep Per Month</em>' attribute.
-   * @see #setDepPerMonth(int)
-   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_DepPerMonth()
+   * @return the value of the '<em>Deb Per Month</em>' attribute.
+   * @see #setDebPerMonth(int)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_DebPerMonth()
    * @model
    * @generated
    */
-  int getDepPerMonth();
+  int getDebPerMonth();
 
   /**
-   * Sets the value of the '{@link org.xtext.bankSystem.Account#getDepPerMonth <em>Dep Per Month</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getDebPerMonth <em>Deb Per Month</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Dep Per Month</em>' attribute.
-   * @see #getDepPerMonth()
+   * @param value the new value of the '<em>Deb Per Month</em>' attribute.
+   * @see #getDebPerMonth()
    * @generated
    */
-  void setDepPerMonth(int value);
+  void setDebPerMonth(int value);
 
   /**
    * Returns the value of the '<em><b>Loan Period</b></em>' attribute.

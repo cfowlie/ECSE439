@@ -1,0 +1,405 @@
+Bank 
+{
+	Name 'CIBC'
+	Country 'Canada'
+	Branch{
+		Address '1006 Sherbrooke Street, Montreal'
+		Booth
+		Employee{
+			Name 'John Smith'
+			Hiring date 2010/06/11
+			Salary 165000
+			Current Role Manager
+		}
+		Employee{
+			Name 'James Doe'
+			Hiring date 2009/05/10
+			Salary 100000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Jane Hale'
+			Hiring date 2016/07/18
+			Salary 65000
+			Current Role Teller
+		}
+	}
+	Branch{
+		Address '600 Cathcart Street, Montreal'
+		Booth
+		Vault
+		Employee{
+			Name 'Toni Kroos'
+			Hiring date 2000/06/11
+			Salary 140000
+			Current Role Manager
+		}
+		Employee{
+			Name 'James Rodriguez'
+			Hiring date 2007/05/10
+			Salary 80000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Francis Underwood'
+			Hiring date 2006/07/18
+			Salary 75000
+			Current Role Teller
+		}
+	}
+	Branch{
+		Address '1155 Rene-Levesque Boulevard, Montreal'
+		Booth
+		Vault
+		Employee{
+			Name 'Gareth Bale'
+			Hiring date 1995/06/11
+			Salary 150000
+			Current Role Manager
+		}
+		Employee{
+			Name 'Peter Crouch'
+			Hiring date 2004/05/10
+			Salary 90000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Eden Hazard'
+			Hiring date 2002/07/18
+			Salary 75000
+			Current Role Teller
+		}
+	}
+	account {
+		Account number 'CA12345'
+		Holder 'Lionel Messi'
+		Balance 14562300
+		MFA Type 'Telephone+PIN'
+		Type Savings Account
+		Interest rate 4
+	}
+	account {
+		Account number 'CA67890'
+		Holder 'Antoine Griezmann'
+		Balance 144562300
+		MFA Type 'Telephone+PIN'
+		Type Checking Account
+		Debits per month 10
+	}
+	account {
+		Account number 'CA54321'
+		Holder 'Cristiano Ronaldo'
+		Balance 944462300
+		MFA Type 'Telephone+PIN'
+		Type Mortgage Account
+		Loan period 'Start : 2014/10/18 End : 2020/10/18'
+	}
+	transaction {
+		Related account 'CA12345'
+		Amount 544
+		Date 2016/05/10
+		Debit false
+		Vendor name 'FC Barcelona'
+	}
+	transaction {
+		Related account 'CA67890'
+		Amount 100
+		Date 2017/06/09
+		Debit true
+		Vendor name 'Coca-Cola'
+	}
+	transaction {
+		Related account 'CA54321'
+		Amount 400
+		Date 2014/05/10
+		Debit false
+		Vendor name 'McDonalds'
+	}
+}
+Bank
+{
+	Name 'TD'
+	Country 'Canada'
+	Branch{
+		Address '2001 Robert Bourrassa Boulevard, Montreal'
+		Booth
+		Employee{
+			Name 'Claire Underwood'
+			Hiring date 2010/06/11
+			Salary 165000
+			Current Role Manager
+		}
+		Employee{
+			Name 'Dani Carvajal'
+			Hiring date 2007/05/10
+			Salary 100000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Jon Snow'
+			Hiring date 2005/07/18
+			Salary 65000
+			Current Role Teller
+		}
+	}
+	Branch{
+		Address '1130 Sherbrooke Street, Montreal'
+		Vault
+		Employee{
+			Name 'Walter White'
+			Hiring date 2010/06/11
+			Salary 265000
+			Current Role Manager
+		}
+		Employee{
+			Name 'Jesse Pinkman'
+			Hiring date 2009/05/10
+			Salary 90000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Gustavo Fring'
+			Hiring date 2016/07/18
+			Salary 60000
+			Current Role Teller
+		}
+	}
+	Branch{
+		Address '1009 Maisonneuve Boulevard, Montreal'
+		Booth
+		Vault
+		Employee{
+			Name 'Sergio Aguero'
+			Hiring date 2017/06/11
+			Salary 145000
+			Current Role Manager
+		}
+		Employee{
+			Name 'Mohamed Salah'
+			Hiring date 2005/05/10
+			Salary 100000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Leroy Sane'
+			Hiring date 2006/07/18
+			Salary 65000
+			Current Role Teller
+		}
+	}
+	account {
+		Account number 'CA23456'
+		Holder 'Karim Benzema'
+		Balance 7979651
+		MFA Type 'Telephone+PIN'
+		Type Savings Account
+		Interest rate 6
+	}
+	account {
+		Account number 'CA34567'
+		Holder 'Doug Stamper'
+		Balance 5654
+		MFA Type 'Telephone+PIN'
+		Type Checking Account
+		Debits per month 25
+	}
+	account {
+		Account number 'CA45678'
+		Holder 'Annette Shepherd'
+		Balance 12000
+		MFA Type 'Telephone+PIN'
+		Type Mortgage Account
+		Loan period 'Start : 2010/05/09 End : 2030/05/10'	
+	}
+	transaction {
+		Related account 'CA23456'
+		Amount 39
+		Date 2016/05/10
+		Debit true
+		Vendor name 'DHL'
+	}
+	transaction {
+		Related account 'CA34567'
+		Amount 64
+		Date 2017/06/09
+		Debit true
+		Vendor name 'McGill University'
+	}
+	transaction {
+		Related account 'CA45678'
+		Amount 700
+		Date 2014/05/10
+		Debit true
+		Vendor name 'Boston Celtics'
+	}
+}
+Bank
+{
+	Name 'Scotia Bank'
+	Country 'Canada'
+	Branch{
+		Address '601 Sainte-Catherine Avenue, Montreal'
+		Booth
+		Employee{
+			Name 'Kevin De Bruyne'
+			Hiring date 2010/06/11
+			Salary 200000
+			Current Role Manager
+		}
+		Employee{
+			Name 'David Silva'
+			Hiring date 2009/05/10
+			Salary 80000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Olivier Giroud'
+			Hiring date 2016/07/18
+			Salary 68000
+			Current Role Teller
+		}
+	}
+	Branch{
+		Address '1130 Saint-Denis Street, Montreal'
+		Booth
+		Employee{
+			Name 'Robert Lewandowski'
+			Hiring date 2004/06/11
+			Salary 300000
+			Current Role Manager
+		}
+		Employee{
+			Name 'Arjen Robben'
+			Hiring date 2003/05/10
+			Salary 120000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Kingsley Coman'
+			Hiring date 2018/07/18
+			Salary 64000
+			Current Role Teller
+		}
+	}
+	Branch{
+		Address '1009 Saint-Dominique Street, Montreal'
+		Vault
+		Employee{
+			Name 'Cristian Stuani'
+			Hiring date 2001/06/11
+			Salary 250000
+			Current Role Manager
+		}
+		Employee{
+			Name 'Pablo Maffeo'
+			Hiring date 2007/05/10
+			Salary 110000
+			Current Role Teller
+		}
+		Employee{
+			Name 'Alex Telles'
+			Hiring date 2006/07/18
+			Salary 120000
+			Current Role Teller
+		}
+	}
+	account {
+		Account number 'CA78901'
+		Holder 'Will Byers'
+		Balance 3546
+		MFA Type 'Telephone+PIN'
+		Type Savings Account
+		Interest rate 1
+	}
+	account {
+		Account number 'CA89012'
+		Holder 'Paco Alcacer'
+		Balance 12000
+		MFA Type 'Telephone+PIN'
+		Type Checking Account
+		Debits per month 10
+	}
+	account {
+		Account number 'CA90123'
+		Holder 'James Dean'
+		Balance 35000
+		MFA Type 'Telephone+PIN'
+		Type Mortgage Account
+		Loan period 'Start : 2000/05/09 End : 2018/12/10'	
+	}
+	transaction {
+		Related account 'CA78901'
+		Amount 64
+		Date 2016/05/10
+		Debit true
+		Vendor name '7/11'
+	}
+	transaction {
+		Related account 'CA89012'
+		Amount 6454
+		Date 2009/06/09
+		Debit true
+		Vendor name 'Intel'
+	}
+	transaction {
+		Related account 'CA90123'
+		Amount 70555
+		Date 2014/05/10
+		Debit true
+		Vendor name 'Huawei'
+	}
+}
+User {
+	Name 'James Dean'
+	Email 'james.dean@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Montreal'
+}
+User {
+	Name 'Paco Alcacer'
+	Email 'palcacer@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Dortmund'
+}
+User {
+	Name 'Will Byers'
+	Email 'w.byers@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Colorado'
+}
+User {
+	Name 'Doug Stamper'
+	Email 'dougstamper@gov.us'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Washington DC'
+}
+User {
+	Name 'Annette Shepherd'
+	Email 'ashepherd@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Tallahassee'
+}
+User {
+	Name 'Karim Benzema'
+	Email 'kbnueve@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Madrid'
+}
+User {
+	Name 'Antoine Griezmann'
+	Email 'agriezmann@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Madrid'
+}
+User {
+	Name 'Lionel Messi'
+	Email 'leo@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Barcelona'
+}
+User {
+	Name 'Cristiano Ronaldo'
+	Email 'cr7@gmail.com'
+	HashPass 'sdffsdfdgfbvwfvsfdbcx'
+	Address 'Turin'
+}

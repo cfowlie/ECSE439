@@ -4,9 +4,10 @@
 «EXTENSION template::GeneratorExtensions»
 
 «DEFINE main FOR BankSystem»
- 	«FILE "database.sql"»
+ 	«FILE "example2.sql"»
 DROP DATABASE bankSystem;
 CREATE DATABASE banksystem;
+USE banksystem;
 CREATE TABLE bank(
  	id varchar(36) PRIMARY KEY,
  	name varchar(36),
@@ -84,7 +85,7 @@ INSERT INTO user (id, name, email, hashpass, address) VALUES(UUID(), '«name»', '
 «DEFINE employee(String branchAddress) FOR Employee»
 INSERT INTO employee(id, branchID, name, salary, currentRole)
 VALUES (UUID(), (SELECT id FROM branch WHERE address= '«branchAddress»'), '«name»', «salary», '«currentRole»');
-«ENDDEFINE»
+«ENDDEFINE»  
 
 «DEFINE account(String bankName) FOR Account»
 	INSERT INTO account (id, bankID, userID, balance, accountNum, mfaType)
@@ -95,11 +96,11 @@ VALUES (UUID(), (SELECT id FROM branch WHERE address= '«branchAddress»'), '«name
  		WHERE accountNum = '«accountNum»';
  	«ELSEIF this.accountType.toString() == 'Mortgage Account'»
  		UPDATE account
- 		SET type = 'Mortgage', loanPeriod = «this.loanPeriod»
+ 		SET type = 'Mortgage', loanPeriod = '«this.loanPeriod»'
  		WHERE accountNum = '«accountNum»';
  	«ELSE»
  		UPDATE account
- 		SET type = 'Checking', depPerMonth = «this.depPerMonth»
+ 		SET type = 'Checking', debPerMonth = «this.debPerMonth»
  		WHERE accountNum = '«accountNum»';
  	«ENDIF»
 «ENDDEFINE»

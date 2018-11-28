@@ -137,11 +137,19 @@ ruleBank returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getBankAccess().getBankKeyword_0());
 		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='Name'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getBankAccess().getNameKeyword_2());
+		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getBankAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getBankAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -150,24 +158,20 @@ ruleBank returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_4='Country'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getBankAccess().getLeftCurlyBracketKeyword_2());
-		}
-		otherlv_3='Country'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getBankAccess().getCountryKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getBankAccess().getCountryKeyword_4());
 		}
 		(
 			(
-				lv_countryOfOrigin_4_0=RULE_STRING
+				lv_countryOfOrigin_5_0=RULE_STRING
 				{
-					newLeafNode(lv_countryOfOrigin_4_0, grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_countryOfOrigin_5_0, grammarAccess.getBankAccess().getCountryOfOriginSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -176,7 +180,7 @@ ruleBank returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"countryOfOrigin",
-						lv_countryOfOrigin_4_0,
+						lv_countryOfOrigin_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -184,9 +188,9 @@ ruleBank returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBankAccess().getBranchesBranchParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getBankAccess().getBranchesBranchParserRuleCall_6_0());
 				}
-				lv_branches_5_0=ruleBranch
+				lv_branches_6_0=ruleBranch
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBankRule());
@@ -194,7 +198,7 @@ ruleBank returns [EObject current=null]
 					add(
 						$current,
 						"branches",
-						lv_branches_5_0,
+						lv_branches_6_0,
 						"org.xtext.BankSystem.Branch");
 					afterParserOrEnumRuleCall();
 				}
@@ -203,9 +207,9 @@ ruleBank returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBankAccess().getAccountsAccountParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getBankAccess().getAccountsAccountParserRuleCall_7_0());
 				}
-				lv_accounts_6_0=ruleAccount
+				lv_accounts_7_0=ruleAccount
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBankRule());
@@ -213,7 +217,7 @@ ruleBank returns [EObject current=null]
 					add(
 						$current,
 						"accounts",
-						lv_accounts_6_0,
+						lv_accounts_7_0,
 						"org.xtext.BankSystem.Account");
 					afterParserOrEnumRuleCall();
 				}
@@ -222,9 +226,9 @@ ruleBank returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBankAccess().getTransactionsTransactionParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getBankAccess().getTransactionsTransactionParserRuleCall_8_0());
 				}
-				lv_transactions_7_0=ruleTransaction
+				lv_transactions_8_0=ruleTransaction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBankRule());
@@ -232,15 +236,15 @@ ruleBank returns [EObject current=null]
 					add(
 						$current,
 						"transactions",
-						lv_transactions_7_0,
+						lv_transactions_8_0,
 						"org.xtext.BankSystem.Transaction");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_8='}'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getBankAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getBankAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -275,9 +279,9 @@ ruleUser returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_3_0=RULE_ID
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_3_0, grammarAccess.getUserAccess().getNameIDTerminalRuleCall_3_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getUserAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -287,7 +291,7 @@ ruleUser returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_3_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -534,11 +538,19 @@ ruleEmployee returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEmployeeAccess().getEmployeeKeyword_0());
 		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEmployeeAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='Name'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getNameKeyword_2());
+		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getEmployeeAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getEmployeeAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -547,25 +559,21 @@ ruleEmployee returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_4='Hiring date'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getLeftCurlyBracketKeyword_2());
-		}
-		otherlv_3='Hiring date'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getEmployeeAccess().getHiringDateKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getEmployeeAccess().getHiringDateKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEmployeeAccess().getDateDateParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getEmployeeAccess().getDateDateParserRuleCall_5_0());
 				}
-				lv_date_4_0=ruleDate
+				lv_date_5_0=ruleDate
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEmployeeRule());
@@ -573,21 +581,21 @@ ruleEmployee returns [EObject current=null]
 					set(
 						$current,
 						"date",
-						lv_date_4_0,
+						lv_date_5_0,
 						"org.xtext.BankSystem.Date");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='Salary'
+		otherlv_6='Salary'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getEmployeeAccess().getSalaryKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getEmployeeAccess().getSalaryKeyword_6());
 		}
 		(
 			(
-				lv_salary_6_0=RULE_INT
+				lv_salary_7_0=RULE_INT
 				{
-					newLeafNode(lv_salary_6_0, grammarAccess.getEmployeeAccess().getSalaryINTTerminalRuleCall_6_0());
+					newLeafNode(lv_salary_7_0, grammarAccess.getEmployeeAccess().getSalaryINTTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -596,21 +604,21 @@ ruleEmployee returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"salary",
-						lv_salary_6_0,
+						lv_salary_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_7='Current Role'
+		otherlv_8='Current Role'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getEmployeeAccess().getCurrentRoleKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getEmployeeAccess().getCurrentRoleKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEmployeeAccess().getCurrentRoleEmployeeRoleParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getEmployeeAccess().getCurrentRoleEmployeeRoleParserRuleCall_9_0());
 				}
-				lv_currentRole_8_0=ruleEmployeeRole
+				lv_currentRole_9_0=ruleEmployeeRole
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEmployeeRule());
@@ -618,15 +626,15 @@ ruleEmployee returns [EObject current=null]
 					set(
 						$current,
 						"currentRole",
-						lv_currentRole_8_0,
+						lv_currentRole_9_0,
 						"org.xtext.BankSystem.EmployeeRole");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_9='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getEmployeeAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getEmployeeAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -735,11 +743,19 @@ ruleAccount returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAccountAccess().getAccountKeyword_0());
 		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAccountAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='Account number'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getAccountAccess().getAccountNumberKeyword_2());
+		}
 		(
 			(
-				lv_accountNum_1_0=RULE_ID
+				lv_accountNum_3_0=RULE_STRING
 				{
-					newLeafNode(lv_accountNum_1_0, grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_1_0());
+					newLeafNode(lv_accountNum_3_0, grammarAccess.getAccountAccess().getAccountNumSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -748,24 +764,20 @@ ruleAccount returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"accountNum",
-						lv_accountNum_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_accountNum_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_4='Holder'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getAccountAccess().getLeftCurlyBracketKeyword_2());
-		}
-		otherlv_3='Holder(s)'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getAccountAccess().getHolderSKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getAccountAccess().getHolderKeyword_4());
 		}
 		(
 			(
-				lv_holder_4_0=RULE_ID
+				lv_holder_5_0=RULE_STRING
 				{
-					newLeafNode(lv_holder_4_0, grammarAccess.getAccountAccess().getHolderIDTerminalRuleCall_4_0());
+					newLeafNode(lv_holder_5_0, grammarAccess.getAccountAccess().getHolderSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -774,20 +786,20 @@ ruleAccount returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"holder",
-						lv_holder_4_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_holder_5_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_5='Balance'
+		otherlv_6='Balance'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAccountAccess().getBalanceKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getAccountAccess().getBalanceKeyword_6());
 		}
 		(
 			(
-				lv_balance_6_0=RULE_INT
+				lv_balance_7_0=RULE_INT
 				{
-					newLeafNode(lv_balance_6_0, grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_6_0());
+					newLeafNode(lv_balance_7_0, grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -796,15 +808,11 @@ ruleAccount returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"balance",
-						lv_balance_6_0,
+						lv_balance_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_7='Account Number'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getAccountAccess().getAccountNumberKeyword_7());
-		}
 		otherlv_8='MFA Type'
 		{
 			newLeafNode(otherlv_8, grammarAccess.getAccountAccess().getMFATypeKeyword_8());
@@ -881,9 +889,9 @@ ruleAccount returns [EObject current=null]
 			}
 			(
 				(
-					lv_depPerMonth_15_0=RULE_INT
+					lv_debPerMonth_15_0=RULE_INT
 					{
-						newLeafNode(lv_depPerMonth_15_0, grammarAccess.getAccountAccess().getDepPerMonthINTTerminalRuleCall_13_1_0());
+						newLeafNode(lv_debPerMonth_15_0, grammarAccess.getAccountAccess().getDebPerMonthINTTerminalRuleCall_13_1_0());
 					}
 					{
 						if ($current==null) {
@@ -891,8 +899,8 @@ ruleAccount returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"depPerMonth",
-							lv_depPerMonth_15_0,
+							"debPerMonth",
+							lv_debPerMonth_15_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
@@ -1066,15 +1074,15 @@ ruleTransaction returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getTransactionAccess().getTransactionKeyword_0());
 		}
-		otherlv_1='Account:'
+		otherlv_1='Related account'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getTransactionAccess().getAccountKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getTransactionAccess().getRelatedAccountKeyword_1());
 		}
 		(
 			(
-				lv_account_2_0=RULE_ID
+				lv_account_2_0=RULE_STRING
 				{
-					newLeafNode(lv_account_2_0, grammarAccess.getTransactionAccess().getAccountIDTerminalRuleCall_2_0());
+					newLeafNode(lv_account_2_0, grammarAccess.getTransactionAccess().getAccountSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -1084,11 +1092,11 @@ ruleTransaction returns [EObject current=null]
 						$current,
 						"account",
 						lv_account_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3='Amount:'
+		otherlv_3='Amount'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getTransactionAccess().getAmountKeyword_3());
 		}

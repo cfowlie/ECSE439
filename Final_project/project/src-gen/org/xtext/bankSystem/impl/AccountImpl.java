@@ -27,7 +27,7 @@ import org.xtext.bankSystem.BankSystemPackage;
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getMfaType <em>Mfa Type</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getIntRate <em>Int Rate</em>}</li>
- *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getDepPerMonth <em>Dep Per Month</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getDebPerMonth <em>Deb Per Month</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getLoanPeriod <em>Loan Period</em>}</li>
  * </ul>
  *
@@ -156,24 +156,24 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   protected int intRate = INT_RATE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDepPerMonth() <em>Dep Per Month</em>}' attribute.
+   * The default value of the '{@link #getDebPerMonth() <em>Deb Per Month</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDepPerMonth()
+   * @see #getDebPerMonth()
    * @generated
    * @ordered
    */
-  protected static final int DEP_PER_MONTH_EDEFAULT = 0;
+  protected static final int DEB_PER_MONTH_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getDepPerMonth() <em>Dep Per Month</em>}' attribute.
+   * The cached value of the '{@link #getDebPerMonth() <em>Deb Per Month</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDepPerMonth()
+   * @see #getDebPerMonth()
    * @generated
    * @ordered
    */
-  protected int depPerMonth = DEP_PER_MONTH_EDEFAULT;
+  protected int debPerMonth = DEB_PER_MONTH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLoanPeriod() <em>Loan Period</em>}' attribute.
@@ -359,9 +359,9 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getDepPerMonth()
+  public int getDebPerMonth()
   {
-    return depPerMonth;
+    return debPerMonth;
   }
 
   /**
@@ -369,12 +369,12 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDepPerMonth(int newDepPerMonth)
+  public void setDebPerMonth(int newDebPerMonth)
   {
-    int oldDepPerMonth = depPerMonth;
-    depPerMonth = newDepPerMonth;
+    int oldDebPerMonth = debPerMonth;
+    debPerMonth = newDebPerMonth;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__DEP_PER_MONTH, oldDepPerMonth, depPerMonth));
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__DEB_PER_MONTH, oldDebPerMonth, debPerMonth));
   }
 
   /**
@@ -422,8 +422,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
         return getAccountType();
       case BankSystemPackage.ACCOUNT__INT_RATE:
         return getIntRate();
-      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
-        return getDepPerMonth();
+      case BankSystemPackage.ACCOUNT__DEB_PER_MONTH:
+        return getDebPerMonth();
       case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
         return getLoanPeriod();
     }
@@ -458,8 +458,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
       case BankSystemPackage.ACCOUNT__INT_RATE:
         setIntRate((Integer)newValue);
         return;
-      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
-        setDepPerMonth((Integer)newValue);
+      case BankSystemPackage.ACCOUNT__DEB_PER_MONTH:
+        setDebPerMonth((Integer)newValue);
         return;
       case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
         setLoanPeriod((String)newValue);
@@ -496,8 +496,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
       case BankSystemPackage.ACCOUNT__INT_RATE:
         setIntRate(INT_RATE_EDEFAULT);
         return;
-      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
-        setDepPerMonth(DEP_PER_MONTH_EDEFAULT);
+      case BankSystemPackage.ACCOUNT__DEB_PER_MONTH:
+        setDebPerMonth(DEB_PER_MONTH_EDEFAULT);
         return;
       case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
         setLoanPeriod(LOAN_PERIOD_EDEFAULT);
@@ -528,8 +528,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
         return ACCOUNT_TYPE_EDEFAULT == null ? accountType != null : !ACCOUNT_TYPE_EDEFAULT.equals(accountType);
       case BankSystemPackage.ACCOUNT__INT_RATE:
         return intRate != INT_RATE_EDEFAULT;
-      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
-        return depPerMonth != DEP_PER_MONTH_EDEFAULT;
+      case BankSystemPackage.ACCOUNT__DEB_PER_MONTH:
+        return debPerMonth != DEB_PER_MONTH_EDEFAULT;
       case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
         return LOAN_PERIOD_EDEFAULT == null ? loanPeriod != null : !LOAN_PERIOD_EDEFAULT.equals(loanPeriod);
     }
@@ -559,8 +559,8 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
     result.append(accountType);
     result.append(", intRate: ");
     result.append(intRate);
-    result.append(", depPerMonth: ");
-    result.append(depPerMonth);
+    result.append(", debPerMonth: ");
+    result.append(debPerMonth);
     result.append(", loanPeriod: ");
     result.append(loanPeriod);
     result.append(')');

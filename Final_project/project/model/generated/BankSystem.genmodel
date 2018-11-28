@@ -42,7 +42,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/mfaType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/accountType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/intRate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/depPerMonth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/debPerMonth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/loanPeriod"/>
     </genClasses>
     <genClasses ecoreClass="BankSystem.ecore#//Transaction">

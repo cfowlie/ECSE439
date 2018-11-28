@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bankSystem:BankSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bankSystem="http://www.xtext.org/BankSystem">
+  <banks name="CIBC" countryOfOrigin="Canada">
+    <branches address="1006 Sherbrooke Street, Montreal" mybooth="Booth">
+      <employees name="John Smith" salary="165000" currentRole="Manager">
+        <date year="2010" month="6" day="11"/>
+      </employees>
+      <employees name="James Doe" salary="100000" currentRole="Teller">
+        <date year="2009" month="5" day="10"/>
+      </employees>
+      <employees name="Jane Hale" salary="65000" currentRole="Teller">
+        <date year="2016" month="7" day="18"/>
+      </employees>
+    </branches>
+    <branches address="600 Cathcart Street, Montreal" mybooth="Booth" myVault="Vault">
+      <employees name="Toni Kroos" salary="140000" currentRole="Manager">
+        <date year="2000" month="6" day="11"/>
+      </employees>
+      <employees name="James Rodriguez" salary="80000" currentRole="Teller">
+        <date year="2007" month="5" day="10"/>
+      </employees>
+      <employees name="Francis Underwood" salary="75000" currentRole="Teller">
+        <date year="2006" month="7" day="18"/>
+      </employees>
+    </branches>
+    <branches address="1155 Rene-Levesque Boulevard, Montreal" mybooth="Booth" myVault="Vault">
+      <employees name="Gareth Bale" salary="150000" currentRole="Manager">
+        <date year="1995" month="6" day="11"/>
+      </employees>
+      <employees name="Peter Crouch" salary="90000" currentRole="Teller">
+        <date year="2004" month="5" day="10"/>
+      </employees>
+      <employees name="Eden Hazard" salary="75000" currentRole="Teller">
+        <date year="2002" month="7" day="18"/>
+      </employees>
+    </branches>
+    <accounts accountNum="CA12345" holder="Lionel Messi" balance="14562300" mfaType="Telephone+PIN" accountType="Savings Account" intRate="4"/>
+    <accounts accountNum="CA67890" holder="Antoine Griezmann" balance="144562300" mfaType="Telephone+PIN" accountType="Checking Account" debPerMonth="10"/>
+    <accounts accountNum="CA54321" holder="Cristiano Ronaldo" balance="944462300" mfaType="Telephone+PIN" accountType="Mortgage Account" loanPeriod="Start : 2014/10/18 End : 2020/10/18"/>
+    <transactions account="CA12345" amount="544" debit="false" vendorName="FC Barcelona">
+      <date year="2016" month="5" day="10"/>
+    </transactions>
+    <transactions account="CA67890" amount="100" debit="true" vendorName="Coca-Cola">
+      <date year="2017" month="6" day="9"/>
+    </transactions>
+    <transactions account="CA54321" amount="400" debit="false" vendorName="McDonalds">
+      <date year="2014" month="5" day="10"/>
+    </transactions>
+  </banks>
+  <banks name="TD" countryOfOrigin="Canada">
+    <branches address="2001 Robert Bourrassa Boulevard, Montreal" mybooth="Booth">
+      <employees name="Claire Underwood" salary="165000" currentRole="Manager">
+        <date year="2010" month="6" day="11"/>
+      </employees>
+      <employees name="Dani Carvajal" salary="100000" currentRole="Teller">
+        <date year="2007" month="5" day="10"/>
+      </employees>
+      <employees name="Jon Snow" salary="65000" currentRole="Teller">
+        <date year="2005" month="7" day="18"/>
+      </employees>
+    </branches>
+    <branches address="1130 Sherbrooke Street, Montreal" myVault="Vault">
+      <employees name="Walter White" salary="265000" currentRole="Manager">
+        <date year="2010" month="6" day="11"/>
+      </employees>
+      <employees name="Jesse Pinkman" salary="90000" currentRole="Teller">
+        <date year="2009" month="5" day="10"/>
+      </employees>
+      <employees name="Gustavo Fring" salary="60000" currentRole="Teller">
+        <date year="2016" month="7" day="18"/>
+      </employees>
+    </branches>
+    <branches address="1009 Maisonneuve Boulevard, Montreal" mybooth="Booth" myVault="Vault">
+      <employees name="Sergio Aguero" salary="145000" currentRole="Manager">
+        <date year="2017" month="6" day="11"/>
+      </employees>
+      <employees name="Mohamed Salah" salary="100000" currentRole="Teller">
+        <date year="2005" month="5" day="10"/>
+      </employees>
+      <employees name="Leroy Sane" salary="65000" currentRole="Teller">
+        <date year="2006" month="7" day="18"/>
+      </employees>
+    </branches>
+    <accounts accountNum="CA23456" holder="Karim Benzema" balance="7979651" mfaType="Telephone+PIN" accountType="Savings Account" intRate="6"/>
+    <accounts accountNum="CA34567" holder="Doug Stamper" balance="5654" mfaType="Telephone+PIN" accountType="Checking Account" debPerMonth="25"/>
+    <accounts accountNum="CA45678" holder="Annette Shepherd" balance="12000" mfaType="Telephone+PIN" accountType="Mortgage Account" loanPeriod="Start : 2010/05/09 End : 2030/05/10"/>
+    <transactions account="CA23456" amount="39" debit="true" vendorName="DHL">
+      <date year="2016" month="5" day="10"/>
+    </transactions>
+    <transactions account="CA34567" amount="64" debit="true" vendorName="McGill University">
+      <date year="2017" month="6" day="9"/>
+    </transactions>
+    <transactions account="CA45678" amount="700" debit="true" vendorName="Boston Celtics">
+      <date year="2014" month="5" day="10"/>
+    </transactions>
+  </banks>
+  <banks name="Scotia Bank" countryOfOrigin="Canada">
+    <branches address="601 Sainte-Catherine Avenue, Montreal" mybooth="Booth">
+      <employees name="Kevin De Bruyne" salary="200000" currentRole="Manager">
+        <date year="2010" month="6" day="11"/>
+      </employees>
+      <employees name="David Silva" salary="80000" currentRole="Teller">
+        <date year="2009" month="5" day="10"/>
+      </employees>
+      <employees name="Olivier Giroud" salary="68000" currentRole="Teller">
+        <date year="2016" month="7" day="18"/>
+      </employees>
+    </branches>
+    <branches address="1130 Saint-Denis Street, Montreal" mybooth="Booth">
+      <employees name="Robert Lewandowski" salary="300000" currentRole="Manager">
+        <date year="2004" month="6" day="11"/>
+      </employees>
+      <employees name="Arjen Robben" salary="120000" currentRole="Teller">
+        <date year="2003" month="5" day="10"/>
+      </employees>
+      <employees name="Kingsley Coman" salary="64000" currentRole="Teller">
+        <date year="2018" month="7" day="18"/>
+      </employees>
+    </branches>
+    <branches address="1009 Saint-Dominique Street, Montreal" myVault="Vault">
+      <employees name="Cristian Stuani" salary="250000" currentRole="Manager">
+        <date year="2001" month="6" day="11"/>
+      </employees>
+      <employees name="Pablo Maffeo" salary="110000" currentRole="Teller">
+        <date year="2007" month="5" day="10"/>
+      </employees>
+      <employees name="Alex Telles" salary="120000" currentRole="Teller">
+        <date year="2006" month="7" day="18"/>
+      </employees>
+    </branches>
+    <accounts accountNum="CA78901" holder="Will Byers" balance="3546" mfaType="Telephone+PIN" accountType="Savings Account" intRate="1"/>
+    <accounts accountNum="CA89012" holder="Paco Alcacer" balance="12000" mfaType="Telephone+PIN" accountType="Checking Account" debPerMonth="10"/>
+    <accounts accountNum="CA90123" holder="James Dean" balance="35000" mfaType="Telephone+PIN" accountType="Mortgage Account" loanPeriod="Start : 2000/05/09 End : 2018/12/10"/>
+    <transactions account="CA78901" amount="64" debit="true" vendorName="7/11">
+      <date year="2016" month="5" day="10"/>
+    </transactions>
+    <transactions account="CA89012" amount="6454" debit="true" vendorName="Intel">
+      <date year="2009" month="6" day="9"/>
+    </transactions>
+    <transactions account="CA90123" amount="70555" debit="true" vendorName="Huawei">
+      <date year="2014" month="5" day="10"/>
+    </transactions>
+  </banks>
+  <users name="James Dean" email="james.dean@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Montreal"/>
+  <users name="Paco Alcacer" email="palcacer@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Dortmund"/>
+  <users name="Will Byers" email="w.byers@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Colorado"/>
+  <users name="Doug Stamper" email="dougstamper@gov.us" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Washington DC"/>
+  <users name="Annette Shepherd" email="ashepherd@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Tallahassee"/>
+  <users name="Karim Benzema" email="kbnueve@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Madrid"/>
+  <users name="Antoine Griezmann" email="agriezmann@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Madrid"/>
+  <users name="Lionel Messi" email="leo@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Barcelona"/>
+  <users name="Cristiano Ronaldo" email="cr7@gmail.com" hashpass="sdffsdfdgfbvwfvsfdbcx" address="Turin"/>
+</bankSystem:BankSystem>
