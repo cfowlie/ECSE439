@@ -32,7 +32,7 @@ public class BankSystemParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, BankSystemGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEmployeeRoleAccess().getAlternatives(), "rule__EmployeeRole__Alternatives");
-			builder.put(grammarAccess.getAccountAccess().getAlternatives_0(), "rule__Account__Alternatives_0");
+			builder.put(grammarAccess.getAccountTypeAccess().getAlternatives(), "rule__AccountType__Alternatives");
 			builder.put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
 			builder.put(grammarAccess.getBankSystemAccess().getGroup(), "rule__BankSystem__Group__0");
 			builder.put(grammarAccess.getBankAccess().getGroup(), "rule__Bank__Group__0");
@@ -40,9 +40,9 @@ public class BankSystemParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBranchAccess().getGroup(), "rule__Branch__Group__0");
 			builder.put(grammarAccess.getEmployeeAccess().getGroup(), "rule__Employee__Group__0");
 			builder.put(grammarAccess.getAccountAccess().getGroup(), "rule__Account__Group__0");
-			builder.put(grammarAccess.getSavingsAccountAccess().getGroup(), "rule__SavingsAccount__Group__0");
-			builder.put(grammarAccess.getCheckingAccountAccess().getGroup(), "rule__CheckingAccount__Group__0");
-			builder.put(grammarAccess.getMortgageAccountAccess().getGroup(), "rule__MortgageAccount__Group__0");
+			builder.put(grammarAccess.getAccountAccess().getGroup_12(), "rule__Account__Group_12__0");
+			builder.put(grammarAccess.getAccountAccess().getGroup_13(), "rule__Account__Group_13__0");
+			builder.put(grammarAccess.getAccountAccess().getGroup_14(), "rule__Account__Group_14__0");
 			builder.put(grammarAccess.getTransactionAccess().getGroup(), "rule__Transaction__Group__0");
 			builder.put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
 			builder.put(grammarAccess.getBankSystemAccess().getBanksAssignment_0(), "rule__BankSystem__BanksAssignment_0");
@@ -57,18 +57,21 @@ public class BankSystemParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUserAccess().getHashpassAssignment_7(), "rule__User__HashpassAssignment_7");
 			builder.put(grammarAccess.getUserAccess().getAddressAssignment_9(), "rule__User__AddressAssignment_9");
 			builder.put(grammarAccess.getBranchAccess().getAddressAssignment_2(), "rule__Branch__AddressAssignment_2");
+			builder.put(grammarAccess.getBranchAccess().getMyboothAssignment_3(), "rule__Branch__MyboothAssignment_3");
+			builder.put(grammarAccess.getBranchAccess().getMyVaultAssignment_4(), "rule__Branch__MyVaultAssignment_4");
 			builder.put(grammarAccess.getBranchAccess().getEmployeesAssignment_5(), "rule__Branch__EmployeesAssignment_5");
 			builder.put(grammarAccess.getEmployeeAccess().getNameAssignment_1(), "rule__Employee__NameAssignment_1");
 			builder.put(grammarAccess.getEmployeeAccess().getDateAssignment_4(), "rule__Employee__DateAssignment_4");
 			builder.put(grammarAccess.getEmployeeAccess().getSalaryAssignment_6(), "rule__Employee__SalaryAssignment_6");
 			builder.put(grammarAccess.getEmployeeAccess().getCurrentRoleAssignment_8(), "rule__Employee__CurrentRoleAssignment_8");
-			builder.put(grammarAccess.getAccountAccess().getHolderAssignment_2(), "rule__Account__HolderAssignment_2");
-			builder.put(grammarAccess.getAccountAccess().getBalanceAssignment_4(), "rule__Account__BalanceAssignment_4");
-			builder.put(grammarAccess.getAccountAccess().getAccountNumAssignment_6(), "rule__Account__AccountNumAssignment_6");
-			builder.put(grammarAccess.getAccountAccess().getMfaTypeAssignment_8(), "rule__Account__MfaTypeAssignment_8");
-			builder.put(grammarAccess.getSavingsAccountAccess().getIntRateAssignment_2(), "rule__SavingsAccount__IntRateAssignment_2");
-			builder.put(grammarAccess.getCheckingAccountAccess().getDepPerMonthAssignment_2(), "rule__CheckingAccount__DepPerMonthAssignment_2");
-			builder.put(grammarAccess.getMortgageAccountAccess().getLoanPeriodAssignment_2(), "rule__MortgageAccount__LoanPeriodAssignment_2");
+			builder.put(grammarAccess.getAccountAccess().getAccountNumAssignment_1(), "rule__Account__AccountNumAssignment_1");
+			builder.put(grammarAccess.getAccountAccess().getHolderAssignment_4(), "rule__Account__HolderAssignment_4");
+			builder.put(grammarAccess.getAccountAccess().getBalanceAssignment_6(), "rule__Account__BalanceAssignment_6");
+			builder.put(grammarAccess.getAccountAccess().getMfaTypeAssignment_9(), "rule__Account__MfaTypeAssignment_9");
+			builder.put(grammarAccess.getAccountAccess().getAccountTypeAssignment_11(), "rule__Account__AccountTypeAssignment_11");
+			builder.put(grammarAccess.getAccountAccess().getIntRateAssignment_12_1(), "rule__Account__IntRateAssignment_12_1");
+			builder.put(grammarAccess.getAccountAccess().getDepPerMonthAssignment_13_1(), "rule__Account__DepPerMonthAssignment_13_1");
+			builder.put(grammarAccess.getAccountAccess().getLoanPeriodAssignment_14_1(), "rule__Account__LoanPeriodAssignment_14_1");
 			builder.put(grammarAccess.getTransactionAccess().getAccountAssignment_2(), "rule__Transaction__AccountAssignment_2");
 			builder.put(grammarAccess.getTransactionAccess().getAmountAssignment_4(), "rule__Transaction__AmountAssignment_4");
 			builder.put(grammarAccess.getTransactionAccess().getDateAssignment_6(), "rule__Transaction__DateAssignment_6");

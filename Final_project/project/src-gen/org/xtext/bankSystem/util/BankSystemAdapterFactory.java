@@ -106,21 +106,6 @@ public class BankSystemAdapterFactory extends AdapterFactoryImpl
         return createAccountAdapter();
       }
       @Override
-      public Adapter caseSavingsAccount(SavingsAccount object)
-      {
-        return createSavingsAccountAdapter();
-      }
-      @Override
-      public Adapter caseCheckingAccount(CheckingAccount object)
-      {
-        return createCheckingAccountAdapter();
-      }
-      @Override
-      public Adapter caseMortgageAccount(MortgageAccount object)
-      {
-        return createMortgageAccountAdapter();
-      }
-      @Override
       public Adapter caseTransaction(Transaction object)
       {
         return createTransactionAdapter();
@@ -238,51 +223,6 @@ public class BankSystemAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAccountAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.bankSystem.SavingsAccount <em>Savings Account</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.bankSystem.SavingsAccount
-   * @generated
-   */
-  public Adapter createSavingsAccountAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.bankSystem.CheckingAccount <em>Checking Account</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.bankSystem.CheckingAccount
-   * @generated
-   */
-  public Adapter createCheckingAccountAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.bankSystem.MortgageAccount <em>Mortgage Account</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.bankSystem.MortgageAccount
-   * @generated
-   */
-  public Adapter createMortgageAccountAdapter()
   {
     return null;
   }

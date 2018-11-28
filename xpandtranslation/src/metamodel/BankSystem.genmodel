@@ -25,6 +25,8 @@
     </genClasses>
     <genClasses ecoreClass="BankSystem.ecore#//Branch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Branch/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Branch/mybooth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Branch/myVault"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BankSystem.ecore#//Branch/employees"/>
     </genClasses>
     <genClasses ecoreClass="BankSystem.ecore#//Employee">
@@ -34,22 +36,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Employee/currentRole"/>
     </genClasses>
     <genClasses ecoreClass="BankSystem.ecore#//Account">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BankSystem.ecore#//Account/holder"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/balance"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/accountNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/holder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/balance"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/mfaType"/>
-    </genClasses>
-    <genClasses ecoreClass="BankSystem.ecore#//SavingsAccount">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//SavingsAccount/intRate"/>
-    </genClasses>
-    <genClasses ecoreClass="BankSystem.ecore#//CheckingAccount">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//CheckingAccount/depPerMonth"/>
-    </genClasses>
-    <genClasses ecoreClass="BankSystem.ecore#//MortgageAccount">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//MortgageAccount/loanPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/accountType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/intRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/depPerMonth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Account/loanPeriod"/>
     </genClasses>
     <genClasses ecoreClass="BankSystem.ecore#//Transaction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BankSystem.ecore#//Transaction/account"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Transaction/account"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Transaction/amount"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BankSystem.ecore#//Transaction/date"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BankSystem.ecore#//Transaction/debit"/>

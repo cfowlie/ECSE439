@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <bankSystem:BankSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bankSystem="http://www.xtext.org/BankSystem">
   <banks name="bnp" countryOfOrigin="Belgium">
-    <branches address="Brussels">
+    <branches address="Brussels" mybooth="Booth">
       <employees name="manager" salary="54000" currentRole="Manager">
         <date year="2018" month="4" day="7"/>
       </employees>
     </branches>
+    <accounts accountNum="BE65468746" holder="Nathan" balance="12" mfaType="sdsdc" accountType="Savings Account" intRate="5"/>
   </banks>
   <users name="Nathan" email="nathan@mail.com" hashpass="sdsqsq" address="qsdqs"/>
 </bankSystem:BankSystem>

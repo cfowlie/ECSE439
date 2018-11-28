@@ -14,10 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getBalance <em>Balance</em>}</li>
- *   <li>{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Account#getMfaType <em>Mfa Type</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Account#getAccountType <em>Account Type</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Account#getIntRate <em>Int Rate</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Account#getDepPerMonth <em>Dep Per Month</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Account#getLoanPeriod <em>Loan Period</em>}</li>
  * </ul>
  *
  * @see org.xtext.bankSystem.BankSystemPackage#getAccount()
@@ -27,30 +31,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface Account extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Holder</b></em>' containment reference.
+   * Returns the value of the '<em><b>Account Num</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Holder</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Account Num</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Holder</em>' containment reference.
-   * @see #setHolder(User)
-   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_Holder()
-   * @model containment="true"
+   * @return the value of the '<em>Account Num</em>' attribute.
+   * @see #setAccountNum(String)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_AccountNum()
+   * @model
    * @generated
    */
-  User getHolder();
+  String getAccountNum();
 
   /**
-   * Sets the value of the '{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Holder</em>' containment reference.
+   * @param value the new value of the '<em>Account Num</em>' attribute.
+   * @see #getAccountNum()
+   * @generated
+   */
+  void setAccountNum(String value);
+
+  /**
+   * Returns the value of the '<em><b>Holder</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Holder</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Holder</em>' attribute.
+   * @see #setHolder(String)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_Holder()
+   * @model
+   * @generated
+   */
+  String getHolder();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Holder</em>' attribute.
    * @see #getHolder()
    * @generated
    */
-  void setHolder(User value);
+  void setHolder(String value);
 
   /**
    * Returns the value of the '<em><b>Balance</b></em>' attribute.
@@ -79,32 +109,6 @@ public interface Account extends EObject
   void setBalance(int value);
 
   /**
-   * Returns the value of the '<em><b>Account Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Account Num</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Account Num</em>' attribute.
-   * @see #setAccountNum(String)
-   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_AccountNum()
-   * @model
-   * @generated
-   */
-  String getAccountNum();
-
-  /**
-   * Sets the value of the '{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Account Num</em>' attribute.
-   * @see #getAccountNum()
-   * @generated
-   */
-  void setAccountNum(String value);
-
-  /**
    * Returns the value of the '<em><b>Mfa Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -129,5 +133,109 @@ public interface Account extends EObject
    * @generated
    */
   void setMfaType(String value);
+
+  /**
+   * Returns the value of the '<em><b>Account Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Account Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Account Type</em>' attribute.
+   * @see #setAccountType(String)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_AccountType()
+   * @model
+   * @generated
+   */
+  String getAccountType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getAccountType <em>Account Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Account Type</em>' attribute.
+   * @see #getAccountType()
+   * @generated
+   */
+  void setAccountType(String value);
+
+  /**
+   * Returns the value of the '<em><b>Int Rate</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Int Rate</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Int Rate</em>' attribute.
+   * @see #setIntRate(int)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_IntRate()
+   * @model
+   * @generated
+   */
+  int getIntRate();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getIntRate <em>Int Rate</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Int Rate</em>' attribute.
+   * @see #getIntRate()
+   * @generated
+   */
+  void setIntRate(int value);
+
+  /**
+   * Returns the value of the '<em><b>Dep Per Month</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Dep Per Month</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Dep Per Month</em>' attribute.
+   * @see #setDepPerMonth(int)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_DepPerMonth()
+   * @model
+   * @generated
+   */
+  int getDepPerMonth();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getDepPerMonth <em>Dep Per Month</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Dep Per Month</em>' attribute.
+   * @see #getDepPerMonth()
+   * @generated
+   */
+  void setDepPerMonth(int value);
+
+  /**
+   * Returns the value of the '<em><b>Loan Period</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Loan Period</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Loan Period</em>' attribute.
+   * @see #setLoanPeriod(String)
+   * @see org.xtext.bankSystem.BankSystemPackage#getAccount_LoanPeriod()
+   * @model
+   * @generated
+   */
+  String getLoanPeriod();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Account#getLoanPeriod <em>Loan Period</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Loan Period</em>' attribute.
+   * @see #getLoanPeriod()
+   * @generated
+   */
+  void setLoanPeriod(String value);
 
 } // Account

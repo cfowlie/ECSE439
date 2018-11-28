@@ -4,17 +4,14 @@
 package org.xtext.bankSystem.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.bankSystem.Account;
 import org.xtext.bankSystem.BankSystemPackage;
-import org.xtext.bankSystem.User;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,10 +21,14 @@ import org.xtext.bankSystem.User;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getAccountNum <em>Account Num</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getHolder <em>Holder</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getBalance <em>Balance</em>}</li>
- *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getAccountNum <em>Account Num</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getMfaType <em>Mfa Type</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getAccountType <em>Account Type</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getIntRate <em>Int Rate</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getDepPerMonth <em>Dep Per Month</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.AccountImpl#getLoanPeriod <em>Loan Period</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +36,44 @@ import org.xtext.bankSystem.User;
 public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 {
   /**
-   * The cached value of the '{@link #getHolder() <em>Holder</em>}' containment reference.
+   * The default value of the '{@link #getAccountNum() <em>Account Num</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAccountNum()
+   * @generated
+   * @ordered
+   */
+  protected static final String ACCOUNT_NUM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAccountNum() <em>Account Num</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAccountNum()
+   * @generated
+   * @ordered
+   */
+  protected String accountNum = ACCOUNT_NUM_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getHolder() <em>Holder</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getHolder()
    * @generated
    * @ordered
    */
-  protected User holder;
+  protected static final String HOLDER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getHolder() <em>Holder</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHolder()
+   * @generated
+   * @ordered
+   */
+  protected String holder = HOLDER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getBalance() <em>Balance</em>}' attribute.
@@ -65,26 +96,6 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   protected int balance = BALANCE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAccountNum() <em>Account Num</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAccountNum()
-   * @generated
-   * @ordered
-   */
-  protected static final String ACCOUNT_NUM_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAccountNum() <em>Account Num</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAccountNum()
-   * @generated
-   * @ordered
-   */
-  protected String accountNum = ACCOUNT_NUM_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getMfaType() <em>Mfa Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -105,6 +116,86 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   protected String mfaType = MFA_TYPE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getAccountType() <em>Account Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAccountType()
+   * @generated
+   * @ordered
+   */
+  protected static final String ACCOUNT_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAccountType() <em>Account Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAccountType()
+   * @generated
+   * @ordered
+   */
+  protected String accountType = ACCOUNT_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIntRate() <em>Int Rate</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIntRate()
+   * @generated
+   * @ordered
+   */
+  protected static final int INT_RATE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getIntRate() <em>Int Rate</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIntRate()
+   * @generated
+   * @ordered
+   */
+  protected int intRate = INT_RATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDepPerMonth() <em>Dep Per Month</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDepPerMonth()
+   * @generated
+   * @ordered
+   */
+  protected static final int DEP_PER_MONTH_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getDepPerMonth() <em>Dep Per Month</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDepPerMonth()
+   * @generated
+   * @ordered
+   */
+  protected int depPerMonth = DEP_PER_MONTH_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLoanPeriod() <em>Loan Period</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoanPeriod()
+   * @generated
+   * @ordered
+   */
+  protected static final String LOAN_PERIOD_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLoanPeriod() <em>Loan Period</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoanPeriod()
+   * @generated
+   * @ordered
+   */
+  protected String loanPeriod = LOAN_PERIOD_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -123,77 +214,6 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   protected EClass eStaticClass()
   {
     return BankSystemPackage.Literals.ACCOUNT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public User getHolder()
-  {
-    return holder;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetHolder(User newHolder, NotificationChain msgs)
-  {
-    User oldHolder = holder;
-    holder = newHolder;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__HOLDER, oldHolder, newHolder);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHolder(User newHolder)
-  {
-    if (newHolder != holder)
-    {
-      NotificationChain msgs = null;
-      if (holder != null)
-        msgs = ((InternalEObject)holder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.ACCOUNT__HOLDER, null, msgs);
-      if (newHolder != null)
-        msgs = ((InternalEObject)newHolder).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.ACCOUNT__HOLDER, null, msgs);
-      msgs = basicSetHolder(newHolder, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__HOLDER, newHolder, newHolder));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getBalance()
-  {
-    return balance;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBalance(int newBalance)
-  {
-    int oldBalance = balance;
-    balance = newBalance;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__BALANCE, oldBalance, balance));
   }
 
   /**
@@ -224,6 +244,52 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getHolder()
+  {
+    return holder;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHolder(String newHolder)
+  {
+    String oldHolder = holder;
+    holder = newHolder;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__HOLDER, oldHolder, holder));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getBalance()
+  {
+    return balance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBalance(int newBalance)
+  {
+    int oldBalance = balance;
+    balance = newBalance;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__BALANCE, oldBalance, balance));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getMfaType()
   {
     return mfaType;
@@ -247,15 +313,91 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public String getAccountType()
   {
-    switch (featureID)
-    {
-      case BankSystemPackage.ACCOUNT__HOLDER:
-        return basicSetHolder(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return accountType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAccountType(String newAccountType)
+  {
+    String oldAccountType = accountType;
+    accountType = newAccountType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__ACCOUNT_TYPE, oldAccountType, accountType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getIntRate()
+  {
+    return intRate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIntRate(int newIntRate)
+  {
+    int oldIntRate = intRate;
+    intRate = newIntRate;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__INT_RATE, oldIntRate, intRate));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getDepPerMonth()
+  {
+    return depPerMonth;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDepPerMonth(int newDepPerMonth)
+  {
+    int oldDepPerMonth = depPerMonth;
+    depPerMonth = newDepPerMonth;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__DEP_PER_MONTH, oldDepPerMonth, depPerMonth));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getLoanPeriod()
+  {
+    return loanPeriod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLoanPeriod(String newLoanPeriod)
+  {
+    String oldLoanPeriod = loanPeriod;
+    loanPeriod = newLoanPeriod;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.ACCOUNT__LOAN_PERIOD, oldLoanPeriod, loanPeriod));
   }
 
   /**
@@ -268,14 +410,22 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
+      case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
+        return getAccountNum();
       case BankSystemPackage.ACCOUNT__HOLDER:
         return getHolder();
       case BankSystemPackage.ACCOUNT__BALANCE:
         return getBalance();
-      case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
-        return getAccountNum();
       case BankSystemPackage.ACCOUNT__MFA_TYPE:
         return getMfaType();
+      case BankSystemPackage.ACCOUNT__ACCOUNT_TYPE:
+        return getAccountType();
+      case BankSystemPackage.ACCOUNT__INT_RATE:
+        return getIntRate();
+      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
+        return getDepPerMonth();
+      case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
+        return getLoanPeriod();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -290,17 +440,29 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
+      case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
+        setAccountNum((String)newValue);
+        return;
       case BankSystemPackage.ACCOUNT__HOLDER:
-        setHolder((User)newValue);
+        setHolder((String)newValue);
         return;
       case BankSystemPackage.ACCOUNT__BALANCE:
         setBalance((Integer)newValue);
         return;
-      case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
-        setAccountNum((String)newValue);
-        return;
       case BankSystemPackage.ACCOUNT__MFA_TYPE:
         setMfaType((String)newValue);
+        return;
+      case BankSystemPackage.ACCOUNT__ACCOUNT_TYPE:
+        setAccountType((String)newValue);
+        return;
+      case BankSystemPackage.ACCOUNT__INT_RATE:
+        setIntRate((Integer)newValue);
+        return;
+      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
+        setDepPerMonth((Integer)newValue);
+        return;
+      case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
+        setLoanPeriod((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -316,17 +478,29 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
+      case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
+        setAccountNum(ACCOUNT_NUM_EDEFAULT);
+        return;
       case BankSystemPackage.ACCOUNT__HOLDER:
-        setHolder((User)null);
+        setHolder(HOLDER_EDEFAULT);
         return;
       case BankSystemPackage.ACCOUNT__BALANCE:
         setBalance(BALANCE_EDEFAULT);
         return;
-      case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
-        setAccountNum(ACCOUNT_NUM_EDEFAULT);
-        return;
       case BankSystemPackage.ACCOUNT__MFA_TYPE:
         setMfaType(MFA_TYPE_EDEFAULT);
+        return;
+      case BankSystemPackage.ACCOUNT__ACCOUNT_TYPE:
+        setAccountType(ACCOUNT_TYPE_EDEFAULT);
+        return;
+      case BankSystemPackage.ACCOUNT__INT_RATE:
+        setIntRate(INT_RATE_EDEFAULT);
+        return;
+      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
+        setDepPerMonth(DEP_PER_MONTH_EDEFAULT);
+        return;
+      case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
+        setLoanPeriod(LOAN_PERIOD_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -342,14 +516,22 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
   {
     switch (featureID)
     {
-      case BankSystemPackage.ACCOUNT__HOLDER:
-        return holder != null;
-      case BankSystemPackage.ACCOUNT__BALANCE:
-        return balance != BALANCE_EDEFAULT;
       case BankSystemPackage.ACCOUNT__ACCOUNT_NUM:
         return ACCOUNT_NUM_EDEFAULT == null ? accountNum != null : !ACCOUNT_NUM_EDEFAULT.equals(accountNum);
+      case BankSystemPackage.ACCOUNT__HOLDER:
+        return HOLDER_EDEFAULT == null ? holder != null : !HOLDER_EDEFAULT.equals(holder);
+      case BankSystemPackage.ACCOUNT__BALANCE:
+        return balance != BALANCE_EDEFAULT;
       case BankSystemPackage.ACCOUNT__MFA_TYPE:
         return MFA_TYPE_EDEFAULT == null ? mfaType != null : !MFA_TYPE_EDEFAULT.equals(mfaType);
+      case BankSystemPackage.ACCOUNT__ACCOUNT_TYPE:
+        return ACCOUNT_TYPE_EDEFAULT == null ? accountType != null : !ACCOUNT_TYPE_EDEFAULT.equals(accountType);
+      case BankSystemPackage.ACCOUNT__INT_RATE:
+        return intRate != INT_RATE_EDEFAULT;
+      case BankSystemPackage.ACCOUNT__DEP_PER_MONTH:
+        return depPerMonth != DEP_PER_MONTH_EDEFAULT;
+      case BankSystemPackage.ACCOUNT__LOAN_PERIOD:
+        return LOAN_PERIOD_EDEFAULT == null ? loanPeriod != null : !LOAN_PERIOD_EDEFAULT.equals(loanPeriod);
     }
     return super.eIsSet(featureID);
   }
@@ -365,12 +547,22 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (balance: ");
-    result.append(balance);
-    result.append(", accountNum: ");
+    result.append(" (accountNum: ");
     result.append(accountNum);
+    result.append(", holder: ");
+    result.append(holder);
+    result.append(", balance: ");
+    result.append(balance);
     result.append(", mfaType: ");
     result.append(mfaType);
+    result.append(", accountType: ");
+    result.append(accountType);
+    result.append(", intRate: ");
+    result.append(intRate);
+    result.append(", depPerMonth: ");
+    result.append(depPerMonth);
+    result.append(", loanPeriod: ");
+    result.append(loanPeriod);
     result.append(')');
     return result.toString();
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
-	<property name="model" value="xpandtranslation/src/xmifiles/output.xmi" />
+	<property name="model" value="xpandtranslation/src/xmifiles/test.xmi" />
 	<property name="src-gen" value="src-gen" />
 
 	<!-- set up EMF for standalone execution -->

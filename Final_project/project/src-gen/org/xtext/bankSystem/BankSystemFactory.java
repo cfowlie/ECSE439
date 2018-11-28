@@ -78,33 +78,6 @@ public interface BankSystemFactory extends EFactory
   Account createAccount();
 
   /**
-   * Returns a new object of class '<em>Savings Account</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Savings Account</em>'.
-   * @generated
-   */
-  SavingsAccount createSavingsAccount();
-
-  /**
-   * Returns a new object of class '<em>Checking Account</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Checking Account</em>'.
-   * @generated
-   */
-  CheckingAccount createCheckingAccount();
-
-  /**
-   * Returns a new object of class '<em>Mortgage Account</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mortgage Account</em>'.
-   * @generated
-   */
-  MortgageAccount createMortgageAccount();
-
-  /**
    * Returns a new object of class '<em>Transaction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

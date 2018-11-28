@@ -115,30 +115,6 @@ public class BankSystemSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case BankSystemPackage.SAVINGS_ACCOUNT:
-      {
-        SavingsAccount savingsAccount = (SavingsAccount)theEObject;
-        T result = caseSavingsAccount(savingsAccount);
-        if (result == null) result = caseAccount(savingsAccount);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case BankSystemPackage.CHECKING_ACCOUNT:
-      {
-        CheckingAccount checkingAccount = (CheckingAccount)theEObject;
-        T result = caseCheckingAccount(checkingAccount);
-        if (result == null) result = caseAccount(checkingAccount);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case BankSystemPackage.MORTGAGE_ACCOUNT:
-      {
-        MortgageAccount mortgageAccount = (MortgageAccount)theEObject;
-        T result = caseMortgageAccount(mortgageAccount);
-        if (result == null) result = caseAccount(mortgageAccount);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case BankSystemPackage.TRANSACTION:
       {
         Transaction transaction = (Transaction)theEObject;
@@ -249,54 +225,6 @@ public class BankSystemSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAccount(Account object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Savings Account</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Savings Account</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSavingsAccount(SavingsAccount object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Checking Account</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Checking Account</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCheckingAccount(CheckingAccount object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Mortgage Account</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mortgage Account</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMortgageAccount(MortgageAccount object)
   {
     return null;
   }

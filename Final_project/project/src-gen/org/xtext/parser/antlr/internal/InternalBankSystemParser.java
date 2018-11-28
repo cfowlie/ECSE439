@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBankSystemParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Bank'", "'{'", "'Country'", "'}'", "'User'", "'Name'", "'Email'", "'HashPass'", "'Address'", "'Branch{'", "'Booth'", "'Vault'", "'Employee'", "'Hiring date'", "'Salary'", "'Current Role'", "'Teller'", "'Manager'", "'Holder(s)'", "'Balance'", "'Account Number'", "'MFA Type'", "'Savings Account {'", "'Interest rate'", "'Checking Account {'", "'Debits per month'", "'Mortgage Account {'", "'Loan period'", "'transaction {'", "'Account:'", "'Amount:'", "'Date'", "'Debit'", "'Vendor name'", "'true'", "'false'", "'/'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Bank'", "'{'", "'Country'", "'}'", "'User'", "'Name'", "'Email'", "'HashPass'", "'Address'", "'Branch{'", "'Booth'", "'Vault'", "'Employee'", "'Hiring date'", "'Salary'", "'Current Role'", "'Teller'", "'Manager'", "'account'", "'Holder(s)'", "'Balance'", "'Account Number'", "'MFA Type'", "'Type'", "'Interest rate'", "'Debits per month'", "'Loan period'", "'Savings Account'", "'Checking Account'", "'Mortgage Account'", "'transaction {'", "'Account:'", "'Amount:'", "'Date'", "'Debit'", "'Vendor name'", "'true'", "'false'", "'/'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -60,6 +60,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
     public static final int T__32=32;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
+    public static final int T__48=48;
+    public static final int T__49=49;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__46=46;
@@ -482,7 +484,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==33||LA4_0==35||LA4_0==37) ) {
+                if ( (LA4_0==29) ) {
                     alt4=1;
                 }
 
@@ -531,7 +533,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==39) ) {
+                if ( (LA5_0==41) ) {
                     alt5=1;
                 }
 
@@ -854,7 +856,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBranch"
-    // InternalBankSystem.g:375:1: ruleBranch returns [EObject current=null] : (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( ruleBooth )? ( ruleVault )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' ) ;
+    // InternalBankSystem.g:375:1: ruleBranch returns [EObject current=null] : (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( (lv_mybooth_3_0= ruleBooth ) )? ( (lv_myVault_4_0= ruleVault ) )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' ) ;
     public final EObject ruleBranch() throws RecognitionException {
         EObject current = null;
 
@@ -862,6 +864,10 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token lv_address_2_0=null;
         Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_mybooth_3_0 = null;
+
+        AntlrDatatypeRuleToken lv_myVault_4_0 = null;
+
         EObject lv_employees_5_0 = null;
 
 
@@ -869,11 +875,11 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:381:2: ( (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( ruleBooth )? ( ruleVault )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' ) )
-            // InternalBankSystem.g:382:2: (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( ruleBooth )? ( ruleVault )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' )
+            // InternalBankSystem.g:381:2: ( (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( (lv_mybooth_3_0= ruleBooth ) )? ( (lv_myVault_4_0= ruleVault ) )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' ) )
+            // InternalBankSystem.g:382:2: (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( (lv_mybooth_3_0= ruleBooth ) )? ( (lv_myVault_4_0= ruleVault ) )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' )
             {
-            // InternalBankSystem.g:382:2: (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( ruleBooth )? ( ruleVault )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' )
-            // InternalBankSystem.g:383:3: otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( ruleBooth )? ( ruleVault )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}'
+            // InternalBankSystem.g:382:2: (otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( (lv_mybooth_3_0= ruleBooth ) )? ( (lv_myVault_4_0= ruleVault ) )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}' )
+            // InternalBankSystem.g:383:3: otherlv_0= 'Branch{' otherlv_1= 'Address' ( (lv_address_2_0= RULE_STRING ) ) ( (lv_mybooth_3_0= ruleBooth ) )? ( (lv_myVault_4_0= ruleVault ) )? ( (lv_employees_5_0= ruleEmployee ) )+ otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,20,FOLLOW_16); 
 
@@ -909,7 +915,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalBankSystem.g:409:3: ( ruleBooth )?
+            // InternalBankSystem.g:409:3: ( (lv_mybooth_3_0= ruleBooth ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -918,26 +924,40 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalBankSystem.g:410:4: ruleBooth
+                    // InternalBankSystem.g:410:4: (lv_mybooth_3_0= ruleBooth )
+                    {
+                    // InternalBankSystem.g:410:4: (lv_mybooth_3_0= ruleBooth )
+                    // InternalBankSystem.g:411:5: lv_mybooth_3_0= ruleBooth
                     {
 
-                    				newCompositeNode(grammarAccess.getBranchAccess().getBoothParserRuleCall_3());
-                    			
+                    					newCompositeNode(grammarAccess.getBranchAccess().getMyboothBoothParserRuleCall_3_0());
+                    				
                     pushFollow(FOLLOW_18);
-                    ruleBooth();
+                    lv_mybooth_3_0=ruleBooth();
 
                     state._fsp--;
 
 
-                    				afterParserOrEnumRuleCall();
-                    			
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getBranchRule());
+                    					}
+                    					set(
+                    						current,
+                    						"mybooth",
+                    						lv_mybooth_3_0,
+                    						"org.xtext.BankSystem.Booth");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
 
                     }
                     break;
 
             }
 
-            // InternalBankSystem.g:418:3: ( ruleVault )?
+            // InternalBankSystem.g:428:3: ( (lv_myVault_4_0= ruleVault ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -946,26 +966,40 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalBankSystem.g:419:4: ruleVault
+                    // InternalBankSystem.g:429:4: (lv_myVault_4_0= ruleVault )
+                    {
+                    // InternalBankSystem.g:429:4: (lv_myVault_4_0= ruleVault )
+                    // InternalBankSystem.g:430:5: lv_myVault_4_0= ruleVault
                     {
 
-                    				newCompositeNode(grammarAccess.getBranchAccess().getVaultParserRuleCall_4());
-                    			
+                    					newCompositeNode(grammarAccess.getBranchAccess().getMyVaultVaultParserRuleCall_4_0());
+                    				
                     pushFollow(FOLLOW_18);
-                    ruleVault();
+                    lv_myVault_4_0=ruleVault();
 
                     state._fsp--;
 
 
-                    				afterParserOrEnumRuleCall();
-                    			
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getBranchRule());
+                    					}
+                    					set(
+                    						current,
+                    						"myVault",
+                    						lv_myVault_4_0,
+                    						"org.xtext.BankSystem.Vault");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
 
                     }
                     break;
 
             }
 
-            // InternalBankSystem.g:427:3: ( (lv_employees_5_0= ruleEmployee ) )+
+            // InternalBankSystem.g:447:3: ( (lv_employees_5_0= ruleEmployee ) )+
             int cnt8=0;
             loop8:
             do {
@@ -979,10 +1013,10 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalBankSystem.g:428:4: (lv_employees_5_0= ruleEmployee )
+            	    // InternalBankSystem.g:448:4: (lv_employees_5_0= ruleEmployee )
             	    {
-            	    // InternalBankSystem.g:428:4: (lv_employees_5_0= ruleEmployee )
-            	    // InternalBankSystem.g:429:5: lv_employees_5_0= ruleEmployee
+            	    // InternalBankSystem.g:448:4: (lv_employees_5_0= ruleEmployee )
+            	    // InternalBankSystem.g:449:5: lv_employees_5_0= ruleEmployee
             	    {
 
             	    					newCompositeNode(grammarAccess.getBranchAccess().getEmployeesEmployeeParserRuleCall_5_0());
@@ -1046,7 +1080,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooth"
-    // InternalBankSystem.g:454:1: entryRuleBooth returns [String current=null] : iv_ruleBooth= ruleBooth EOF ;
+    // InternalBankSystem.g:474:1: entryRuleBooth returns [String current=null] : iv_ruleBooth= ruleBooth EOF ;
     public final String entryRuleBooth() throws RecognitionException {
         String current = null;
 
@@ -1054,8 +1088,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:454:45: (iv_ruleBooth= ruleBooth EOF )
-            // InternalBankSystem.g:455:2: iv_ruleBooth= ruleBooth EOF
+            // InternalBankSystem.g:474:45: (iv_ruleBooth= ruleBooth EOF )
+            // InternalBankSystem.g:475:2: iv_ruleBooth= ruleBooth EOF
             {
              newCompositeNode(grammarAccess.getBoothRule()); 
             pushFollow(FOLLOW_1);
@@ -1082,7 +1116,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooth"
-    // InternalBankSystem.g:461:1: ruleBooth returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Booth' ;
+    // InternalBankSystem.g:481:1: ruleBooth returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Booth' ;
     public final AntlrDatatypeRuleToken ruleBooth() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1092,8 +1126,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:467:2: (kw= 'Booth' )
-            // InternalBankSystem.g:468:2: kw= 'Booth'
+            // InternalBankSystem.g:487:2: (kw= 'Booth' )
+            // InternalBankSystem.g:488:2: kw= 'Booth'
             {
             kw=(Token)match(input,21,FOLLOW_2); 
 
@@ -1120,7 +1154,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVault"
-    // InternalBankSystem.g:476:1: entryRuleVault returns [String current=null] : iv_ruleVault= ruleVault EOF ;
+    // InternalBankSystem.g:496:1: entryRuleVault returns [String current=null] : iv_ruleVault= ruleVault EOF ;
     public final String entryRuleVault() throws RecognitionException {
         String current = null;
 
@@ -1128,8 +1162,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:476:45: (iv_ruleVault= ruleVault EOF )
-            // InternalBankSystem.g:477:2: iv_ruleVault= ruleVault EOF
+            // InternalBankSystem.g:496:45: (iv_ruleVault= ruleVault EOF )
+            // InternalBankSystem.g:497:2: iv_ruleVault= ruleVault EOF
             {
              newCompositeNode(grammarAccess.getVaultRule()); 
             pushFollow(FOLLOW_1);
@@ -1156,7 +1190,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVault"
-    // InternalBankSystem.g:483:1: ruleVault returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Vault' ;
+    // InternalBankSystem.g:503:1: ruleVault returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Vault' ;
     public final AntlrDatatypeRuleToken ruleVault() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1166,8 +1200,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:489:2: (kw= 'Vault' )
-            // InternalBankSystem.g:490:2: kw= 'Vault'
+            // InternalBankSystem.g:509:2: (kw= 'Vault' )
+            // InternalBankSystem.g:510:2: kw= 'Vault'
             {
             kw=(Token)match(input,22,FOLLOW_2); 
 
@@ -1194,7 +1228,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEmployee"
-    // InternalBankSystem.g:498:1: entryRuleEmployee returns [EObject current=null] : iv_ruleEmployee= ruleEmployee EOF ;
+    // InternalBankSystem.g:518:1: entryRuleEmployee returns [EObject current=null] : iv_ruleEmployee= ruleEmployee EOF ;
     public final EObject entryRuleEmployee() throws RecognitionException {
         EObject current = null;
 
@@ -1202,8 +1236,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:498:49: (iv_ruleEmployee= ruleEmployee EOF )
-            // InternalBankSystem.g:499:2: iv_ruleEmployee= ruleEmployee EOF
+            // InternalBankSystem.g:518:49: (iv_ruleEmployee= ruleEmployee EOF )
+            // InternalBankSystem.g:519:2: iv_ruleEmployee= ruleEmployee EOF
             {
              newCompositeNode(grammarAccess.getEmployeeRule()); 
             pushFollow(FOLLOW_1);
@@ -1230,7 +1264,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmployee"
-    // InternalBankSystem.g:505:1: ruleEmployee returns [EObject current=null] : (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' ) ;
+    // InternalBankSystem.g:525:1: ruleEmployee returns [EObject current=null] : (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' ) ;
     public final EObject ruleEmployee() throws RecognitionException {
         EObject current = null;
 
@@ -1251,21 +1285,21 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:511:2: ( (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' ) )
-            // InternalBankSystem.g:512:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' )
+            // InternalBankSystem.g:531:2: ( (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' ) )
+            // InternalBankSystem.g:532:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' )
             {
-            // InternalBankSystem.g:512:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' )
-            // InternalBankSystem.g:513:3: otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}'
+            // InternalBankSystem.g:532:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}' )
+            // InternalBankSystem.g:533:3: otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Hiring date' ( (lv_date_4_0= ruleDate ) ) otherlv_5= 'Salary' ( (lv_salary_6_0= RULE_INT ) ) otherlv_7= 'Current Role' ( (lv_currentRole_8_0= ruleEmployeeRole ) ) otherlv_9= '}'
             {
             otherlv_0=(Token)match(input,23,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEmployeeAccess().getEmployeeKeyword_0());
             		
-            // InternalBankSystem.g:517:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalBankSystem.g:518:4: (lv_name_1_0= RULE_ID )
+            // InternalBankSystem.g:537:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalBankSystem.g:538:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalBankSystem.g:518:4: (lv_name_1_0= RULE_ID )
-            // InternalBankSystem.g:519:5: lv_name_1_0= RULE_ID
+            // InternalBankSystem.g:538:4: (lv_name_1_0= RULE_ID )
+            // InternalBankSystem.g:539:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -1295,11 +1329,11 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getEmployeeAccess().getHiringDateKeyword_3());
             		
-            // InternalBankSystem.g:543:3: ( (lv_date_4_0= ruleDate ) )
-            // InternalBankSystem.g:544:4: (lv_date_4_0= ruleDate )
+            // InternalBankSystem.g:563:3: ( (lv_date_4_0= ruleDate ) )
+            // InternalBankSystem.g:564:4: (lv_date_4_0= ruleDate )
             {
-            // InternalBankSystem.g:544:4: (lv_date_4_0= ruleDate )
-            // InternalBankSystem.g:545:5: lv_date_4_0= ruleDate
+            // InternalBankSystem.g:564:4: (lv_date_4_0= ruleDate )
+            // InternalBankSystem.g:565:5: lv_date_4_0= ruleDate
             {
 
             					newCompositeNode(grammarAccess.getEmployeeAccess().getDateDateParserRuleCall_4_0());
@@ -1330,11 +1364,11 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getEmployeeAccess().getSalaryKeyword_5());
             		
-            // InternalBankSystem.g:566:3: ( (lv_salary_6_0= RULE_INT ) )
-            // InternalBankSystem.g:567:4: (lv_salary_6_0= RULE_INT )
+            // InternalBankSystem.g:586:3: ( (lv_salary_6_0= RULE_INT ) )
+            // InternalBankSystem.g:587:4: (lv_salary_6_0= RULE_INT )
             {
-            // InternalBankSystem.g:567:4: (lv_salary_6_0= RULE_INT )
-            // InternalBankSystem.g:568:5: lv_salary_6_0= RULE_INT
+            // InternalBankSystem.g:587:4: (lv_salary_6_0= RULE_INT )
+            // InternalBankSystem.g:588:5: lv_salary_6_0= RULE_INT
             {
             lv_salary_6_0=(Token)match(input,RULE_INT,FOLLOW_23); 
 
@@ -1360,11 +1394,11 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getEmployeeAccess().getCurrentRoleKeyword_7());
             		
-            // InternalBankSystem.g:588:3: ( (lv_currentRole_8_0= ruleEmployeeRole ) )
-            // InternalBankSystem.g:589:4: (lv_currentRole_8_0= ruleEmployeeRole )
+            // InternalBankSystem.g:608:3: ( (lv_currentRole_8_0= ruleEmployeeRole ) )
+            // InternalBankSystem.g:609:4: (lv_currentRole_8_0= ruleEmployeeRole )
             {
-            // InternalBankSystem.g:589:4: (lv_currentRole_8_0= ruleEmployeeRole )
-            // InternalBankSystem.g:590:5: lv_currentRole_8_0= ruleEmployeeRole
+            // InternalBankSystem.g:609:4: (lv_currentRole_8_0= ruleEmployeeRole )
+            // InternalBankSystem.g:610:5: lv_currentRole_8_0= ruleEmployeeRole
             {
 
             					newCompositeNode(grammarAccess.getEmployeeAccess().getCurrentRoleEmployeeRoleParserRuleCall_8_0());
@@ -1418,7 +1452,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEmployeeRole"
-    // InternalBankSystem.g:615:1: entryRuleEmployeeRole returns [String current=null] : iv_ruleEmployeeRole= ruleEmployeeRole EOF ;
+    // InternalBankSystem.g:635:1: entryRuleEmployeeRole returns [String current=null] : iv_ruleEmployeeRole= ruleEmployeeRole EOF ;
     public final String entryRuleEmployeeRole() throws RecognitionException {
         String current = null;
 
@@ -1426,8 +1460,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:615:52: (iv_ruleEmployeeRole= ruleEmployeeRole EOF )
-            // InternalBankSystem.g:616:2: iv_ruleEmployeeRole= ruleEmployeeRole EOF
+            // InternalBankSystem.g:635:52: (iv_ruleEmployeeRole= ruleEmployeeRole EOF )
+            // InternalBankSystem.g:636:2: iv_ruleEmployeeRole= ruleEmployeeRole EOF
             {
              newCompositeNode(grammarAccess.getEmployeeRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -1454,7 +1488,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmployeeRole"
-    // InternalBankSystem.g:622:1: ruleEmployeeRole returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Teller_0= ruleTeller | this_Manager_1= ruleManager ) ;
+    // InternalBankSystem.g:642:1: ruleEmployeeRole returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Teller_0= ruleTeller | this_Manager_1= ruleManager ) ;
     public final AntlrDatatypeRuleToken ruleEmployeeRole() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1467,10 +1501,10 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:628:2: ( (this_Teller_0= ruleTeller | this_Manager_1= ruleManager ) )
-            // InternalBankSystem.g:629:2: (this_Teller_0= ruleTeller | this_Manager_1= ruleManager )
+            // InternalBankSystem.g:648:2: ( (this_Teller_0= ruleTeller | this_Manager_1= ruleManager ) )
+            // InternalBankSystem.g:649:2: (this_Teller_0= ruleTeller | this_Manager_1= ruleManager )
             {
-            // InternalBankSystem.g:629:2: (this_Teller_0= ruleTeller | this_Manager_1= ruleManager )
+            // InternalBankSystem.g:649:2: (this_Teller_0= ruleTeller | this_Manager_1= ruleManager )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1488,7 +1522,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalBankSystem.g:630:3: this_Teller_0= ruleTeller
+                    // InternalBankSystem.g:650:3: this_Teller_0= ruleTeller
                     {
 
                     			newCompositeNode(grammarAccess.getEmployeeRoleAccess().getTellerParserRuleCall_0());
@@ -1508,7 +1542,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBankSystem.g:641:3: this_Manager_1= ruleManager
+                    // InternalBankSystem.g:661:3: this_Manager_1= ruleManager
                     {
 
                     			newCompositeNode(grammarAccess.getEmployeeRoleAccess().getManagerParserRuleCall_1());
@@ -1550,7 +1584,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTeller"
-    // InternalBankSystem.g:655:1: entryRuleTeller returns [String current=null] : iv_ruleTeller= ruleTeller EOF ;
+    // InternalBankSystem.g:675:1: entryRuleTeller returns [String current=null] : iv_ruleTeller= ruleTeller EOF ;
     public final String entryRuleTeller() throws RecognitionException {
         String current = null;
 
@@ -1558,8 +1592,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:655:46: (iv_ruleTeller= ruleTeller EOF )
-            // InternalBankSystem.g:656:2: iv_ruleTeller= ruleTeller EOF
+            // InternalBankSystem.g:675:46: (iv_ruleTeller= ruleTeller EOF )
+            // InternalBankSystem.g:676:2: iv_ruleTeller= ruleTeller EOF
             {
              newCompositeNode(grammarAccess.getTellerRule()); 
             pushFollow(FOLLOW_1);
@@ -1586,7 +1620,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTeller"
-    // InternalBankSystem.g:662:1: ruleTeller returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Teller' ;
+    // InternalBankSystem.g:682:1: ruleTeller returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Teller' ;
     public final AntlrDatatypeRuleToken ruleTeller() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1596,8 +1630,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:668:2: (kw= 'Teller' )
-            // InternalBankSystem.g:669:2: kw= 'Teller'
+            // InternalBankSystem.g:688:2: (kw= 'Teller' )
+            // InternalBankSystem.g:689:2: kw= 'Teller'
             {
             kw=(Token)match(input,27,FOLLOW_2); 
 
@@ -1624,7 +1658,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleManager"
-    // InternalBankSystem.g:677:1: entryRuleManager returns [String current=null] : iv_ruleManager= ruleManager EOF ;
+    // InternalBankSystem.g:697:1: entryRuleManager returns [String current=null] : iv_ruleManager= ruleManager EOF ;
     public final String entryRuleManager() throws RecognitionException {
         String current = null;
 
@@ -1632,8 +1666,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:677:47: (iv_ruleManager= ruleManager EOF )
-            // InternalBankSystem.g:678:2: iv_ruleManager= ruleManager EOF
+            // InternalBankSystem.g:697:47: (iv_ruleManager= ruleManager EOF )
+            // InternalBankSystem.g:698:2: iv_ruleManager= ruleManager EOF
             {
              newCompositeNode(grammarAccess.getManagerRule()); 
             pushFollow(FOLLOW_1);
@@ -1660,7 +1694,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleManager"
-    // InternalBankSystem.g:684:1: ruleManager returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Manager' ;
+    // InternalBankSystem.g:704:1: ruleManager returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Manager' ;
     public final AntlrDatatypeRuleToken ruleManager() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1670,8 +1704,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:690:2: (kw= 'Manager' )
-            // InternalBankSystem.g:691:2: kw= 'Manager'
+            // InternalBankSystem.g:710:2: (kw= 'Manager' )
+            // InternalBankSystem.g:711:2: kw= 'Manager'
             {
             kw=(Token)match(input,28,FOLLOW_2); 
 
@@ -1698,7 +1732,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAccount"
-    // InternalBankSystem.g:699:1: entryRuleAccount returns [EObject current=null] : iv_ruleAccount= ruleAccount EOF ;
+    // InternalBankSystem.g:719:1: entryRuleAccount returns [EObject current=null] : iv_ruleAccount= ruleAccount EOF ;
     public final EObject entryRuleAccount() throws RecognitionException {
         EObject current = null;
 
@@ -1706,8 +1740,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:699:48: (iv_ruleAccount= ruleAccount EOF )
-            // InternalBankSystem.g:700:2: iv_ruleAccount= ruleAccount EOF
+            // InternalBankSystem.g:719:48: (iv_ruleAccount= ruleAccount EOF )
+            // InternalBankSystem.g:720:2: iv_ruleAccount= ruleAccount EOF
             {
              newCompositeNode(grammarAccess.getAccountRule()); 
             pushFollow(FOLLOW_1);
@@ -1734,148 +1768,98 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAccount"
-    // InternalBankSystem.g:706:1: ruleAccount returns [EObject current=null] : ( (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) otherlv_3= 'Holder(s)' ( (lv_holder_4_0= ruleUser ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' ( (lv_accountNum_8_0= RULE_ID ) ) otherlv_9= 'MFA Type' ( (lv_mfaType_10_0= RULE_STRING ) ) otherlv_11= '}' ) ;
+    // InternalBankSystem.g:726:1: ruleAccount returns [EObject current=null] : (otherlv_0= 'account' ( (lv_accountNum_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Holder(s)' ( (lv_holder_4_0= RULE_ID ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' otherlv_8= 'MFA Type' ( (lv_mfaType_9_0= RULE_STRING ) ) otherlv_10= 'Type' ( (lv_accountType_11_0= ruleAccountType ) ) (otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) ) )? (otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) ) )? (otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) ) )? otherlv_18= '}' ) ;
     public final EObject ruleAccount() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_0=null;
+        Token lv_accountNum_1_0=null;
+        Token otherlv_2=null;
         Token otherlv_3=null;
+        Token lv_holder_4_0=null;
         Token otherlv_5=null;
         Token lv_balance_6_0=null;
         Token otherlv_7=null;
-        Token lv_accountNum_8_0=null;
-        Token otherlv_9=null;
-        Token lv_mfaType_10_0=null;
-        Token otherlv_11=null;
-        EObject this_SavingsAccount_0 = null;
-
-        EObject this_CheckingAccount_1 = null;
-
-        EObject this_MortgageAccount_2 = null;
-
-        EObject lv_holder_4_0 = null;
+        Token otherlv_8=null;
+        Token lv_mfaType_9_0=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        Token lv_intRate_13_0=null;
+        Token otherlv_14=null;
+        Token lv_depPerMonth_15_0=null;
+        Token otherlv_16=null;
+        Token lv_loanPeriod_17_0=null;
+        Token otherlv_18=null;
+        AntlrDatatypeRuleToken lv_accountType_11_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalBankSystem.g:712:2: ( ( (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) otherlv_3= 'Holder(s)' ( (lv_holder_4_0= ruleUser ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' ( (lv_accountNum_8_0= RULE_ID ) ) otherlv_9= 'MFA Type' ( (lv_mfaType_10_0= RULE_STRING ) ) otherlv_11= '}' ) )
-            // InternalBankSystem.g:713:2: ( (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) otherlv_3= 'Holder(s)' ( (lv_holder_4_0= ruleUser ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' ( (lv_accountNum_8_0= RULE_ID ) ) otherlv_9= 'MFA Type' ( (lv_mfaType_10_0= RULE_STRING ) ) otherlv_11= '}' )
+            // InternalBankSystem.g:732:2: ( (otherlv_0= 'account' ( (lv_accountNum_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Holder(s)' ( (lv_holder_4_0= RULE_ID ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' otherlv_8= 'MFA Type' ( (lv_mfaType_9_0= RULE_STRING ) ) otherlv_10= 'Type' ( (lv_accountType_11_0= ruleAccountType ) ) (otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) ) )? (otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) ) )? (otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) ) )? otherlv_18= '}' ) )
+            // InternalBankSystem.g:733:2: (otherlv_0= 'account' ( (lv_accountNum_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Holder(s)' ( (lv_holder_4_0= RULE_ID ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' otherlv_8= 'MFA Type' ( (lv_mfaType_9_0= RULE_STRING ) ) otherlv_10= 'Type' ( (lv_accountType_11_0= ruleAccountType ) ) (otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) ) )? (otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) ) )? (otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) ) )? otherlv_18= '}' )
             {
-            // InternalBankSystem.g:713:2: ( (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) otherlv_3= 'Holder(s)' ( (lv_holder_4_0= ruleUser ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' ( (lv_accountNum_8_0= RULE_ID ) ) otherlv_9= 'MFA Type' ( (lv_mfaType_10_0= RULE_STRING ) ) otherlv_11= '}' )
-            // InternalBankSystem.g:714:3: (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) otherlv_3= 'Holder(s)' ( (lv_holder_4_0= ruleUser ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' ( (lv_accountNum_8_0= RULE_ID ) ) otherlv_9= 'MFA Type' ( (lv_mfaType_10_0= RULE_STRING ) ) otherlv_11= '}'
+            // InternalBankSystem.g:733:2: (otherlv_0= 'account' ( (lv_accountNum_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Holder(s)' ( (lv_holder_4_0= RULE_ID ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' otherlv_8= 'MFA Type' ( (lv_mfaType_9_0= RULE_STRING ) ) otherlv_10= 'Type' ( (lv_accountType_11_0= ruleAccountType ) ) (otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) ) )? (otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) ) )? (otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) ) )? otherlv_18= '}' )
+            // InternalBankSystem.g:734:3: otherlv_0= 'account' ( (lv_accountNum_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Holder(s)' ( (lv_holder_4_0= RULE_ID ) ) otherlv_5= 'Balance' ( (lv_balance_6_0= RULE_INT ) ) otherlv_7= 'Account Number' otherlv_8= 'MFA Type' ( (lv_mfaType_9_0= RULE_STRING ) ) otherlv_10= 'Type' ( (lv_accountType_11_0= ruleAccountType ) ) (otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) ) )? (otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) ) )? (otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) ) )? otherlv_18= '}'
             {
-            // InternalBankSystem.g:714:3: (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount )
-            int alt10=3;
-            switch ( input.LA(1) ) {
-            case 33:
-                {
-                alt10=1;
-                }
-                break;
-            case 35:
-                {
-                alt10=2;
-                }
-                break;
-            case 37:
-                {
-                alt10=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+            otherlv_0=(Token)match(input,29,FOLLOW_5); 
 
-                throw nvae;
-            }
-
-            switch (alt10) {
-                case 1 :
-                    // InternalBankSystem.g:715:4: this_SavingsAccount_0= ruleSavingsAccount
-                    {
-
-                    				newCompositeNode(grammarAccess.getAccountAccess().getSavingsAccountParserRuleCall_0_0());
-                    			
-                    pushFollow(FOLLOW_25);
-                    this_SavingsAccount_0=ruleSavingsAccount();
-
-                    state._fsp--;
-
-
-                    				current = this_SavingsAccount_0;
-                    				afterParserOrEnumRuleCall();
-                    			
-
-                    }
-                    break;
-                case 2 :
-                    // InternalBankSystem.g:724:4: this_CheckingAccount_1= ruleCheckingAccount
-                    {
-
-                    				newCompositeNode(grammarAccess.getAccountAccess().getCheckingAccountParserRuleCall_0_1());
-                    			
-                    pushFollow(FOLLOW_25);
-                    this_CheckingAccount_1=ruleCheckingAccount();
-
-                    state._fsp--;
-
-
-                    				current = this_CheckingAccount_1;
-                    				afterParserOrEnumRuleCall();
-                    			
-
-                    }
-                    break;
-                case 3 :
-                    // InternalBankSystem.g:733:4: this_MortgageAccount_2= ruleMortgageAccount
-                    {
-
-                    				newCompositeNode(grammarAccess.getAccountAccess().getMortgageAccountParserRuleCall_0_2());
-                    			
-                    pushFollow(FOLLOW_25);
-                    this_MortgageAccount_2=ruleMortgageAccount();
-
-                    state._fsp--;
-
-
-                    				current = this_MortgageAccount_2;
-                    				afterParserOrEnumRuleCall();
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_3=(Token)match(input,29,FOLLOW_26); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getAccountAccess().getHolderSKeyword_1());
+            			newLeafNode(otherlv_0, grammarAccess.getAccountAccess().getAccountKeyword_0());
             		
-            // InternalBankSystem.g:746:3: ( (lv_holder_4_0= ruleUser ) )
-            // InternalBankSystem.g:747:4: (lv_holder_4_0= ruleUser )
+            // InternalBankSystem.g:738:3: ( (lv_accountNum_1_0= RULE_ID ) )
+            // InternalBankSystem.g:739:4: (lv_accountNum_1_0= RULE_ID )
             {
-            // InternalBankSystem.g:747:4: (lv_holder_4_0= ruleUser )
-            // InternalBankSystem.g:748:5: lv_holder_4_0= ruleUser
+            // InternalBankSystem.g:739:4: (lv_accountNum_1_0= RULE_ID )
+            // InternalBankSystem.g:740:5: lv_accountNum_1_0= RULE_ID
             {
+            lv_accountNum_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
-            					newCompositeNode(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0());
+            					newLeafNode(lv_accountNum_1_0, grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_1_0());
             				
-            pushFollow(FOLLOW_27);
-            lv_holder_4_0=ruleUser();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAccountRule());
+            						current = createModelElement(grammarAccess.getAccountRule());
             					}
-            					set(
+            					setWithLastConsumed(
+            						current,
+            						"accountNum",
+            						lv_accountNum_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,12,FOLLOW_25); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getAccountAccess().getLeftCurlyBracketKeyword_2());
+            		
+            otherlv_3=(Token)match(input,30,FOLLOW_5); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getAccountAccess().getHolderSKeyword_3());
+            		
+            // InternalBankSystem.g:764:3: ( (lv_holder_4_0= RULE_ID ) )
+            // InternalBankSystem.g:765:4: (lv_holder_4_0= RULE_ID )
+            {
+            // InternalBankSystem.g:765:4: (lv_holder_4_0= RULE_ID )
+            // InternalBankSystem.g:766:5: lv_holder_4_0= RULE_ID
+            {
+            lv_holder_4_0=(Token)match(input,RULE_ID,FOLLOW_26); 
+
+            					newLeafNode(lv_holder_4_0, grammarAccess.getAccountAccess().getHolderIDTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAccountRule());
+            					}
+            					setWithLastConsumed(
             						current,
             						"holder",
             						lv_holder_4_0,
-            						"org.xtext.BankSystem.User");
-            					afterParserOrEnumRuleCall();
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -1883,19 +1867,19 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,30,FOLLOW_21); 
+            otherlv_5=(Token)match(input,31,FOLLOW_21); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getAccountAccess().getBalanceKeyword_3());
+            			newLeafNode(otherlv_5, grammarAccess.getAccountAccess().getBalanceKeyword_5());
             		
-            // InternalBankSystem.g:769:3: ( (lv_balance_6_0= RULE_INT ) )
-            // InternalBankSystem.g:770:4: (lv_balance_6_0= RULE_INT )
+            // InternalBankSystem.g:786:3: ( (lv_balance_6_0= RULE_INT ) )
+            // InternalBankSystem.g:787:4: (lv_balance_6_0= RULE_INT )
             {
-            // InternalBankSystem.g:770:4: (lv_balance_6_0= RULE_INT )
-            // InternalBankSystem.g:771:5: lv_balance_6_0= RULE_INT
+            // InternalBankSystem.g:787:4: (lv_balance_6_0= RULE_INT )
+            // InternalBankSystem.g:788:5: lv_balance_6_0= RULE_INT
             {
-            lv_balance_6_0=(Token)match(input,RULE_INT,FOLLOW_28); 
+            lv_balance_6_0=(Token)match(input,RULE_INT,FOLLOW_27); 
 
-            					newLeafNode(lv_balance_6_0, grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0());
+            					newLeafNode(lv_balance_6_0, grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_6_0());
             				
 
             					if (current==null) {
@@ -1913,49 +1897,23 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,31,FOLLOW_5); 
+            otherlv_7=(Token)match(input,32,FOLLOW_28); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getAccountAccess().getAccountNumberKeyword_5());
+            			newLeafNode(otherlv_7, grammarAccess.getAccountAccess().getAccountNumberKeyword_7());
             		
-            // InternalBankSystem.g:791:3: ( (lv_accountNum_8_0= RULE_ID ) )
-            // InternalBankSystem.g:792:4: (lv_accountNum_8_0= RULE_ID )
-            {
-            // InternalBankSystem.g:792:4: (lv_accountNum_8_0= RULE_ID )
-            // InternalBankSystem.g:793:5: lv_accountNum_8_0= RULE_ID
-            {
-            lv_accountNum_8_0=(Token)match(input,RULE_ID,FOLLOW_29); 
+            otherlv_8=(Token)match(input,33,FOLLOW_8); 
 
-            					newLeafNode(lv_accountNum_8_0, grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAccountRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"accountNum",
-            						lv_accountNum_8_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            otherlv_9=(Token)match(input,32,FOLLOW_8); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getAccountAccess().getMFATypeKeyword_7());
+            			newLeafNode(otherlv_8, grammarAccess.getAccountAccess().getMFATypeKeyword_8());
             		
-            // InternalBankSystem.g:813:3: ( (lv_mfaType_10_0= RULE_STRING ) )
-            // InternalBankSystem.g:814:4: (lv_mfaType_10_0= RULE_STRING )
+            // InternalBankSystem.g:812:3: ( (lv_mfaType_9_0= RULE_STRING ) )
+            // InternalBankSystem.g:813:4: (lv_mfaType_9_0= RULE_STRING )
             {
-            // InternalBankSystem.g:814:4: (lv_mfaType_10_0= RULE_STRING )
-            // InternalBankSystem.g:815:5: lv_mfaType_10_0= RULE_STRING
+            // InternalBankSystem.g:813:4: (lv_mfaType_9_0= RULE_STRING )
+            // InternalBankSystem.g:814:5: lv_mfaType_9_0= RULE_STRING
             {
-            lv_mfaType_10_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_mfaType_9_0=(Token)match(input,RULE_STRING,FOLLOW_29); 
 
-            					newLeafNode(lv_mfaType_10_0, grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0());
+            					newLeafNode(lv_mfaType_9_0, grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_9_0());
             				
 
             					if (current==null) {
@@ -1964,7 +1922,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"mfaType",
-            						lv_mfaType_10_0,
+            						lv_mfaType_9_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1973,9 +1931,185 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,14,FOLLOW_2); 
+            otherlv_10=(Token)match(input,34,FOLLOW_30); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_10, grammarAccess.getAccountAccess().getTypeKeyword_10());
+            		
+            // InternalBankSystem.g:834:3: ( (lv_accountType_11_0= ruleAccountType ) )
+            // InternalBankSystem.g:835:4: (lv_accountType_11_0= ruleAccountType )
+            {
+            // InternalBankSystem.g:835:4: (lv_accountType_11_0= ruleAccountType )
+            // InternalBankSystem.g:836:5: lv_accountType_11_0= ruleAccountType
+            {
+
+            					newCompositeNode(grammarAccess.getAccountAccess().getAccountTypeAccountTypeParserRuleCall_11_0());
+            				
+            pushFollow(FOLLOW_31);
+            lv_accountType_11_0=ruleAccountType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAccountRule());
+            					}
+            					set(
+            						current,
+            						"accountType",
+            						lv_accountType_11_0,
+            						"org.xtext.BankSystem.AccountType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalBankSystem.g:853:3: (otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) ) )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==35) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalBankSystem.g:854:4: otherlv_12= 'Interest rate' ( (lv_intRate_13_0= RULE_INT ) )
+                    {
+                    otherlv_12=(Token)match(input,35,FOLLOW_21); 
+
+                    				newLeafNode(otherlv_12, grammarAccess.getAccountAccess().getInterestRateKeyword_12_0());
+                    			
+                    // InternalBankSystem.g:858:4: ( (lv_intRate_13_0= RULE_INT ) )
+                    // InternalBankSystem.g:859:5: (lv_intRate_13_0= RULE_INT )
+                    {
+                    // InternalBankSystem.g:859:5: (lv_intRate_13_0= RULE_INT )
+                    // InternalBankSystem.g:860:6: lv_intRate_13_0= RULE_INT
+                    {
+                    lv_intRate_13_0=(Token)match(input,RULE_INT,FOLLOW_32); 
+
+                    						newLeafNode(lv_intRate_13_0, grammarAccess.getAccountAccess().getIntRateINTTerminalRuleCall_12_1_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getAccountRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"intRate",
+                    							lv_intRate_13_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalBankSystem.g:877:3: (otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) ) )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==36) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // InternalBankSystem.g:878:4: otherlv_14= 'Debits per month' ( (lv_depPerMonth_15_0= RULE_INT ) )
+                    {
+                    otherlv_14=(Token)match(input,36,FOLLOW_21); 
+
+                    				newLeafNode(otherlv_14, grammarAccess.getAccountAccess().getDebitsPerMonthKeyword_13_0());
+                    			
+                    // InternalBankSystem.g:882:4: ( (lv_depPerMonth_15_0= RULE_INT ) )
+                    // InternalBankSystem.g:883:5: (lv_depPerMonth_15_0= RULE_INT )
+                    {
+                    // InternalBankSystem.g:883:5: (lv_depPerMonth_15_0= RULE_INT )
+                    // InternalBankSystem.g:884:6: lv_depPerMonth_15_0= RULE_INT
+                    {
+                    lv_depPerMonth_15_0=(Token)match(input,RULE_INT,FOLLOW_33); 
+
+                    						newLeafNode(lv_depPerMonth_15_0, grammarAccess.getAccountAccess().getDepPerMonthINTTerminalRuleCall_13_1_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getAccountRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"depPerMonth",
+                    							lv_depPerMonth_15_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalBankSystem.g:901:3: (otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==37) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalBankSystem.g:902:4: otherlv_16= 'Loan period' ( (lv_loanPeriod_17_0= RULE_STRING ) )
+                    {
+                    otherlv_16=(Token)match(input,37,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_16, grammarAccess.getAccountAccess().getLoanPeriodKeyword_14_0());
+                    			
+                    // InternalBankSystem.g:906:4: ( (lv_loanPeriod_17_0= RULE_STRING ) )
+                    // InternalBankSystem.g:907:5: (lv_loanPeriod_17_0= RULE_STRING )
+                    {
+                    // InternalBankSystem.g:907:5: (lv_loanPeriod_17_0= RULE_STRING )
+                    // InternalBankSystem.g:908:6: lv_loanPeriod_17_0= RULE_STRING
+                    {
+                    lv_loanPeriod_17_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+
+                    						newLeafNode(lv_loanPeriod_17_0, grammarAccess.getAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_14_1_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getAccountRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"loanPeriod",
+                    							lv_loanPeriod_17_0,
+                    							"org.eclipse.xtext.common.Terminals.STRING");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_18=(Token)match(input,14,FOLLOW_2); 
+
+            			newLeafNode(otherlv_18, grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_15());
             		
 
             }
@@ -1999,17 +2133,180 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAccount"
 
 
-    // $ANTLR start "entryRuleSavingsAccount"
-    // InternalBankSystem.g:839:1: entryRuleSavingsAccount returns [EObject current=null] : iv_ruleSavingsAccount= ruleSavingsAccount EOF ;
-    public final EObject entryRuleSavingsAccount() throws RecognitionException {
-        EObject current = null;
+    // $ANTLR start "entryRuleAccountType"
+    // InternalBankSystem.g:933:1: entryRuleAccountType returns [String current=null] : iv_ruleAccountType= ruleAccountType EOF ;
+    public final String entryRuleAccountType() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleSavingsAccount = null;
+        AntlrDatatypeRuleToken iv_ruleAccountType = null;
 
 
         try {
-            // InternalBankSystem.g:839:55: (iv_ruleSavingsAccount= ruleSavingsAccount EOF )
-            // InternalBankSystem.g:840:2: iv_ruleSavingsAccount= ruleSavingsAccount EOF
+            // InternalBankSystem.g:933:51: (iv_ruleAccountType= ruleAccountType EOF )
+            // InternalBankSystem.g:934:2: iv_ruleAccountType= ruleAccountType EOF
+            {
+             newCompositeNode(grammarAccess.getAccountTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleAccountType=ruleAccountType();
+
+            state._fsp--;
+
+             current =iv_ruleAccountType.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAccountType"
+
+
+    // $ANTLR start "ruleAccountType"
+    // InternalBankSystem.g:940:1: ruleAccountType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) ;
+    public final AntlrDatatypeRuleToken ruleAccountType() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        AntlrDatatypeRuleToken this_SavingsAccount_0 = null;
+
+        AntlrDatatypeRuleToken this_CheckingAccount_1 = null;
+
+        AntlrDatatypeRuleToken this_MortgageAccount_2 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalBankSystem.g:946:2: ( (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount ) )
+            // InternalBankSystem.g:947:2: (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount )
+            {
+            // InternalBankSystem.g:947:2: (this_SavingsAccount_0= ruleSavingsAccount | this_CheckingAccount_1= ruleCheckingAccount | this_MortgageAccount_2= ruleMortgageAccount )
+            int alt13=3;
+            switch ( input.LA(1) ) {
+            case 38:
+                {
+                alt13=1;
+                }
+                break;
+            case 39:
+                {
+                alt13=2;
+                }
+                break;
+            case 40:
+                {
+                alt13=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 13, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt13) {
+                case 1 :
+                    // InternalBankSystem.g:948:3: this_SavingsAccount_0= ruleSavingsAccount
+                    {
+
+                    			newCompositeNode(grammarAccess.getAccountTypeAccess().getSavingsAccountParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_SavingsAccount_0=ruleSavingsAccount();
+
+                    state._fsp--;
+
+
+                    			current.merge(this_SavingsAccount_0);
+                    		
+
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalBankSystem.g:959:3: this_CheckingAccount_1= ruleCheckingAccount
+                    {
+
+                    			newCompositeNode(grammarAccess.getAccountTypeAccess().getCheckingAccountParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_CheckingAccount_1=ruleCheckingAccount();
+
+                    state._fsp--;
+
+
+                    			current.merge(this_CheckingAccount_1);
+                    		
+
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalBankSystem.g:970:3: this_MortgageAccount_2= ruleMortgageAccount
+                    {
+
+                    			newCompositeNode(grammarAccess.getAccountTypeAccess().getMortgageAccountParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MortgageAccount_2=ruleMortgageAccount();
+
+                    state._fsp--;
+
+
+                    			current.merge(this_MortgageAccount_2);
+                    		
+
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAccountType"
+
+
+    // $ANTLR start "entryRuleSavingsAccount"
+    // InternalBankSystem.g:984:1: entryRuleSavingsAccount returns [String current=null] : iv_ruleSavingsAccount= ruleSavingsAccount EOF ;
+    public final String entryRuleSavingsAccount() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleSavingsAccount = null;
+
+
+        try {
+            // InternalBankSystem.g:984:54: (iv_ruleSavingsAccount= ruleSavingsAccount EOF )
+            // InternalBankSystem.g:985:2: iv_ruleSavingsAccount= ruleSavingsAccount EOF
             {
              newCompositeNode(grammarAccess.getSavingsAccountRule()); 
             pushFollow(FOLLOW_1);
@@ -2017,7 +2314,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleSavingsAccount; 
+             current =iv_ruleSavingsAccount.getText(); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2036,61 +2333,24 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSavingsAccount"
-    // InternalBankSystem.g:846:1: ruleSavingsAccount returns [EObject current=null] : (otherlv_0= 'Savings Account {' otherlv_1= 'Interest rate' ( (lv_intRate_2_0= RULE_INT ) ) ) ;
-    public final EObject ruleSavingsAccount() throws RecognitionException {
-        EObject current = null;
+    // InternalBankSystem.g:991:1: ruleSavingsAccount returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Savings Account' ;
+    public final AntlrDatatypeRuleToken ruleSavingsAccount() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_intRate_2_0=null;
+        Token kw=null;
 
 
         	enterRule();
 
         try {
-            // InternalBankSystem.g:852:2: ( (otherlv_0= 'Savings Account {' otherlv_1= 'Interest rate' ( (lv_intRate_2_0= RULE_INT ) ) ) )
-            // InternalBankSystem.g:853:2: (otherlv_0= 'Savings Account {' otherlv_1= 'Interest rate' ( (lv_intRate_2_0= RULE_INT ) ) )
+            // InternalBankSystem.g:997:2: (kw= 'Savings Account' )
+            // InternalBankSystem.g:998:2: kw= 'Savings Account'
             {
-            // InternalBankSystem.g:853:2: (otherlv_0= 'Savings Account {' otherlv_1= 'Interest rate' ( (lv_intRate_2_0= RULE_INT ) ) )
-            // InternalBankSystem.g:854:3: otherlv_0= 'Savings Account {' otherlv_1= 'Interest rate' ( (lv_intRate_2_0= RULE_INT ) )
-            {
-            otherlv_0=(Token)match(input,33,FOLLOW_30); 
+            kw=(Token)match(input,38,FOLLOW_2); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword_0());
-            		
-            otherlv_1=(Token)match(input,34,FOLLOW_21); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getSavingsAccountAccess().getInterestRateKeyword_1());
-            		
-            // InternalBankSystem.g:862:3: ( (lv_intRate_2_0= RULE_INT ) )
-            // InternalBankSystem.g:863:4: (lv_intRate_2_0= RULE_INT )
-            {
-            // InternalBankSystem.g:863:4: (lv_intRate_2_0= RULE_INT )
-            // InternalBankSystem.g:864:5: lv_intRate_2_0= RULE_INT
-            {
-            lv_intRate_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-            					newLeafNode(lv_intRate_2_0, grammarAccess.getSavingsAccountAccess().getIntRateINTTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getSavingsAccountRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"intRate",
-            						lv_intRate_2_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
+            		current.merge(kw);
+            		newLeafNode(kw, grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword());
+            	
 
             }
 
@@ -2111,16 +2371,16 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCheckingAccount"
-    // InternalBankSystem.g:884:1: entryRuleCheckingAccount returns [EObject current=null] : iv_ruleCheckingAccount= ruleCheckingAccount EOF ;
-    public final EObject entryRuleCheckingAccount() throws RecognitionException {
-        EObject current = null;
+    // InternalBankSystem.g:1006:1: entryRuleCheckingAccount returns [String current=null] : iv_ruleCheckingAccount= ruleCheckingAccount EOF ;
+    public final String entryRuleCheckingAccount() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleCheckingAccount = null;
+        AntlrDatatypeRuleToken iv_ruleCheckingAccount = null;
 
 
         try {
-            // InternalBankSystem.g:884:56: (iv_ruleCheckingAccount= ruleCheckingAccount EOF )
-            // InternalBankSystem.g:885:2: iv_ruleCheckingAccount= ruleCheckingAccount EOF
+            // InternalBankSystem.g:1006:55: (iv_ruleCheckingAccount= ruleCheckingAccount EOF )
+            // InternalBankSystem.g:1007:2: iv_ruleCheckingAccount= ruleCheckingAccount EOF
             {
              newCompositeNode(grammarAccess.getCheckingAccountRule()); 
             pushFollow(FOLLOW_1);
@@ -2128,7 +2388,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleCheckingAccount; 
+             current =iv_ruleCheckingAccount.getText(); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2147,61 +2407,24 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCheckingAccount"
-    // InternalBankSystem.g:891:1: ruleCheckingAccount returns [EObject current=null] : (otherlv_0= 'Checking Account {' otherlv_1= 'Debits per month' ( (lv_depPerMonth_2_0= RULE_INT ) ) ) ;
-    public final EObject ruleCheckingAccount() throws RecognitionException {
-        EObject current = null;
+    // InternalBankSystem.g:1013:1: ruleCheckingAccount returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Checking Account' ;
+    public final AntlrDatatypeRuleToken ruleCheckingAccount() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_depPerMonth_2_0=null;
+        Token kw=null;
 
 
         	enterRule();
 
         try {
-            // InternalBankSystem.g:897:2: ( (otherlv_0= 'Checking Account {' otherlv_1= 'Debits per month' ( (lv_depPerMonth_2_0= RULE_INT ) ) ) )
-            // InternalBankSystem.g:898:2: (otherlv_0= 'Checking Account {' otherlv_1= 'Debits per month' ( (lv_depPerMonth_2_0= RULE_INT ) ) )
+            // InternalBankSystem.g:1019:2: (kw= 'Checking Account' )
+            // InternalBankSystem.g:1020:2: kw= 'Checking Account'
             {
-            // InternalBankSystem.g:898:2: (otherlv_0= 'Checking Account {' otherlv_1= 'Debits per month' ( (lv_depPerMonth_2_0= RULE_INT ) ) )
-            // InternalBankSystem.g:899:3: otherlv_0= 'Checking Account {' otherlv_1= 'Debits per month' ( (lv_depPerMonth_2_0= RULE_INT ) )
-            {
-            otherlv_0=(Token)match(input,35,FOLLOW_31); 
+            kw=(Token)match(input,39,FOLLOW_2); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword_0());
-            		
-            otherlv_1=(Token)match(input,36,FOLLOW_21); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getCheckingAccountAccess().getDebitsPerMonthKeyword_1());
-            		
-            // InternalBankSystem.g:907:3: ( (lv_depPerMonth_2_0= RULE_INT ) )
-            // InternalBankSystem.g:908:4: (lv_depPerMonth_2_0= RULE_INT )
-            {
-            // InternalBankSystem.g:908:4: (lv_depPerMonth_2_0= RULE_INT )
-            // InternalBankSystem.g:909:5: lv_depPerMonth_2_0= RULE_INT
-            {
-            lv_depPerMonth_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-            					newLeafNode(lv_depPerMonth_2_0, grammarAccess.getCheckingAccountAccess().getDepPerMonthINTTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCheckingAccountRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"depPerMonth",
-            						lv_depPerMonth_2_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
+            		current.merge(kw);
+            		newLeafNode(kw, grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword());
+            	
 
             }
 
@@ -2222,16 +2445,16 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMortgageAccount"
-    // InternalBankSystem.g:929:1: entryRuleMortgageAccount returns [EObject current=null] : iv_ruleMortgageAccount= ruleMortgageAccount EOF ;
-    public final EObject entryRuleMortgageAccount() throws RecognitionException {
-        EObject current = null;
+    // InternalBankSystem.g:1028:1: entryRuleMortgageAccount returns [String current=null] : iv_ruleMortgageAccount= ruleMortgageAccount EOF ;
+    public final String entryRuleMortgageAccount() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleMortgageAccount = null;
+        AntlrDatatypeRuleToken iv_ruleMortgageAccount = null;
 
 
         try {
-            // InternalBankSystem.g:929:56: (iv_ruleMortgageAccount= ruleMortgageAccount EOF )
-            // InternalBankSystem.g:930:2: iv_ruleMortgageAccount= ruleMortgageAccount EOF
+            // InternalBankSystem.g:1028:55: (iv_ruleMortgageAccount= ruleMortgageAccount EOF )
+            // InternalBankSystem.g:1029:2: iv_ruleMortgageAccount= ruleMortgageAccount EOF
             {
              newCompositeNode(grammarAccess.getMortgageAccountRule()); 
             pushFollow(FOLLOW_1);
@@ -2239,7 +2462,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleMortgageAccount; 
+             current =iv_ruleMortgageAccount.getText(); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2258,61 +2481,24 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMortgageAccount"
-    // InternalBankSystem.g:936:1: ruleMortgageAccount returns [EObject current=null] : (otherlv_0= 'Mortgage Account {' otherlv_1= 'Loan period' ( (lv_loanPeriod_2_0= RULE_STRING ) ) ) ;
-    public final EObject ruleMortgageAccount() throws RecognitionException {
-        EObject current = null;
+    // InternalBankSystem.g:1035:1: ruleMortgageAccount returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Mortgage Account' ;
+    public final AntlrDatatypeRuleToken ruleMortgageAccount() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_loanPeriod_2_0=null;
+        Token kw=null;
 
 
         	enterRule();
 
         try {
-            // InternalBankSystem.g:942:2: ( (otherlv_0= 'Mortgage Account {' otherlv_1= 'Loan period' ( (lv_loanPeriod_2_0= RULE_STRING ) ) ) )
-            // InternalBankSystem.g:943:2: (otherlv_0= 'Mortgage Account {' otherlv_1= 'Loan period' ( (lv_loanPeriod_2_0= RULE_STRING ) ) )
+            // InternalBankSystem.g:1041:2: (kw= 'Mortgage Account' )
+            // InternalBankSystem.g:1042:2: kw= 'Mortgage Account'
             {
-            // InternalBankSystem.g:943:2: (otherlv_0= 'Mortgage Account {' otherlv_1= 'Loan period' ( (lv_loanPeriod_2_0= RULE_STRING ) ) )
-            // InternalBankSystem.g:944:3: otherlv_0= 'Mortgage Account {' otherlv_1= 'Loan period' ( (lv_loanPeriod_2_0= RULE_STRING ) )
-            {
-            otherlv_0=(Token)match(input,37,FOLLOW_32); 
+            kw=(Token)match(input,40,FOLLOW_2); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword_0());
-            		
-            otherlv_1=(Token)match(input,38,FOLLOW_8); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getMortgageAccountAccess().getLoanPeriodKeyword_1());
-            		
-            // InternalBankSystem.g:952:3: ( (lv_loanPeriod_2_0= RULE_STRING ) )
-            // InternalBankSystem.g:953:4: (lv_loanPeriod_2_0= RULE_STRING )
-            {
-            // InternalBankSystem.g:953:4: (lv_loanPeriod_2_0= RULE_STRING )
-            // InternalBankSystem.g:954:5: lv_loanPeriod_2_0= RULE_STRING
-            {
-            lv_loanPeriod_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-            					newLeafNode(lv_loanPeriod_2_0, grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getMortgageAccountRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"loanPeriod",
-            						lv_loanPeriod_2_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
+            		current.merge(kw);
+            		newLeafNode(kw, grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword());
+            	
 
             }
 
@@ -2333,7 +2519,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransaction"
-    // InternalBankSystem.g:974:1: entryRuleTransaction returns [EObject current=null] : iv_ruleTransaction= ruleTransaction EOF ;
+    // InternalBankSystem.g:1050:1: entryRuleTransaction returns [EObject current=null] : iv_ruleTransaction= ruleTransaction EOF ;
     public final EObject entryRuleTransaction() throws RecognitionException {
         EObject current = null;
 
@@ -2341,8 +2527,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:974:52: (iv_ruleTransaction= ruleTransaction EOF )
-            // InternalBankSystem.g:975:2: iv_ruleTransaction= ruleTransaction EOF
+            // InternalBankSystem.g:1050:52: (iv_ruleTransaction= ruleTransaction EOF )
+            // InternalBankSystem.g:1051:2: iv_ruleTransaction= ruleTransaction EOF
             {
              newCompositeNode(grammarAccess.getTransactionRule()); 
             pushFollow(FOLLOW_1);
@@ -2369,12 +2555,13 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransaction"
-    // InternalBankSystem.g:981:1: ruleTransaction returns [EObject current=null] : (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= ruleAccount ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' ) ;
+    // InternalBankSystem.g:1057:1: ruleTransaction returns [EObject current=null] : (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= RULE_ID ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' ) ;
     public final EObject ruleTransaction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
+        Token lv_account_2_0=null;
         Token otherlv_3=null;
         Token lv_amount_4_0=null;
         Token otherlv_5=null;
@@ -2382,8 +2569,6 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         Token otherlv_9=null;
         Token lv_vendorName_10_0=null;
         Token otherlv_11=null;
-        EObject lv_account_2_0 = null;
-
         EObject lv_date_6_0 = null;
 
         AntlrDatatypeRuleToken lv_debit_8_0 = null;
@@ -2393,44 +2578,39 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:987:2: ( (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= ruleAccount ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' ) )
-            // InternalBankSystem.g:988:2: (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= ruleAccount ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' )
+            // InternalBankSystem.g:1063:2: ( (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= RULE_ID ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' ) )
+            // InternalBankSystem.g:1064:2: (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= RULE_ID ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' )
             {
-            // InternalBankSystem.g:988:2: (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= ruleAccount ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' )
-            // InternalBankSystem.g:989:3: otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= ruleAccount ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}'
+            // InternalBankSystem.g:1064:2: (otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= RULE_ID ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}' )
+            // InternalBankSystem.g:1065:3: otherlv_0= 'transaction {' otherlv_1= 'Account:' ( (lv_account_2_0= RULE_ID ) ) otherlv_3= 'Amount:' ( (lv_amount_4_0= RULE_INT ) ) otherlv_5= 'Date' ( (lv_date_6_0= ruleDate ) ) otherlv_7= 'Debit' ( (lv_debit_8_0= ruleBoolean ) ) otherlv_9= 'Vendor name' ( (lv_vendorName_10_0= RULE_STRING ) ) otherlv_11= '}'
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_33); 
+            otherlv_0=(Token)match(input,41,FOLLOW_34); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTransactionAccess().getTransactionKeyword_0());
             		
-            otherlv_1=(Token)match(input,40,FOLLOW_34); 
+            otherlv_1=(Token)match(input,42,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTransactionAccess().getAccountKeyword_1());
             		
-            // InternalBankSystem.g:997:3: ( (lv_account_2_0= ruleAccount ) )
-            // InternalBankSystem.g:998:4: (lv_account_2_0= ruleAccount )
+            // InternalBankSystem.g:1073:3: ( (lv_account_2_0= RULE_ID ) )
+            // InternalBankSystem.g:1074:4: (lv_account_2_0= RULE_ID )
             {
-            // InternalBankSystem.g:998:4: (lv_account_2_0= ruleAccount )
-            // InternalBankSystem.g:999:5: lv_account_2_0= ruleAccount
+            // InternalBankSystem.g:1074:4: (lv_account_2_0= RULE_ID )
+            // InternalBankSystem.g:1075:5: lv_account_2_0= RULE_ID
             {
+            lv_account_2_0=(Token)match(input,RULE_ID,FOLLOW_35); 
 
-            					newCompositeNode(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0());
+            					newLeafNode(lv_account_2_0, grammarAccess.getTransactionAccess().getAccountIDTerminalRuleCall_2_0());
             				
-            pushFollow(FOLLOW_35);
-            lv_account_2_0=ruleAccount();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTransactionRule());
+            						current = createModelElement(grammarAccess.getTransactionRule());
             					}
-            					set(
+            					setWithLastConsumed(
             						current,
             						"account",
             						lv_account_2_0,
-            						"org.xtext.BankSystem.Account");
-            					afterParserOrEnumRuleCall();
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -2438,15 +2618,15 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,41,FOLLOW_21); 
+            otherlv_3=(Token)match(input,43,FOLLOW_21); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTransactionAccess().getAmountKeyword_3());
             		
-            // InternalBankSystem.g:1020:3: ( (lv_amount_4_0= RULE_INT ) )
-            // InternalBankSystem.g:1021:4: (lv_amount_4_0= RULE_INT )
+            // InternalBankSystem.g:1095:3: ( (lv_amount_4_0= RULE_INT ) )
+            // InternalBankSystem.g:1096:4: (lv_amount_4_0= RULE_INT )
             {
-            // InternalBankSystem.g:1021:4: (lv_amount_4_0= RULE_INT )
-            // InternalBankSystem.g:1022:5: lv_amount_4_0= RULE_INT
+            // InternalBankSystem.g:1096:4: (lv_amount_4_0= RULE_INT )
+            // InternalBankSystem.g:1097:5: lv_amount_4_0= RULE_INT
             {
             lv_amount_4_0=(Token)match(input,RULE_INT,FOLLOW_36); 
 
@@ -2468,15 +2648,15 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,42,FOLLOW_21); 
+            otherlv_5=(Token)match(input,44,FOLLOW_21); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTransactionAccess().getDateKeyword_5());
             		
-            // InternalBankSystem.g:1042:3: ( (lv_date_6_0= ruleDate ) )
-            // InternalBankSystem.g:1043:4: (lv_date_6_0= ruleDate )
+            // InternalBankSystem.g:1117:3: ( (lv_date_6_0= ruleDate ) )
+            // InternalBankSystem.g:1118:4: (lv_date_6_0= ruleDate )
             {
-            // InternalBankSystem.g:1043:4: (lv_date_6_0= ruleDate )
-            // InternalBankSystem.g:1044:5: lv_date_6_0= ruleDate
+            // InternalBankSystem.g:1118:4: (lv_date_6_0= ruleDate )
+            // InternalBankSystem.g:1119:5: lv_date_6_0= ruleDate
             {
 
             					newCompositeNode(grammarAccess.getTransactionAccess().getDateDateParserRuleCall_6_0());
@@ -2503,15 +2683,15 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,43,FOLLOW_38); 
+            otherlv_7=(Token)match(input,45,FOLLOW_38); 
 
             			newLeafNode(otherlv_7, grammarAccess.getTransactionAccess().getDebitKeyword_7());
             		
-            // InternalBankSystem.g:1065:3: ( (lv_debit_8_0= ruleBoolean ) )
-            // InternalBankSystem.g:1066:4: (lv_debit_8_0= ruleBoolean )
+            // InternalBankSystem.g:1140:3: ( (lv_debit_8_0= ruleBoolean ) )
+            // InternalBankSystem.g:1141:4: (lv_debit_8_0= ruleBoolean )
             {
-            // InternalBankSystem.g:1066:4: (lv_debit_8_0= ruleBoolean )
-            // InternalBankSystem.g:1067:5: lv_debit_8_0= ruleBoolean
+            // InternalBankSystem.g:1141:4: (lv_debit_8_0= ruleBoolean )
+            // InternalBankSystem.g:1142:5: lv_debit_8_0= ruleBoolean
             {
 
             					newCompositeNode(grammarAccess.getTransactionAccess().getDebitBooleanParserRuleCall_8_0());
@@ -2538,15 +2718,15 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,44,FOLLOW_8); 
+            otherlv_9=(Token)match(input,46,FOLLOW_8); 
 
             			newLeafNode(otherlv_9, grammarAccess.getTransactionAccess().getVendorNameKeyword_9());
             		
-            // InternalBankSystem.g:1088:3: ( (lv_vendorName_10_0= RULE_STRING ) )
-            // InternalBankSystem.g:1089:4: (lv_vendorName_10_0= RULE_STRING )
+            // InternalBankSystem.g:1163:3: ( (lv_vendorName_10_0= RULE_STRING ) )
+            // InternalBankSystem.g:1164:4: (lv_vendorName_10_0= RULE_STRING )
             {
-            // InternalBankSystem.g:1089:4: (lv_vendorName_10_0= RULE_STRING )
-            // InternalBankSystem.g:1090:5: lv_vendorName_10_0= RULE_STRING
+            // InternalBankSystem.g:1164:4: (lv_vendorName_10_0= RULE_STRING )
+            // InternalBankSystem.g:1165:5: lv_vendorName_10_0= RULE_STRING
             {
             lv_vendorName_10_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -2595,7 +2775,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoolean"
-    // InternalBankSystem.g:1114:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
+    // InternalBankSystem.g:1189:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
     public final String entryRuleBoolean() throws RecognitionException {
         String current = null;
 
@@ -2603,8 +2783,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:1114:47: (iv_ruleBoolean= ruleBoolean EOF )
-            // InternalBankSystem.g:1115:2: iv_ruleBoolean= ruleBoolean EOF
+            // InternalBankSystem.g:1189:47: (iv_ruleBoolean= ruleBoolean EOF )
+            // InternalBankSystem.g:1190:2: iv_ruleBoolean= ruleBoolean EOF
             {
              newCompositeNode(grammarAccess.getBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -2631,7 +2811,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoolean"
-    // InternalBankSystem.g:1121:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // InternalBankSystem.g:1196:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2641,30 +2821,30 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:1127:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalBankSystem.g:1128:2: (kw= 'true' | kw= 'false' )
+            // InternalBankSystem.g:1202:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalBankSystem.g:1203:2: (kw= 'true' | kw= 'false' )
             {
-            // InternalBankSystem.g:1128:2: (kw= 'true' | kw= 'false' )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalBankSystem.g:1203:2: (kw= 'true' | kw= 'false' )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA11_0==45) ) {
-                alt11=1;
+            if ( (LA14_0==47) ) {
+                alt14=1;
             }
-            else if ( (LA11_0==46) ) {
-                alt11=2;
+            else if ( (LA14_0==48) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt14) {
                 case 1 :
-                    // InternalBankSystem.g:1129:3: kw= 'true'
+                    // InternalBankSystem.g:1204:3: kw= 'true'
                     {
-                    kw=(Token)match(input,45,FOLLOW_2); 
+                    kw=(Token)match(input,47,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getBooleanAccess().getTrueKeyword_0());
@@ -2673,9 +2853,9 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBankSystem.g:1135:3: kw= 'false'
+                    // InternalBankSystem.g:1210:3: kw= 'false'
                     {
-                    kw=(Token)match(input,46,FOLLOW_2); 
+                    kw=(Token)match(input,48,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getBooleanAccess().getFalseKeyword_1());
@@ -2706,7 +2886,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDate"
-    // InternalBankSystem.g:1144:1: entryRuleDate returns [EObject current=null] : iv_ruleDate= ruleDate EOF ;
+    // InternalBankSystem.g:1219:1: entryRuleDate returns [EObject current=null] : iv_ruleDate= ruleDate EOF ;
     public final EObject entryRuleDate() throws RecognitionException {
         EObject current = null;
 
@@ -2714,8 +2894,8 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBankSystem.g:1144:45: (iv_ruleDate= ruleDate EOF )
-            // InternalBankSystem.g:1145:2: iv_ruleDate= ruleDate EOF
+            // InternalBankSystem.g:1219:45: (iv_ruleDate= ruleDate EOF )
+            // InternalBankSystem.g:1220:2: iv_ruleDate= ruleDate EOF
             {
              newCompositeNode(grammarAccess.getDateRule()); 
             pushFollow(FOLLOW_1);
@@ -2742,7 +2922,7 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDate"
-    // InternalBankSystem.g:1151:1: ruleDate returns [EObject current=null] : ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) ) ;
+    // InternalBankSystem.g:1226:1: ruleDate returns [EObject current=null] : ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) ) ;
     public final EObject ruleDate() throws RecognitionException {
         EObject current = null;
 
@@ -2756,17 +2936,17 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBankSystem.g:1157:2: ( ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) ) )
-            // InternalBankSystem.g:1158:2: ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) )
+            // InternalBankSystem.g:1232:2: ( ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) ) )
+            // InternalBankSystem.g:1233:2: ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) )
             {
-            // InternalBankSystem.g:1158:2: ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) )
-            // InternalBankSystem.g:1159:3: ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) )
+            // InternalBankSystem.g:1233:2: ( ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) ) )
+            // InternalBankSystem.g:1234:3: ( (lv_year_0_0= RULE_INT ) ) otherlv_1= '/' ( (lv_month_2_0= RULE_INT ) ) otherlv_3= '/' ( (lv_day_4_0= RULE_INT ) )
             {
-            // InternalBankSystem.g:1159:3: ( (lv_year_0_0= RULE_INT ) )
-            // InternalBankSystem.g:1160:4: (lv_year_0_0= RULE_INT )
+            // InternalBankSystem.g:1234:3: ( (lv_year_0_0= RULE_INT ) )
+            // InternalBankSystem.g:1235:4: (lv_year_0_0= RULE_INT )
             {
-            // InternalBankSystem.g:1160:4: (lv_year_0_0= RULE_INT )
-            // InternalBankSystem.g:1161:5: lv_year_0_0= RULE_INT
+            // InternalBankSystem.g:1235:4: (lv_year_0_0= RULE_INT )
+            // InternalBankSystem.g:1236:5: lv_year_0_0= RULE_INT
             {
             lv_year_0_0=(Token)match(input,RULE_INT,FOLLOW_40); 
 
@@ -2788,15 +2968,15 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,47,FOLLOW_21); 
+            otherlv_1=(Token)match(input,49,FOLLOW_21); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDateAccess().getSolidusKeyword_1());
             		
-            // InternalBankSystem.g:1181:3: ( (lv_month_2_0= RULE_INT ) )
-            // InternalBankSystem.g:1182:4: (lv_month_2_0= RULE_INT )
+            // InternalBankSystem.g:1256:3: ( (lv_month_2_0= RULE_INT ) )
+            // InternalBankSystem.g:1257:4: (lv_month_2_0= RULE_INT )
             {
-            // InternalBankSystem.g:1182:4: (lv_month_2_0= RULE_INT )
-            // InternalBankSystem.g:1183:5: lv_month_2_0= RULE_INT
+            // InternalBankSystem.g:1257:4: (lv_month_2_0= RULE_INT )
+            // InternalBankSystem.g:1258:5: lv_month_2_0= RULE_INT
             {
             lv_month_2_0=(Token)match(input,RULE_INT,FOLLOW_40); 
 
@@ -2818,15 +2998,15 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,47,FOLLOW_21); 
+            otherlv_3=(Token)match(input,49,FOLLOW_21); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDateAccess().getSolidusKeyword_3());
             		
-            // InternalBankSystem.g:1203:3: ( (lv_day_4_0= RULE_INT ) )
-            // InternalBankSystem.g:1204:4: (lv_day_4_0= RULE_INT )
+            // InternalBankSystem.g:1278:3: ( (lv_day_4_0= RULE_INT ) )
+            // InternalBankSystem.g:1279:4: (lv_day_4_0= RULE_INT )
             {
-            // InternalBankSystem.g:1204:4: (lv_day_4_0= RULE_INT )
-            // InternalBankSystem.g:1205:5: lv_day_4_0= RULE_INT
+            // InternalBankSystem.g:1279:4: (lv_day_4_0= RULE_INT )
+            // InternalBankSystem.g:1280:5: lv_day_4_0= RULE_INT
             {
             lv_day_4_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2883,9 +3063,9 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000AA00104000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000AA00004000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000008000004000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000020020104000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000020020004000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000020000004000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000040000L});
@@ -2898,21 +3078,21 @@ public class InternalBankSystemParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000002A00000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000600000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x000001C000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000003800004000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000003000004000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000002000004000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0001800000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0002000000000000L});
 
 }

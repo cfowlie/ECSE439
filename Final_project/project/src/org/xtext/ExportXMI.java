@@ -37,7 +37,7 @@ public class ExportXMI {
 	    //change this to the path of your input turn file
 	    String inputURI = "C:\\Users\\grego\\Documents\\test.bank";
 	    //change this to the path of your output xmi file
-	    String outputURI = "C:\\Users\\grego\\Documents\\Github\\ECSE439\\src\\xmifiles\\output.xmi";
+	    String outputURI = "C:\\Users\\grego\\Documents\\Github\\ECSE439\\xpandtranslation\\src\\xmifiles\\test.xmi";
 	    //used to parse a File path string
 	    URI inUri = URI.createFileURI(inputURI);
 	    URI outUri=URI.createFileURI(outputURI);

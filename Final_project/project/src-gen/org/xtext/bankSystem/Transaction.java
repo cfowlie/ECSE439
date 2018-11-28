@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Transaction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Account</b></em>' containment reference.
+   * Returns the value of the '<em><b>Account</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Account</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Account</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Account</em>' containment reference.
-   * @see #setAccount(Account)
+   * @return the value of the '<em>Account</em>' attribute.
+   * @see #setAccount(String)
    * @see org.xtext.bankSystem.BankSystemPackage#getTransaction_Account()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Account getAccount();
+  String getAccount();
 
   /**
-   * Sets the value of the '{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Account</em>' containment reference.
+   * @param value the new value of the '<em>Account</em>' attribute.
    * @see #getAccount()
    * @generated
    */
-  void setAccount(Account value);
+  void setAccount(String value);
 
   /**
    * Returns the value of the '<em><b>Amount</b></em>' attribute.

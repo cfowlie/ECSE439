@@ -29,8 +29,8 @@ User:
 Branch:
 	'Branch{'
 		'Address' address = STRING
-		(Booth)?
-		(Vault)?
+		(mybooth=Booth)?
+		(myVault=Vault)?
 		(employees+=Employee)+
 	'}'
 ;
@@ -64,32 +64,38 @@ Manager:
 ;
 
 Account:
-	(SavingsAccount|CheckingAccount|MortgageAccount)
-		'Holder(s)' holder=User
+	'account'(accountNum = ID) '{'
+		'Holder(s)' holder=ID
 		'Balance' balance=INT
-		'Account Number' accountNum = ID
+		'Account Number' 
 		'MFA Type' mfaType= STRING
+		'Type'(accountType = AccountType)
+		('Interest rate' intRate= INT)?
+		('Debits per month' depPerMonth= INT)?
+		('Loan period' loanPeriod=STRING)?
 	'}'
 ;
 
+AccountType:
+	(SavingsAccount|CheckingAccount|MortgageAccount)
+;
+
 SavingsAccount:
-	'Savings Account {'
-		'Interest rate' intRate= INT
+	'Savings Account'
 ;
 
 CheckingAccount:
-	'Checking Account {'
-		'Debits per month' depPerMonth= INT
+	'Checking Account'
+	
 ;
 
 MortgageAccount:
-	'Mortgage Account {'
-		'Loan period' loanPeriod=STRING
+	'Mortgage Account'
 ;
 
 Transaction:
 	'transaction {'
-		'Account:' account=Account
+		'Account:' account=ID
 		'Amount:' amount = INT
 		'Date' date=Date
 		'Debit' debit=Boolean

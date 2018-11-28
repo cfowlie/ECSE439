@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.bankSystem.Branch#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Branch#getMybooth <em>Mybooth</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.Branch#getMyVault <em>My Vault</em>}</li>
  *   <li>{@link org.xtext.bankSystem.Branch#getEmployees <em>Employees</em>}</li>
  * </ul>
  *
@@ -51,6 +53,58 @@ public interface Branch extends EObject
    * @generated
    */
   void setAddress(String value);
+
+  /**
+   * Returns the value of the '<em><b>Mybooth</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Mybooth</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mybooth</em>' attribute.
+   * @see #setMybooth(String)
+   * @see org.xtext.bankSystem.BankSystemPackage#getBranch_Mybooth()
+   * @model
+   * @generated
+   */
+  String getMybooth();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Branch#getMybooth <em>Mybooth</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mybooth</em>' attribute.
+   * @see #getMybooth()
+   * @generated
+   */
+  void setMybooth(String value);
+
+  /**
+   * Returns the value of the '<em><b>My Vault</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>My Vault</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>My Vault</em>' attribute.
+   * @see #setMyVault(String)
+   * @see org.xtext.bankSystem.BankSystemPackage#getBranch_MyVault()
+   * @model
+   * @generated
+   */
+  String getMyVault();
+
+  /**
+   * Sets the value of the '{@link org.xtext.bankSystem.Branch#getMyVault <em>My Vault</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>My Vault</em>' attribute.
+   * @see #getMyVault()
+   * @generated
+   */
+  void setMyVault(String value);
 
   /**
    * Returns the value of the '<em><b>Employees</b></em>' containment reference list.

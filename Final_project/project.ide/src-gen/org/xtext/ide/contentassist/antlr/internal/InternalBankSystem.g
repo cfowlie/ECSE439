@@ -324,6 +324,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleAccountType
+entryRuleAccountType
+:
+{ before(grammarAccess.getAccountTypeRule()); }
+	 ruleAccountType
+{ after(grammarAccess.getAccountTypeRule()); } 
+	 EOF 
+;
+
+// Rule AccountType
+ruleAccountType 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getAccountTypeAccess().getAlternatives()); }
+		(rule__AccountType__Alternatives)
+		{ after(grammarAccess.getAccountTypeAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleSavingsAccount
 entryRuleSavingsAccount
 :
@@ -340,9 +365,9 @@ ruleSavingsAccount
 	}
 	:
 	(
-		{ before(grammarAccess.getSavingsAccountAccess().getGroup()); }
-		(rule__SavingsAccount__Group__0)
-		{ after(grammarAccess.getSavingsAccountAccess().getGroup()); }
+		{ before(grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword()); }
+		'Savings Account'
+		{ after(grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword()); }
 	)
 ;
 finally {
@@ -365,9 +390,9 @@ ruleCheckingAccount
 	}
 	:
 	(
-		{ before(grammarAccess.getCheckingAccountAccess().getGroup()); }
-		(rule__CheckingAccount__Group__0)
-		{ after(grammarAccess.getCheckingAccountAccess().getGroup()); }
+		{ before(grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword()); }
+		'Checking Account'
+		{ after(grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword()); }
 	)
 ;
 finally {
@@ -390,9 +415,9 @@ ruleMortgageAccount
 	}
 	:
 	(
-		{ before(grammarAccess.getMortgageAccountAccess().getGroup()); }
-		(rule__MortgageAccount__Group__0)
-		{ after(grammarAccess.getMortgageAccountAccess().getGroup()); }
+		{ before(grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword()); }
+		'Mortgage Account'
+		{ after(grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword()); }
 	)
 ;
 finally {
@@ -495,27 +520,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Account__Alternatives_0
+rule__AccountType__Alternatives
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAccountAccess().getSavingsAccountParserRuleCall_0_0()); }
+		{ before(grammarAccess.getAccountTypeAccess().getSavingsAccountParserRuleCall_0()); }
 		ruleSavingsAccount
-		{ after(grammarAccess.getAccountAccess().getSavingsAccountParserRuleCall_0_0()); }
+		{ after(grammarAccess.getAccountTypeAccess().getSavingsAccountParserRuleCall_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getAccountAccess().getCheckingAccountParserRuleCall_0_1()); }
+		{ before(grammarAccess.getAccountTypeAccess().getCheckingAccountParserRuleCall_1()); }
 		ruleCheckingAccount
-		{ after(grammarAccess.getAccountAccess().getCheckingAccountParserRuleCall_0_1()); }
+		{ after(grammarAccess.getAccountTypeAccess().getCheckingAccountParserRuleCall_1()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getAccountAccess().getMortgageAccountParserRuleCall_0_2()); }
+		{ before(grammarAccess.getAccountTypeAccess().getMortgageAccountParserRuleCall_2()); }
 		ruleMortgageAccount
-		{ after(grammarAccess.getAccountAccess().getMortgageAccountParserRuleCall_0_2()); }
+		{ after(grammarAccess.getAccountTypeAccess().getMortgageAccountParserRuleCall_2()); }
 	)
 ;
 finally {
@@ -1257,9 +1282,9 @@ rule__Branch__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBranchAccess().getBoothParserRuleCall_3()); }
-	(ruleBooth)?
-	{ after(grammarAccess.getBranchAccess().getBoothParserRuleCall_3()); }
+	{ before(grammarAccess.getBranchAccess().getMyboothAssignment_3()); }
+	(rule__Branch__MyboothAssignment_3)?
+	{ after(grammarAccess.getBranchAccess().getMyboothAssignment_3()); }
 )
 ;
 finally {
@@ -1284,9 +1309,9 @@ rule__Branch__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBranchAccess().getVaultParserRuleCall_4()); }
-	(ruleVault)?
-	{ after(grammarAccess.getBranchAccess().getVaultParserRuleCall_4()); }
+	{ before(grammarAccess.getBranchAccess().getMyVaultAssignment_4()); }
+	(rule__Branch__MyVaultAssignment_4)?
+	{ after(grammarAccess.getBranchAccess().getMyVaultAssignment_4()); }
 )
 ;
 finally {
@@ -1642,9 +1667,9 @@ rule__Account__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getAlternatives_0()); }
-	(rule__Account__Alternatives_0)
-	{ after(grammarAccess.getAccountAccess().getAlternatives_0()); }
+	{ before(grammarAccess.getAccountAccess().getAccountKeyword_0()); }
+	'account'
+	{ after(grammarAccess.getAccountAccess().getAccountKeyword_0()); }
 )
 ;
 finally {
@@ -1669,9 +1694,9 @@ rule__Account__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getHolderSKeyword_1()); }
-	'Holder(s)'
-	{ after(grammarAccess.getAccountAccess().getHolderSKeyword_1()); }
+	{ before(grammarAccess.getAccountAccess().getAccountNumAssignment_1()); }
+	(rule__Account__AccountNumAssignment_1)
+	{ after(grammarAccess.getAccountAccess().getAccountNumAssignment_1()); }
 )
 ;
 finally {
@@ -1696,9 +1721,9 @@ rule__Account__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getHolderAssignment_2()); }
-	(rule__Account__HolderAssignment_2)
-	{ after(grammarAccess.getAccountAccess().getHolderAssignment_2()); }
+	{ before(grammarAccess.getAccountAccess().getLeftCurlyBracketKeyword_2()); }
+	'{'
+	{ after(grammarAccess.getAccountAccess().getLeftCurlyBracketKeyword_2()); }
 )
 ;
 finally {
@@ -1723,9 +1748,9 @@ rule__Account__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getBalanceKeyword_3()); }
-	'Balance'
-	{ after(grammarAccess.getAccountAccess().getBalanceKeyword_3()); }
+	{ before(grammarAccess.getAccountAccess().getHolderSKeyword_3()); }
+	'Holder(s)'
+	{ after(grammarAccess.getAccountAccess().getHolderSKeyword_3()); }
 )
 ;
 finally {
@@ -1750,9 +1775,9 @@ rule__Account__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getBalanceAssignment_4()); }
-	(rule__Account__BalanceAssignment_4)
-	{ after(grammarAccess.getAccountAccess().getBalanceAssignment_4()); }
+	{ before(grammarAccess.getAccountAccess().getHolderAssignment_4()); }
+	(rule__Account__HolderAssignment_4)
+	{ after(grammarAccess.getAccountAccess().getHolderAssignment_4()); }
 )
 ;
 finally {
@@ -1777,9 +1802,9 @@ rule__Account__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getAccountNumberKeyword_5()); }
-	'Account Number'
-	{ after(grammarAccess.getAccountAccess().getAccountNumberKeyword_5()); }
+	{ before(grammarAccess.getAccountAccess().getBalanceKeyword_5()); }
+	'Balance'
+	{ after(grammarAccess.getAccountAccess().getBalanceKeyword_5()); }
 )
 ;
 finally {
@@ -1804,9 +1829,9 @@ rule__Account__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getAccountNumAssignment_6()); }
-	(rule__Account__AccountNumAssignment_6)
-	{ after(grammarAccess.getAccountAccess().getAccountNumAssignment_6()); }
+	{ before(grammarAccess.getAccountAccess().getBalanceAssignment_6()); }
+	(rule__Account__BalanceAssignment_6)
+	{ after(grammarAccess.getAccountAccess().getBalanceAssignment_6()); }
 )
 ;
 finally {
@@ -1831,9 +1856,9 @@ rule__Account__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getMFATypeKeyword_7()); }
-	'MFA Type'
-	{ after(grammarAccess.getAccountAccess().getMFATypeKeyword_7()); }
+	{ before(grammarAccess.getAccountAccess().getAccountNumberKeyword_7()); }
+	'Account Number'
+	{ after(grammarAccess.getAccountAccess().getAccountNumberKeyword_7()); }
 )
 ;
 finally {
@@ -1858,9 +1883,9 @@ rule__Account__Group__8__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getMfaTypeAssignment_8()); }
-	(rule__Account__MfaTypeAssignment_8)
-	{ after(grammarAccess.getAccountAccess().getMfaTypeAssignment_8()); }
+	{ before(grammarAccess.getAccountAccess().getMFATypeKeyword_8()); }
+	'MFA Type'
+	{ after(grammarAccess.getAccountAccess().getMFATypeKeyword_8()); }
 )
 ;
 finally {
@@ -1873,6 +1898,7 @@ rule__Account__Group__9
 	}
 :
 	rule__Account__Group__9__Impl
+	rule__Account__Group__10
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1884,9 +1910,170 @@ rule__Account__Group__9__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_9()); }
+	{ before(grammarAccess.getAccountAccess().getMfaTypeAssignment_9()); }
+	(rule__Account__MfaTypeAssignment_9)
+	{ after(grammarAccess.getAccountAccess().getMfaTypeAssignment_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Account__Group__10__Impl
+	rule__Account__Group__11
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAccountAccess().getTypeKeyword_10()); }
+	'Type'
+	{ after(grammarAccess.getAccountAccess().getTypeKeyword_10()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Account__Group__11__Impl
+	rule__Account__Group__12
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__11__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAccountAccess().getAccountTypeAssignment_11()); }
+	(rule__Account__AccountTypeAssignment_11)
+	{ after(grammarAccess.getAccountAccess().getAccountTypeAssignment_11()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Account__Group__12__Impl
+	rule__Account__Group__13
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__12__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAccountAccess().getGroup_12()); }
+	(rule__Account__Group_12__0)?
+	{ after(grammarAccess.getAccountAccess().getGroup_12()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__13
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Account__Group__13__Impl
+	rule__Account__Group__14
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__13__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAccountAccess().getGroup_13()); }
+	(rule__Account__Group_13__0)?
+	{ after(grammarAccess.getAccountAccess().getGroup_13()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__14
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Account__Group__14__Impl
+	rule__Account__Group__15
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__14__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAccountAccess().getGroup_14()); }
+	(rule__Account__Group_14__0)?
+	{ after(grammarAccess.getAccountAccess().getGroup_14()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__15
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Account__Group__15__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__Group__15__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_15()); }
 	'}'
-	{ after(grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_9()); }
+	{ after(grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_15()); }
 )
 ;
 finally {
@@ -1894,80 +2081,53 @@ finally {
 }
 
 
-rule__SavingsAccount__Group__0
+rule__Account__Group_12__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SavingsAccount__Group__0__Impl
-	rule__SavingsAccount__Group__1
+	rule__Account__Group_12__0__Impl
+	rule__Account__Group_12__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SavingsAccount__Group__0__Impl
+rule__Account__Group_12__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword_0()); }
-	'Savings Account {'
-	{ after(grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SavingsAccount__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__SavingsAccount__Group__1__Impl
-	rule__SavingsAccount__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SavingsAccount__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getSavingsAccountAccess().getInterestRateKeyword_1()); }
+	{ before(grammarAccess.getAccountAccess().getInterestRateKeyword_12_0()); }
 	'Interest rate'
-	{ after(grammarAccess.getSavingsAccountAccess().getInterestRateKeyword_1()); }
+	{ after(grammarAccess.getAccountAccess().getInterestRateKeyword_12_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SavingsAccount__Group__2
+rule__Account__Group_12__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__SavingsAccount__Group__2__Impl
+	rule__Account__Group_12__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SavingsAccount__Group__2__Impl
+rule__Account__Group_12__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getSavingsAccountAccess().getIntRateAssignment_2()); }
-	(rule__SavingsAccount__IntRateAssignment_2)
-	{ after(grammarAccess.getSavingsAccountAccess().getIntRateAssignment_2()); }
+	{ before(grammarAccess.getAccountAccess().getIntRateAssignment_12_1()); }
+	(rule__Account__IntRateAssignment_12_1)
+	{ after(grammarAccess.getAccountAccess().getIntRateAssignment_12_1()); }
 )
 ;
 finally {
@@ -1975,80 +2135,53 @@ finally {
 }
 
 
-rule__CheckingAccount__Group__0
+rule__Account__Group_13__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__CheckingAccount__Group__0__Impl
-	rule__CheckingAccount__Group__1
+	rule__Account__Group_13__0__Impl
+	rule__Account__Group_13__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CheckingAccount__Group__0__Impl
+rule__Account__Group_13__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword_0()); }
-	'Checking Account {'
-	{ after(grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CheckingAccount__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CheckingAccount__Group__1__Impl
-	rule__CheckingAccount__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CheckingAccount__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCheckingAccountAccess().getDebitsPerMonthKeyword_1()); }
+	{ before(grammarAccess.getAccountAccess().getDebitsPerMonthKeyword_13_0()); }
 	'Debits per month'
-	{ after(grammarAccess.getCheckingAccountAccess().getDebitsPerMonthKeyword_1()); }
+	{ after(grammarAccess.getAccountAccess().getDebitsPerMonthKeyword_13_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CheckingAccount__Group__2
+rule__Account__Group_13__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__CheckingAccount__Group__2__Impl
+	rule__Account__Group_13__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CheckingAccount__Group__2__Impl
+rule__Account__Group_13__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getCheckingAccountAccess().getDepPerMonthAssignment_2()); }
-	(rule__CheckingAccount__DepPerMonthAssignment_2)
-	{ after(grammarAccess.getCheckingAccountAccess().getDepPerMonthAssignment_2()); }
+	{ before(grammarAccess.getAccountAccess().getDepPerMonthAssignment_13_1()); }
+	(rule__Account__DepPerMonthAssignment_13_1)
+	{ after(grammarAccess.getAccountAccess().getDepPerMonthAssignment_13_1()); }
 )
 ;
 finally {
@@ -2056,80 +2189,53 @@ finally {
 }
 
 
-rule__MortgageAccount__Group__0
+rule__Account__Group_14__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__MortgageAccount__Group__0__Impl
-	rule__MortgageAccount__Group__1
+	rule__Account__Group_14__0__Impl
+	rule__Account__Group_14__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MortgageAccount__Group__0__Impl
+rule__Account__Group_14__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword_0()); }
-	'Mortgage Account {'
-	{ after(grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MortgageAccount__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__MortgageAccount__Group__1__Impl
-	rule__MortgageAccount__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MortgageAccount__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getMortgageAccountAccess().getLoanPeriodKeyword_1()); }
+	{ before(grammarAccess.getAccountAccess().getLoanPeriodKeyword_14_0()); }
 	'Loan period'
-	{ after(grammarAccess.getMortgageAccountAccess().getLoanPeriodKeyword_1()); }
+	{ after(grammarAccess.getAccountAccess().getLoanPeriodKeyword_14_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MortgageAccount__Group__2
+rule__Account__Group_14__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__MortgageAccount__Group__2__Impl
+	rule__Account__Group_14__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MortgageAccount__Group__2__Impl
+rule__Account__Group_14__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getMortgageAccountAccess().getLoanPeriodAssignment_2()); }
-	(rule__MortgageAccount__LoanPeriodAssignment_2)
-	{ after(grammarAccess.getMortgageAccountAccess().getLoanPeriodAssignment_2()); }
+	{ before(grammarAccess.getAccountAccess().getLoanPeriodAssignment_14_1()); }
+	(rule__Account__LoanPeriodAssignment_14_1)
+	{ after(grammarAccess.getAccountAccess().getLoanPeriodAssignment_14_1()); }
 )
 ;
 finally {
@@ -2776,6 +2882,36 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Branch__MyboothAssignment_3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBranchAccess().getMyboothBoothParserRuleCall_3_0()); }
+		ruleBooth
+		{ after(grammarAccess.getBranchAccess().getMyboothBoothParserRuleCall_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Branch__MyVaultAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBranchAccess().getMyVaultVaultParserRuleCall_4_0()); }
+		ruleVault
+		{ after(grammarAccess.getBranchAccess().getMyVaultVaultParserRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Branch__EmployeesAssignment_5
 	@init {
 		int stackSize = keepStackSize();
@@ -2851,105 +2987,120 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Account__HolderAssignment_2
+rule__Account__AccountNumAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0()); }
-		ruleUser
-		{ after(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Account__BalanceAssignment_4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0()); }
-		RULE_INT
-		{ after(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Account__AccountNumAssignment_6
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0()); }
+		{ before(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0()); }
+		{ after(grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Account__MfaTypeAssignment_8
+rule__Account__HolderAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0()); }
+		{ before(grammarAccess.getAccountAccess().getHolderIDTerminalRuleCall_4_0()); }
+		RULE_ID
+		{ after(grammarAccess.getAccountAccess().getHolderIDTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SavingsAccount__IntRateAssignment_2
+rule__Account__BalanceAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSavingsAccountAccess().getIntRateINTTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_6_0()); }
 		RULE_INT
-		{ after(grammarAccess.getSavingsAccountAccess().getIntRateINTTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_6_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CheckingAccount__DepPerMonthAssignment_2
+rule__Account__MfaTypeAssignment_9
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getCheckingAccountAccess().getDepPerMonthINTTerminalRuleCall_2_0()); }
-		RULE_INT
-		{ after(grammarAccess.getCheckingAccountAccess().getDepPerMonthINTTerminalRuleCall_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MortgageAccount__LoanPeriodAssignment_2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_9_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_9_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__AccountTypeAssignment_11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAccountAccess().getAccountTypeAccountTypeParserRuleCall_11_0()); }
+		ruleAccountType
+		{ after(grammarAccess.getAccountAccess().getAccountTypeAccountTypeParserRuleCall_11_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__IntRateAssignment_12_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAccountAccess().getIntRateINTTerminalRuleCall_12_1_0()); }
+		RULE_INT
+		{ after(grammarAccess.getAccountAccess().getIntRateINTTerminalRuleCall_12_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__DepPerMonthAssignment_13_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAccountAccess().getDepPerMonthINTTerminalRuleCall_13_1_0()); }
+		RULE_INT
+		{ after(grammarAccess.getAccountAccess().getDepPerMonthINTTerminalRuleCall_13_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Account__LoanPeriodAssignment_14_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_14_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_14_1_0()); }
 	)
 ;
 finally {
@@ -2962,9 +3113,9 @@ rule__Transaction__AccountAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0()); }
-		ruleAccount
-		{ after(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0()); }
+		{ before(grammarAccess.getTransactionAccess().getAccountIDTerminalRuleCall_2_0()); }
+		RULE_ID
+		{ after(grammarAccess.getTransactionAccess().getAccountIDTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

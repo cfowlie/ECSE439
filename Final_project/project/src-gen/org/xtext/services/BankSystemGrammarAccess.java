@@ -206,8 +206,10 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAddressKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cAddressAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cAddressSTRINGTerminalRuleCall_2_0 = (RuleCall)cAddressAssignment_2.eContents().get(0);
-		private final RuleCall cBoothParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cVaultParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cMyboothAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMyboothBoothParserRuleCall_3_0 = (RuleCall)cMyboothAssignment_3.eContents().get(0);
+		private final Assignment cMyVaultAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMyVaultVaultParserRuleCall_4_0 = (RuleCall)cMyVaultAssignment_4.eContents().get(0);
 		private final Assignment cEmployeesAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cEmployeesEmployeeParserRuleCall_5_0 = (RuleCall)cEmployeesAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
@@ -215,13 +217,13 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//Branch:
 		//	'Branch{'
 		//	'Address' address=STRING
-		//	Booth?
-		//	Vault?
+		//	mybooth=Booth?
+		//	myVault=Vault?
 		//	employees+=Employee+
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Branch{' 'Address' address=STRING Booth? Vault? employees+=Employee+ '}'
+		//'Branch{' 'Address' address=STRING mybooth=Booth? myVault=Vault? employees+=Employee+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Branch{'
@@ -236,11 +238,17 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAddressSTRINGTerminalRuleCall_2_0() { return cAddressSTRINGTerminalRuleCall_2_0; }
 		
-		//Booth?
-		public RuleCall getBoothParserRuleCall_3() { return cBoothParserRuleCall_3; }
+		//mybooth=Booth?
+		public Assignment getMyboothAssignment_3() { return cMyboothAssignment_3; }
 		
-		//Vault?
-		public RuleCall getVaultParserRuleCall_4() { return cVaultParserRuleCall_4; }
+		//Booth
+		public RuleCall getMyboothBoothParserRuleCall_3_0() { return cMyboothBoothParserRuleCall_3_0; }
+		
+		//myVault=Vault?
+		public Assignment getMyVaultAssignment_4() { return cMyVaultAssignment_4; }
+		
+		//Vault
+		public RuleCall getMyVaultVaultParserRuleCall_4_0() { return cMyVaultVaultParserRuleCall_4_0; }
 		
 		//employees+=Employee+
 		public Assignment getEmployeesAssignment_5() { return cEmployeesAssignment_5; }
@@ -388,171 +396,198 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	public class AccountElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.BankSystem.Account");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cSavingsAccountParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final RuleCall cCheckingAccountParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final RuleCall cMortgageAccountParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
-		private final Keyword cHolderSKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cHolderAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cHolderUserParserRuleCall_2_0 = (RuleCall)cHolderAssignment_2.eContents().get(0);
-		private final Keyword cBalanceKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cBalanceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBalanceINTTerminalRuleCall_4_0 = (RuleCall)cBalanceAssignment_4.eContents().get(0);
-		private final Keyword cAccountNumberKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAccountNumAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cAccountNumIDTerminalRuleCall_6_0 = (RuleCall)cAccountNumAssignment_6.eContents().get(0);
-		private final Keyword cMFATypeKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cMfaTypeAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cMfaTypeSTRINGTerminalRuleCall_8_0 = (RuleCall)cMfaTypeAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cAccountKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAccountNumAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAccountNumIDTerminalRuleCall_1_0 = (RuleCall)cAccountNumAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cHolderSKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cHolderAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cHolderIDTerminalRuleCall_4_0 = (RuleCall)cHolderAssignment_4.eContents().get(0);
+		private final Keyword cBalanceKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cBalanceAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cBalanceINTTerminalRuleCall_6_0 = (RuleCall)cBalanceAssignment_6.eContents().get(0);
+		private final Keyword cAccountNumberKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cMFATypeKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cMfaTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cMfaTypeSTRINGTerminalRuleCall_9_0 = (RuleCall)cMfaTypeAssignment_9.eContents().get(0);
+		private final Keyword cTypeKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cAccountTypeAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cAccountTypeAccountTypeParserRuleCall_11_0 = (RuleCall)cAccountTypeAssignment_11.eContents().get(0);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cInterestRateKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cIntRateAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cIntRateINTTerminalRuleCall_12_1_0 = (RuleCall)cIntRateAssignment_12_1.eContents().get(0);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cDebitsPerMonthKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cDepPerMonthAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final RuleCall cDepPerMonthINTTerminalRuleCall_13_1_0 = (RuleCall)cDepPerMonthAssignment_13_1.eContents().get(0);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Keyword cLoanPeriodKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cLoanPeriodAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cLoanPeriodSTRINGTerminalRuleCall_14_1_0 = (RuleCall)cLoanPeriodAssignment_14_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Account:
-		//	(SavingsAccount | CheckingAccount | MortgageAccount)
-		//	'Holder(s)' holder=User
+		//	'account' accountNum=ID '{'
+		//	'Holder(s)' holder=ID
 		//	'Balance' balance=INT
-		//	'Account Number' accountNum=ID
+		//	'Account Number'
 		//	'MFA Type' mfaType=STRING
+		//	'Type' accountType=AccountType ('Interest rate' intRate=INT)? ('Debits per month' depPerMonth=INT)? ('Loan period'
+		//	loanPeriod=STRING)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(SavingsAccount | CheckingAccount | MortgageAccount) 'Holder(s)' holder=User 'Balance' balance=INT 'Account Number'
-		//accountNum=ID 'MFA Type' mfaType=STRING '}'
+		//'account' accountNum=ID '{' 'Holder(s)' holder=ID 'Balance' balance=INT 'Account Number' 'MFA Type' mfaType=STRING
+		//'Type' accountType=AccountType ('Interest rate' intRate=INT)? ('Debits per month' depPerMonth=INT)? ('Loan period'
+		//loanPeriod=STRING)? '}'
 		public Group getGroup() { return cGroup; }
 		
-		//SavingsAccount | CheckingAccount | MortgageAccount
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//SavingsAccount
-		public RuleCall getSavingsAccountParserRuleCall_0_0() { return cSavingsAccountParserRuleCall_0_0; }
-		
-		//CheckingAccount
-		public RuleCall getCheckingAccountParserRuleCall_0_1() { return cCheckingAccountParserRuleCall_0_1; }
-		
-		//MortgageAccount
-		public RuleCall getMortgageAccountParserRuleCall_0_2() { return cMortgageAccountParserRuleCall_0_2; }
-		
-		//'Holder(s)'
-		public Keyword getHolderSKeyword_1() { return cHolderSKeyword_1; }
-		
-		//holder=User
-		public Assignment getHolderAssignment_2() { return cHolderAssignment_2; }
-		
-		//User
-		public RuleCall getHolderUserParserRuleCall_2_0() { return cHolderUserParserRuleCall_2_0; }
-		
-		//'Balance'
-		public Keyword getBalanceKeyword_3() { return cBalanceKeyword_3; }
-		
-		//balance=INT
-		public Assignment getBalanceAssignment_4() { return cBalanceAssignment_4; }
-		
-		//INT
-		public RuleCall getBalanceINTTerminalRuleCall_4_0() { return cBalanceINTTerminalRuleCall_4_0; }
-		
-		//'Account Number'
-		public Keyword getAccountNumberKeyword_5() { return cAccountNumberKeyword_5; }
+		//'account'
+		public Keyword getAccountKeyword_0() { return cAccountKeyword_0; }
 		
 		//accountNum=ID
-		public Assignment getAccountNumAssignment_6() { return cAccountNumAssignment_6; }
+		public Assignment getAccountNumAssignment_1() { return cAccountNumAssignment_1; }
 		
 		//ID
-		public RuleCall getAccountNumIDTerminalRuleCall_6_0() { return cAccountNumIDTerminalRuleCall_6_0; }
+		public RuleCall getAccountNumIDTerminalRuleCall_1_0() { return cAccountNumIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'Holder(s)'
+		public Keyword getHolderSKeyword_3() { return cHolderSKeyword_3; }
+		
+		//holder=ID
+		public Assignment getHolderAssignment_4() { return cHolderAssignment_4; }
+		
+		//ID
+		public RuleCall getHolderIDTerminalRuleCall_4_0() { return cHolderIDTerminalRuleCall_4_0; }
+		
+		//'Balance'
+		public Keyword getBalanceKeyword_5() { return cBalanceKeyword_5; }
+		
+		//balance=INT
+		public Assignment getBalanceAssignment_6() { return cBalanceAssignment_6; }
+		
+		//INT
+		public RuleCall getBalanceINTTerminalRuleCall_6_0() { return cBalanceINTTerminalRuleCall_6_0; }
+		
+		//'Account Number'
+		public Keyword getAccountNumberKeyword_7() { return cAccountNumberKeyword_7; }
 		
 		//'MFA Type'
-		public Keyword getMFATypeKeyword_7() { return cMFATypeKeyword_7; }
+		public Keyword getMFATypeKeyword_8() { return cMFATypeKeyword_8; }
 		
 		//mfaType=STRING
-		public Assignment getMfaTypeAssignment_8() { return cMfaTypeAssignment_8; }
+		public Assignment getMfaTypeAssignment_9() { return cMfaTypeAssignment_9; }
 		
 		//STRING
-		public RuleCall getMfaTypeSTRINGTerminalRuleCall_8_0() { return cMfaTypeSTRINGTerminalRuleCall_8_0; }
+		public RuleCall getMfaTypeSTRINGTerminalRuleCall_9_0() { return cMfaTypeSTRINGTerminalRuleCall_9_0; }
+		
+		//'Type'
+		public Keyword getTypeKeyword_10() { return cTypeKeyword_10; }
+		
+		//accountType=AccountType
+		public Assignment getAccountTypeAssignment_11() { return cAccountTypeAssignment_11; }
+		
+		//AccountType
+		public RuleCall getAccountTypeAccountTypeParserRuleCall_11_0() { return cAccountTypeAccountTypeParserRuleCall_11_0; }
+		
+		//('Interest rate' intRate=INT)?
+		public Group getGroup_12() { return cGroup_12; }
+		
+		//'Interest rate'
+		public Keyword getInterestRateKeyword_12_0() { return cInterestRateKeyword_12_0; }
+		
+		//intRate=INT
+		public Assignment getIntRateAssignment_12_1() { return cIntRateAssignment_12_1; }
+		
+		//INT
+		public RuleCall getIntRateINTTerminalRuleCall_12_1_0() { return cIntRateINTTerminalRuleCall_12_1_0; }
+		
+		//('Debits per month' depPerMonth=INT)?
+		public Group getGroup_13() { return cGroup_13; }
+		
+		//'Debits per month'
+		public Keyword getDebitsPerMonthKeyword_13_0() { return cDebitsPerMonthKeyword_13_0; }
+		
+		//depPerMonth=INT
+		public Assignment getDepPerMonthAssignment_13_1() { return cDepPerMonthAssignment_13_1; }
+		
+		//INT
+		public RuleCall getDepPerMonthINTTerminalRuleCall_13_1_0() { return cDepPerMonthINTTerminalRuleCall_13_1_0; }
+		
+		//('Loan period' loanPeriod=STRING)?
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//'Loan period'
+		public Keyword getLoanPeriodKeyword_14_0() { return cLoanPeriodKeyword_14_0; }
+		
+		//loanPeriod=STRING
+		public Assignment getLoanPeriodAssignment_14_1() { return cLoanPeriodAssignment_14_1; }
+		
+		//STRING
+		public RuleCall getLoanPeriodSTRINGTerminalRuleCall_14_1_0() { return cLoanPeriodSTRINGTerminalRuleCall_14_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+	}
+	public class AccountTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.BankSystem.AccountType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSavingsAccountParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCheckingAccountParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMortgageAccountParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//AccountType:
+		//	SavingsAccount | CheckingAccount | MortgageAccount;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SavingsAccount | CheckingAccount | MortgageAccount
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SavingsAccount
+		public RuleCall getSavingsAccountParserRuleCall_0() { return cSavingsAccountParserRuleCall_0; }
+		
+		//CheckingAccount
+		public RuleCall getCheckingAccountParserRuleCall_1() { return cCheckingAccountParserRuleCall_1; }
+		
+		//MortgageAccount
+		public RuleCall getMortgageAccountParserRuleCall_2() { return cMortgageAccountParserRuleCall_2; }
 	}
 	public class SavingsAccountElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.BankSystem.SavingsAccount");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSavingsAccountKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cInterestRateKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cIntRateAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIntRateINTTerminalRuleCall_2_0 = (RuleCall)cIntRateAssignment_2.eContents().get(0);
+		private final Keyword cSavingsAccountKeyword = (Keyword)rule.eContents().get(1);
 		
 		//SavingsAccount:
-		//	'Savings Account {'
-		//	'Interest rate' intRate=INT;
+		//	'Savings Account';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Savings Account {' 'Interest rate' intRate=INT
-		public Group getGroup() { return cGroup; }
-		
-		//'Savings Account {'
-		public Keyword getSavingsAccountKeyword_0() { return cSavingsAccountKeyword_0; }
-		
-		//'Interest rate'
-		public Keyword getInterestRateKeyword_1() { return cInterestRateKeyword_1; }
-		
-		//intRate=INT
-		public Assignment getIntRateAssignment_2() { return cIntRateAssignment_2; }
-		
-		//INT
-		public RuleCall getIntRateINTTerminalRuleCall_2_0() { return cIntRateINTTerminalRuleCall_2_0; }
+		//'Savings Account'
+		public Keyword getSavingsAccountKeyword() { return cSavingsAccountKeyword; }
 	}
 	public class CheckingAccountElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.BankSystem.CheckingAccount");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCheckingAccountKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cDebitsPerMonthKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cDepPerMonthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDepPerMonthINTTerminalRuleCall_2_0 = (RuleCall)cDepPerMonthAssignment_2.eContents().get(0);
+		private final Keyword cCheckingAccountKeyword = (Keyword)rule.eContents().get(1);
 		
 		//CheckingAccount:
-		//	'Checking Account {'
-		//	'Debits per month' depPerMonth=INT;
+		//	'Checking Account';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Checking Account {' 'Debits per month' depPerMonth=INT
-		public Group getGroup() { return cGroup; }
-		
-		//'Checking Account {'
-		public Keyword getCheckingAccountKeyword_0() { return cCheckingAccountKeyword_0; }
-		
-		//'Debits per month'
-		public Keyword getDebitsPerMonthKeyword_1() { return cDebitsPerMonthKeyword_1; }
-		
-		//depPerMonth=INT
-		public Assignment getDepPerMonthAssignment_2() { return cDepPerMonthAssignment_2; }
-		
-		//INT
-		public RuleCall getDepPerMonthINTTerminalRuleCall_2_0() { return cDepPerMonthINTTerminalRuleCall_2_0; }
+		//'Checking Account'
+		public Keyword getCheckingAccountKeyword() { return cCheckingAccountKeyword; }
 	}
 	public class MortgageAccountElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.BankSystem.MortgageAccount");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMortgageAccountKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLoanPeriodKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLoanPeriodAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLoanPeriodSTRINGTerminalRuleCall_2_0 = (RuleCall)cLoanPeriodAssignment_2.eContents().get(0);
+		private final Keyword cMortgageAccountKeyword = (Keyword)rule.eContents().get(1);
 		
 		//MortgageAccount:
-		//	'Mortgage Account {'
-		//	'Loan period' loanPeriod=STRING;
+		//	'Mortgage Account';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Mortgage Account {' 'Loan period' loanPeriod=STRING
-		public Group getGroup() { return cGroup; }
-		
-		//'Mortgage Account {'
-		public Keyword getMortgageAccountKeyword_0() { return cMortgageAccountKeyword_0; }
-		
-		//'Loan period'
-		public Keyword getLoanPeriodKeyword_1() { return cLoanPeriodKeyword_1; }
-		
-		//loanPeriod=STRING
-		public Assignment getLoanPeriodAssignment_2() { return cLoanPeriodAssignment_2; }
-		
-		//STRING
-		public RuleCall getLoanPeriodSTRINGTerminalRuleCall_2_0() { return cLoanPeriodSTRINGTerminalRuleCall_2_0; }
+		//'Mortgage Account'
+		public Keyword getMortgageAccountKeyword() { return cMortgageAccountKeyword; }
 	}
 	public class TransactionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.BankSystem.Transaction");
@@ -560,7 +595,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTransactionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cAccountKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cAccountAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAccountAccountParserRuleCall_2_0 = (RuleCall)cAccountAssignment_2.eContents().get(0);
+		private final RuleCall cAccountIDTerminalRuleCall_2_0 = (RuleCall)cAccountAssignment_2.eContents().get(0);
 		private final Keyword cAmountKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cAmountAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cAmountINTTerminalRuleCall_4_0 = (RuleCall)cAmountAssignment_4.eContents().get(0);
@@ -577,7 +612,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Transaction:
 		//	'transaction {'
-		//	'Account:' account=Account
+		//	'Account:' account=ID
 		//	'Amount:' amount=INT
 		//	'Date' date=Date
 		//	'Debit' debit=Boolean
@@ -585,7 +620,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'transaction {' 'Account:' account=Account 'Amount:' amount=INT 'Date' date=Date 'Debit' debit=Boolean 'Vendor name'
+		//'transaction {' 'Account:' account=ID 'Amount:' amount=INT 'Date' date=Date 'Debit' debit=Boolean 'Vendor name'
 		//vendorName=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -595,11 +630,11 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		//'Account:'
 		public Keyword getAccountKeyword_1() { return cAccountKeyword_1; }
 		
-		//account=Account
+		//account=ID
 		public Assignment getAccountAssignment_2() { return cAccountAssignment_2; }
 		
-		//Account
-		public RuleCall getAccountAccountParserRuleCall_2_0() { return cAccountAccountParserRuleCall_2_0; }
+		//ID
+		public RuleCall getAccountIDTerminalRuleCall_2_0() { return cAccountIDTerminalRuleCall_2_0; }
 		
 		//'Amount:'
 		public Keyword getAmountKeyword_3() { return cAmountKeyword_3; }
@@ -715,6 +750,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	private final TellerElements pTeller;
 	private final ManagerElements pManager;
 	private final AccountElements pAccount;
+	private final AccountTypeElements pAccountType;
 	private final SavingsAccountElements pSavingsAccount;
 	private final CheckingAccountElements pCheckingAccount;
 	private final MortgageAccountElements pMortgageAccount;
@@ -742,6 +778,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTeller = new TellerElements();
 		this.pManager = new ManagerElements();
 		this.pAccount = new AccountElements();
+		this.pAccountType = new AccountTypeElements();
 		this.pSavingsAccount = new SavingsAccountElements();
 		this.pCheckingAccount = new CheckingAccountElements();
 		this.pMortgageAccount = new MortgageAccountElements();
@@ -822,8 +859,8 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	//Branch:
 	//	'Branch{'
 	//	'Address' address=STRING
-	//	Booth?
-	//	Vault?
+	//	mybooth=Booth?
+	//	myVault=Vault?
 	//	employees+=Employee+
 	//	'}';
 	public BranchElements getBranchAccess() {
@@ -899,11 +936,13 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Account:
-	//	(SavingsAccount | CheckingAccount | MortgageAccount)
-	//	'Holder(s)' holder=User
+	//	'account' accountNum=ID '{'
+	//	'Holder(s)' holder=ID
 	//	'Balance' balance=INT
-	//	'Account Number' accountNum=ID
+	//	'Account Number'
 	//	'MFA Type' mfaType=STRING
+	//	'Type' accountType=AccountType ('Interest rate' intRate=INT)? ('Debits per month' depPerMonth=INT)? ('Loan period'
+	//	loanPeriod=STRING)?
 	//	'}';
 	public AccountElements getAccountAccess() {
 		return pAccount;
@@ -913,9 +952,18 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 		return getAccountAccess().getRule();
 	}
 	
+	//AccountType:
+	//	SavingsAccount | CheckingAccount | MortgageAccount;
+	public AccountTypeElements getAccountTypeAccess() {
+		return pAccountType;
+	}
+	
+	public ParserRule getAccountTypeRule() {
+		return getAccountTypeAccess().getRule();
+	}
+	
 	//SavingsAccount:
-	//	'Savings Account {'
-	//	'Interest rate' intRate=INT;
+	//	'Savings Account';
 	public SavingsAccountElements getSavingsAccountAccess() {
 		return pSavingsAccount;
 	}
@@ -925,8 +973,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CheckingAccount:
-	//	'Checking Account {'
-	//	'Debits per month' depPerMonth=INT;
+	//	'Checking Account';
 	public CheckingAccountElements getCheckingAccountAccess() {
 		return pCheckingAccount;
 	}
@@ -936,8 +983,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MortgageAccount:
-	//	'Mortgage Account {'
-	//	'Loan period' loanPeriod=STRING;
+	//	'Mortgage Account';
 	public MortgageAccountElements getMortgageAccountAccess() {
 		return pMortgageAccount;
 	}
@@ -948,7 +994,7 @@ public class BankSystemGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Transaction:
 	//	'transaction {'
-	//	'Account:' account=Account
+	//	'Account:' account=ID
 	//	'Amount:' amount=INT
 	//	'Date' date=Date
 	//	'Debit' debit=Boolean

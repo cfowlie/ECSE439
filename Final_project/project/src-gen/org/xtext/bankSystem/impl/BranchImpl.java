@@ -32,6 +32,8 @@ import org.xtext.bankSystem.Employee;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.bankSystem.impl.BranchImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.BranchImpl#getMybooth <em>Mybooth</em>}</li>
+ *   <li>{@link org.xtext.bankSystem.impl.BranchImpl#getMyVault <em>My Vault</em>}</li>
  *   <li>{@link org.xtext.bankSystem.impl.BranchImpl#getEmployees <em>Employees</em>}</li>
  * </ul>
  *
@@ -58,6 +60,46 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
    * @ordered
    */
   protected String address = ADDRESS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMybooth() <em>Mybooth</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMybooth()
+   * @generated
+   * @ordered
+   */
+  protected static final String MYBOOTH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMybooth() <em>Mybooth</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMybooth()
+   * @generated
+   * @ordered
+   */
+  protected String mybooth = MYBOOTH_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMyVault() <em>My Vault</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMyVault()
+   * @generated
+   * @ordered
+   */
+  protected static final String MY_VAULT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMyVault() <em>My Vault</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMyVault()
+   * @generated
+   * @ordered
+   */
+  protected String myVault = MY_VAULT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getEmployees() <em>Employees</em>}' containment reference list.
@@ -118,6 +160,52 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getMybooth()
+  {
+    return mybooth;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMybooth(String newMybooth)
+  {
+    String oldMybooth = mybooth;
+    mybooth = newMybooth;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.BRANCH__MYBOOTH, oldMybooth, mybooth));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getMyVault()
+  {
+    return myVault;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMyVault(String newMyVault)
+  {
+    String oldMyVault = myVault;
+    myVault = newMyVault;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.BRANCH__MY_VAULT, oldMyVault, myVault));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Employee> getEmployees()
   {
     if (employees == null)
@@ -155,6 +243,10 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
     {
       case BankSystemPackage.BRANCH__ADDRESS:
         return getAddress();
+      case BankSystemPackage.BRANCH__MYBOOTH:
+        return getMybooth();
+      case BankSystemPackage.BRANCH__MY_VAULT:
+        return getMyVault();
       case BankSystemPackage.BRANCH__EMPLOYEES:
         return getEmployees();
     }
@@ -174,6 +266,12 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
     {
       case BankSystemPackage.BRANCH__ADDRESS:
         setAddress((String)newValue);
+        return;
+      case BankSystemPackage.BRANCH__MYBOOTH:
+        setMybooth((String)newValue);
+        return;
+      case BankSystemPackage.BRANCH__MY_VAULT:
+        setMyVault((String)newValue);
         return;
       case BankSystemPackage.BRANCH__EMPLOYEES:
         getEmployees().clear();
@@ -196,6 +294,12 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
       case BankSystemPackage.BRANCH__ADDRESS:
         setAddress(ADDRESS_EDEFAULT);
         return;
+      case BankSystemPackage.BRANCH__MYBOOTH:
+        setMybooth(MYBOOTH_EDEFAULT);
+        return;
+      case BankSystemPackage.BRANCH__MY_VAULT:
+        setMyVault(MY_VAULT_EDEFAULT);
+        return;
       case BankSystemPackage.BRANCH__EMPLOYEES:
         getEmployees().clear();
         return;
@@ -215,6 +319,10 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
     {
       case BankSystemPackage.BRANCH__ADDRESS:
         return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
+      case BankSystemPackage.BRANCH__MYBOOTH:
+        return MYBOOTH_EDEFAULT == null ? mybooth != null : !MYBOOTH_EDEFAULT.equals(mybooth);
+      case BankSystemPackage.BRANCH__MY_VAULT:
+        return MY_VAULT_EDEFAULT == null ? myVault != null : !MY_VAULT_EDEFAULT.equals(myVault);
       case BankSystemPackage.BRANCH__EMPLOYEES:
         return employees != null && !employees.isEmpty();
     }
@@ -234,6 +342,10 @@ public class BranchImpl extends MinimalEObjectImpl.Container implements Branch
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (address: ");
     result.append(address);
+    result.append(", mybooth: ");
+    result.append(mybooth);
+    result.append(", myVault: ");
+    result.append(myVault);
     result.append(')');
     return result.toString();
   }

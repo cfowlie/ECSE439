@@ -407,22 +407,42 @@ ruleBranch returns [EObject current=null]
 			)
 		)
 		(
-			{
-				newCompositeNode(grammarAccess.getBranchAccess().getBoothParserRuleCall_3());
-			}
-			ruleBooth
-			{
-				afterParserOrEnumRuleCall();
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getBranchAccess().getMyboothBoothParserRuleCall_3_0());
+				}
+				lv_mybooth_3_0=ruleBooth
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBranchRule());
+					}
+					set(
+						$current,
+						"mybooth",
+						lv_mybooth_3_0,
+						"org.xtext.BankSystem.Booth");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)?
 		(
-			{
-				newCompositeNode(grammarAccess.getBranchAccess().getVaultParserRuleCall_4());
-			}
-			ruleVault
-			{
-				afterParserOrEnumRuleCall();
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getBranchAccess().getMyVaultVaultParserRuleCall_4_0());
+				}
+				lv_myVault_4_0=ruleVault
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBranchRule());
+					}
+					set(
+						$current,
+						"myVault",
+						lv_myVault_4_0,
+						"org.xtext.BankSystem.Vault");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)?
 		(
 			(
@@ -711,66 +731,63 @@ ruleAccount returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				newCompositeNode(grammarAccess.getAccountAccess().getSavingsAccountParserRuleCall_0_0());
-			}
-			this_SavingsAccount_0=ruleSavingsAccount
-			{
-				$current = $this_SavingsAccount_0.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getAccountAccess().getCheckingAccountParserRuleCall_0_1());
-			}
-			this_CheckingAccount_1=ruleCheckingAccount
-			{
-				$current = $this_CheckingAccount_1.current;
-				afterParserOrEnumRuleCall();
-			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getAccountAccess().getMortgageAccountParserRuleCall_0_2());
-			}
-			this_MortgageAccount_2=ruleMortgageAccount
-			{
-				$current = $this_MortgageAccount_2.current;
-				afterParserOrEnumRuleCall();
-			}
-		)
-		otherlv_3='Holder(s)'
+		otherlv_0='account'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAccountAccess().getHolderSKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getAccountAccess().getAccountKeyword_0());
 		}
 		(
 			(
+				lv_accountNum_1_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getAccountAccess().getHolderUserParserRuleCall_2_0());
+					newLeafNode(lv_accountNum_1_0, grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_1_0());
 				}
-				lv_holder_4_0=ruleUser
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAccountRule());
+						$current = createModelElement(grammarAccess.getAccountRule());
 					}
-					set(
+					setWithLastConsumed(
+						$current,
+						"accountNum",
+						lv_accountNum_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getAccountAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='Holder(s)'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAccountAccess().getHolderSKeyword_3());
+		}
+		(
+			(
+				lv_holder_4_0=RULE_ID
+				{
+					newLeafNode(lv_holder_4_0, grammarAccess.getAccountAccess().getHolderIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAccountRule());
+					}
+					setWithLastConsumed(
 						$current,
 						"holder",
 						lv_holder_4_0,
-						"org.xtext.BankSystem.User");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
 		otherlv_5='Balance'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAccountAccess().getBalanceKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getAccountAccess().getBalanceKeyword_5());
 		}
 		(
 			(
 				lv_balance_6_0=RULE_INT
 				{
-					newLeafNode(lv_balance_6_0, grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_4_0());
+					newLeafNode(lv_balance_6_0, grammarAccess.getAccountAccess().getBalanceINTTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -786,35 +803,17 @@ ruleAccount returns [EObject current=null]
 		)
 		otherlv_7='Account Number'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getAccountAccess().getAccountNumberKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getAccountAccess().getAccountNumberKeyword_7());
 		}
-		(
-			(
-				lv_accountNum_8_0=RULE_ID
-				{
-					newLeafNode(lv_accountNum_8_0, grammarAccess.getAccountAccess().getAccountNumIDTerminalRuleCall_6_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAccountRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"accountNum",
-						lv_accountNum_8_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_9='MFA Type'
+		otherlv_8='MFA Type'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getAccountAccess().getMFATypeKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getAccountAccess().getMFATypeKeyword_8());
 		}
 		(
 			(
-				lv_mfaType_10_0=RULE_STRING
+				lv_mfaType_9_0=RULE_STRING
 				{
-					newLeafNode(lv_mfaType_10_0, grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_8_0());
+					newLeafNode(lv_mfaType_9_0, grammarAccess.getAccountAccess().getMfaTypeSTRINGTerminalRuleCall_9_0());
 				}
 				{
 					if ($current==null) {
@@ -823,151 +822,228 @@ ruleAccount returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"mfaType",
-						lv_mfaType_10_0,
+						lv_mfaType_9_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_11='}'
+		otherlv_10='Type'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getAccountAccess().getTypeKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAccountAccess().getAccountTypeAccountTypeParserRuleCall_11_0());
+				}
+				lv_accountType_11_0=ruleAccountType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAccountRule());
+					}
+					set(
+						$current,
+						"accountType",
+						lv_accountType_11_0,
+						"org.xtext.BankSystem.AccountType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_12='Interest rate'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getAccountAccess().getInterestRateKeyword_12_0());
+			}
+			(
+				(
+					lv_intRate_13_0=RULE_INT
+					{
+						newLeafNode(lv_intRate_13_0, grammarAccess.getAccountAccess().getIntRateINTTerminalRuleCall_12_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAccountRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"intRate",
+							lv_intRate_13_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_14='Debits per month'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getAccountAccess().getDebitsPerMonthKeyword_13_0());
+			}
+			(
+				(
+					lv_depPerMonth_15_0=RULE_INT
+					{
+						newLeafNode(lv_depPerMonth_15_0, grammarAccess.getAccountAccess().getDepPerMonthINTTerminalRuleCall_13_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAccountRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"depPerMonth",
+							lv_depPerMonth_15_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_16='Loan period'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getAccountAccess().getLoanPeriodKeyword_14_0());
+			}
+			(
+				(
+					lv_loanPeriod_17_0=RULE_STRING
+					{
+						newLeafNode(lv_loanPeriod_17_0, grammarAccess.getAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_14_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAccountRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"loanPeriod",
+							lv_loanPeriod_17_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)?
+		otherlv_18='}'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getAccountAccess().getRightCurlyBracketKeyword_15());
+		}
+	)
+;
+
+// Entry rule entryRuleAccountType
+entryRuleAccountType returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getAccountTypeRule()); }
+	iv_ruleAccountType=ruleAccountType
+	{ $current=$iv_ruleAccountType.current.getText(); }
+	EOF;
+
+// Rule AccountType
+ruleAccountType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getAccountTypeAccess().getSavingsAccountParserRuleCall_0());
+		}
+		this_SavingsAccount_0=ruleSavingsAccount
+		{
+			$current.merge(this_SavingsAccount_0);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAccountTypeAccess().getCheckingAccountParserRuleCall_1());
+		}
+		this_CheckingAccount_1=ruleCheckingAccount
+		{
+			$current.merge(this_CheckingAccount_1);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAccountTypeAccess().getMortgageAccountParserRuleCall_2());
+		}
+		this_MortgageAccount_2=ruleMortgageAccount
+		{
+			$current.merge(this_MortgageAccount_2);
+		}
+		{
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
 // Entry rule entryRuleSavingsAccount
-entryRuleSavingsAccount returns [EObject current=null]:
+entryRuleSavingsAccount returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getSavingsAccountRule()); }
 	iv_ruleSavingsAccount=ruleSavingsAccount
-	{ $current=$iv_ruleSavingsAccount.current; }
+	{ $current=$iv_ruleSavingsAccount.current.getText(); }
 	EOF;
 
 // Rule SavingsAccount
-ruleSavingsAccount returns [EObject current=null]
+ruleSavingsAccount returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		otherlv_0='Savings Account {'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword_0());
-		}
-		otherlv_1='Interest rate'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSavingsAccountAccess().getInterestRateKeyword_1());
-		}
-		(
-			(
-				lv_intRate_2_0=RULE_INT
-				{
-					newLeafNode(lv_intRate_2_0, grammarAccess.getSavingsAccountAccess().getIntRateINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSavingsAccountRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"intRate",
-						lv_intRate_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-	)
+	kw='Savings Account'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getSavingsAccountAccess().getSavingsAccountKeyword());
+	}
 ;
 
 // Entry rule entryRuleCheckingAccount
-entryRuleCheckingAccount returns [EObject current=null]:
+entryRuleCheckingAccount returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getCheckingAccountRule()); }
 	iv_ruleCheckingAccount=ruleCheckingAccount
-	{ $current=$iv_ruleCheckingAccount.current; }
+	{ $current=$iv_ruleCheckingAccount.current.getText(); }
 	EOF;
 
 // Rule CheckingAccount
-ruleCheckingAccount returns [EObject current=null]
+ruleCheckingAccount returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		otherlv_0='Checking Account {'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword_0());
-		}
-		otherlv_1='Debits per month'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getCheckingAccountAccess().getDebitsPerMonthKeyword_1());
-		}
-		(
-			(
-				lv_depPerMonth_2_0=RULE_INT
-				{
-					newLeafNode(lv_depPerMonth_2_0, grammarAccess.getCheckingAccountAccess().getDepPerMonthINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCheckingAccountRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"depPerMonth",
-						lv_depPerMonth_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-	)
+	kw='Checking Account'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getCheckingAccountAccess().getCheckingAccountKeyword());
+	}
 ;
 
 // Entry rule entryRuleMortgageAccount
-entryRuleMortgageAccount returns [EObject current=null]:
+entryRuleMortgageAccount returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getMortgageAccountRule()); }
 	iv_ruleMortgageAccount=ruleMortgageAccount
-	{ $current=$iv_ruleMortgageAccount.current; }
+	{ $current=$iv_ruleMortgageAccount.current.getText(); }
 	EOF;
 
 // Rule MortgageAccount
-ruleMortgageAccount returns [EObject current=null]
+ruleMortgageAccount returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		otherlv_0='Mortgage Account {'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword_0());
-		}
-		otherlv_1='Loan period'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getMortgageAccountAccess().getLoanPeriodKeyword_1());
-		}
-		(
-			(
-				lv_loanPeriod_2_0=RULE_STRING
-				{
-					newLeafNode(lv_loanPeriod_2_0, grammarAccess.getMortgageAccountAccess().getLoanPeriodSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMortgageAccountRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"loanPeriod",
-						lv_loanPeriod_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-	)
+	kw='Mortgage Account'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getMortgageAccountAccess().getMortgageAccountKeyword());
+	}
 ;
 
 // Entry rule entryRuleTransaction
@@ -996,20 +1072,19 @@ ruleTransaction returns [EObject current=null]
 		}
 		(
 			(
+				lv_account_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getTransactionAccess().getAccountAccountParserRuleCall_2_0());
+					newLeafNode(lv_account_2_0, grammarAccess.getTransactionAccess().getAccountIDTerminalRuleCall_2_0());
 				}
-				lv_account_2_0=ruleAccount
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTransactionRule());
+						$current = createModelElement(grammarAccess.getTransactionRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"account",
 						lv_account_2_0,
-						"org.xtext.BankSystem.Account");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)

@@ -233,13 +233,31 @@ public interface BankSystemPackage extends EPackage
   int BRANCH__ADDRESS = 0;
 
   /**
+   * The feature id for the '<em><b>Mybooth</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BRANCH__MYBOOTH = 1;
+
+  /**
+   * The feature id for the '<em><b>My Vault</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BRANCH__MY_VAULT = 2;
+
+  /**
    * The feature id for the '<em><b>Employees</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BRANCH__EMPLOYEES = 1;
+  int BRANCH__EMPLOYEES = 3;
 
   /**
    * The number of structural features of the '<em>Branch</em>' class.
@@ -248,7 +266,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BRANCH_FEATURE_COUNT = 2;
+  int BRANCH_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.bankSystem.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -316,13 +334,22 @@ public interface BankSystemPackage extends EPackage
   int ACCOUNT = 5;
 
   /**
-   * The feature id for the '<em><b>Holder</b></em>' containment reference.
+   * The feature id for the '<em><b>Account Num</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNT__HOLDER = 0;
+  int ACCOUNT__ACCOUNT_NUM = 0;
+
+  /**
+   * The feature id for the '<em><b>Holder</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCOUNT__HOLDER = 1;
 
   /**
    * The feature id for the '<em><b>Balance</b></em>' attribute.
@@ -331,16 +358,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNT__BALANCE = 1;
-
-  /**
-   * The feature id for the '<em><b>Account Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACCOUNT__ACCOUNT_NUM = 2;
+  int ACCOUNT__BALANCE = 2;
 
   /**
    * The feature id for the '<em><b>Mfa Type</b></em>' attribute.
@@ -352,59 +370,13 @@ public interface BankSystemPackage extends EPackage
   int ACCOUNT__MFA_TYPE = 3;
 
   /**
-   * The number of structural features of the '<em>Account</em>' class.
+   * The feature id for the '<em><b>Account Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNT_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link org.xtext.bankSystem.impl.SavingsAccountImpl <em>Savings Account</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.bankSystem.impl.SavingsAccountImpl
-   * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getSavingsAccount()
-   * @generated
-   */
-  int SAVINGS_ACCOUNT = 6;
-
-  /**
-   * The feature id for the '<em><b>Holder</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVINGS_ACCOUNT__HOLDER = ACCOUNT__HOLDER;
-
-  /**
-   * The feature id for the '<em><b>Balance</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVINGS_ACCOUNT__BALANCE = ACCOUNT__BALANCE;
-
-  /**
-   * The feature id for the '<em><b>Account Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVINGS_ACCOUNT__ACCOUNT_NUM = ACCOUNT__ACCOUNT_NUM;
-
-  /**
-   * The feature id for the '<em><b>Mfa Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVINGS_ACCOUNT__MFA_TYPE = ACCOUNT__MFA_TYPE;
+  int ACCOUNT__ACCOUNT_TYPE = 4;
 
   /**
    * The feature id for the '<em><b>Int Rate</b></em>' attribute.
@@ -413,62 +385,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SAVINGS_ACCOUNT__INT_RATE = ACCOUNT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Savings Account</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVINGS_ACCOUNT_FEATURE_COUNT = ACCOUNT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.bankSystem.impl.CheckingAccountImpl <em>Checking Account</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.bankSystem.impl.CheckingAccountImpl
-   * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getCheckingAccount()
-   * @generated
-   */
-  int CHECKING_ACCOUNT = 7;
-
-  /**
-   * The feature id for the '<em><b>Holder</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHECKING_ACCOUNT__HOLDER = ACCOUNT__HOLDER;
-
-  /**
-   * The feature id for the '<em><b>Balance</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHECKING_ACCOUNT__BALANCE = ACCOUNT__BALANCE;
-
-  /**
-   * The feature id for the '<em><b>Account Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHECKING_ACCOUNT__ACCOUNT_NUM = ACCOUNT__ACCOUNT_NUM;
-
-  /**
-   * The feature id for the '<em><b>Mfa Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHECKING_ACCOUNT__MFA_TYPE = ACCOUNT__MFA_TYPE;
+  int ACCOUNT__INT_RATE = 5;
 
   /**
    * The feature id for the '<em><b>Dep Per Month</b></em>' attribute.
@@ -477,62 +394,7 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHECKING_ACCOUNT__DEP_PER_MONTH = ACCOUNT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Checking Account</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHECKING_ACCOUNT_FEATURE_COUNT = ACCOUNT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.bankSystem.impl.MortgageAccountImpl <em>Mortgage Account</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.bankSystem.impl.MortgageAccountImpl
-   * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getMortgageAccount()
-   * @generated
-   */
-  int MORTGAGE_ACCOUNT = 8;
-
-  /**
-   * The feature id for the '<em><b>Holder</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MORTGAGE_ACCOUNT__HOLDER = ACCOUNT__HOLDER;
-
-  /**
-   * The feature id for the '<em><b>Balance</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MORTGAGE_ACCOUNT__BALANCE = ACCOUNT__BALANCE;
-
-  /**
-   * The feature id for the '<em><b>Account Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MORTGAGE_ACCOUNT__ACCOUNT_NUM = ACCOUNT__ACCOUNT_NUM;
-
-  /**
-   * The feature id for the '<em><b>Mfa Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MORTGAGE_ACCOUNT__MFA_TYPE = ACCOUNT__MFA_TYPE;
+  int ACCOUNT__DEP_PER_MONTH = 6;
 
   /**
    * The feature id for the '<em><b>Loan Period</b></em>' attribute.
@@ -541,16 +403,16 @@ public interface BankSystemPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MORTGAGE_ACCOUNT__LOAN_PERIOD = ACCOUNT_FEATURE_COUNT + 0;
+  int ACCOUNT__LOAN_PERIOD = 7;
 
   /**
-   * The number of structural features of the '<em>Mortgage Account</em>' class.
+   * The number of structural features of the '<em>Account</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MORTGAGE_ACCOUNT_FEATURE_COUNT = ACCOUNT_FEATURE_COUNT + 1;
+  int ACCOUNT_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link org.xtext.bankSystem.impl.TransactionImpl <em>Transaction</em>}' class.
@@ -560,10 +422,10 @@ public interface BankSystemPackage extends EPackage
    * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getTransaction()
    * @generated
    */
-  int TRANSACTION = 9;
+  int TRANSACTION = 6;
 
   /**
-   * The feature id for the '<em><b>Account</b></em>' containment reference.
+   * The feature id for the '<em><b>Account</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -624,7 +486,7 @@ public interface BankSystemPackage extends EPackage
    * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getDate()
    * @generated
    */
-  int DATE = 10;
+  int DATE = 7;
 
   /**
    * The feature id for the '<em><b>Year</b></em>' attribute.
@@ -836,6 +698,28 @@ public interface BankSystemPackage extends EPackage
   EAttribute getBranch_Address();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Branch#getMybooth <em>Mybooth</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mybooth</em>'.
+   * @see org.xtext.bankSystem.Branch#getMybooth()
+   * @see #getBranch()
+   * @generated
+   */
+  EAttribute getBranch_Mybooth();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Branch#getMyVault <em>My Vault</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>My Vault</em>'.
+   * @see org.xtext.bankSystem.Branch#getMyVault()
+   * @see #getBranch()
+   * @generated
+   */
+  EAttribute getBranch_MyVault();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.bankSystem.Branch#getEmployees <em>Employees</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -911,15 +795,26 @@ public interface BankSystemPackage extends EPackage
   EClass getAccount();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Holder</em>'.
+   * @return the meta object for the attribute '<em>Account Num</em>'.
+   * @see org.xtext.bankSystem.Account#getAccountNum()
+   * @see #getAccount()
+   * @generated
+   */
+  EAttribute getAccount_AccountNum();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getHolder <em>Holder</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Holder</em>'.
    * @see org.xtext.bankSystem.Account#getHolder()
    * @see #getAccount()
    * @generated
    */
-  EReference getAccount_Holder();
+  EAttribute getAccount_Holder();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getBalance <em>Balance</em>}'.
@@ -933,17 +828,6 @@ public interface BankSystemPackage extends EPackage
   EAttribute getAccount_Balance();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getAccountNum <em>Account Num</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Account Num</em>'.
-   * @see org.xtext.bankSystem.Account#getAccountNum()
-   * @see #getAccount()
-   * @generated
-   */
-  EAttribute getAccount_AccountNum();
-
-  /**
    * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getMfaType <em>Mfa Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -955,67 +839,48 @@ public interface BankSystemPackage extends EPackage
   EAttribute getAccount_MfaType();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.bankSystem.SavingsAccount <em>Savings Account</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getAccountType <em>Account Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Savings Account</em>'.
-   * @see org.xtext.bankSystem.SavingsAccount
+   * @return the meta object for the attribute '<em>Account Type</em>'.
+   * @see org.xtext.bankSystem.Account#getAccountType()
+   * @see #getAccount()
    * @generated
    */
-  EClass getSavingsAccount();
+  EAttribute getAccount_AccountType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.SavingsAccount#getIntRate <em>Int Rate</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getIntRate <em>Int Rate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Int Rate</em>'.
-   * @see org.xtext.bankSystem.SavingsAccount#getIntRate()
-   * @see #getSavingsAccount()
+   * @see org.xtext.bankSystem.Account#getIntRate()
+   * @see #getAccount()
    * @generated
    */
-  EAttribute getSavingsAccount_IntRate();
+  EAttribute getAccount_IntRate();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.bankSystem.CheckingAccount <em>Checking Account</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Checking Account</em>'.
-   * @see org.xtext.bankSystem.CheckingAccount
-   * @generated
-   */
-  EClass getCheckingAccount();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.CheckingAccount#getDepPerMonth <em>Dep Per Month</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getDepPerMonth <em>Dep Per Month</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Dep Per Month</em>'.
-   * @see org.xtext.bankSystem.CheckingAccount#getDepPerMonth()
-   * @see #getCheckingAccount()
+   * @see org.xtext.bankSystem.Account#getDepPerMonth()
+   * @see #getAccount()
    * @generated
    */
-  EAttribute getCheckingAccount_DepPerMonth();
+  EAttribute getAccount_DepPerMonth();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.bankSystem.MortgageAccount <em>Mortgage Account</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mortgage Account</em>'.
-   * @see org.xtext.bankSystem.MortgageAccount
-   * @generated
-   */
-  EClass getMortgageAccount();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.MortgageAccount#getLoanPeriod <em>Loan Period</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Account#getLoanPeriod <em>Loan Period</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Loan Period</em>'.
-   * @see org.xtext.bankSystem.MortgageAccount#getLoanPeriod()
-   * @see #getMortgageAccount()
+   * @see org.xtext.bankSystem.Account#getLoanPeriod()
+   * @see #getAccount()
    * @generated
    */
-  EAttribute getMortgageAccount_LoanPeriod();
+  EAttribute getAccount_LoanPeriod();
 
   /**
    * Returns the meta object for class '{@link org.xtext.bankSystem.Transaction <em>Transaction</em>}'.
@@ -1028,15 +893,15 @@ public interface BankSystemPackage extends EPackage
   EClass getTransaction();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Transaction#getAccount <em>Account</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Account</em>'.
+   * @return the meta object for the attribute '<em>Account</em>'.
    * @see org.xtext.bankSystem.Transaction#getAccount()
    * @see #getTransaction()
    * @generated
    */
-  EReference getTransaction_Account();
+  EAttribute getTransaction_Account();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.bankSystem.Transaction#getAmount <em>Amount</em>}'.
@@ -1285,6 +1150,22 @@ public interface BankSystemPackage extends EPackage
     EAttribute BRANCH__ADDRESS = eINSTANCE.getBranch_Address();
 
     /**
+     * The meta object literal for the '<em><b>Mybooth</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BRANCH__MYBOOTH = eINSTANCE.getBranch_Mybooth();
+
+    /**
+     * The meta object literal for the '<em><b>My Vault</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BRANCH__MY_VAULT = eINSTANCE.getBranch_MyVault();
+
+    /**
      * The meta object literal for the '<em><b>Employees</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1345,12 +1226,20 @@ public interface BankSystemPackage extends EPackage
     EClass ACCOUNT = eINSTANCE.getAccount();
 
     /**
-     * The meta object literal for the '<em><b>Holder</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Account Num</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACCOUNT__HOLDER = eINSTANCE.getAccount_Holder();
+    EAttribute ACCOUNT__ACCOUNT_NUM = eINSTANCE.getAccount_AccountNum();
+
+    /**
+     * The meta object literal for the '<em><b>Holder</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACCOUNT__HOLDER = eINSTANCE.getAccount_Holder();
 
     /**
      * The meta object literal for the '<em><b>Balance</b></em>' attribute feature.
@@ -1361,14 +1250,6 @@ public interface BankSystemPackage extends EPackage
     EAttribute ACCOUNT__BALANCE = eINSTANCE.getAccount_Balance();
 
     /**
-     * The meta object literal for the '<em><b>Account Num</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACCOUNT__ACCOUNT_NUM = eINSTANCE.getAccount_AccountNum();
-
-    /**
      * The meta object literal for the '<em><b>Mfa Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1377,14 +1258,12 @@ public interface BankSystemPackage extends EPackage
     EAttribute ACCOUNT__MFA_TYPE = eINSTANCE.getAccount_MfaType();
 
     /**
-     * The meta object literal for the '{@link org.xtext.bankSystem.impl.SavingsAccountImpl <em>Savings Account</em>}' class.
+     * The meta object literal for the '<em><b>Account Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.bankSystem.impl.SavingsAccountImpl
-     * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getSavingsAccount()
      * @generated
      */
-    EClass SAVINGS_ACCOUNT = eINSTANCE.getSavingsAccount();
+    EAttribute ACCOUNT__ACCOUNT_TYPE = eINSTANCE.getAccount_AccountType();
 
     /**
      * The meta object literal for the '<em><b>Int Rate</b></em>' attribute feature.
@@ -1392,17 +1271,7 @@ public interface BankSystemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SAVINGS_ACCOUNT__INT_RATE = eINSTANCE.getSavingsAccount_IntRate();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.bankSystem.impl.CheckingAccountImpl <em>Checking Account</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.bankSystem.impl.CheckingAccountImpl
-     * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getCheckingAccount()
-     * @generated
-     */
-    EClass CHECKING_ACCOUNT = eINSTANCE.getCheckingAccount();
+    EAttribute ACCOUNT__INT_RATE = eINSTANCE.getAccount_IntRate();
 
     /**
      * The meta object literal for the '<em><b>Dep Per Month</b></em>' attribute feature.
@@ -1410,17 +1279,7 @@ public interface BankSystemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CHECKING_ACCOUNT__DEP_PER_MONTH = eINSTANCE.getCheckingAccount_DepPerMonth();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.bankSystem.impl.MortgageAccountImpl <em>Mortgage Account</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.bankSystem.impl.MortgageAccountImpl
-     * @see org.xtext.bankSystem.impl.BankSystemPackageImpl#getMortgageAccount()
-     * @generated
-     */
-    EClass MORTGAGE_ACCOUNT = eINSTANCE.getMortgageAccount();
+    EAttribute ACCOUNT__DEP_PER_MONTH = eINSTANCE.getAccount_DepPerMonth();
 
     /**
      * The meta object literal for the '<em><b>Loan Period</b></em>' attribute feature.
@@ -1428,7 +1287,7 @@ public interface BankSystemPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MORTGAGE_ACCOUNT__LOAN_PERIOD = eINSTANCE.getMortgageAccount_LoanPeriod();
+    EAttribute ACCOUNT__LOAN_PERIOD = eINSTANCE.getAccount_LoanPeriod();
 
     /**
      * The meta object literal for the '{@link org.xtext.bankSystem.impl.TransactionImpl <em>Transaction</em>}' class.
@@ -1441,12 +1300,12 @@ public interface BankSystemPackage extends EPackage
     EClass TRANSACTION = eINSTANCE.getTransaction();
 
     /**
-     * The meta object literal for the '<em><b>Account</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Account</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSACTION__ACCOUNT = eINSTANCE.getTransaction_Account();
+    EAttribute TRANSACTION__ACCOUNT = eINSTANCE.getTransaction_Account();
 
     /**
      * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.

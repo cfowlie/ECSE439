@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.bankSystem.Account;
 import org.xtext.bankSystem.BankSystemPackage;
 import org.xtext.bankSystem.Date;
 import org.xtext.bankSystem.Transaction;
@@ -37,14 +36,24 @@ import org.xtext.bankSystem.Transaction;
 public class TransactionImpl extends MinimalEObjectImpl.Container implements Transaction
 {
   /**
-   * The cached value of the '{@link #getAccount() <em>Account</em>}' containment reference.
+   * The default value of the '{@link #getAccount() <em>Account</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAccount()
    * @generated
    * @ordered
    */
-  protected Account account;
+  protected static final String ACCOUNT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAccount() <em>Account</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAccount()
+   * @generated
+   * @ordered
+   */
+  protected String account = ACCOUNT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
@@ -142,7 +151,7 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public Account getAccount()
+  public String getAccount()
   {
     return account;
   }
@@ -152,37 +161,12 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAccount(Account newAccount, NotificationChain msgs)
+  public void setAccount(String newAccount)
   {
-    Account oldAccount = account;
+    String oldAccount = account;
     account = newAccount;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__ACCOUNT, oldAccount, newAccount);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAccount(Account newAccount)
-  {
-    if (newAccount != account)
-    {
-      NotificationChain msgs = null;
-      if (account != null)
-        msgs = ((InternalEObject)account).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__ACCOUNT, null, msgs);
-      if (newAccount != null)
-        msgs = ((InternalEObject)newAccount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BankSystemPackage.TRANSACTION__ACCOUNT, null, msgs);
-      msgs = basicSetAccount(newAccount, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__ACCOUNT, newAccount, newAccount));
+      eNotify(new ENotificationImpl(this, Notification.SET, BankSystemPackage.TRANSACTION__ACCOUNT, oldAccount, account));
   }
 
   /**
@@ -312,8 +296,6 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
   {
     switch (featureID)
     {
-      case BankSystemPackage.TRANSACTION__ACCOUNT:
-        return basicSetAccount(null, msgs);
       case BankSystemPackage.TRANSACTION__DATE:
         return basicSetDate(null, msgs);
     }
@@ -355,7 +337,7 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
     switch (featureID)
     {
       case BankSystemPackage.TRANSACTION__ACCOUNT:
-        setAccount((Account)newValue);
+        setAccount((String)newValue);
         return;
       case BankSystemPackage.TRANSACTION__AMOUNT:
         setAmount((Integer)newValue);
@@ -384,7 +366,7 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
     switch (featureID)
     {
       case BankSystemPackage.TRANSACTION__ACCOUNT:
-        setAccount((Account)null);
+        setAccount(ACCOUNT_EDEFAULT);
         return;
       case BankSystemPackage.TRANSACTION__AMOUNT:
         setAmount(AMOUNT_EDEFAULT);
@@ -413,7 +395,7 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
     switch (featureID)
     {
       case BankSystemPackage.TRANSACTION__ACCOUNT:
-        return account != null;
+        return ACCOUNT_EDEFAULT == null ? account != null : !ACCOUNT_EDEFAULT.equals(account);
       case BankSystemPackage.TRANSACTION__AMOUNT:
         return amount != AMOUNT_EDEFAULT;
       case BankSystemPackage.TRANSACTION__DATE:
@@ -437,7 +419,9 @@ public class TransactionImpl extends MinimalEObjectImpl.Container implements Tra
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (amount: ");
+    result.append(" (account: ");
+    result.append(account);
+    result.append(", amount: ");
     result.append(amount);
     result.append(", debit: ");
     result.append(debit);

@@ -71,9 +71,6 @@ public class BankSystemFactoryImpl extends EFactoryImpl implements BankSystemFac
       case BankSystemPackage.BRANCH: return createBranch();
       case BankSystemPackage.EMPLOYEE: return createEmployee();
       case BankSystemPackage.ACCOUNT: return createAccount();
-      case BankSystemPackage.SAVINGS_ACCOUNT: return createSavingsAccount();
-      case BankSystemPackage.CHECKING_ACCOUNT: return createCheckingAccount();
-      case BankSystemPackage.MORTGAGE_ACCOUNT: return createMortgageAccount();
       case BankSystemPackage.TRANSACTION: return createTransaction();
       case BankSystemPackage.DATE: return createDate();
       default:
@@ -145,39 +142,6 @@ public class BankSystemFactoryImpl extends EFactoryImpl implements BankSystemFac
   {
     AccountImpl account = new AccountImpl();
     return account;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SavingsAccount createSavingsAccount()
-  {
-    SavingsAccountImpl savingsAccount = new SavingsAccountImpl();
-    return savingsAccount;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CheckingAccount createCheckingAccount()
-  {
-    CheckingAccountImpl checkingAccount = new CheckingAccountImpl();
-    return checkingAccount;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MortgageAccount createMortgageAccount()
-  {
-    MortgageAccountImpl mortgageAccount = new MortgageAccountImpl();
-    return mortgageAccount;
   }
 
   /**
