@@ -4,7 +4,7 @@
 «EXTENSION template::GeneratorExtensions»
 
 «DEFINE main FOR BankSystem»
- 	«FILE "example2.sql"»
+ 	«FILE "database.sql"»
 DROP DATABASE bankSystem;
 CREATE DATABASE banksystem;
 USE banksystem;
@@ -48,6 +48,7 @@ CREATE TABLE account(
  	name varchar(36),
  	salary DOUBLE,
  	currentRole ENUM('Manager', 'Teller'),
+ 	hiringdate DATE,
  	 FOREIGN KEY (branchId) REFERENCES branch(id)
  );
  CREATE TABLE Transaction(
@@ -57,6 +58,7 @@ CREATE TABLE account(
 	amount DOUBLE,
  	debit BOOLEAN,
  	vendorName varchar(256),
+ 	date DATE,
  	FOREIGN KEY (bankId) REFERENCES bank(id),
  	FOREIGN KEY (accountID) REFERENCES account(id)
  );			
@@ -83,8 +85,8 @@ INSERT INTO user (id, name, email, hashpass, address) VALUES(UUID(), '«name»', '
 	«EXPAND employee(address) FOREACH employees»
 «ENDDEFINE»
 «DEFINE employee(String branchAddress) FOR Employee»
-INSERT INTO employee(id, branchID, name, salary, currentRole)
-VALUES (UUID(), (SELECT id FROM branch WHERE address= '«branchAddress»'), '«name»', «salary», '«currentRole»');
+INSERT INTO employee(id, branchID, name, salary, currentRole, hiringdate)
+VALUES (UUID(), (SELECT id FROM branch WHERE address= '«branchAddress»'), '«name»', «salary», '«currentRole»', '«date.year»/«date.month»/«date.day»');
 «ENDDEFINE»  
 
 «DEFINE account(String bankName) FOR Account»
@@ -106,6 +108,6 @@ VALUES (UUID(), (SELECT id FROM branch WHERE address= '«branchAddress»'), '«name
 «ENDDEFINE»
 
 «DEFINE transaction(String bankName) FOR Transaction»
-	INSERT INTO transaction (id, bankID, accountID, amount, debit, vendorName)
-	VALUES(UUID(), (SELECT id FROM bank where name = '«bankName»'), (SELECT id FROM account where accountNum = '«account»'), «amount»,  «debit», '«vendorName»');
+	INSERT INTO transaction (id, bankID, accountID, amount, debit, vendorName, date)
+	VALUES(UUID(), (SELECT id FROM bank where name = '«bankName»'), (SELECT id FROM account where accountNum = '«account»'), «amount»,  «debit», '«vendorName»', '«date.year»/«date.month»/«date.day»');
 «ENDDEFINE»
